@@ -1,3 +1,4 @@
+# AWS::IAM::AccessKey generated from spec 1.11.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IAM::AccessKey',
@@ -7,17 +8,22 @@ coerce 'Cfn::Resource::Properties::AWS::IAM::AccessKey',
 package Cfn::Resource::AWS::IAM::AccessKey {
   use Moose;
   extends 'Cfn::Resource';
-  has Properties => (isa => 'Cfn::Resource::Properties::AWS::IAM::AccessKey', is => 'rw', coerce => 1, required => 1);
+  has Properties => (isa => 'Cfn::Resource::Properties::AWS::IAM::AccessKey', is => 'rw', coerce => 1);
+  sub _build_attributes {
+    [ 'SecretAccessKey' ]
+  }
 }
 
-package Cfn::Resource::Properties::AWS::IAM::AccessKey  {
+
+
+package Cfn::Resource::Properties::AWS::IAM::AccessKey {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
-  has Serial => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-  # TODO: Status has extra restrictions
-  has Status => (isa => 'Cfn::Value', is => 'rw', coerce => 1, required => 0);
-  has UserName => (isa => 'Cfn::Value', is => 'rw', coerce => 1, required => 1);
+  
+  has Serial => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has UserName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
 1;

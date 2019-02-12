@@ -1,15 +1,5 @@
 use Moose::Util::TypeConstraints;
 
-subtype 'Cfn::ValueHash',
-     as 'HashRef[Cfn::Value]';
-
-my $cfn_value_constraint = Moose::Util::TypeConstraints::find_type_constraint('Cfn::Value');
-coerce 'Cfn::ValueHash',
-  from 'HashRef',  via {
-  my $original = $_;
-  return { map { ($_ =>  $cfn_value_constraint->coerce($original->{ $_ }) ) } keys %$original };
-};
-
 coerce 'Cfn::Resource::Properties::AWS::CloudFormation::CustomResource',
   from 'HashRef',
    via { Cfn::Resource::Properties::AWS::CloudFormation::CustomResource->new( %$_ ) };
@@ -18,17 +8,22 @@ package Cfn::Resource::Properties::AWS::CloudFormation::CustomResource {
   use Moose;
   use MooseX::SlurpyConstructor;
   extends 'Cfn::Resource::Properties';
-  has ServiceToken => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-  has _extra => (isa => 'Cfn::ValueHash', is => 'ro', coerce => 1, slurpy => 1);
+  # ServiceToken is the only defined property in a CustomResource. The rest of it's properties
+  # are free-form, so we store them in _extra (via the slurpy attribute that MooseX::SlurpyConstructor
+  # provides
+  has ServiceToken => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1);
+  has _extra => (isa => 'Cfn::Value::Hash', is => 'ro', coerce => 1, slurpy => 1);
 
   override as_hashref => sub {
     my $self = shift;
     my @args = @_;
 
     my $ret = { ServiceToken => $self->ServiceToken->as_hashref(@args) };
-    foreach my $att (keys %{ $self->_extra }) {;
-      if (defined $self->_extra->{ $att }) {
-        my @ret = $self->_extra->{ $att }->as_hashref(@args);
+    return $ret if (not defined $self->_extra);
+
+    foreach my $att (keys %{ $self->_extra->Value }) {;
+      if (defined $self->_extra->Value->{ $att }) {
+        my @ret = $self->_extra->Value->{ $att }->as_hashref(@args);
         if (@ret == 1) {
           $ret->{ $att } = $ret[0];
         } else {
@@ -46,6 +41,16 @@ package Cfn::Resource::AWS::CloudFormation::CustomResource {
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CloudFormation::CustomResource', is => 'rw', coerce => 1, required => 1);
   has Version    => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
+
+  around as_hashref => sub {
+    my ($orig, $self, @rest) = @_;
+    my $cfn = $rest[0];
+
+    my $hash = $self->$orig(@rest);
+    $hash->{ Type } = 'AWS::CloudFormation::CustomResource' if ($cfn->cfn_options->custom_resource_rename);
+    $hash->{ Version } = $self->Version->as_hashref if (defined $self->Version);
+    return $hash;
+  };
 }
 
 1;
