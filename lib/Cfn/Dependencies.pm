@@ -1,4 +1,4 @@
-package CCfnX::Dependencies {
+package Cfn::Dependencies {
   use Moose::Role;
 
   sub resolve_references_to_logicalid_with {

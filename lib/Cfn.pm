@@ -534,7 +534,7 @@ package Cfn::Timestamp {
 package Cfn::Resource {
   use Moose;
   # CCfnX::Dependencies is not production ready
-  with 'CCfnX::Dependencies';
+  with 'Cfn::Dependencies';
 
   sub BUILD {
     my $self = shift;
