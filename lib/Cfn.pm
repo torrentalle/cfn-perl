@@ -172,6 +172,18 @@ package Cfn::TypeLibrary {
   coerce 'Cfn::Value::Hash',
     from 'HashRef',  via (\&coerce_hash);
 
+  subtype 'Cfn::Transform',
+       as 'ArrayRef[Str]';
+
+  coerce 'Cfn::Transform',
+    from 'ArrayRef', via {
+      return $_;
+    };
+  coerce 'Cfn::Transform',
+    from 'Value', via {
+      return [ $_ ];
+    };
+
   subtype 'Cfn::MappingHash',
     as 'HashRef[Cfn::Mapping]';
 
@@ -740,7 +752,7 @@ package Cfn {
   use Scalar::Util;
   has AWSTemplateFormatVersion => (isa => 'Str', is => 'rw');
   has Description => (isa => 'Str', is => 'rw');
-  has Transform => (isa => 'ArrayRef[Str]', is => 'rw');
+  has Transform => (isa => 'Cfn::Transform', is => 'rw', coerce => 1);
 
   our $VERSION = '0.01';
   #ABSTRACT: An object model for CloudFormation documents
