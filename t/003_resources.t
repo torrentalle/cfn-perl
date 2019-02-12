@@ -53,10 +53,12 @@ $o->addResource(
   R5 => 'Type1'
 );
 
-my $struct = $o->as_hashref;
+# Regression test: adding a WaitConditionHandle this way would blow up
+$o->addResource(
+  'WCH', 'AWS::CloudFormation::WaitConditionHandle',
+);
 
-use Data::Dumper;
-print Dumper($struct);
+my $struct = $o->as_hashref;
 
 ok(defined($struct->{ Resources }->{ R1 }));
 cmp_ok($struct->{ Resources }->{ R1 }->{ Properties }->{ Prop1 }, 'eq', 'X');
@@ -72,5 +74,7 @@ cmp_ok($struct->{ Resources }->{ R4 }->{ Properties }->{ Prop1 }, 'eq', 'X');
 cmp_ok($struct->{ Resources }->{ R4 }->{ DependsOn }->[ 0 ], 'eq', 'R1');
 
 ok(defined($struct->{ Resources }->{ R5 }));
+
+ok(defined($struct->{ Resources }->{ WCH }));
 
 done_testing;

@@ -575,7 +575,7 @@ package Cfn {
           die "Don't know what to do with the fourth parameter to addResource";
         }
       } else {
-        @properties = ($third_param, @rest);
+        @properties = ( $third_param // () , @rest);
         @extra_props = ();
       }
 
