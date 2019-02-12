@@ -43,10 +43,4 @@ cmp_ok($hr->{Outputs}->{o2}->{Condition}, 'eq', 'MyCondition', 'o2 points to a C
 ok(not(defined($hr->{Resources}->{ResourceWithoutCondition}->{Condition})), 'ResourceWithoutCondition doesnt have a Condition');
 cmp_ok($hr->{Resources}->{ResourceWithCondition}->{Condition}, 'eq', 'MyCondition', 'ResourceWithCondition has a Condition');
 
-
-use Data::Dumper;
-print Dumper($hr);
-
-
-
 done_testing;
