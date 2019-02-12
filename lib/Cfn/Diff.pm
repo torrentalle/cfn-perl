@@ -9,6 +9,25 @@ package Cfn::Diff::Changes {
   has to => (is => 'rw');
 }
 
+package Cfn::Diff::IncompatibleChange {
+  use Moose;
+  extends 'Cfn::Diff::Changes';
+}
+
+package Cfn::Diff::ResourcePropertyChange {
+  use Moose;
+  extends 'Cfn::Diff::Changes';
+  has resource => (is => 'ro', isa => 'Cfn::Resource', required => 1);
+  has property => (is => 'ro', isa => 'Str', required => 1);
+
+  has mutability => (is => 'ro', isa => 'Str|Undef', lazy => 1, default => sub {
+    my $self = shift;
+    my $prop_meta = $self->resource->Properties->meta->find_attribute_by_name($self->property);
+    return undef if (not $prop_meta->does('CfnMutability'));
+    return $prop_meta->mutability;
+  });
+}
+
 package Cfn::Diff {
   use Moose;
   extends 'Cfn';
@@ -38,9 +57,11 @@ package Cfn::Diff {
     my %changed = ();
     foreach my $res (keys %new_resources) {
       if (exists $old_resources{ $res }) {
-        if (my @changes = $self->compare_resource($new->Resource($res)->Properties, $old->Resource($res)->Properties, $res)) {
+
+        if (my @changes = $self->compare_resource($new->Resource($res), $old->Resource($res), $res)) {
           $self->new_change(@changes);
         }
+
         delete $new_resources{ $res };
         delete $old_resources{ $res };
       } else {
@@ -54,7 +75,43 @@ package Cfn::Diff {
   }
 
   sub compare_resource {
-    my ($self, $new, $old, $res) = @_;
+    my ($self, $new_res, $old_res, $logical_id) = @_;
+
+    my $new_res_type = $new_res->Type;
+    $new_res_type = 'AWS::CloudFormation::CustomResource' if ($new_res->isa('Cfn::Resource::AWS::CloudFormation::CustomResource'));
+    my $old_res_type = $old_res->Type;
+    $old_res_type = 'AWS::CloudFormation::CustomResource' if ($old_res->isa('Cfn::Resource::AWS::CloudFormation::CustomResource'));
+
+    if ($new_res_type ne $old_res_type) {
+      return Cfn::Diff::IncompatibleChange->new(
+        path => "Resources.$logical_id", 
+        change => 'Resource Type Changed', 
+        from => $old_res->Type, 
+        to => $new_res->Type,
+      );
+    }
+
+    # This section diffs the resources properties
+    my $new = $new_res->Properties;
+    my $old = $old_res->Properties;
+
+    if (not defined $new and not defined $old) {
+      return ; # No changes, and don't go on trying to
+               # diff the properties of unexisting objects
+    } elsif (not defined $new or not defined $old) {
+      my $message;
+      $message = "Properties key deleted" if (not defined $new and defined $old);
+      $message = "Properties key added" if (defined $new and not defined $old);
+
+      return Cfn::Diff::Changes->new(
+        path => "Resources.$logical_id",
+        change => $message,
+        from => $old,
+        to => $new,
+      );
+    }
+
+    # If we get here, the two objects have properties
     my @changes = ();
     foreach my $p ($new->meta->get_all_attributes) {
       my $meth = $p->name;
@@ -63,18 +120,29 @@ package Cfn::Diff {
 
       next if (not defined $new_val and not defined $old_val);
 
-      if (not defined $new_val) {
-        push @changes, Cfn::Diff::Changes->new(path => "Resources.$res.Properties.$meth", change => 'Property Deleted', from => $old_val, to => undef);
+      my $change_description;
+      if      (    defined $old_val and not defined $new_val) {
+        $change_description = 'Property Deleted';
+      } elsif (not defined $old_val and     defined $new_val) {
+        $change_description = 'Property Added';
+      } elsif (    defined $old_val and     defined $new_val) {
+        if (not $self->properties_equal($new_val, $old_val, "$logical_id.$meth")) {
+          $change_description = 'Property Changed';
+        } else {
+          next
+        }
+      } elsif (not defined $old_val and not defined $new_val) {
         next;
       }
-      if (not defined $old_val) {
-        push @changes, Cfn::Diff::Changes->new(path => "Resources.$res.Properties.$meth", change => 'Property Added', from => undef, to => $new_val);
-        next;
-      }
-      if (not $self->properties_equal($new_val, $old_val, "$res.$meth")) {
-        push @changes, Cfn::Diff::Changes->new(path => "Resources.$res.Properties.$meth", change => 'Property Changed', from => $old_val, to => $new_val);
-        next;
-      }
+
+      push @changes, Cfn::Diff::ResourcePropertyChange->new(
+        path => "Resources.$logical_id.Properties.$meth",
+        change => $change_description,
+        from => $old_val,
+        to => $new_val,
+        resource => $new_res,
+        property => $meth,
+      );
     }
     return @changes;
   }
@@ -94,7 +162,7 @@ package Cfn::Diff {
         } elsif ($new->isa('Cfn::Value::Function')) {
           return (($new->Function eq $old->Function) and $self->properties_equal($new->Value, $old->Value));
         } elsif ($new->isa('Cfn::Value')) {
-          return $self->properties_equal($new->Value, $old->Value);
+          return $self->properties_equal($new->as_hashref, $old->as_hashref);
         } else {
           die "Don't know how to compare $new";
         }
