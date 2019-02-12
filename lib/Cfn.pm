@@ -336,6 +336,30 @@ package Cfn::Value {
   sub as_hashref { shift->Value->as_hashref(@_) }
 }
 
+package Cfn::DynamicValue {
+  use Moose;
+  extends 'Cfn::Value';
+  has Value => (isa => 'CodeRef', is => 'rw', required => 1);
+
+  sub to_value {
+    my $self = shift;
+    return Moose::Util::TypeConstraints::find_type_constraint('Cfn::Value')->coerce($self->resolve_value(@_));
+  }
+
+  sub resolve_value {
+    my $self = shift;
+    my @args = reverse @_;
+    my (@ret) = ($self->Value->(@args));
+    @ret = map { (not ref($_) or ref($_) eq 'HASH')?$_:$_->as_hashref(@args) } @ret;
+    return (@ret);
+  }
+
+  override as_hashref => sub {
+    my $self = shift;
+    return $self->resolve_value(@_);
+  };
+}
+
 package Cfn::Value::Function {
   use Moose;
   extends 'Cfn::Value';
