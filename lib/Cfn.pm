@@ -438,6 +438,10 @@ package Cfn::Mapping {
 package Cfn {
   use Moose;
   use Moose::Util;
+
+  our $VERSION = '0.01';
+  #ABSTRACT: An object model for CloudFormation documents
+
   has AWSTemplateFormatVersion => (isa => 'Str', is => 'ro', default => '2010-09-09' );
   has Description => (isa => 'Str', is => 'rw', required => 1, default => '' );
   has Transform => (isa => 'Str', is => 'rw');
