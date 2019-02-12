@@ -530,15 +530,35 @@ package Cfn {
   }
 
   sub addResource {
-    my ($self, $name, $type, @rest) = @_;
+    my ($self, $name, $second_param, $third_param, @rest) = @_;
     die "A resource named $name already exists" if ($self->Resources->{ $name });
-    if (not ref $type){
+
+    if (not ref $second_param){
+      my $type = $second_param;
+      my (@properties, @extra_props);
+
+      if (ref($third_param) eq 'HASH') {
+        @properties = %$third_param;
+        if (not defined $rest[0]){
+          @extra_props = ();
+        } elsif (defined $rest[0] and ref($rest[0]) eq 'HASH') {
+          @extra_props = %{ $rest[0] }
+        } else {
+          die "Don't know what to do with the fourth parameter to addResource";
+        }
+      } else {
+        @properties = ($third_param, @rest);
+        @extra_props = ();
+      }
+
       return $self->Resources->{ $name } = Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource')->coerce({
           Type => $type,
-          Properties => { @rest }
+          Properties => { @properties },
+          @extra_props,
         });
     } else {
-      return $self->Resources->{ $name } = $type;
+      my $object = $second_param;
+      return $self->Resources->{ $name } = $object;
     }
   }
 

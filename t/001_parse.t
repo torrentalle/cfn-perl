@@ -17,7 +17,7 @@ foreach my $file (@files){
   my $tname = "Resource from $file via generic hashref";
   eval {
     my $cfn = Cfn->new;
-    $cfn->addResource('Resource', $struct->{Type}, %{ $struct->{Properties} });
+    $cfn->addResource('Resource', $struct->{Type}, $struct->{Properties});
     is_deeply($cfn->Resources->{Resource}->as_hashref, $struct, $tname);
   };
   if ($@) {

@@ -1,7 +1,6 @@
 #/usr/bin/env perl
 
-use CCfn;
-
+use Cfn;
 use Data::Dumper;
 use Test::More;
 
@@ -26,34 +25,21 @@ package Cfn::Resource::Type1 {
   has Properties => (is => 'ro', isa => 'Cfn::Resource::Properties::DummyProps', coerce => 1);
 }
 
-package Test1 {
-  use Moose;
-  extends 'CCfn';
-  use CCfnX::Shortcuts;
-  use CCfnX::CommonArgs;
+my $o = Cfn->new;
 
-  has params => (is => 'ro', default => sub { CCfnX::CommonArgs->new(
-    name => 'test',
-    account => 'devel-capside',
-    region => 'eu-west-1',
-  ) });
+$o->addResource(R1 => 'Type1', { }, { DependsOn => [ 'R2', 'R3' ] });
+$o->addResource(R2 => 'Type1', { });
+$o->addResource(R3 => 'Type1', { Prop1 => { Ref => 'R2' } });
+$o->addResource(R4 => 'Type1', { ArrayProp => [ { Ref => 'R3' }, { Ref => 'R4' } ] });
+$o->addResource(R5 => 'Type1', { Prop3 => { 'Fn::Join' => [ ' ', [ 'hello ', { Ref => 'R3' } ] ] } });
+$o->addResource(R6 => 'Type1', { Prop1 => { 'Fn::GetAtt' => [ 'R2', 'Prop1' ] } });
+$o->addResource(R7 => 'Type1', { Prop1 => { Ref => 'R1' } }, { DependsOn => [ 'R2', 'R3' ] });
+$o->addResource(R8 => 'Type1', { Prop1 => { Ref => 'R2' } }, { DependsOn => [ 'R2', 'R3' ] });
+$o->addResource(R9 => 'Type1', { Prop1 => { Ref => 'R2' }, Prop2 => { Ref => 'R2' } });
+$o->addResource(R10 => 'Type1', { Prop1 => { Ref => 'R2' }, Prop2 => { 'Fn::GetAtt' => [ 'R2', 'Attribute' ] } });
+$o->addResource(R11 => 'Type1', { Prop1 => { Ref => 'R2' }, Prop2 => { Ref => 'R2' }, ArrayProp => [ { Ref => 'R2' } ] });
+$o->addResource(R12 => 'Type1', { }, { DependsOn => 'R1' });
 
-  resource R1 => 'Type1', { }, { DependsOn => [ 'R2', 'R3' ] };
-  resource R2 => 'Type1', { };
-  resource R3 => 'Type1', { Prop1 => Ref('R2') };
-  resource R4 => 'Type1', { ArrayProp => [ Ref('R3'), Ref('R4') ] };
-  resource R5 => 'Type1', { Prop3 => { 'Fn::Join' => [ ' ', [ 'hello ', Ref('R3') ] ] } };
-  resource R6 => 'Type1', { Prop1 => GetAtt('R2', 'Prop1') };
-  resource R7 => 'Type1', { Prop1 => Ref('R1') }, { DependsOn => [ 'R2', 'R3' ] };
-  resource R8 => 'Type1', { Prop1 => Ref('R2') }, { DependsOn => [ 'R2', 'R3' ] };
-  resource R9 => 'Type1', { Prop1 => Ref('R2'), Prop2 => Ref('R2') };
-  resource R10 => 'Type1', { Prop1 => Ref('R2'), Prop2 => GetAtt('R2', 'Attribute') };
-  resource R11 => 'Type1', { Prop1 => Ref('R2'), Prop2 => Ref('R2'), ArrayProp => [ Ref('R2') ] };
-  resource R12 => 'Type1', { }, { DependsOn => 'R1' };
-}
-
-
-my $o = Test1->new;
 
 my $tests = [
   { resource => 'R1',  deps => [ 'R2', 'R3' ], desc => 'Explicit DependsOn'},
