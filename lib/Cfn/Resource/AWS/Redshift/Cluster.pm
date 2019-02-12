@@ -1,3 +1,4 @@
+# AWS::Redshift::Cluster generated from spec 2.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Redshift::Cluster',
@@ -5,41 +6,72 @@ coerce 'Cfn::Resource::Properties::AWS::Redshift::Cluster',
    via { Cfn::Resource::Properties::AWS::Redshift::Cluster->new( %$_ ) };
 
 package Cfn::Resource::AWS::Redshift::Cluster {
-        use Moose;
-        extends 'Cfn::Resource';
-        has Properties => (isa => 'Cfn::Resource::Properties::AWS::Redshift::Cluster', is => 'rw', coerce => 1, required => 1);
+  use Moose;
+  extends 'Cfn::Resource';
+  has Properties => (isa => 'Cfn::Resource::Properties::AWS::Redshift::Cluster', is => 'rw', coerce => 1);
+  sub _build_attributes {
+    [ 'Endpoint.Address','Endpoint.Port' ]
+  }
 }
 
-package Cfn::Resource::Properties::AWS::Redshift::Cluster  {
-        use Moose;
-        use MooseX::StrictConstructor;
-        extends 'Cfn::Resource::Properties';
-        has AllowVersionUpgrade => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has AutomatedSnapshotRetentionPeriod => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has AvailabilityZone => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has ClusterParameterGroupName => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has ClusterSecurityGroups => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1);
-        has ClusterSubnetGroupName => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has ClusterType => (isa => 'Cfn::Value', is => 'rw', coerce => 1, required => 1);
-        has ClusterVersion => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has DBName => (isa => 'Cfn::Value', is => 'rw', coerce => 1, required => 1);
-        has ElasticIp => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has Encrypted => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has HsmClientCertificateIdentifier => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has HsmConfigurationIdentifier => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has KmsKeyId => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has MasterUsername => (isa => 'Cfn::Value', is => 'rw', coerce => 1, required => 1);
-        has MasterUserPassword => (isa => 'Cfn::Value', is => 'rw', coerce => 1, required => 1);
-        has NodeType => (isa => 'Cfn::Value', is => 'rw', coerce => 1, required => 1);
-        has NumberOfNodes => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has OwnerAccount => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has Port => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has PreferredMaintenanceWindow => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has PubliclyAccessible => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has SnapshotClusterIdentifier => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has SnapshotIdentifier => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-        has VpcSecurityGroupIds => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1);
+
+
+subtype 'Cfn::Resource::Properties::AWS::Redshift::Cluster::LoggingProperties',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Redshift::Cluster::LoggingProperties',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::Redshift::Cluster::LoggingPropertiesValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::Redshift::Cluster::LoggingPropertiesValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has BucketName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has S3KeyPrefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+package Cfn::Resource::Properties::AWS::Redshift::Cluster {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Resource::Properties';
+  
+  has AllowVersionUpgrade => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has AutomatedSnapshotRetentionPeriod => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has AvailabilityZone => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ClusterIdentifier => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ClusterParameterGroupName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ClusterSecurityGroups => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ClusterSubnetGroupName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ClusterType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ClusterVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DBName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ElasticIp => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has Encrypted => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has HsmClientCertificateIdentifier => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HsmConfigurationIdentifier => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IamRoles => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has KmsKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has LoggingProperties => (isa => 'Cfn::Resource::Properties::AWS::Redshift::Cluster::LoggingProperties', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MasterUserPassword => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MasterUsername => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has NodeType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has NumberOfNodes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has OwnerAccount => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has Port => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has PreferredMaintenanceWindow => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PubliclyAccessible => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SnapshotClusterIdentifier => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has SnapshotIdentifier => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has VpcSecurityGroupIds => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;
-

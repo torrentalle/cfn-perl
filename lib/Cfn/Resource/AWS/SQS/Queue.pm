@@ -1,3 +1,4 @@
+# AWS::SQS::Queue generated from spec 2.6.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SQS::Queue',
@@ -7,20 +8,31 @@ coerce 'Cfn::Resource::Properties::AWS::SQS::Queue',
 package Cfn::Resource::AWS::SQS::Queue {
   use Moose;
   extends 'Cfn::Resource';
-  has Properties => (isa => 'Cfn::Resource::Properties::AWS::SQS::Queue', is => 'rw', coerce => 1, required => 1);
+  has Properties => (isa => 'Cfn::Resource::Properties::AWS::SQS::Queue', is => 'rw', coerce => 1);
+  sub _build_attributes {
+    [ 'Arn','QueueName' ]
+  }
 }
+
+
 
 package Cfn::Resource::Properties::AWS::SQS::Queue {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
-  has DelaySeconds => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-  has MaximumMessageSize => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-  has MessageRetentionPeriod => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-  has QueueName => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-  has ReceiveMessageWaitTimeSeconds => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-  has RedrivePolicy => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
-  has VisibilityTimeout => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
+  
+  has ContentBasedDeduplication => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DelaySeconds => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has FifoQueue => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has KmsDataKeyReusePeriodSeconds => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has KmsMasterKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MaximumMessageSize => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MessageRetentionPeriod => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has QueueName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ReceiveMessageWaitTimeSeconds => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RedrivePolicy => (isa => 'Cfn::Value::Json', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has VisibilityTimeout => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

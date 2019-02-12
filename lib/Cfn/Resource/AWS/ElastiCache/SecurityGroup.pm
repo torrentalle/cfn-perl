@@ -1,3 +1,4 @@
+# AWS::ElastiCache::SecurityGroup generated from spec 1.11.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElastiCache::SecurityGroup',
@@ -7,18 +8,20 @@ coerce 'Cfn::Resource::Properties::AWS::ElastiCache::SecurityGroup',
 package Cfn::Resource::AWS::ElastiCache::SecurityGroup {
   use Moose;
   extends 'Cfn::Resource';
-  has Properties => (isa => 'Cfn::Resource::Properties::AWS::ElastiCache::SecurityGroup', is => 'rw', coerce => 1, required => 1);
+  has Properties => (isa => 'Cfn::Resource::Properties::AWS::ElastiCache::SecurityGroup', is => 'rw', coerce => 1);
+  sub _build_attributes {
+    [  ]
+  }
 }
 
-package Cfn::Resource::Properties::AWS::ElastiCache::SecurityGroup  {
+
+
+package Cfn::Resource::Properties::AWS::ElastiCache::SecurityGroup {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
-  has Description => (isa => 'Cfn::Value', is => 'rw', coerce => 1, required => 1);
+  
+  has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
-
-coerce 'Cfn::Resource::Properties::AWS::ElastiCache::SecurityGroupIngress',
-  from 'HashRef',
-   via { Cfn::Resource::Properties::AWS::ElastiCache::SecurityGroupIngress->new( %$_ ) };
 
 1;
