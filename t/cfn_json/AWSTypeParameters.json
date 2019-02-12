@@ -1,4 +1,5 @@
 {
+"Resources": {},
 "Parameters" : {
   "myKeyPair" : {
     "Description" : "Amazon EC2 Key Pair",
