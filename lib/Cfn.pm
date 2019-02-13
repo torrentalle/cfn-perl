@@ -1,7 +1,31 @@
 package Cfn::TypeLibrary {
-
   use Moose::Util::TypeConstraints;
 
+  sub try_function {
+    my $arg = shift;
+    my @keys = keys %$arg;
+    my $first_key = $keys[0];
+    if (@keys == 1 and (substr($first_key,0,4) eq 'Fn::' or $first_key eq 'Ref' or $first_key eq 'Condition')){
+      if ($first_key eq 'Fn::GetAtt') { 
+        return Cfn::Value::Function::GetAtt->new(Function => $first_key, Value => $arg->{ $first_key });
+      } elsif ($keys[0] eq 'Ref'){
+        my $psdparam = Moose::Util::TypeConstraints::find_type_constraint('Cfn::PseudoParameterValue');
+        my $value = $arg->{ $first_key };
+        my $class = $psdparam->check($value) ? 
+                      'Cfn::Value::Function::PseudoParameter' : 
+                      'Cfn::Value::Function::Ref';
+        
+        return $class->new( Function => $first_key, Value => $value);
+      } elsif ($keys[0] eq 'Condition'){
+        return Cfn::Value::Function::Condition->new( Function => $first_key, Value => $arg->{ $first_key });
+      } else {
+        return Cfn::Value::Function->new(Function => $first_key, Value => $arg->{ $first_key });
+      }
+    } else {
+      return undef;
+    }
+  }
+  
   coerce 'Cfn::Resource::UpdatePolicy',
     from 'HashRef',
     via { Cfn::Resource::UpdatePolicy->new( %$_ ) };
@@ -51,25 +75,6 @@ package Cfn::TypeLibrary {
     Cfn::Value::Array->new(Value => [
       map { Moose::Util::TypeConstraints::find_type_constraint('Cfn::Value')->coerce($_) } @$_
     ])
-  }
-
-  sub try_function {
-    my $arg = shift;
-    my @keys = keys %$arg;
-    my $first_key = $keys[0];
-    if (@keys == 1 and (substr($first_key,0,4) eq 'Fn::' or $first_key eq 'Ref' or $first_key eq 'Condition')){
-      if ($first_key eq 'Fn::GetAtt') {
-        return Cfn::Value::Function::GetAtt->new(Function => $first_key, Value => $arg->{ $first_key });
-      } elsif ($keys[0] eq 'Ref'){
-        return Cfn::Value::Function::Ref->new( Function => $first_key, Value => $arg->{ $first_key });
-      } elsif ($keys[0] eq 'Condition'){
-        return Cfn::Value::Function::Condition->new( Function => $first_key, Value => $arg->{ $first_key });
-      } else {
-        return Cfn::Value::Function->new(Function => $first_key, Value => $arg->{ $first_key });
-      }
-    } else {
-      return undef;
-    }
   }
 
   sub coerce_hash  {
@@ -336,6 +341,15 @@ package Cfn::TypeLibrary {
       }
     };
 
+  enum 'Cfn::PseudoParameterValue', [
+    'AWS::AccountId',
+    'AWS::NotificationARNs',
+    'AWS::NoValue',
+    'AWS::Region',
+    'AWS::StackId',
+    'AWS::StackName',
+  ];
+
   coerce 'Cfn::Internal::Options',
     from 'HashRef',
     via { Cfn::Internal::Options->new(%$_) };
@@ -383,6 +397,15 @@ package Cfn::Value::Function {
     my $key = $self->Function;
     return { $key => $self->Value->as_hashref(@_) }
   }
+
+  sub path_to {
+    my ($self, $path) = @_;
+    my ($part, $rest) = Cfn::path_split($path);
+
+    die "Can't path $part into a $self" if ($part ne $self->Function);
+    return $self->Value->path_to($rest) if (defined $rest);
+    return $self->Value;
+  }
 }
 
 package Cfn::Value::TypedValue {
@@ -397,6 +420,15 @@ package Cfn::Value::TypedValue {
                $self->meta->get_all_attributes
              };
     return $hr;
+  }
+
+  sub path_to {
+    my ($self, $path) = @_;
+    my ($part, $rest) = Cfn::path_split($path);
+
+    die "Can't go into $part on $self" if (not $self->can($part));
+    return $self->$part->path_to($rest) if (defined $rest);
+    return $self->$part;
   }
 }
 
@@ -418,6 +450,11 @@ package Cfn::Value::Function::Ref {
   sub LogicalId {
     shift->Value->Value;
   }
+}
+
+package Cfn::Value::Function::PseudoParameter {
+  use Moose;
+  extends 'Cfn::Value::Function::Ref';
 }
 
 package Cfn::Value::Function::GetAtt {
@@ -454,7 +491,16 @@ package Cfn::Value::Array {
     my $self = shift;
     my @args = @_;
     return [ map { $_->as_hashref(@args)  } @{ $self->Value } ]
-  };
+  }
+
+  sub path_to {
+    my ($self, $path) = @_;
+    my ($part, $rest) = Cfn::path_split($path);
+
+    die "Can't go into $part on $self" if (not exists $self->Value->[ $part ]);
+    return $self->Value->[ $part ]->path_to($rest) if (defined $rest);
+    return $self->Value->[ $part ];
+  }
 }
 
 package Cfn::Value::Hash {
@@ -471,6 +517,15 @@ package Cfn::Value::Hash {
     my @args = @_;
     return { map { $_ => $self->Value->{$_}->as_hashref(@args) } keys %{ $self->Value } };
   };
+
+  sub path_to {
+    my ($self, $path) = @_;
+    my ($part, $rest) = Cfn::path_split($path);
+
+    die "Can't go into $part on $self" if (not exists $self->Value->{ $part }); 
+    return $self->Value->{ $part }->path_to($rest) if (defined $rest);
+    return $self->Value->{ $part };
+  }
 }
 
 
@@ -562,7 +617,7 @@ package Cfn::Resource {
   sub Property {
     my ($self, $property) = @_;
     return undef if (not defined $self->Properties);
-    return $self->Properties->{ $property };
+    return $self->Properties->$property;
   }
 
   sub hasAttribute {
@@ -594,6 +649,27 @@ package Cfn::Resource {
         grep { defined $self->$_ } qw/Type DeletionPolicy DependsOn CreationPolicy Condition/),
     }
   }
+
+  sub path_to {
+    my ($self, $path) = @_;
+    my ($part, $rest) = Cfn::path_split($path);
+
+    if      ($part eq 'Properties') {
+      return $self->Properties if (not defined $rest);
+      return $self->Properties->path_to($rest);
+    } elsif ($part eq 'Metadata') {
+      return $self->Metadata if (not defined $rest);
+      return $self->Metadata->{ $rest };
+    } elsif ($part eq 'DependsOn') {
+      return $self->DependsOn if (not defined $rest);
+      die "Can't go into $path on resource";
+    } elsif ($part eq 'Type' or $path eq 'Condition') {
+      return $self->$part if (not defined $rest);
+      die "Can't go into $path on resource";
+    } else {
+      die "Can't go into $path on resource";
+    }
+  }
 }
 
 package Cfn::Resource::Properties {
@@ -615,6 +691,15 @@ package Cfn::Resource::Properties {
       }
     }
     return $ret;
+  }
+
+  sub path_to {
+    my ($self, $path) = @_;
+    my ($part, $rest) = Cfn::path_split($path);
+
+    die "Can't go into $part on $self" if (not $self->can($part));
+    return $self->$part->path_to($rest) if (defined $rest);
+    return $self->$part;
   }
 
   sub resolve_references_to_logicalid_with {
@@ -705,6 +790,27 @@ package Cfn::Output {
       (defined $self->Export) ? (Export => $self->Export->as_hashref) : (),
     }
   }
+  sub path_to {
+    my ($self, $path) = @_;
+    my ($part, $rest) = Cfn::path_split($path);
+
+    die "Can't path into $part on $self" if ($part ne 'Value' and
+                                             $part ne 'Description' and
+                                             $part ne 'Condition' and
+                                             $part ne 'Export'
+                                            );
+    if ($part eq 'Value') {
+      return $self->Value if (not defined $rest);
+      return $self->Value->path_to($rest);
+    } elsif ($part eq 'Description' or $part eq 'Condition') {
+      die "Can't path into $part on $self" if (defined $rest);
+      return $self->$part;
+    } elsif ($part eq 'Export') {
+      return $self->Export if (not defined $rest);
+      return $self->Value->path_to($rest);
+    }
+
+  } 
 }
 
 package Cfn::Parameter {
@@ -764,7 +870,9 @@ package Cfn {
     traits => [ 'Hash' ],
     handles => {
       Parameter => 'accessor',
+      ParameterList => 'keys',
       ParameterCount => 'count',
+      ParameterList => 'keys',
     },
   );
   has Mappings => (
@@ -775,6 +883,7 @@ package Cfn {
     handles => {
       Mapping => 'accessor',
       MappingCount => 'count',
+      MappingList => 'keys',
     },
   );
   has Conditions => (
@@ -970,6 +1079,36 @@ package Cfn {
       (defined $self->Metadata)?(Metadata => { map { ($_ => $self->Metadata->{ $_ }->as_hashref($self)) } $self->MetadataList }):(),
       Resources => { map { ($_ => $self->Resource($_)->as_hashref($self)) } $self->ResourceList },
     }
+  }
+
+  sub path_split {
+    my $path = shift;
+    die "No path specified" if (not defined $path);
+    my @parts = split/\./, $path, 2;
+    return ($parts[0], $parts[1]);
+  }
+
+  sub path_to {
+    my ($self, $path) = @_;
+    my ($part, $rest) = Cfn::path_split($path);
+
+    die "Can't path into $part" if ($part ne 'Resources' and
+                                    $part ne 'Mappings' and
+                                    $part ne 'Parameters' and
+                                    $part ne 'Outputs' and
+                                    $part ne 'Conditions' and
+                                    $part ne 'Metadata');
+
+    my $current_element = $self->$part;
+    return $current_element if (not defined $rest);
+
+    ($part, $rest) = Cfn::path_split($rest);
+
+    die "Must specify a resource to traverse into" if (not defined $part);
+
+    die "No element $part found" if (not defined $current_element->{ $part });
+    return $current_element->{ $part }->path_to($rest) if (defined $rest);
+    return $current_element->{ $part };
   }
 
   has json => (is => 'ro', lazy => 1, default => sub {
