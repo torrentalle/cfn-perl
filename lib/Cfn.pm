@@ -487,7 +487,7 @@ package Cfn::Value::Primitive {
 
 package Cfn::Boolean {
   use Moose;
-  use JSON;
+  use JSON::MaybeXS;
   extends 'Cfn::Value::Primitive';
   has '+Value' => (isa => 'Bool');
   has stringy => (is => 'ro', required => 1, isa => 'Bool');
@@ -973,8 +973,8 @@ package Cfn {
   }
 
   has json => (is => 'ro', lazy => 1, default => sub {
-      require JSON;
-      return JSON->new->canonical
+      require JSON::MaybeXS;
+      return JSON::MaybeXS->new->canonical
     });
 
   sub as_json {
@@ -986,8 +986,8 @@ package Cfn {
   sub from_json {
     my ($class, $json) = @_;
 
-    require JSON;
-    return $class->from_hashref(JSON::from_json($json));
+    require JSON::MaybeXS;
+    return $class->from_hashref(JSON::MaybeXS::from_json($json));
   }
 }
 

@@ -1,3 +1,10 @@
+#!/usr/bin/env perl
+
+use Cfn;
+use Test::More;
+use Test::Exception;
+
+my $content = <<EOF;
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
 
@@ -27,3 +34,9 @@
   "Outputs" : {
   }
 }
+EOF
+
+throws_ok(sub { Cfn->from_json($content) }, qr/Duplicate keys not allowed/);
+
+done_testing;
+
