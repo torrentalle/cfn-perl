@@ -4,7 +4,7 @@ package CfnModel::CfnResource;
   no warnings 'experimental::postderef';
 
   use CfnModel::CfnProperty;
-  use Sort::Topological qw(toposort);
+  use Data::Graph::Util qw//;
   use CfnModel::CfnAttribute;
 
   has name => (is => 'ro', required => 1);
@@ -88,20 +88,13 @@ package CfnModel::CfnResource;
       }
     }
 
-    # toposort really needs a sub that returns an array of dependencies
-    #  so we use the deps hash we've just built
-    #  Note: if we get a "Can't use an undefined value as an ARRAY reference" error
-    #  here: it's that we have some value in the $deps values that doesn't have a corresponding
-    #  key. That should not be
-    my $deps_sub = sub { 
-      return () if ($_[0] eq 'TagType');
-      return @{ $deps->{ $_[0] } } 
-    
-    }; 
-
     # sort keys is important to maintain the output of ordered_subtypes stable
     # reverse is because toposort returns the dependants first
-    my @sorted = reverse toposort($deps_sub, [ sort keys %$deps ]);
+    my $order = [ sort keys %$deps ];
+    my @sorted = reverse Data::Graph::Util::toposort($deps, $order);
+
+use Data::Dumper;
+print Dumper($self->name, $order, \@sorted) if ($self->name eq 'AWS::SES::ReceiptRule' or $self->name eq 'AWS::KinesisFirehose::DeliveryStream');
 
     return \@sorted;
   });
