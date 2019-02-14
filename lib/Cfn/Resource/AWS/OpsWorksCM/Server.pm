@@ -1,4 +1,4 @@
-# AWS::OpsWorksCM::Server generated from spec 2.21.0
+# AWS::OpsWorksCM::Server generated from spec 2.22.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::OpsWorksCM::Server',
@@ -65,6 +65,7 @@ package Cfn::Resource::Properties::AWS::OpsWorksCM::Server {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has AssociatePublicIpAddress => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has BackupId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has BackupRetentionCount => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DisableAutomatedBackup => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

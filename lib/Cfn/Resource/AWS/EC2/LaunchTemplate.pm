@@ -1,4 +1,4 @@
-# AWS::EC2::LaunchTemplate generated from spec 2.2.0
+# AWS::EC2::LaunchTemplate generated from spec 2.22.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate',
@@ -152,6 +152,27 @@ package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::EbsValue {
   has VolumeSize => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has VolumeType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
+
+subtype 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationTarget',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationTarget',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationTargetValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationTargetValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CapacityReservationId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::TagSpecification',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -296,6 +317,92 @@ package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::MonitoringValue {
   
   has Enabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
+subtype 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecification',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecification',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecification')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecification',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecification',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecificationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecificationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has LicenseConfigurationArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAcceleratorValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAcceleratorValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 
 subtype 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::InstanceMarketOptions',
      as 'Cfn::Value';
@@ -339,6 +446,27 @@ package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::IamInstanceProfileV
   
   has Arn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::HibernationOptions',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::HibernationOptions',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::HibernationOptionsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::HibernationOptionsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Configured => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::ElasticGpuSpecification',
      as 'Cfn::Value',
@@ -403,6 +531,50 @@ package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CreditSpecification
   extends 'Cfn::Value::TypedValue';
   
   has CpuCredits => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CpuOptions',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CpuOptions',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CpuOptionsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CpuOptionsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CoreCount => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ThreadsPerCore => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationSpecification',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationSpecification',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationSpecificationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationSpecificationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CapacityReservationPreference => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has CapacityReservationTarget => (isa => 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationTarget', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::BlockDeviceMapping',
      as 'Cfn::Value',
@@ -470,10 +642,14 @@ package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateDataV
   extends 'Cfn::Value::TypedValue';
   
   has BlockDeviceMappings => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::BlockDeviceMapping', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has CapacityReservationSpecification => (isa => 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has CpuOptions => (isa => 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CpuOptions', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has CreditSpecification => (isa => 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CreditSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DisableApiTermination => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EbsOptimized => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ElasticGpuSpecifications => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::ElasticGpuSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ElasticInferenceAccelerators => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HibernationOptions => (isa => 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::HibernationOptions', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has IamInstanceProfile => (isa => 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::IamInstanceProfile', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ImageId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InstanceInitiatedShutdownBehavior => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
@@ -481,6 +657,7 @@ package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateDataV
   has InstanceType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has KernelId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has KeyName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has LicenseSpecifications => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Monitoring => (isa => 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Monitoring', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has NetworkInterfaces => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EC2::LaunchTemplate::NetworkInterface', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Placement => (isa => 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Placement', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
