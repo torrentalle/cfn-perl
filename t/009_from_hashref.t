@@ -6,7 +6,7 @@ use Test::Exception;
 use FindBin;
 use Cfn;
 use File::Slurp;
-use JSON;
+use JSON::MaybeXS;
 
 use strict;
 
