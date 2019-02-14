@@ -13,3 +13,11 @@ on test => sub {
   requires 'IO::Dir';
   requires 'File::Slurp';
 };
+
+on develop => sub {
+  requires 'MooseX::Types::Path::Class';
+  requires 'MooseX::DataModel';
+  requires 'JSON::MaybeXS';
+  requires 'Sort::Topological';
+  requires 'Template';
+};

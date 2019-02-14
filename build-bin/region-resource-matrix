@@ -1,0 +1,49 @@
+#!/usr/bin/env perl
+
+use v5.10;
+use strict;
+use warnings;
+use feature 'postderef';
+no warnings 'experimental::postderef';
+
+use Text::TabularDisplay;
+use CfnModel;
+
+my @region_list = qw/
+  ap-northeast-1  ap-south-1      ap-southeast-2  eu-central-1  eu-west-2  us-east-2  us-west-2
+  ap-northeast-2  ap-southeast-1  ca-central-1    eu-west-1     sa-east-1  us-east-1  us-west-1/;
+
+@region_list = @ARGV if (@ARGV);
+
+my $regions = {
+  map { ($_ => CfnModel->new(file => "spec/$_.json")) } @region_list
+};
+
+my $services = { };
+foreach my $region (@region_list) {
+  foreach my $service ($regions->{ $region }->classes_in_spec->@*) {
+    $services->{ $service }->{ $region } = 1;
+  }
+}
+
+say "Region $_ is at defintion version: " . $regions->{ $_ }->spec->ResourceSpecificationVersion for (@region_list);
+
+my $table = Text::TabularDisplay->new(
+  '', 
+  map {
+    my $title = $_;
+    $title =~ s/south/s/; 
+    $title =~ s/north/n/; 
+    $title =~ s/east/e/; 
+    $title =~ s/west/w/; 
+    $title =~ s/central/c/;
+    $title 
+  } @region_list
+);
+foreach my $service (sort keys %$services) {
+  my @row = map { (defined $services->{ $service }->{ $_ })?'*':'' } @region_list;
+  $table->add($service, @row);
+}
+
+say $table->render;
+

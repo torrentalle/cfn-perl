@@ -1,0 +1,34 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use JSON::MaybeXS;
+use Path::Class::File;
+
+my ($from, $to) = @ARGV;
+die "Usage: $0 from_spec.json to_spec.json" if (not defined $from or not defined $to);
+
+my $from_file = Path::Class::File->new($from);
+
+my $file_content = $from_file->slurp;
+
+# canonical so the output is always in the same order
+my $json = JSON::MaybeXS->new(canonical => 1, pretty => 1, space_after => 1);
+
+my $doc = $json->decode($file_content);
+
+my $iotthing = $doc->{ResourceTypes}{'AWS::IoT::Thing'}{Properties}{AttributePayload};
+delete $iotthing->{Type};
+$iotthing->{PrimitiveType} = 'Json';
+
+delete $doc->{PropertyTypes}{'AWS::IoT::Thing.AttributePayload'};
+
+my $ssmassoc = $doc->{ResourceTypes}{'AWS::SSM::Association'}{Properties}{Parameters};
+delete $ssmassoc->{ItemType};
+$ssmassoc->{PrimitiveType} = 'Json';
+
+delete $doc->{PropertyTypes}{'AWS::SSM::Association.ParameterValues'};
+
+my $dest_file = Path::Class::File->new($to);
+$dest_file->spew($json->encode($doc));
