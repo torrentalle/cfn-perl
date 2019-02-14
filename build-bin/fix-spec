@@ -1,0 +1,44 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use JSON::MaybeXS;
+use Path::Class::File;
+
+my ($from, $to) = @ARGV;
+die "Usage: $0 from_spec.json to_spec.json" if (not defined $from or not defined $to);
+
+my $from_file = Path::Class::File->new($from);
+
+my $file_content = $from_file->slurp;
+
+# canonical so the output is always in the same order
+my $json = JSON::MaybeXS->new(canonical => 1, pretty => 1, space_after => 1);
+
+my $doc = $json->decode($file_content);
+
+my $iotthing = $doc->{ResourceTypes}{'AWS::IoT::Thing'}{Properties}{AttributePayload};
+delete $iotthing->{Type};
+$iotthing->{PrimitiveType} = 'Json';
+
+delete $doc->{PropertyTypes}{'AWS::IoT::Thing.AttributePayload'};
+
+my $ssmassoc = $doc->{ResourceTypes}{'AWS::SSM::Association'}{Properties}{Parameters};
+delete $ssmassoc->{ItemType};
+$ssmassoc->{PrimitiveType} = 'Json';
+
+delete $doc->{PropertyTypes}{'AWS::SSM::Association.ParameterValues'};
+
+# delete a property that is undocumented and ill-defined (no properties)
+warn "take a look to see if the filtergroup property has been documented: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups";
+delete $doc->{PropertyTypes}{'AWS::CodeBuild::Project.FilterGroup'};
+delete $doc->{PropertyTypes}{'AWS::CodeBuild::Project.ProjectTriggers'}->{ Properties }->{ FilterGroups };
+
+
+delete $doc->{PropertyTypes}{'AWS::EC2::LaunchTemplate.CapacityReservationPreference'};
+delete $doc->{PropertyTypes}{'AWS::EC2::LaunchTemplate.CapacityReservationSpecification'}{Properties}{CapacityReservationPreference}{Type};
+$doc->{PropertyTypes}{'AWS::EC2::LaunchTemplate.CapacityReservationSpecification'}{Properties}{CapacityReservationPreference}{ PrimitiveType } = 'String';
+
+my $dest_file = Path::Class::File->new($to);
+$dest_file->spew($json->encode($doc));
