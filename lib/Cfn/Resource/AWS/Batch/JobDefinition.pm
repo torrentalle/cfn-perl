@@ -1,4 +1,4 @@
-# AWS::Batch::JobDefinition generated from spec 2.15.0
+# AWS::Batch::JobDefinition generated from spec 2.22.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition',
@@ -233,7 +233,7 @@ package Cfn::Resource::Properties::AWS::Batch::JobDefinition::ContainerPropertie
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has Command => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Command => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Environment => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Batch::JobDefinition::Environment', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Image => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InstanceType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

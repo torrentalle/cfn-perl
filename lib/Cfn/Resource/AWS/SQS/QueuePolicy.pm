@@ -1,4 +1,4 @@
-# AWS::SQS::QueuePolicy generated from spec 1.11.0
+# AWS::SQS::QueuePolicy generated from spec 2.22.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SQS::QueuePolicy',
@@ -22,7 +22,7 @@ package Cfn::Resource::Properties::AWS::SQS::QueuePolicy {
   extends 'Cfn::Resource::Properties';
   
   has PolicyDocument => (isa => 'Cfn::Value::Json', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Queues => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Queues => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

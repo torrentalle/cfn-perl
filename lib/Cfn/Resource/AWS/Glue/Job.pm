@@ -1,4 +1,4 @@
-# AWS::Glue::Job generated from spec 1.11.0
+# AWS::Glue::Job generated from spec 2.22.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Glue::Job',
@@ -77,7 +77,7 @@ package Cfn::Resource::Properties::AWS::Glue::Job::ConnectionsListValue {
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has Connections => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Connections => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::Glue::Job {

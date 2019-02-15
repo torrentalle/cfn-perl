@@ -1,4 +1,4 @@
-# AWS::SSM::MaintenanceWindowTask generated from spec 1.13.0
+# AWS::SSM::MaintenanceWindowTask generated from spec 2.22.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask',
@@ -35,7 +35,7 @@ package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::Notification
   extends 'Cfn::Value::TypedValue';
   
   has NotificationArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has NotificationEvents => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has NotificationEvents => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has NotificationType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -200,7 +200,7 @@ package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::TargetValue 
   extends 'Cfn::Value::TypedValue';
   
   has Key => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Values => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Values => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::LoggingInfo',
