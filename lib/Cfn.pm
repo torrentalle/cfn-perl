@@ -364,6 +364,7 @@ package Cfn::Value {
 
 package Cfn::DynamicValue {
   use Moose;
+  use Scalar::Util qw/blessed/;
   extends 'Cfn::Value';
   has Value => (isa => 'CodeRef', is => 'rw', required => 1);
 
@@ -375,8 +376,9 @@ package Cfn::DynamicValue {
   sub resolve_value {
     my $self = shift;
     my @args = reverse @_;
+    my $ret = $self->Value->(@args);
     my (@ret) = ($self->Value->(@args));
-    @ret = map { (not ref($_) or ref($_) eq 'HASH')?$_:$_->as_hashref(@args) } @ret;
+    @ret = map { (blessed($_) and $_->isa('Cfn::Value')) ? $_->as_hashref(@args) : $_ } @ret;
     return (@ret);
   }
 

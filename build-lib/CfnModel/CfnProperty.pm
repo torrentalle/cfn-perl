@@ -81,11 +81,11 @@ package CfnModel::CfnProperty;
 
     if ($self->is_array) {
       return ($self->is_primitive_type) ?
-               'Cfn::Value::Array|Cfn::Value::Function' :
+               'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue' :
                'ArrayOfCfn::Resource::Properties::' . $self->of_type;
     } elsif ($self->is_map) {
       return ($self->is_primitive_type) ?
-               'Cfn::Value::Hash' : 
+               'Cfn::Value::Hash|Cfn::DynamicValue' : 
                'MapOfCfn::Resource::Properties::' . $self->of_type;
     } else {
       if ($self->is_primitive_type) {
