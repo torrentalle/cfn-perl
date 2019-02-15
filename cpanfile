@@ -12,6 +12,7 @@ on test => sub {
   requires 'FindBin';
   requires 'IO::Dir';
   requires 'File::Slurp';
+  requires 'Test::Pod';
 };
 
 on develop => sub {

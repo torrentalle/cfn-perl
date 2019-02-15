@@ -1145,3 +1145,604 @@ package Cfn::Resource::Properties::Tag {
 }
 
 1;
+### main pod documentation begin ###
+
+=encoding UTF-8
+
+=head1 NAME
+
+Cfn - An object model for CloudFormation documents
+
+=head1 DESCRIPTION
+
+This module helps parse, manipulate and validate CloudFormation documents. It creates
+an object model of a CloudFormation template so you can work with the document as 
+a set of objects. See L<https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html> for
+more information.
+
+It provides full blown objects for all know CloudFormation resources. See 
+L<https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html> for a list
+of all resource types. These objects live in the C<Cfn::Resource> namespace.
+
+The module provides a set of objects representing each piece of CloudFormation. Following is a list of all
+object types in the distribution:
+
+=head1 Cfn object
+
+The C<Cfn> class is the "root" of a CloudFormation document. It represents an entire CloudFormation document.
+It has attributes and methods to access the parts of a CloudFormation document.
+
+  use Cfn;
+  my $cfn = Cfn->new;
+  $cfn->addResource('MyRes' => ...);
+  my $res = $cfn->Resource('MyRes');
+
+=head2 Constructors
+
+=head3 new(Resources => { ... }, Outputs => { }, ...)
+
+The default Moose constructor. You can initialize an empty document like this:
+
+  my $cfn = Cfn->new;
+  print $cfn->as_json;
+
+=head3 from_hashref
+
+CloudFormation documents resemble Perl HashRefs (since they're just JSON datastructures).
+This method converts a hashref that represents a CloudFormation document into a Cfn object.
+
+  use Data::Dumper;
+  my $cfn = Cfn->from_hashref({ Resources => { R1 => { Type => '...', Properties => { ... } } } });
+  print Dumper($cfn->Resource('R1');
+
+=head3 from_json
+
+This method creates a Cfn object from a JSON string that containes a CloudFormation document
+
+=head2 Attributes
+
+=head3 json
+
+When serializing to JSON with C<as_json>, the encode method on on this object is called passing the
+documents hashref representation. By default the JSON generated is "ugly", that is, all in one line,
+but in canonical form (so a given serialization always has attributes in the same order).
+
+You can specify your own JSON serializer to control how JSON is generated:
+
+  my $cfn = Cfn->new(json => JSON->new->canonical->pretty);
+  ...
+  print $cfn->as_json;
+
+
+=head3 cfn_options
+
+A C<Cfn::Internal::Options> object instance that controls how the as_hashref method converts the Cfn object
+to a datastructure suitable for CloudFormation (only HashRefs, ArrayRefs and Scalars).
+
+You can specify your own options as a hashref with the attributes to C<Cfn::Internal::Options> in the
+constructor.
+
+  my $cfn = Cfn->new(cfn_options => { custom_resource_rename => 1 });
+  ...
+  print Dumper($cfn->as_hashref);
+
+See the C<Cfn::Internal::Options> object for more details
+
+=head3 AWSTemplateFormatVersion
+
+A string with the value of the AWSTemplateFormatVersion field of the CloudFormation document. Can be undef.
+
+=head3 Description
+
+A string with the value of the Description field of the CloudFormation document. Can be undef.
+
+=head3 Transform
+
+An ArrayRef of Strings with the values of the Transform field of the CloudFormation document. Can be undef.
+
+=head3 Parameters
+
+A HashRef of C<Cfn::Parameter> objects. The keys are the name of the Parameters. 
+There are a set of convenience methods for accessing this attribute:
+
+  $cfn->Parameter('ParamName') # returns a Cfn::Parameter or undef
+  $cfn->ParameterList # returns a list of the parameters in the document
+  $cfn->ParameterCount # returns the number of parameters in the document
+
+=head3 Mappings
+
+A HashRef of C<Cfn::Mapping> objects. The keys are the name of the Mappings. 
+There are a set of convenience methods for accessing this attribute:
+
+  $cfn->Mapping('MappingName') # returns a Cfn::Parameter or undef
+  $cfn->MappingList # returns a list of the mappings in the document
+  $cfn->MappingCount # returns the number of mappings in the document
+
+=head3 Conditions
+
+A HashRef of C<Cfn::Condition> objects. The keys are the name of the Mappings. 
+There are a set of convenience methods for accessing this attribute:
+
+  $cfn->Mapping('MappingName') # returns a Cfn::Mapping or undef
+  $cfn->MappingList # returns a list of the mappings in the document
+  $cfn->MappingCount # returns the number of mappings in the document
+
+=head3 Resources
+
+A HashRef of C<Cfn::Resource> objects. The keys are the name of the Resources. 
+There are a set of convenience methods for accessing this attribute:
+
+  $cfn->Resource('ResourceName') # returns a Cfn::Resource or undef
+  $cfn->ResourceList # returns a list of the resources in the document
+  $cfn->ResourceCount # returns the number of resources in the document
+
+=head3 Outputs
+
+A HashRef of C<Cfn::Output> objects. The keys are the name of the Outputs. 
+There are a set of convenience methods for accessing this attribute:
+
+  $cfn->Output('OutputName') # returns a Cfn::Output or undef
+  $cfn->OutputList # returns a list of the outputs in the document
+  $cfn->OutputCount # returns the number of outputs in the document
+
+=head3 Metadata
+
+A HashRef of C<Cfn::Value> or subclasses of C<Cfn::Value>. Represents the 
+Metadata key of the CloudFormation document.
+
+There are a set of convenience methods for accessing this attribute:
+
+  $cfn->Metadata('MetadataName') # returns a Cfn::Metadata or undef
+  $cfn->MetadataList # returns a list of keys in the document Metadata
+  $cfn->MetadataCount # returns the number of keys in the document Metadata
+
+=head2 Methods
+
+=head3 as_hashref
+
+Returns a Perl HashRef representation of the CloudFormation document. This HashRef
+has no objects in it. It is suitable for converting to JSON and passing to CloudFormation
+
+C<as_hashref> triggers the serialization process of the document, which scans the whole
+object model asking it's components to serialize (calling their C<as_hashref>). Objects
+can decide how they serialize to a hashref.
+
+=head3 as_json
+
+Returns a JSON representation of C<as_hashref>. Just a shortcut
+
+=head3 path_to($path)
+
+Given a path in the format C<'Resources.R1.Properties.PropName'> it will return the value
+stored in PropName of the resource R1. Use C<'Resource.R1.Properties.ArrayProp.0'> to access
+Arrays.
+
+=head3 ResourcesOfType($type)
+
+Returns a list of all the Resources of a given type.
+
+  foreach my $iam_user ($cfn->ResourcesOfType('AWS::IAM::User')) {
+    ...
+  }
+
+=head3 addParameter($name, $object)
+
+Adds an already instanced C<Cfn::Parameter> object. Throws an exception if the parameter already exists.
+
+  $cfn->addParameter('P1', Cfn::Parameter->new(Type => 'String', MaxLength => 5));
+
+=head3 addParameter($name, $type, %properties)
+
+Adds a named parameter to the document with the specified type and properties. See C<Cfn::Parameter> for available
+properties. Throws an exception if the parameter already exists.
+
+  $cfn->addParameter('P1', 'String', MaxLength => 5);
+
+=head3 addMapping($name, $object_or_hashref);
+
+Adds a named mapping to the mappings of the document. The second parameter can be a C<Cfn::Mapping> object or 
+a HashRef that will be coerced to a C<Cfn::Mapping> object
+
+  $cfn->addMapping('amis', { 'eu-west-1' => 'ami-12345678' });
+  $cfn->addMapping('amis', Cfn::Mapping->new(Map => { 'eu-west-1' => 'ami-12345678' }));
+  # $cfn->Mapping('amis') is a Cfn::Mapping object
+
+=head3 addOutput($name, $object)
+
+Adds an already instanced C<Cfn::Output> object. Throws an exception if the output already exists.
+
+  $cfn->addParameter('O1', Cfn::Output->new(Value => { Ref => 'R1' });
+
+=head3 addOutput($name, $output[, %output_attributes]);
+
+Adds a named output to the document. See C<Cfn::Output> for available
+output_attributes. Throws an exception if the output already exists.
+
+  $cfn->addParameter('O1', { Ref => 'R1' });
+  $cfn->addParameter('O1', { Ref => 'R1' }, Description => 'Bla bla');
+
+
+=head3 addCondition($name, $value)
+
+Adds a named condition to the document. The value parameter should be
+a HashRef that expresses a CloudFormation condition. See L<https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html>
+
+=head3 addResource($name, $object)
+
+Adds a named resource to the document. $object has to be an instance of a 
+subclass of C<Cfn::Resource>. Throws an exception if a resource already
+exists with that name.
+
+=head3 addResource($name, $type, %properties)
+
+Adds a named resource to the document, putting the specified properties in the 
+resources properties. See subclasses of C<Cfn::Resource> for more details.
+
+  $cfn->addResource('R1', 'AWS::IAM::User');
+
+  $cfn->addResource('R2', 'AWS::IAM::User', Path => '/');
+  # $cfn->Resource('R2')->Properties->Path is '/'
+
+Throws an exception if a resource already exists with that name.
+
+=head3 addResource($name, $name, $properties, $resource_attributes)
+
+Adds a named resource to the document. properties and resource_attributes
+are hashrefs.
+
+  $cfn->addResource('R3', 'AWS::IAM::User', { Path => '/' });
+  # $cfn->Resource('R3')->Properties->Path is '/'
+  $cfn->addResource('R3', 'AWS::IAM::User', { Path => '/' }, { DependsOn => [ 'R2' ] });
+  # $cfn->Resource('R3')->DependsOn->[0] is 'R2'
+
+Throws an exception if a resource already exists with that name.
+
+=head3 addResourceMetadata($name, %metadata);
+
+Adds metadata to the Metadata attribute of a Resource.
+
+  $cfn->addResourceMetadata('R1', MyMetadataKey1 => 'Value');
+  # $cfn->Resource('R1')->Metadata->{ MyMedataKey1 } is 'Value'
+
+=head3 addDependsOn($resource_name, $depends_on1, $depends_on2)
+
+  $cfn->addDependsOn('R1', 'R2', 'R3');
+  # $cfn->Resource('R1')->DependsOn is [ 'R2', 'R3' ]
+
+=head3 addDeletionPolicy($resource_name)
+
+  Adds a DeletionPolicy to the resource. L<https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html>
+
+=head3 addUpdatePolicy($resource_name)
+  
+  Adds an UpdatePolicy to the resource. L<https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html>
+
+=head1 Cfn::Value
+
+Is a base class for the attributes of Cloudformation values. In Cloudformation you can find that in
+a resources attributes you can place functions, references, etc.
+
+  "Attribute": "hello"
+  "Attribute": { "Ref": "R1" }
+  "Attribute": { "Fn::GetAtt": [ "R1", "InstanceId" ] }
+
+All value objects in the Cfn toolkit subclass C<Cfn::Value> as a common ancestor. Once the object model is built,
+you can find that a
+
+  $cfn->addResource('R1', 'AWS::IAM::User', Path => '/');
+  # $cfn->Resource('R1')->Properties->Path is a Cfn::Value::Primitive
+
+  $cfn->addResource('R1', 'AWS::IAM::User', Path => { 'Fn::Join' => [ '/', { Ref => 'Param1' }, '/' ] });
+  # $cfn->Resource('R1')->Properties->Path is a Cfn::Value::Function::Join
+
+All C<Cfn::Value> subclasses have to implement an C<as_hashref> method that returns a HashRef suitable for 
+conversion to JSON for CloudFormation. A attributes of objects that hold C<Cfn::Value> subclasses should
+enable coercion of the attribute so that plain hashrefs can be coerced into the appropiate Cfn::Value objects
+
+Here is a Hierarchy of the different Cfn::Value descendant object:
+
+  Cfn::Value
+  |--Cfn::DynamicValue
+  |--Cfn::Value::Function
+  |  |--Cfn::Value::Function::Condition
+  |  |--Cfn::Value::Function::Ref
+  |     |--Cfn::Value::Function::PseudoParameter
+  |  |--Cfn::Value::Function::GetAtt
+  |--Cfn::Value::Array
+  |--Cfn::Value::Hash
+  |--Cfn::Value::Primitive
+  |  |--Cfn::Boolean
+  |  |--Cfn::Integer
+  |  |--Cfn::Long
+  |  |--Cfn::String
+  |  |--Cfn::Double
+  |  |--Cfn::Timestamp
+  |--Cfn::Value::TypedValue
+  
+
+=head2 Cfn::DynamicValue
+
+The C<Value> attribute of this object is a CodeRef that get's called
+when as_hashref is called.
+
+  $cfn->addResource('R1', 'AWS::IAM::User', Path => Cfn::DynamicValue->new(Value => sub { return 'Hello' });
+  $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::DynamicValue
+  $cfn->path_to('Resources.R1.Properties.Path')->as_hashref # eq 'Hello'
+
+=head2 Cfn::Value::Function
+
+All function statements derive from Cfn::Value::Function. 
+The name of the function can be found in the C<Function> attribute
+It's value can be found in the C<Value> attribute
+
+=head2 Cfn::Value::Function::Ref
+
+Object of this class represent a CloudFormation Ref. You can find the value 
+of the reference in the C<Value> attribute. Note that the Value attribute contains
+another C<Cfn::Value>. It derives from C<Cfn::Value::Function>
+
+  $cfn->addResource('R1', 'AWS::IAM::User', Path => { Ref => 'AWS::Region' });
+  $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::Value::Function::PseudoParam
+
+=head2 Cfn::Value::Function::PseudoParam
+
+This is a subclass of C<Cfn::Value::Function::Ref> used to hold what CloudFormation
+calls PseudoParameters.
+
+  $cfn->addResource('R1', 'AWS::IAM::User', Path => { Ref => 'AWS::Region' });
+  $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::Value::Function::PseudoParam
+
+=head2 Cfn::Value::Function::GetAtt
+
+This class represents 'Fn::GetAtt' nodes in the object model. It's a subclass of C<Cfn::Value::Function>.
+
+  $cfn->addResource('R1', 'AWS::IAM::User', Path => { 'Fn::GetAtt' => [ 'R1', 'InstanceId' ] });
+  $cfn->path_to('Resources.R1.Properties.Path')             # isa Cfn::Value::Function::GetAtt
+  $cfn->path_to('Resources.R1.Properties.Path')->LogicalId  # eq 'R1'
+  $cfn->path_to('Resources.R1.Properties.Path')->Property   # eq 'InstanceId'
+
+=head2 Cfn::Value::Array
+
+This class represents Arrays in the object model. It's C<Value> property is an ArrayRef
+of C<Cfn::Values> or C<Cfn::Resource::Properties>.
+
+There is also a subtype called C<Cfn::Value::ArrayOfPrimitives> that restricts the values
+in the array to C<Cfn::Value::Primitive> types.
+
+=head2 Cfn::Value::Hash
+
+This class represents JSON objects whose keys are not defined beforehand (arbitrary keys).
+It's C<Value> property is a HashRef of C<Cfn::Value>s.
+
+=head2 Cfn::Value::Primitive
+
+This is a base class for any "simple" value (what the CloudFormation spec calls C<PrimitiveType>).
+This classes C<Value> attribute has no type constraint, so it actually accepts anything. This class
+is supposed to only be inherited from, specializing the C<Value> attribute to a specific type.
+
+=head2 Cfn::Boolean
+
+Used to store and validate CloudFormation C<Boolean> values. Has a C<stringy> attribute that controls if C<as_hashref>
+returns a string boolean C<"true"> or C<"false"> or a literal C<true> or C<false>, since these two
+boolean forms are accepted in CloudFormation.
+
+
+=head2 Cfn::Integer
+
+Used to store and validate CloudFormation C<Integer> values.
+
+=head2 Cfn::Long
+
+Used to store and validate CloudFormation C<Long> values.
+
+=head2 Cfn::String
+
+Used to store and validate CloudFormation C<String> values.
+
+=head2 Cfn::Double
+
+Used to store and validate CloudFormation C<Double> values.
+
+=head2 Cfn::Timestamp
+
+Used to store CloudFormation C<Timestamp> values. Only validates that it's a string.
+  
+=head2 Cfn::Value::TypedValue
+
+Used as a base class for structured properties of CloudFormation resources. The subclasses
+of TypedValue declare Moose attributes that are used to represent and validate that the
+properties of a CloudFormation resource are well formed.
+
+=head1 Cfn::Resource
+
+Represents a CloudFormation Resource. All C<Cfn::Resource::*> objects (like L<Cfn::Resource::AWS::IAM::User>)
+use C<Cfn::Resource> as a base class.
+
+=head2 Attributes for Cfn::Resource objects
+
+The attributes for Cfn::Resource objects map to the attributes of CloudFormation Resources.
+
+    {
+      "Type": "AWS::IAM::User",
+      "Properties": { ... },
+      "DependsOn": "R2"
+      ...
+    }
+
+=head3 Type
+
+Holds a string with the type of the resource.
+
+=head3 Properties
+
+Holds a C<Cfn::Value::Properties> subclass with the properties of the resource.
+
+=head3 DeletionPolicy
+
+Holds the DeletionPolicy. Validates that the DeletionPolicy is valid
+
+=head3 DependsOn
+
+Can hold either a single string or an arrayref of strings. This is because CloudFormation
+supports C<DependsOn> in these two forms. Method C<DependsOnList> provides a uniform way
+of accessing the DependsOn attribute.
+
+=head3 Condition
+
+Can hold a String identifying the Condition property of a resource
+
+=head3 Metadata
+
+Is a C<Cfn::Value::Hash> for the resources metadata
+
+=head3 UpdatePolicy
+
+Holds the UpdatePolicy. Validates that the UpdatePolicy is valid
+
+=head3 CreationPolicy
+
+HashRef with the CreationPolicy. Doesn't validate CreationPolicies.
+
+=head3 AttributeList
+
+Holds a Hashref of attributes that can be recalled in CloudFormation via C<Fn::GetAtt>
+
+=head2 Methods for Cfn::Resource objects
+
+=head3 DependsOnList
+
+Returns a list of dependencies from the DependsOn attribute (it doesn't matter
+if the DependsOn attribute is a String or an ArrayRef of Strings.
+
+   my @deps = $cfn->Resource('R1')->DependsOnList;
+
+=head3 hasAttribute($attribute)
+
+Returns true if the specified attribute is in the C<AttributeList>
+
+=head3 as_hashref
+
+Like C<Cfn::Values>, as_hashref returns a HashRef representation of the object ready
+for transforming to JSON.
+
+=head1 Cfn::Resource::Properties
+
+A base class for the objects that the C<Properties> attribute of C<Cfn::Resource>s hold.
+Subclasses of C<Cfn::Resource::Properties> are used to validate and represent the properties
+of resources inside the object model. See L<Cfn::Resource::Properties::AWS::IAM::User> for 
+an example.
+
+Each subclass of C<Cfn::Resource::Properties> has to have attributes to hold the values of 
+the properties of the resource it represents.
+
+=head1 Cfn::Parameter
+
+Represents a Parameter in a CloudFormation document
+
+  my $cfn = Cfn->new;
+  $cfn->addParameter('P1', 'String', Default => 5);
+  $cfn->Parameter('P1')->Default  # 5
+  $cfn->Parameter('P1')->NoEcho   # undef
+
+=head2 Cfn::Parameter Attributes
+
+=head3 Type
+
+A string with the type of parameter. Validates that it's a CloudFormation supported parameter type.
+
+=head3 Default
+
+Holds the default value for the parameter
+
+=head3 NoEcho
+
+Holds the NoEcho property of the parameter
+
+=head3 AllowedValues
+
+An ArrayRef of the allowed values of the parameter
+
+=head3 AllowedPattern
+
+A String holding the pattern that the value of this parameter can take
+
+=head3 MaxLength, MinLength, MaxValue, MinValue
+
+Values holding the MaxLength, MinLength, MaxValue, MinValue of the parameter
+
+=head3 Description
+
+A string description of the parameter
+
+=head3 ConstraintDescription
+
+A string description of the constraint of the parameter
+
+=head1 Cfn::Mapping
+
+This object represents the value of the C<Mappings> key in a CloudFormation
+document. It has a C<Map> attribute to hold the Mappings in the CloudFormation
+document.
+
+=head1 Cfn::Output
+
+Represents an output object in a CloudFormation document
+
+=head2 Attributes for Cfn::Output objects
+
+  "Outputs": {
+    "Output1": {
+      "Value": { "Ref": "Instance" }
+    }
+  }
+
+=head3 Value
+
+Holds the Value key of an output. Is a C<Cfn::Value>
+
+=head3 Description
+
+Holds a String with the descrption of the output
+
+=head3 Condition
+
+Holds a String with the condition of the output
+
+=head3 Export
+
+Holds a HashRef with the export definition of the object
+
+=head2 Methods for Cfn::Output objects
+
+=head3 as_hashref
+
+Returns a HashRef representation of the output that is convertible to JSON
+
+=head1 SEE ALSO
+
+L<https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html>
+
+=head1 AUTHOR
+
+    Jose Luis Martinez
+    CAPSiDE
+    jlmartinez@capside.com
+
+=head1 Contributions
+
+Thanks to Sergi Pruneda, Miquel Ruiz, Luis Alberto Gimenez, Eleatzar Colomer, Oriol Soriano, 
+Roi Vazquez for years of work on this module.
+
+=head1 BUGS and SOURCE
+
+The source code is located here: L<https://github.com/pplu/cfn-perl>
+
+Please report bugs to: L<https://github.com/pplu/cfn-perl/issues>
+
+=head1 COPYRIGHT and LICENSE
+
+Copyright (c) 2013 by CAPSiDE
+This code is distributed under the Apache 2 License. The full text of the 
+license can be found in the LICENSE file included with this module.
+
+=cut
