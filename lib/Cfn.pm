@@ -1203,7 +1203,7 @@ This method creates a Cfn object from a JSON string that containes a CloudFormat
 
 =head3 json
 
-When serializing to JSON with C<as_json>, the encode method on on this object is called passing the
+When serializing to JSON with C<as_json>, the encode method on this object is called passing the
 documents hashref representation. By default the JSON generated is "ugly", that is, all in one line,
 but in canonical form (so a given serialization always has attributes in the same order).
 
