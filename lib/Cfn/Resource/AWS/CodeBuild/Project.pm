@@ -1,4 +1,4 @@
-# AWS::CodeBuild::Project generated from spec 2.22.0
+# AWS::CodeBuild::Project generated from spec 2.24.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project',
@@ -286,6 +286,7 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectCacheValue {
   extends 'Cfn::Value::TypedValue';
   
   has Location => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Modes => (isa => 'Cfn::Value::Array|Cfn::Value::Function', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
