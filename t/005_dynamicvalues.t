@@ -1,5 +1,7 @@
 #!/usr/bin/env perl
 
+use strict;
+use warnings;
 use Data::Printer;
 use Test::More;
 use Cfn;
@@ -35,6 +37,16 @@ $obj->addResource(Instance => 'AWS::EC2::Instance', {
     }
   });
 
+$obj->addResource(ParamGroup => 'AWS::RDS::DBParameterGroup', {
+  Description => 'test description',
+  Family => 'MySQL5.1',
+  Parameters => Cfn::DynamicValue->new(Value => sub {
+    return {
+      param1 => 'param1value',
+    }
+  }),
+});
+
 my $struct = $obj->as_hashref;
 
 my $instance = $struct->{Resources}{Instance}{Properties};
@@ -47,5 +59,16 @@ cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][2], 'eq', 'dynamicvalu
 cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][3], 'eq', 'before dynamic', 'multiple dynamic returns');
 cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][4], 'eq', 'dynamicvalue in a list', 'multiple dynamic returns');
 cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][5], 'eq', 'after dynamic', 'multiple dynamic returns');
+
+my $role = $struct->{Resources}{Role}{Properties};
+
+my $param_group = $struct->{Resources}{ParamGroup}{Properties};
+is_deeply(
+  $param_group->{ Parameters },
+  {
+    param1 => 'param1value',
+  },
+  'Cfn::Value can return hashrefs'
+);
 
 done_testing;
