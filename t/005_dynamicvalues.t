@@ -51,18 +51,18 @@ $obj->addResource(ParamGroup => 'AWS::RDS::DBParameterGroup', {
   }),
 });
 
-#$obj->addResource(Role => 'AWS::IAM::Role', {
-#    AssumeRolePolicyDocument => Cfn::DynamicValue->new(Value => sub {
-#      return {
-#        Version => '2012-10-17',
-#	Statement => [ {
-#          Effect => 'Allow',
-#	  Principal => { Service => [ 'ec2.amazonaws.com' ] },
-#	  Action => [ 'sts:AssumeRole' ],
-#	} ],
-#      }
-#    }),
-#  });
+$obj->addResource(Role => 'AWS::IAM::Role', {
+    AssumeRolePolicyDocument => Cfn::DynamicValue->new(Value => sub {
+      return {
+        Version => '2012-10-17',
+        Statement => [ {
+          Effect => Cfn::DynamicValue->new(Value => sub { 'Allow' }),
+          Principal => { Service => [ 'ec2.amazonaws.com' ] },
+          Action => [ 'sts:AssumeRole' ],
+        } ],
+      }
+    }),
+  });
 
 my $struct = $obj->as_hashref;
 
@@ -78,6 +78,18 @@ cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][4], 'eq', 'dynamicvalu
 cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][5], 'eq', 'after dynamic', 'multiple dynamic returns');
 
 my $role = $struct->{Resources}{Role}{Properties};
+
+is_deeply(
+  $role->{ AssumeRolePolicyDocument },
+  {
+    Version => '2012-10-17',
+    Statement => [ {
+      Effect => 'Allow',
+      Principal => { Service => [ 'ec2.amazonaws.com' ] },
+      Action => [ 'sts:AssumeRole' ],
+    } ],
+  }
+);
 
 my $param_group = $struct->{Resources}{ParamGroup}{Properties};
 is_deeply(
