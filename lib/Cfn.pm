@@ -364,6 +364,7 @@ package Cfn::Value {
 
 package Cfn::DynamicValue {
   use Moose;
+  use Scalar::Util qw/blessed/;
   extends 'Cfn::Value';
   has Value => (isa => 'CodeRef', is => 'rw', required => 1);
 
@@ -372,11 +373,25 @@ package Cfn::DynamicValue {
     return Moose::Util::TypeConstraints::find_type_constraint('Cfn::Value')->coerce($self->resolve_value(@_));
   }
 
+  sub _resolve_value {
+    my ($v, $args) = @_;
+    if (blessed($v) and $v->isa('Cfn::Value')) {
+      return $v->as_hashref(@$args);
+    } elsif (not blessed($v) and ref($v) eq 'HASH') {
+      return { map { ($_ => _resolve_value($v->{ $_ })) } keys %$v }
+    } elsif (not blessed($v) and ref($v) eq 'ARRAY') {
+      return [ map { _resolve_value($_) } @$v ]
+    } else {
+      return $v
+    }
+  }
+
   sub resolve_value {
     my $self = shift;
     my @args = reverse @_;
+    my $ret = $self->Value->(@args);
     my (@ret) = ($self->Value->(@args));
-    @ret = map { (not ref($_) or ref($_) eq 'HASH')?$_:$_->as_hashref(@args) } @ret;
+    @ret = map { _resolve_value($_, \@args) } @ret;
     return (@ret);
   }
 

@@ -45,6 +45,11 @@ package CfnModel::CfnProperty;
     }
   );
 
+  has is_json => (is => 'ro', isa => 'Str', lazy => 1, default => sub {
+    my $self = shift;
+    return (defined $self->spec->PrimitiveType and $self->spec->PrimitiveType eq 'Json');
+  });
+
   has is_array => (is => 'ro', isa => 'Str', lazy => 1, default => sub {
     my $self = shift;
     return (defined $self->spec->Type and $self->spec->Type eq 'List');
@@ -81,12 +86,14 @@ package CfnModel::CfnProperty;
 
     if ($self->is_array) {
       return ($self->is_primitive_type) ?
-               'Cfn::Value::Array|Cfn::Value::Function' :
+               'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue' :
                'ArrayOfCfn::Resource::Properties::' . $self->of_type;
     } elsif ($self->is_map) {
       return ($self->is_primitive_type) ?
-               'Cfn::Value::Hash' : 
+               'Cfn::Value::Hash|Cfn::DynamicValue' : 
                'MapOfCfn::Resource::Properties::' . $self->of_type;
+    } elsif ($self->is_json) {
+      return 'Cfn::Value::Json|Cfn::DynamicValue';
     } else {
       if ($self->is_primitive_type) {
         return 'Cfn::Value::' . $self->spec->PrimitiveType;
