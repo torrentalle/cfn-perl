@@ -373,12 +373,21 @@ package Cfn::DynamicValue {
     return Moose::Util::TypeConstraints::find_type_constraint('Cfn::Value')->coerce($self->resolve_value(@_));
   }
 
+  sub _resolve_value {
+    my ($v, $args) = @_;
+    if (blessed($v) and $v->isa('Cfn::Value')) {
+      return $v->as_hashref(@$args);
+    } else {
+      return $v
+    }
+  }
+
   sub resolve_value {
     my $self = shift;
     my @args = reverse @_;
     my $ret = $self->Value->(@args);
     my (@ret) = ($self->Value->(@args));
-    @ret = map { (blessed($_) and $_->isa('Cfn::Value')) ? $_->as_hashref(@args) : $_ } @ret;
+    @ret = map { _resolve_value($_, \@args) } @ret;
     return (@ret);
   }
 
