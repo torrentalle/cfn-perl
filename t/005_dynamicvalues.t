@@ -9,7 +9,7 @@ my $obj = Cfn->new;
 $obj->addResource(Instance => 'AWS::EC2::Instance', {
     ImageId => Cfn::DynamicValue->new(Value => sub { return 'DynamicValue' }),
     SecurityGroups => Cfn::DynamicValue->new(Value => sub {
-      return [ ]		    
+      return [ 'sg-12345' ],
     }),
     AvailabilityZone => Cfn::DynamicValue->new(Value => sub {
       # Sick hack to import isa_ok into TestClasses namespace
@@ -24,10 +24,10 @@ $obj->addResource(Instance => 'AWS::EC2::Instance', {
             Cfn::DynamicValue->new(Value => sub { return 'line 1' }),
             Cfn::DynamicValue->new(Value => sub { return 'line 2' }),
             Cfn::DynamicValue->new(Value => sub { 
-               Cfn::DynamicValue->new(Value => sub { return 'dv in a dv' })
+               Cfn::DynamicValue->new(Value => sub { return 'dynamicvalue in a dynamicvalue' })
             }),
             Cfn::DynamicValue->new(Value => sub { 
-               return ('before dynamic', Cfn::DynamicValue->new(Value => sub { return 'in middle' }), 'after dynamic');
+               return ('before dynamic', Cfn::DynamicValue->new(Value => sub { return 'dynamicvalue in a list' }), 'after dynamic');
             }),
           ]
         ]
@@ -40,12 +40,12 @@ my $struct = $obj->as_hashref;
 my $instance = $struct->{Resources}{Instance}{Properties};
 
 cmp_ok($instance->{ImageId}, 'eq', 'DynamicValue', 'Got a correct DynamicValue');
-is_deeply($instance->{SecurityGroups}, [ ], 'DynamicValue can return an ArrayRef');
+is_deeply($instance->{SecurityGroups}, [ 'sg-12345' ], 'DynamicValue can return an ArrayRef');
 cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][0], 'eq', 'line 1', 'userdata dv line 1');
 cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][1], 'eq', 'line 2', 'userdata dv line 2');
-cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][2], 'eq', 'dv in a dv', 'a dynamic value returns a dynamic value and gets resolved');
+cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][2], 'eq', 'dynamicvalue in a dynamicvalue', 'a dynamic value returns a dynamic value and gets resolved');
 cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][3], 'eq', 'before dynamic', 'multiple dynamic returns');
-cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][4], 'eq', 'in middle', 'multiple dynamic returns');
+cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][4], 'eq', 'dynamicvalue in a list', 'multiple dynamic returns');
 cmp_ok($instance->{UserData}{'Fn::Base64'}{'Fn::Join'}[1][5], 'eq', 'after dynamic', 'multiple dynamic returns');
 
 done_testing;
