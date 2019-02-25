@@ -835,7 +835,7 @@ package Cfn::Resource::Properties::AWS::EMR::Cluster {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
-  has AdditionalInfo => (isa => 'Cfn::Value::Json', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has AdditionalInfo => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Applications => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EMR::Cluster::Application', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has AutoScalingRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has BootstrapActions => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EMR::Cluster::BootstrapActionConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

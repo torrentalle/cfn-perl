@@ -59,7 +59,7 @@ package Cfn::Resource::Properties::AWS::GuardDuty::Filter::FindingCriteriaValue 
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has Criterion => (isa => 'Cfn::Value::Json', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Criterion => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ItemType => (isa => 'Cfn::Resource::Properties::AWS::GuardDuty::Filter::Condition', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

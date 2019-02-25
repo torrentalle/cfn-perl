@@ -157,7 +157,7 @@ package Cfn::Resource::Properties::AWS::Elasticsearch::Domain {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
-  has AccessPolicies => (isa => 'Cfn::Value::Json', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has AccessPolicies => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has AdvancedOptions => (isa => 'Cfn::Value::Hash|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DomainName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has EBSOptions => (isa => 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EBSOptions', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

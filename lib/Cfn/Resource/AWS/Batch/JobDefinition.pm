@@ -365,7 +365,7 @@ package Cfn::Resource::Properties::AWS::Batch::JobDefinition {
   has ContainerProperties => (isa => 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::ContainerProperties', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has JobDefinitionName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has NodeProperties => (isa => 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::NodeProperties', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Parameters => (isa => 'Cfn::Value::Json', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Parameters => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RetryStrategy => (isa => 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::RetryStrategy', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Timeout => (isa => 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::Timeout', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
