@@ -377,6 +377,10 @@ package Cfn::DynamicValue {
     my ($v, $args) = @_;
     if (blessed($v) and $v->isa('Cfn::Value')) {
       return $v->as_hashref(@$args);
+    } elsif (not blessed($v) and ref($v) eq 'HASH') {
+      return { map { ($_ => _resolve_value($v->{ $_ })) } keys %$v }
+    } elsif (not blessed($v) and ref($v) eq 'ARRAY') {
+      return [ map { _resolve_value($_) } @$v ]
     } else {
       return $v
     }
