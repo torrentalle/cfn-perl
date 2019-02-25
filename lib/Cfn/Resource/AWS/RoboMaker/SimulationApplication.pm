@@ -138,7 +138,7 @@ package Cfn::Resource::Properties::AWS::RoboMaker::SimulationApplication {
   has RobotSoftwareSuite => (isa => 'Cfn::Resource::Properties::AWS::RoboMaker::SimulationApplication::RobotSoftwareSuite', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has SimulationSoftwareSuite => (isa => 'Cfn::Resource::Properties::AWS::RoboMaker::SimulationApplication::SimulationSoftwareSuite', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Sources => (isa => 'ArrayOfCfn::Resource::Properties::AWS::RoboMaker::SimulationApplication::SourceConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Tags => (isa => 'Cfn::Value::Json', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

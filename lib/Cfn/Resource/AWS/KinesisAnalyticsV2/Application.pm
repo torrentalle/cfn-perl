@@ -340,7 +340,7 @@ package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::Application::Propert
   extends 'Cfn::Value::TypedValue';
   
   has PropertyGroupId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has PropertyMap => (isa => 'Cfn::Value::Json', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PropertyMap => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::Application::ParallelismConfiguration',

@@ -92,7 +92,7 @@ package Cfn::Resource::Properties::AWS::RoboMaker::RobotApplication {
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has RobotSoftwareSuite => (isa => 'Cfn::Resource::Properties::AWS::RoboMaker::RobotApplication::RobotSoftwareSuite', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Sources => (isa => 'ArrayOfCfn::Resource::Properties::AWS::RoboMaker::RobotApplication::SourceConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Tags => (isa => 'Cfn::Value::Json', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;
