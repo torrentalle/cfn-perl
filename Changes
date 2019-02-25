@@ -1,3 +1,9 @@
+0.02
+  - Support for returning ArrayRefs and HashRefs from Cfn::DynamicValues. If the values
+    returned from a DynamicValue is itself a HashRef or an ArrayRef with DynamicValues 
+    too, they will get resolved too. 
+  - Implements the resources in CloudFormation spec 2.24.0 (published as of 2019-02-25)
+
 0.01 2019-02-15
   - First release of this module as a separate entity from CloudDeploy.
     This module is the result of isolating the code in the CloudDeploy distribution,
