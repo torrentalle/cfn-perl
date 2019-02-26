@@ -101,6 +101,54 @@ is_deeply(
   'Cfn::Value can return hashrefs'
 );
 
+# -----------------------------------------------
+# Test diff with DynamicValues
+# -----------------------------------------------
+use Cfn::Diff;
+
+my $obj2 = Cfn->new;
+$obj2->addResource(IAM => 'AWS::IAM::User', {
+    Path => Cfn::DynamicValue->new(Value => sub {
+      my $self = shift;
+      isa_ok($self, 'Cfn');
+      return '/';
+    })
+  });
+
+{
+  my $diff = Cfn::Diff->new(left => $obj, right => $obj2);
+  $diff->diff;
+  cmp_ok(scalar(@{ $diff->changes }), '==', 4, '4 Changes: delete 3 objects from obj, and add 1 in obj2');
+}
+
+my $obj3 = Cfn->new;
+$obj3->addResource(IAM => 'AWS::IAM::User', {
+    Path => Cfn::DynamicValue->new(Value => sub {
+      my $self = shift;
+      isa_ok($self, 'Cfn');
+      return '/2';
+    })
+  });
+
+{
+  # by default, Cfn::Diff won't try to resolve dynamic values
+  my $diff = Cfn::Diff->new(left => $obj2, right => $obj3);
+  $diff->diff;
+  cmp_ok(scalar(@{ $diff->changes }), '==', 1, '1 Change');
+  isa_ok($diff->changes->[0]->from, 'Cfn::DynamicValue');
+  isa_ok($diff->changes->[0]->to,   'Cfn::DynamicValue');
+}
+
+{
+  my $diff = Cfn::Diff->new(left => $obj2, right => $obj3, resolve_dynamicvalues => 1);
+  $diff->diff;
+  cmp_ok(scalar(@{ $diff->changes }), '==', 1, '1 Change');
+  isa_ok($diff->changes->[0]->from, 'Cfn::String');
+  isa_ok($diff->changes->[0]->to,   'Cfn::String');
+  cmp_ok($diff->changes->[0]->from->Value, 'eq', '/');
+  cmp_ok($diff->changes->[0]->to->Value, 'eq', '/2');
+}
+
 {
   my $invocations = 0;
   my $i = \$invocations;
