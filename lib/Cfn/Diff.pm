@@ -31,10 +31,17 @@ package Cfn::Diff::ResourcePropertyChange {
 package Cfn::Diff {
   use Moose;
 
-  has changes => (
+  sub changes { 
+    my $self = shift;
+    return $self->_changes if (defined $self->_changes);
+    $self->_changes([]);
+    $self->diff;
+    return $self->_changes;
+  }
+
+  has _changes => (
     is => 'rw', 
     isa => 'ArrayRef[Cfn::Diff::Changes]', 
-    default => sub { [] },
     traits => [ 'Array' ],
     handles => {
       new_addition => 'push',
