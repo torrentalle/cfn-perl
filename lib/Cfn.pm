@@ -345,9 +345,11 @@ package Cfn::TypeLibrary {
     'AWS::AccountId',
     'AWS::NotificationARNs',
     'AWS::NoValue',
+    'AWS::Partition',
     'AWS::Region',
     'AWS::StackId',
     'AWS::StackName',
+    'AWS::URLSuffix',
   ];
 
   coerce 'Cfn::Internal::Options',
