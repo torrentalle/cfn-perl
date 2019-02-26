@@ -1525,9 +1525,9 @@ of the reference in the C<Value> attribute. Note that the Value attribute contai
 another C<Cfn::Value>. It derives from C<Cfn::Value::Function>
 
   $cfn->addResource('R1', 'AWS::IAM::User', Path => { Ref => 'AWS::Region' });
-  $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::Value::Function::PseudoParam
+  $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::Value::Function::PseudoParameter
 
-=head2 Cfn::Value::Function::PseudoParam
+=head2 Cfn::Value::Function::PseudoParameter
 
 This is a subclass of C<Cfn::Value::Function::Ref> used to hold what CloudFormation
 calls PseudoParameters.
