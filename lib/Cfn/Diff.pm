@@ -30,7 +30,6 @@ package Cfn::Diff::ResourcePropertyChange {
 
 package Cfn::Diff {
   use Moose;
-  extends 'Cfn';
 
   has changes => (
     is => 'rw', 
