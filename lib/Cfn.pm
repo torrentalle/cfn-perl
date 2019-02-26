@@ -389,7 +389,6 @@ package Cfn::DynamicValue {
   sub resolve_value {
     my $self = shift;
     my @args = reverse @_;
-    my $ret = $self->Value->(@args);
     my (@ret) = ($self->Value->(@args));
     @ret = map { _resolve_value($_, \@args) } @ret;
     return (@ret);

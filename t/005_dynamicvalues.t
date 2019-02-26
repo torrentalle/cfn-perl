@@ -149,4 +149,18 @@ $obj3->addResource(IAM => 'AWS::IAM::User', {
   cmp_ok($diff->changes->[0]->to->Value, 'eq', '/2');
 }
 
+{
+  my $invocations = 0;
+  my $i = \$invocations;
+
+  my $o = Cfn->new;
+  $o->addResource(R1 => 'AWS::IAM::User', {
+    Path => Cfn::DynamicValue->new(Value => sub {
+      $$i = $$i + 1;
+    }),
+  });
+  my $h = $o->as_hashref;
+  cmp_ok($h->{ Resources }->{ R1 }->{ Properties }->{ Path }, '==', 1, 'as_hashref only calls dynamicvalues one time');
+}
+
 done_testing;
