@@ -117,7 +117,6 @@ $obj2->addResource(IAM => 'AWS::IAM::User', {
 
 {
   my $diff = Cfn::Diff->new(left => $obj, right => $obj2);
-  $diff->diff;
   cmp_ok(scalar(@{ $diff->changes }), '==', 4, '4 Changes: delete 3 objects from obj, and add 1 in obj2');
 }
 
@@ -133,7 +132,6 @@ $obj3->addResource(IAM => 'AWS::IAM::User', {
 {
   # by default, Cfn::Diff won't try to resolve dynamic values
   my $diff = Cfn::Diff->new(left => $obj2, right => $obj3);
-  $diff->diff;
   cmp_ok(scalar(@{ $diff->changes }), '==', 1, '1 Change');
   isa_ok($diff->changes->[0]->from, 'Cfn::DynamicValue');
   isa_ok($diff->changes->[0]->to,   'Cfn::DynamicValue');
@@ -141,7 +139,6 @@ $obj3->addResource(IAM => 'AWS::IAM::User', {
 
 {
   my $diff = Cfn::Diff->new(left => $obj2, right => $obj3, resolve_dynamicvalues => 1);
-  $diff->diff;
   cmp_ok(scalar(@{ $diff->changes }), '==', 1, '1 Change');
   isa_ok($diff->changes->[0]->from, 'Cfn::String');
   isa_ok($diff->changes->[0]->to,   'Cfn::String');
