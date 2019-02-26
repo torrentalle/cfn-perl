@@ -1327,6 +1327,15 @@ C<as_hashref> triggers the serialization process of the document, which scans th
 object model asking it's components to serialize (calling their C<as_hashref>). Objects
 can decide how they serialize to a hashref.
 
+When C<$cfn->as_hashref> is invoked, all the dynamic values in the Cfn object will be 
+called with the C<$cfn> instance as the first parameter to their subroutine
+
+  $cfn->addResource('R1', 'AWS::IAM::User', Path => Cfn::DynamicValue->new(Value => sub {
+    my $cfn = shift;
+    return $cfn->ResourceCount + 41
+  }));
+  $cfn->as_hashref->{ Resources }->{ R1 }->{ Properties }->{ Path } # == 42
+
 =head3 as_json
 
 Returns a JSON representation of C<as_hashref>. Just a shortcut
@@ -1492,6 +1501,15 @@ when as_hashref is called.
   $cfn->addResource('R1', 'AWS::IAM::User', Path => Cfn::DynamicValue->new(Value => sub { return 'Hello' });
   $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::DynamicValue
   $cfn->path_to('Resources.R1.Properties.Path')->as_hashref # eq 'Hello'
+
+When C<$cfn->as_hashref> is invoked, all the dynamic values in the Cfn object will be 
+called with the C<$cfn> instance as the first parameter to their subroutine
+
+  $cfn->addResource('R1', 'AWS::IAM::User', Path => Cfn::DynamicValue->new(Value => sub {
+    my $cfn = shift;
+    return $cfn->ResourceCount + 41
+  }));
+  $cfn->as_hashref->{ Resources }->{ R1 }->{ Properties }->{ Path } # == 42
 
 =head2 Cfn::Value::Function
 
