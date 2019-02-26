@@ -1081,6 +1081,11 @@ package Cfn {
     return $class->new(%$hashref);
   }
 
+  sub resolve_dynamicvalues {
+    my $self = shift;
+    return Cfn->from_hashref($self->as_hashref);
+  }
+
   sub as_hashref {
     my $self = shift;
     return {
@@ -1331,6 +1336,10 @@ Returns a JSON representation of C<as_hashref>. Just a shortcut
 Given a path in the format C<'Resources.R1.Properties.PropName'> it will return the value
 stored in PropName of the resource R1. Use C<'Resource.R1.Properties.ArrayProp.0'> to access
 Arrays.
+
+=head3 resolve_dynamicvalues
+
+Returns a new C<Cfn> object with all C<Cfn::DynamicValues> resolved.
 
 =head3 ResourcesOfType($type)
 

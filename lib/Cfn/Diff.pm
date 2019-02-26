@@ -32,6 +32,12 @@ package Cfn::Diff {
   use Moose;
   extends 'Cfn';
 
+  has resolve_dynamicvalues => (
+    is => 'ro',
+    isa => 'Bool',
+    default => 0
+  );
+
   has changes => (
     is => 'rw', 
     isa => 'ArrayRef[Cfn::Diff::Changes]', 
@@ -49,8 +55,8 @@ package Cfn::Diff {
 
   sub diff {
     my ($self) = @_;
-    my $old = $self->left;
-    my $new = $self->right;
+    my $old = ($self->resolve_dynamicvalues) ? $self->left->resolve_dynamicvalues : $self->left;
+    my $new = ($self->resolve_dynamicvalues) ? $self->right->resolve_dynamicvalues : $self->right;
 
     my %new_resources = map { ( $_ => 1 ) } $new->ResourceList;    
     my %old_resources = map { ( $_ => 1 ) } $old->ResourceList;    

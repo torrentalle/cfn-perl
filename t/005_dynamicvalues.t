@@ -126,7 +126,7 @@ $obj3->addResource(IAM => 'AWS::IAM::User', {
     Path => Cfn::DynamicValue->new(Value => sub {
       my $self = shift;
       isa_ok($self, 'Cfn');
-      return '/';
+      return '/2';
     })
   });
 
@@ -137,6 +137,16 @@ $obj3->addResource(IAM => 'AWS::IAM::User', {
   cmp_ok(scalar(@{ $diff->changes }), '==', 1, '1 Change');
   isa_ok($diff->changes->[0]->from, 'Cfn::DynamicValue');
   isa_ok($diff->changes->[0]->to,   'Cfn::DynamicValue');
+}
+
+{
+  my $diff = Cfn::Diff->new(left => $obj2, right => $obj3, resolve_dynamicvalues => 1);
+  $diff->diff;
+  cmp_ok(scalar(@{ $diff->changes }), '==', 1, '1 Change');
+  isa_ok($diff->changes->[0]->from, 'Cfn::String');
+  isa_ok($diff->changes->[0]->to,   'Cfn::String');
+  cmp_ok($diff->changes->[0]->from->Value, 'eq', '/');
+  cmp_ok($diff->changes->[0]->to->Value, 'eq', '/2');
 }
 
 done_testing;
