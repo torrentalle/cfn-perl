@@ -31,6 +31,12 @@ package Cfn::Diff::ResourcePropertyChange {
 package Cfn::Diff {
   use Moose;
 
+  has resolve_dynamicvalues => (
+    is => 'ro',
+    isa => 'Bool',
+    default => 0
+  );
+
   has changes => (
     is => 'rw', 
     isa => 'ArrayRef[Cfn::Diff::Changes]', 
@@ -48,8 +54,8 @@ package Cfn::Diff {
 
   sub diff {
     my ($self) = @_;
-    my $old = $self->left;
-    my $new = $self->right;
+    my $old = ($self->resolve_dynamicvalues) ? $self->left->resolve_dynamicvalues : $self->left;
+    my $new = ($self->resolve_dynamicvalues) ? $self->right->resolve_dynamicvalues : $self->right;
 
     my %new_resources = map { ( $_ => 1 ) } $new->ResourceList;    
     my %old_resources = map { ( $_ => 1 ) } $old->ResourceList;    
@@ -156,7 +162,9 @@ package Cfn::Diff {
         return 0 if ($new->meta->name ne $old->meta->name);
 
         # Old and new are guaranteed to be the same type now, so just go on with new
-        if ($new->isa('Cfn::Value::Primitive')) {
+        if ($new->isa('Cfn::DynamicValue')) {
+          return 0;
+        } elsif ($new->isa('Cfn::Value::Primitive')) {
           return ($new->Value eq $old->Value);
         } elsif ($new->isa('Cfn::Value::Function')) {
           return (($new->Function eq $old->Function) and $self->properties_equal($new->Value, $old->Value));
