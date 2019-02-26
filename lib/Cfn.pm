@@ -66,6 +66,11 @@ package Cfn::TypeLibrary {
     where { $_ eq 'Delete' or $_ eq 'Retain' or $_ eq 'Snapshot' },
     message { "$_ is an invalid DeletionPolicy" };
 
+  subtype 'Cfn::Resource::UpdateReplacePolicy',
+    as 'Str',
+    where { $_ eq 'Delete' or $_ eq 'Retain' or $_ eq 'Snapshot' },
+    message { "$_ is an invalid UpdateReplacePolicy" };
+
   subtype 'Cfn::Value::ArrayOfPrimitives',
     as 'Cfn::Value::Array',
     where { @{ $_[0]->Value } == grep { $_->isa('Cfn::Value::Primitive') } @{ $_[0]->Value } },
@@ -652,6 +657,7 @@ package Cfn::Resource {
   has Metadata => (isa => 'Cfn::Value::Hash', is => 'rw', coerce => 1);
   has UpdatePolicy => (isa => 'Cfn::Resource::UpdatePolicy', is => 'rw', coerce => 1);
   has CreationPolicy => (isa => 'HashRef', is => 'rw');
+  has UpdateReplacePolicy => (isa => 'Cfn::Resource::UpdateReplacePolicy', is => 'rw');
 
   sub as_hashref {
     my $self = shift;
@@ -660,7 +666,7 @@ package Cfn::Resource {
       (map { $_ => $self->$_->as_hashref(@args) }
         grep { defined $self->$_ } qw/Properties Metadata UpdatePolicy/),
       (map { $_ => $self->$_ }
-        grep { defined $self->$_ } qw/Type DeletionPolicy DependsOn CreationPolicy Condition/),
+        grep { defined $self->$_ } qw/Type DeletionPolicy UpdateReplacePolicy DependsOn CreationPolicy Condition/),
     }
   }
 
