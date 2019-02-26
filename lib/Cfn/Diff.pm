@@ -157,7 +157,9 @@ package Cfn::Diff {
         return 0 if ($new->meta->name ne $old->meta->name);
 
         # Old and new are guaranteed to be the same type now, so just go on with new
-        if ($new->isa('Cfn::Value::Primitive')) {
+        if ($new->isa('Cfn::DynamicValue')) {
+          return 0;
+        } elsif ($new->isa('Cfn::Value::Primitive')) {
           return ($new->Value eq $old->Value);
         } elsif ($new->isa('Cfn::Value::Function')) {
           return (($new->Function eq $old->Function) and $self->properties_equal($new->Value, $old->Value));
