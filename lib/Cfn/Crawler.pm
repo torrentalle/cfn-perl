@@ -210,7 +210,7 @@ package Cfn::Crawler;
         my $prop_value = $value->$prop_name;
         push @results, $self->_crawl_values("$path\.$prop_name", $prop_value);
       }
-    } elsif ($value->isa('CCfnX::DynamicValue')) {
+    } elsif ($value->isa('Cfn::DynamicValue')) {
       # A DynamicValue is not traversable
     } else {
       die "Unknown $value at $path";
