@@ -10,6 +10,8 @@
     since the return value of a DynamicValue is not known beforehand.
   - Cfn::Diff gets a new attribute resolve_dynamicvalues that when activated will resolve
     all Cfn::DynamicValues before diffing
+  - Cfn::Crawl by default doesn't resolve Dynamic values, but now gets a resolve_dynamicvalues
+    attribute to resolve them before crawling
 
 0.01 2019-02-15
   - First release of this module as a separate entity from CloudDeploy.
