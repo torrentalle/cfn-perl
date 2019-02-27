@@ -882,8 +882,7 @@ package Cfn {
   has Description => (isa => 'Str', is => 'rw');
   has Transform => (isa => 'Cfn::Transform', is => 'rw', coerce => 1);
 
-  our $VERSION = '0.01';
-  #ABSTRACT: An object model for CloudFormation documents
+  our $VERSION = '0.02';
 
   has Parameters => (
     is => 'rw',

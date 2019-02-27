@@ -1,4 +1,4 @@
-0.02
+0.02 2019-02-27
   - Support for UpdateReplacePolicy 
   - Add AWS::Partion and AWS::URLSuffix as PseudoParameters. They are now recognized as
     Cfn::Value::Function::PseudoParameter
