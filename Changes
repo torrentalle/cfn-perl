@@ -1,4 +1,5 @@
 0.02
+  - Support for UpdateReplacePolicy 
   - Add AWS::Partion and AWS::URLSuffix as PseudoParameters. They are now recognized as
     Cfn::Value::Function::PseudoParameter
   - Support for returning ArrayRefs and HashRefs from Cfn::DynamicValues. If the values
