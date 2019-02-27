@@ -1,4 +1,5 @@
 0.02
+  - Support for UpdateReplacePolicy 
   - Support for returning ArrayRefs and HashRefs from Cfn::DynamicValues. If the values
     returned from a DynamicValue is itself a HashRef or an ArrayRef with DynamicValues 
     too, they will get resolved too. 
