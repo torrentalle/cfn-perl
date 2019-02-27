@@ -1,4 +1,6 @@
 0.02
+  - Add AWS::Partion and AWS::URLSuffix as PseudoParameters. They are now recognized as
+    Cfn::Value::Function::PseudoParameter
   - Support for returning ArrayRefs and HashRefs from Cfn::DynamicValues. If the values
     returned from a DynamicValue is itself a HashRef or an ArrayRef with DynamicValues 
     too, they will get resolved too.
