@@ -7,6 +7,9 @@ no warnings 'experimental::postderef';
 use strict;
 use warnings;
 
+use Mojo::UserAgent;
+use Mojo::IOLoop;
+
 my @regions = @ARGV;
 
 # links for all spec files http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html
@@ -34,4 +37,29 @@ my $specs = {
 
 @regions = keys $specs->%* if (@regions == 0);
 
+my @items = map { { region => $_, url => $specs->{ $_ } } } @regions;
 
+my $ua = Mojo::UserAgent->new(max_redirects => 0);
+my $active = 0;
+
+Mojo::IOLoop->recurring(0 => sub {
+  for ($active .. 6 - 1) {
+    return ($active or Mojo::IOLoop->stop) unless my $item = shift @items;
+    my $url = $item->{ url };
+    my $region = $item->{ region };
+
+    ++$active;
+    $ua->get($url => sub {
+      my ($ua, $tx) = @_;
+
+      say $region;
+      open my $fh, '>', "spec/$region.json";
+      print $fh $tx->res->body;
+      close $fh;
+      # Deactivate
+      --$active;
+    }); 
+  }
+});
+
+Mojo::IOLoop->start unless Mojo::IOLoop->is_running;

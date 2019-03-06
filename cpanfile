@@ -21,4 +21,5 @@ on develop => sub {
   requires 'JSON::MaybeXS';
   requires 'Sort::Topological';
   requires 'Template';
+  requires 'Mojo::UserAgent';
 };
