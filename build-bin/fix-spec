@@ -24,6 +24,12 @@ $iotthing->{PrimitiveType} = 'Json';
 
 delete $doc->{PropertyTypes}{'AWS::IoT::Thing.AttributePayload'};
 
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-instanceattributes
+# the docs state that InstanceAttributes is a Map. This Map is declared as a PrimitiveType
+my $sd_instanceatts = $doc->{ResourceTypes}{'AWS::ServiceDiscovery::Instance'}{Properties}{InstanceAttributes};
+$sd_instanceatts->{ Type } = 'Map';
+$sd_instanceatts->{ PrimitiveType } = 'String'; 
+
 my $ssmassoc = $doc->{ResourceTypes}{'AWS::SSM::Association'}{Properties}{Parameters};
 delete $ssmassoc->{ItemType};
 $ssmassoc->{PrimitiveType} = 'Json';
