@@ -1,5 +1,7 @@
 0.03 
   - Implements the resources in CloudFormation spec 2.25.0 (published as of 2019-03-06)
+  - Fixed bug in AWS::ServiceDiscovery::Instance Properties: The InstanceAttributes
+    Attribute was not declared as a Cfn::Value::Hash
 
 0.02 2019-02-27
   - Support for UpdateReplacePolicy 
