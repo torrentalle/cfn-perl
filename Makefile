@@ -58,6 +58,9 @@ get-all-specs: get-spec-virginia get-spec-ireland
 	#paris
 	wget -O spec/eu-west-3.json.gz 'https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
 	gunzip -f spec/eu-west-3.json.gz
+	#stockholm
+	wget -O spec/eu-north-1.json.gz 'https://diy8iv58sj6ba.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
+	gunzip -f spec/eu-north-1.json.gz
 	#saopaulo
 	wget -O spec/sa-east-1.json.gz 'https://d3c9jyj3w509b0.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
 	gunzip -f spec/sa-east-1.json.gz
