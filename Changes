@@ -1,3 +1,6 @@
+0.03 
+  - Implements the resources in CloudFormation spec 2.25.0 (published as of 2019-03-06)
+
 0.02 2019-02-27
   - Support for UpdateReplacePolicy 
   - Add AWS::Partion and AWS::URLSuffix as PseudoParameters. They are now recognized as
