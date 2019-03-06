@@ -9,7 +9,12 @@ package CfnModel;
   use CfnModel::CfnSubtype;
   use CfnModel::CfnProperty;
 
-  has file => (is => 'ro', isa => 'Path::Class::File', required => 1, coerce => 1);
+  has dir => (is => 'ro', isa => 'Path::Class::Dir', required => 1, coerce => 1);
+
+  has file => (is => 'ro', isa => 'Path::Class::File', coerce => 1, lazy => 1, default => sub {
+    my $self = shift;
+    Path::Class::File->new($self->dir, 'spec.json');
+  });
 
   has spec => (is => 'ro', lazy => 1, default => sub {
     my $self = shift;

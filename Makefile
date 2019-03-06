@@ -11,7 +11,7 @@ test:
 	PERL5LIB=local/lib/perl5 prove -I lib -v t/
 
 gen-classes:
-	OUTPUT_DIR=lib carton exec perl -I build-lib/ build-bin/build-cfn-classes spec/spec.json
+	OUTPUT_DIR=lib carton exec perl -I build-lib/ build-bin/build-cfn-classes
 
 #ireland
 get-spec-ireland:
