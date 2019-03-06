@@ -1,4 +1,4 @@
-# AWS::ECS::TaskDefinition generated from spec 2.22.0
+# AWS::ECS::TaskDefinition generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition',
@@ -707,7 +707,6 @@ package Cfn::Resource::Properties::AWS::ECS::TaskDefinition {
   has NetworkMode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has PlacementConstraints => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::TaskDefinitionPlacementConstraint', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has RequiresCompatibilities => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
-  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TaskRoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Volumes => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::Volume', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
