@@ -19,3 +19,5 @@ foreach my $module (@mod_list) {
   );
   ok(defined $class_name->meta, "$class_name is loaded");
 }
+
+done_testing;
