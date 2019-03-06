@@ -3,12 +3,11 @@
 use strict;
 use warnings;
 use v5.10;
-use Module::Find;
+use Cfn::ResourceModules;
 
 my $pattern = $ARGV[0];
 
-my @list = Module::Find::findallmod Cfn::Resource;
-@list = map { $_ =~ s/^Cfn::Resource:://; $_ } @list;
+my @list = Cfn::ResourceModules::list();
 
 if (defined $pattern) {
   @list = grep { $_ =~ m/$pattern/ } @list;
