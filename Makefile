@@ -71,9 +71,9 @@ get-all-specs: get-spec-virginia get-spec-ireland
 	wget -O spec/us-west-2.json.gz 'https://d201a2mn26r7lk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
 	gunzip -f spec/us-west-2.json.gz
 
-fix-spec: get-spec-virginia
+fix-spec:
 	carton exec build-bin/fix-spec spec/us-east-1.json spec/spec.json
 
-build: fix-spec gen-classes
+build: get-spec-virginia fix-spec gen-classes
 
 
