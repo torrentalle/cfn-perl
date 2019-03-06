@@ -13,9 +13,6 @@ test:
 gen-classes:
 	OUTPUT_DIR=lib carton exec perl -I build-lib/ build-bin/build-cfn-classes spec/spec.json
 
-lint-specs:
-	carton exec perl -I lib build-bin/compare_classes_to_webdocs
-
 #ireland
 get-spec-ireland:
 	wget -O spec/eu-west-1.json.gz 'https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
