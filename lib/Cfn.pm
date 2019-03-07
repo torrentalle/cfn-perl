@@ -647,8 +647,6 @@ package Cfn::Resource {
     return @matches == 1;
   }
 
-  has AttributeList => (isa => 'ArrayRef[Str]', is => 'ro', lazy => 1, builder => '_build_attributes');
-
   sub DependsOnList {
     my $self = shift;
     return () if (not defined $self->DependsOn);
