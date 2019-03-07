@@ -2,6 +2,8 @@ use Test::More;
 
 use Moose::Util::TypeConstraints qw/find_type_constraint/;
 
+use strict;
+use warnings;
 use Cfn;
 
 my $tests = [];

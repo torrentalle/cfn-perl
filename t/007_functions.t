@@ -1,5 +1,7 @@
 use Moose::Util::TypeConstraints;
 
+use strict;
+use warnings;
 use Cfn;
 
 use Test::More;
