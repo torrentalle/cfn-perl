@@ -1,7 +1,5 @@
 #!/usr/bin/env perl
 
-use Moose::Util::TypeConstraints;
-
 use strict;
 use warnings;
 use Cfn;
