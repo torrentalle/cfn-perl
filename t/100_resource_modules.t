@@ -18,6 +18,7 @@ foreach my $module (@mod_list) {
     "Module $module is loaded and a class name returned"
   );
   ok(defined $class_name->meta, "$class_name is loaded");
+  ok(scalar(@{ $class_name->supported_regions }) > 0, "$class_name has supported_regions");
 }
 
 done_testing;
