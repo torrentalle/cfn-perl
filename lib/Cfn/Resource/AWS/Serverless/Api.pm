@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::Serverless::Api {
     Cfn::Resource::AWS::Lambda::Function->supported_regions;
   }
 
-  sub _build_attributes {
+  sub AttributeList {
     []
   }
 }
