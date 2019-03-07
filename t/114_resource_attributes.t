@@ -2,12 +2,9 @@
 
 use Test::More;
 use Cfn;
-use Cfn::Resource::AWS::ApiGateway::Account;
-use Cfn::Resource::AWS::ApiGateway::RestApi;
-use Cfn::Resource::AWS::CloudFormation::CustomResource;
 
 {
-  my $res = Cfn::Resource::AWS::ApiGateway::RestApi->new(
+  my $res = Cfn->load_resource_module('AWS::ApiGateway::RestApi')->new(
     Properties => {}
   );
   is_deeply($res->AttributeList, [ 'RootResourceId' ], 'AttributeList OK');
@@ -17,7 +14,7 @@ use Cfn::Resource::AWS::CloudFormation::CustomResource;
 }
 
 {
-  my $res = Cfn::Resource::AWS::ApiGateway::Account->new(
+  my $res = Cfn->load_resource_module('AWS::ApiGateway::Account')->new(
     Properties => {}
   );
   is_deeply($res->AttributeList, [ ], 'AttributeList OK');
@@ -25,7 +22,7 @@ use Cfn::Resource::AWS::CloudFormation::CustomResource;
 }
 
 {
-  my $res = Cfn::Resource::AWS::CloudFormation::CustomResource->new(
+  my $res = Cfn->load_resource_module('AWS::CloudFormation::CustomResource')->new(
     Properties => { ServiceToken => '...' }
   );
   is_deeply($res->AttributeList, undef, 'AttributeList OK');
