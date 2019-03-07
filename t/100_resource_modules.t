@@ -19,6 +19,7 @@ foreach my $module (@mod_list) {
   );
   ok(defined $class_name->meta, "$class_name is loaded");
   ok(scalar(@{ $class_name->supported_regions }) > 0, "$class_name has supported_regions");
+  ok(scalar(@{ $class_name->AttributeList }) >= 0, "$class_name has AttributeList");
 }
 
 done_testing;
