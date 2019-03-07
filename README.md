@@ -471,11 +471,19 @@ Holds the UpdatePolicy. Validates that the UpdatePolicy is valid
 
 HashRef with the CreationPolicy. Doesn't validate CreationPolicies.
 
+## Methods for Cfn::Resource objects
+
 ### AttributeList
 
-Holds a Hashref of attributes that can be recalled in CloudFormation via `Fn::GetAtt`
+Returns an ArrayRef of attributes that can be recalled in CloudFormation via `Fn::GetAtt`.
 
-## Methods for Cfn::Resource objects
+Can also be retrieved as a class method `Cfn::Resource::...-`AttributeList>
+
+### supported\_regions
+
+Returns an ArrayRef of the AWS regions where the resource can be provisioned.
+
+Can also be retrieved as a class method `Cfn::Resource::...-`supported\_regions>
 
 ### DependsOnList
 
@@ -486,7 +494,8 @@ if the DependsOn attribute is a String or an ArrayRef of Strings.
 
 ### hasAttribute($attribute)
 
-Returns true if the specified attribute is in the `AttributeList`
+Returns true if the specified attribute is in the `AttributeList`. Note that some resources
+(AWS::CloudFormation::CustomResource) can return true for values that are not in AttributeList
 
 ### as\_hashref
 
