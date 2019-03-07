@@ -10,10 +10,15 @@ my $what = $ARGV[0];
 die "Usage $0 resource_type\n" if (not defined $what);
 
 my $class = Cfn->load_resource_module($what);
-my $props_class = $class->meta->find_attribute_by_name('Properties')->type_constraint->name;
- 
+
 my $already_seen = {};
 say $what;
+say "Attributes accessible via Fn::GetAtt:";
+say " - $_" for (@{ $class->AttributeList });
+say "Regions:";
+say " - $_" for (@{ $class->supported_regions });
+say "Properties:";
+my $props_class = $class->meta->find_attribute_by_name('Properties')->type_constraint->name;
 say _render_class($props_class, 1, $already_seen);
 
 sub _render_class {
