@@ -1,3 +1,5 @@
+#!/usr/bin/env perl
+
 use Test::More;
 
 use Moose::Util::TypeConstraints qw/find_type_constraint/;
