@@ -1,4 +1,4 @@
-# AWS::CodeCommit::Repository generated from spec 2.22.0
+# AWS::CodeCommit::Repository generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeCommit::Repository',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::CodeCommit::Repository {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CodeCommit::Repository', is => 'rw', coerce => 1);
   sub _build_attributes {
     [ 'Arn','CloneUrlHttp','CloneUrlSsh','Name' ]
+  }
+  sub supported_regions {
+    [ 'eu-west-1','us-east-1','us-east-2','us-west-2' ]
   }
 }
 

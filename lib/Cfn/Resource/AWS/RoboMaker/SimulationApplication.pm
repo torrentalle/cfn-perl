@@ -1,4 +1,4 @@
-# AWS::RoboMaker::SimulationApplication generated from spec 2.24.0
+# AWS::RoboMaker::SimulationApplication generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::RoboMaker::SimulationApplication',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::RoboMaker::SimulationApplication {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::RoboMaker::SimulationApplication', is => 'rw', coerce => 1);
   sub _build_attributes {
     [ 'Arn','CurrentRevisionId' ]
+  }
+  sub supported_regions {
+    [ 'eu-west-1','us-east-1','us-west-2' ]
   }
 }
 

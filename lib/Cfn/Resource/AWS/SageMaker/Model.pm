@@ -1,4 +1,4 @@
-# AWS::SageMaker::Model generated from spec 2.22.0
+# AWS::SageMaker::Model generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SageMaker::Model',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::SageMaker::Model {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::SageMaker::Model', is => 'rw', coerce => 1);
   sub _build_attributes {
     [ 'ModelName' ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-2' ]
   }
 }
 

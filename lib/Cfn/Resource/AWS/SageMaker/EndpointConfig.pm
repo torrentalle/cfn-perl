@@ -1,4 +1,4 @@
-# AWS::SageMaker::EndpointConfig generated from spec 2.18.0
+# AWS::SageMaker::EndpointConfig generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::SageMaker::EndpointConfig {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig', is => 'rw', coerce => 1);
   sub _build_attributes {
     [ 'EndpointConfigName' ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','eu-west-1','us-east-1','us-east-2','us-west-2' ]
   }
 }
 

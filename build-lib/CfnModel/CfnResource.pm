@@ -108,6 +108,10 @@ package CfnModel::CfnResource;
 
   has property_list => (is => 'ro', isa => 'ArrayRef[CfnModel::CfnProperty]', lazy => 1, builder => '_proplist_builder');
   has attribute_list => (is => 'ro', isa => 'ArrayRef[CfnModel::CfnAttribute]', lazy => 1, builder => '_attlist_builder');
+  has region_list => (is => 'ro', isa => 'ArrayRef[Str]', lazy => 1, default => sub {
+    my $self = shift;
+    $self->root->region_resource_map->{ $self->name };
+  });
 
   sub _proplist_builder {
     my $self = shift;

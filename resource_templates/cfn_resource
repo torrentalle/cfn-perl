@@ -12,6 +12,9 @@ package Cfn::Resource::[% c.name %] {
   sub _build_attributes {
     [ [% FOR attribute = c.attribute_list %]'[% attribute.name %]'[% ',' IF (NOT loop.last) %][% END %] ]
   }
+  sub supported_regions {
+    [ [% FOR region = c.region_list %]'[% region %]'[% ',' IF (NOT loop.last) %][% END %] ]
+  }
   [%- SWITCH c.name %]
   [% CASE 'AWS::IAM::Role' %]
   sub addPolicy {

@@ -1,4 +1,4 @@
-# AWS::IoT1Click::Placement generated from spec 2.22.0
+# AWS::IoT1Click::Placement generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IoT1Click::Placement',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::IoT1Click::Placement {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::IoT1Click::Placement', is => 'rw', coerce => 1);
   sub _build_attributes {
     [ 'PlacementName','ProjectName' ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-2' ]
   }
 }
 

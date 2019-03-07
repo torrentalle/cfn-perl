@@ -5,8 +5,6 @@ use warnings;
 
 use CfnModel;
 
-my $spec_file = shift @ARGV;
+my $cfn = CfnModel->new(dir => 'spec/');
 
-my $cfn = CfnModel->new(file => $spec_file);
-
-$cfn->write_classes(@ARGV);
+$cfn->write_classes;
