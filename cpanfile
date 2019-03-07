@@ -3,6 +3,7 @@ requires 'MooseX::StrictConstructor';
 requires 'MooseX::SlurpyConstructor';
 requires 'JSON';
 requires 'Module::Runtime';
+requires 'Module::Find';
 
 on test => sub {
   requires 'Data::Printer';
