@@ -9,6 +9,11 @@ package Cfn::Resource::AWS::Serverless::SimpleTable {
   extends 'Cfn::Resource';
   has Properties => ( isa => 'Cfn::Resource::Properties::AWS::Serverless::SimpleTable', is => 'rw', coerce => 1 );
 
+  sub supported_regions {
+    require Cfn::Resource::AWS::Lambda::Function;
+    Cfn::Resource::AWS::Lambda::Function->supported_regions;
+  }
+
   sub _build_attributes {
     []
   }
