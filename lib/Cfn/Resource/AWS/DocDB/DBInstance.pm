@@ -1,4 +1,4 @@
-# AWS::DocDB::DBInstance generated from spec 2.20.0
+# AWS::DocDB::DBInstance generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::DocDB::DBInstance',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::DocDB::DBInstance {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DocDB::DBInstance', is => 'rw', coerce => 1);
   sub _build_attributes {
     [ 'Endpoint','Port' ]
+  }
+  sub supported_regions {
+    [ 'eu-west-1','us-east-1','us-east-2','us-west-2' ]
   }
 }
 

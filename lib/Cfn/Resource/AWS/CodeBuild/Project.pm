@@ -1,4 +1,4 @@
-# AWS::CodeBuild::Project generated from spec 2.24.0
+# AWS::CodeBuild::Project generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::CodeBuild::Project {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project', is => 'rw', coerce => 1);
   sub _build_attributes {
     [ 'Arn' ]
+  }
+  sub supported_regions {
+    [ 'eu-west-1','us-east-1','us-west-2' ]
   }
 }
 

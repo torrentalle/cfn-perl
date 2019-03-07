@@ -1,4 +1,4 @@
-# AWS::AppStream::Fleet generated from spec 2.22.0
+# AWS::AppStream::Fleet generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::AppStream::Fleet {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppStream::Fleet', is => 'rw', coerce => 1);
   sub _build_attributes {
     [  ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-west-2' ]
   }
 }
 

@@ -1,4 +1,4 @@
-# AWS::ServiceDiscovery::PrivateDnsNamespace generated from spec 1.12.0
+# AWS::ServiceDiscovery::PrivateDnsNamespace generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::PrivateDnsNamespace',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::ServiceDiscovery::PrivateDnsNamespace {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ServiceDiscovery::PrivateDnsNamespace', is => 'rw', coerce => 1);
   sub _build_attributes {
     [ 'Arn','Id' ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','eu-west-3','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 

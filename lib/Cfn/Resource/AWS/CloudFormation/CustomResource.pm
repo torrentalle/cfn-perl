@@ -42,6 +42,11 @@ package Cfn::Resource::AWS::CloudFormation::CustomResource {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CloudFormation::CustomResource', is => 'rw', coerce => 1, required => 1);
   has Version    => (isa => 'Cfn::Value', is => 'rw', coerce => 1);
 
+  sub supported_regions {
+    require Cfn::Resource::AWS::IAM::User;
+    Cfn::Resource::AWS::IAM::User->supported_regions;
+  }
+
   around as_hashref => sub {
     my ($orig, $self, @rest) = @_;
     my $cfn = $rest[0];
