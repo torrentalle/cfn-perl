@@ -1,4 +1,4 @@
-# AWS::ServiceDiscovery::HttpNamespace generated from spec 2.16.0
+# AWS::ServiceDiscovery::HttpNamespace generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::HttpNamespace',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::ServiceDiscovery::HttpNamespace {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ServiceDiscovery::HttpNamespace', is => 'rw', coerce => 1);
   sub _build_attributes {
     [ 'Arn','Id' ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 

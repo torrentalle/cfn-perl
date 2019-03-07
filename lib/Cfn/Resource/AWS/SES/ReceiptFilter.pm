@@ -1,4 +1,4 @@
-# AWS::SES::ReceiptFilter generated from spec 2.0.0
+# AWS::SES::ReceiptFilter generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SES::ReceiptFilter',
@@ -11,6 +11,9 @@ package Cfn::Resource::AWS::SES::ReceiptFilter {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::SES::ReceiptFilter', is => 'rw', coerce => 1);
   sub _build_attributes {
     [  ]
+  }
+  sub supported_regions {
+    [ 'eu-west-1','us-east-1','us-west-2' ]
   }
 }
 

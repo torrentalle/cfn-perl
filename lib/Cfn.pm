@@ -878,6 +878,8 @@ package Cfn {
   use Moose;
   use Moose::Util;
   use Scalar::Util;
+  use Cfn::ResourceModules;
+
   has AWSTemplateFormatVersion => (isa => 'Str', is => 'rw');
   has Description => (isa => 'Str', is => 'rw');
   has Transform => (isa => 'Cfn::Transform', is => 'rw', coerce => 1);
@@ -959,13 +961,13 @@ package Cfn {
     default => sub { Cfn::Internal::Options->new },
   );
 
-  use Module::Runtime qw//;
+  sub list_resource_modules {
+    return Cfn::ResourceModules::list();
+  }
+
   sub load_resource_module {
     my (undef, $type) = @_;
-    my $cfn_resource_class = "Cfn::Resource::$type";
-    my $retval = Module::Runtime::require_module($cfn_resource_class);
-    die "Couldn't load $cfn_resource_class" if (not $retval);
-    return $cfn_resource_class;
+    return Cfn::ResourceModules::load($type);
   }
 
   sub ResourcesOfType {
