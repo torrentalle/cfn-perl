@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::DocDB::DBCluster {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DocDB::DBCluster', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ClusterResourceId','Endpoint','Port','ReadEndpoint' ]
   }
   sub supported_regions {

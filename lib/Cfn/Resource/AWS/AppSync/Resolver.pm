@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AppSync::Resolver {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppSync::Resolver', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'FieldName','ResolverArn','TypeName' ]
   }
   sub supported_regions {

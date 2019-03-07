@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::GuardDuty::Filter {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::GuardDuty::Filter', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

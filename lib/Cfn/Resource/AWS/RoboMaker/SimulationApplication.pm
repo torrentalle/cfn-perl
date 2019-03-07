@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::RoboMaker::SimulationApplication {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::RoboMaker::SimulationApplication', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','CurrentRevisionId' ]
   }
   sub supported_regions {

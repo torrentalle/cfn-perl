@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ServiceDiscovery::HttpNamespace {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ServiceDiscovery::HttpNamespace', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','Id' ]
   }
   sub supported_regions {

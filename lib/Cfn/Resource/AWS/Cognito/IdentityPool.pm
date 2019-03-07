@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Cognito::IdentityPool {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Cognito::IdentityPool', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Name' ]
   }
   sub supported_regions {

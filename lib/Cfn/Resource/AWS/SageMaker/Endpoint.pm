@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::SageMaker::Endpoint {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::SageMaker::Endpoint', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'EndpointName' ]
   }
   sub supported_regions {

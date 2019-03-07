@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AppStream::Fleet {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppStream::Fleet', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

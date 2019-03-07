@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::DAX::SubnetGroup {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DAX::SubnetGroup', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

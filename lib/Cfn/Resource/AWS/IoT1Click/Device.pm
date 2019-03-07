@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::IoT1Click::Device {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::IoT1Click::Device', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','DeviceId','Enabled' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::SageMaker::NotebookInstanceLifecycleConfig {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::SageMaker::NotebookInstanceLifecycleConfig', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'NotebookInstanceLifecycleConfigName' ]
   }
   sub supported_regions {

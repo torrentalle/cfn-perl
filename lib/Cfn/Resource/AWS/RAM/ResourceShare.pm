@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::RAM::ResourceShare {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::RAM::ResourceShare', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::RDS::DBCluster {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::RDS::DBCluster', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Endpoint.Address','Endpoint.Port','ReadEndpoint.Address' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::EMR::Cluster {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::EMR::Cluster', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'MasterPublicDNS' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AmazonMQ::Configuration {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AmazonMQ::Configuration', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','Id','Revision' ]
   }
   sub supported_regions {

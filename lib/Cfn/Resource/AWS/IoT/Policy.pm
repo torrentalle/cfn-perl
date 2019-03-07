@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::IoT::Policy {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::IoT::Policy', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn' ]
   }
   sub supported_regions {

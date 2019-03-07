@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::DAX::Cluster {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DAX::Cluster', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','ClusterDiscoveryEndpoint' ]
   }
   sub supported_regions {

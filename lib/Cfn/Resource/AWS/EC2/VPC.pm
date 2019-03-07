@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::EC2::VPC {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::EC2::VPC', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'CidrBlock','CidrBlockAssociations','DefaultNetworkAcl','DefaultSecurityGroup','Ipv6CidrBlocks' ]
   }
   sub supported_regions {

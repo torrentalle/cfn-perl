@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AppSync::GraphQLApi {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppSync::GraphQLApi', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ApiId','Arn','GraphQLUrl' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::DAX::ParameterGroup {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DAX::ParameterGroup', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

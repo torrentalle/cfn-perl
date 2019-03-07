@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::IoT::TopicRule {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn' ]
   }
   sub supported_regions {

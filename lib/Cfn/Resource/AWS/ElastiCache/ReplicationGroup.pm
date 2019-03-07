@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ElastiCache::ReplicationGroup {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ConfigurationEndPoint.Address','ConfigurationEndPoint.Port','PrimaryEndPoint.Address','PrimaryEndPoint.Port','ReadEndPoint.Addresses','ReadEndPoint.Addresses.List','ReadEndPoint.Ports','ReadEndPoint.Ports.List' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ApiGateway::GatewayResponse {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ApiGateway::GatewayResponse', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

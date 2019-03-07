@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::EKS::Cluster {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::EKS::Cluster', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','CertificateAuthorityData','Endpoint' ]
   }
   sub supported_regions {

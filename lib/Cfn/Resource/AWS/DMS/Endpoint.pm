@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::DMS::Endpoint {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DMS::Endpoint', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ExternalId' ]
   }
   sub supported_regions {

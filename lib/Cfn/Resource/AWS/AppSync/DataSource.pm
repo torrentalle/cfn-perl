@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AppSync::DataSource {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppSync::DataSource', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'DataSourceArn','Name' ]
   }
   sub supported_regions {

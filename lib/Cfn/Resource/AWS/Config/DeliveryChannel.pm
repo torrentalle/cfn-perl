@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Config::DeliveryChannel {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Config::DeliveryChannel', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

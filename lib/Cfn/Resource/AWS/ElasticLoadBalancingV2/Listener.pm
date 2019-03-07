@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ElasticLoadBalancingV2::Listener {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::Listener', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ElasticBeanstalk::Environment {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'EndpointURL' ]
   }
   sub supported_regions {

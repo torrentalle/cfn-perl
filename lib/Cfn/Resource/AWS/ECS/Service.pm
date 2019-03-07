@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ECS::Service {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ECS::Service', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Name' ]
   }
   sub supported_regions {

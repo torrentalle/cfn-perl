@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::OpsWorks::Instance {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::OpsWorks::Instance', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'AvailabilityZone','PrivateDnsName','PrivateIp','PublicDnsName','PublicIp' ]
   }
   sub supported_regions {

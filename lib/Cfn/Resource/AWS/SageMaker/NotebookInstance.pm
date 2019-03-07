@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::SageMaker::NotebookInstance {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::SageMaker::NotebookInstance', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'NotebookInstanceName' ]
   }
   sub supported_regions {

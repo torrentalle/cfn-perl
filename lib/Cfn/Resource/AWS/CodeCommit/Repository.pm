@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::CodeCommit::Repository {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CodeCommit::Repository', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','CloneUrlHttp','CloneUrlSsh','Name' ]
   }
   sub supported_regions {

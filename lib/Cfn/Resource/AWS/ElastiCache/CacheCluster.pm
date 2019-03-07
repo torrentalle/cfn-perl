@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ElastiCache::CacheCluster {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ElastiCache::CacheCluster', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ConfigurationEndpoint.Address','ConfigurationEndpoint.Port','RedisEndpoint.Address','RedisEndpoint.Port' ]
   }
   sub supported_regions {

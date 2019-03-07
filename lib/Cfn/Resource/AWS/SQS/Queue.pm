@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::SQS::Queue {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::SQS::Queue', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','QueueName' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ServiceDiscovery::Service {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','Id','Name' ]
   }
   sub supported_regions {

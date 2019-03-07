@@ -9,7 +9,8 @@ package Cfn::Resource::Alexa::ASK::Skill {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::Alexa::ASK::Skill', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

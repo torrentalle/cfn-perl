@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ApiGateway::Stage {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ApiGateway::Stage', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

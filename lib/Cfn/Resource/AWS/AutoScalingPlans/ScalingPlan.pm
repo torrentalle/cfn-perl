@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AutoScalingPlans::ScalingPlan {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ScalingPlanName','ScalingPlanVersion' ]
   }
   sub supported_regions {

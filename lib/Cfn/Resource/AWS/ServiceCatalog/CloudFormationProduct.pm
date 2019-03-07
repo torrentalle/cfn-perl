@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ServiceCatalog::CloudFormationProduct {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProduct', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ProductName','ProvisioningArtifactIds','ProvisioningArtifactNames' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::S3::Bucket {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','DomainName','DualStackDomainName','RegionalDomainName','WebsiteURL' ]
   }
   sub supported_regions {

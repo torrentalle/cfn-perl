@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ServiceDiscovery::PrivateDnsNamespace {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ServiceDiscovery::PrivateDnsNamespace', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','Id' ]
   }
   sub supported_regions {

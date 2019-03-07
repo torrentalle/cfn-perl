@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::CloudTrail::Trail {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CloudTrail::Trail', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','SnsTopicArn' ]
   }
   sub supported_regions {

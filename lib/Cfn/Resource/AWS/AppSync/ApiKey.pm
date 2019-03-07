@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AppSync::ApiKey {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppSync::ApiKey', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ApiKey','Arn' ]
   }
   sub supported_regions {

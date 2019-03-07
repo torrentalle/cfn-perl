@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::EC2::VPCEndpoint {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::EC2::VPCEndpoint', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'CreationTimestamp','DnsEntries','NetworkInterfaceIds' ]
   }
   sub supported_regions {

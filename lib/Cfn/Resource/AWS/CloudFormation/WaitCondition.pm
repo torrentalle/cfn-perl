@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::CloudFormation::WaitCondition {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CloudFormation::WaitCondition', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Data' ]
   }
   sub supported_regions {

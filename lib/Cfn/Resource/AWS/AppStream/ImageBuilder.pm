@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AppStream::ImageBuilder {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'StreamingUrl' ]
   }
   sub supported_regions {

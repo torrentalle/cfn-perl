@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ApiGateway::RestApi {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ApiGateway::RestApi', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'RootResourceId' ]
   }
   sub supported_regions {

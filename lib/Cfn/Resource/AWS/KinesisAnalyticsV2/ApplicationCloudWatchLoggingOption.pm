@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOpti
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

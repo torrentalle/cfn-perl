@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::CodePipeline::Webhook {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CodePipeline::Webhook', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Url' ]
   }
   sub supported_regions {
