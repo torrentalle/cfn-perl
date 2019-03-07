@@ -9,7 +9,12 @@ package CfnModel;
   use CfnModel::CfnSubtype;
   use CfnModel::CfnProperty;
 
-  has file => (is => 'ro', isa => 'Path::Class::File', required => 1, coerce => 1);
+  has dir => (is => 'ro', isa => 'Path::Class::Dir', required => 1, coerce => 1);
+
+  has file => (is => 'ro', isa => 'Path::Class::File', coerce => 1, lazy => 1, default => sub {
+    my $self = shift;
+    Path::Class::File->new($self->dir, 'spec.json');
+  });
 
   has spec => (is => 'ro', lazy => 1, default => sub {
     my $self = shift;
@@ -82,5 +87,39 @@ package CfnModel;
     @classes = keys $self->classes->%* if (@classes == 0);
     $_->write_class for (map { $self->classes->{ $_ } } @classes);
   }
+
+  has region_files => (is => 'ro', isa => 'ArrayRef[Path::Class::File]', lazy => 1, default => sub {
+    my $self = shift;
+    my @files = $self->dir->children;
+    @files = grep { $_->basename =~ m/[a-z]{2}\-\w+\-\d+\.json/ } @files;
+    @files = sort { $a->basename cmp $b->basename } @files;
+    return \@files;
+  });
+
+   has region_specs => (is => 'ro', lazy => 1, isa => 'HashRef[AWSJsonSpec]', default => sub {
+    my $self = shift;
+    my $regions = { };
+    foreach my $region ($self->region_files->@*) {
+      my ($region_id) = ($region->basename =~ m/(.*)\.json/);
+      $regions->{ $region_id } = AWSJsonSpec->MooseX::DataModel::new_from_json(scalar($region->slurp));
+    }
+    return $regions;
+  });
+
+  has region_resource_map => (is => 'ro', lazy => 1, isa => 'HashRef[ArrayRef[Str]]', lazy => 1, default => sub {
+    my $self = shift;
+    my $map = {};
+    foreach my $region_name (keys $self->region_specs->%*) {
+      my $region_spec = $self->region_specs->{ $region_name };
+      foreach my $resource_type (keys $region_spec->ResourceTypes->%*) {
+        $map->{ $region_name } //= [];
+	push @{ $map->{ $resource_type } }, $region_name;
+      }
+    }
+    foreach my $resource_type (keys $map->%*) {
+      $map->{ $resource_type } = [ sort @{ $map->{ $resource_type } } ];
+    }
+    return $map;
+  });
 
 1;

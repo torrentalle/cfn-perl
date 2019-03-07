@@ -1,4 +1,4 @@
-# AWS::StepFunctions::Activity generated from spec 1.11.0
+# AWS::StepFunctions::Activity generated from spec 2.25.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::StepFunctions::Activity',
@@ -9,8 +9,12 @@ package Cfn::Resource::AWS::StepFunctions::Activity {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::StepFunctions::Activity', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Name' ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','eu-central-1','eu-west-1','us-east-1','us-east-2','us-west-2' ]
   }
 }
 
