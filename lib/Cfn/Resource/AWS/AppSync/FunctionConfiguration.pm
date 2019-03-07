@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AppSync::FunctionConfiguration {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppSync::FunctionConfiguration', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'DataSourceName','FunctionArn','FunctionId','Name' ]
   }
   sub supported_regions {

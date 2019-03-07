@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ElasticLoadBalancingV2::TargetGroup {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'LoadBalancerArns','TargetGroupFullName','TargetGroupName' ]
   }
   sub supported_regions {

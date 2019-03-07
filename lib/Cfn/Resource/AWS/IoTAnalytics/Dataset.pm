@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::IoTAnalytics::Dataset {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

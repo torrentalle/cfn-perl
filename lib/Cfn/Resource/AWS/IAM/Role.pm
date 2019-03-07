@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::IAM::Role {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::IAM::Role', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','RoleId' ]
   }
   sub supported_regions {

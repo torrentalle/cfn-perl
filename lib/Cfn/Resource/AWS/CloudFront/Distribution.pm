@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::CloudFront::Distribution {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'DomainName' ]
   }
   sub supported_regions {

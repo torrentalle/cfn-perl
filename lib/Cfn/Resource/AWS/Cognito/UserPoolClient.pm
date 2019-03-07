@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Cognito::UserPoolClient {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Cognito::UserPoolClient', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ClientSecret','Name' ]
   }
   sub supported_regions {

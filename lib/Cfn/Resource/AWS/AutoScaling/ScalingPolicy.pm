@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::AutoScaling::ScalingPolicy {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AutoScaling::ScalingPolicy', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

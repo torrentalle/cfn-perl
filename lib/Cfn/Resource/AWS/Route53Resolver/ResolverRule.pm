@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Route53Resolver::ResolverRule {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Route53Resolver::ResolverRule', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','DomainName','Name','ResolverEndpointId','ResolverRuleId','TargetIps' ]
   }
   sub supported_regions {

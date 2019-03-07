@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ApiGatewayV2::Route {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ApiGatewayV2::Route', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

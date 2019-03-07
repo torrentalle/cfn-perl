@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::CloudFront::StreamingDistribution {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'DomainName' ]
   }
   sub supported_regions {

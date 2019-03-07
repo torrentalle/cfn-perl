@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Cognito::UserPool {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Cognito::UserPool', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','ProviderName','ProviderURL' ]
   }
   sub supported_regions {

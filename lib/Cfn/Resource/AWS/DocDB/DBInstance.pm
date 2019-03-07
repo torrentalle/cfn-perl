@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::DocDB::DBInstance {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DocDB::DBInstance', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Endpoint','Port' ]
   }
   sub supported_regions {

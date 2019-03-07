@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::DMS::ReplicationInstance {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DMS::ReplicationInstance', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ReplicationInstancePrivateIpAddresses','ReplicationInstancePublicIpAddresses' ]
   }
   sub supported_regions {

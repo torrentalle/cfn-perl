@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::EC2::NetworkAclEntry {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

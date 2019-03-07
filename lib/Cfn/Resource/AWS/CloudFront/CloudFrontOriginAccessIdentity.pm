@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::CloudFront::CloudFrontOriginAccessIdentity {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::CloudFrontOriginAccessIdentity', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'S3CanonicalUserId' ]
   }
   sub supported_regions {

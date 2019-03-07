@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::DynamoDB::Table {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','StreamArn' ]
   }
   sub supported_regions {

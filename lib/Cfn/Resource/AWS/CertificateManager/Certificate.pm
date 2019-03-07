@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::CertificateManager::Certificate {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CertificateManager::Certificate', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

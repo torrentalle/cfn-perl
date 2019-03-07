@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Neptune::DBInstance {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Neptune::DBInstance', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Endpoint','Port' ]
   }
   sub supported_regions {

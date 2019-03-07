@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ServiceCatalog::Portfolio {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ServiceCatalog::Portfolio', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'PortfolioName' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::OpsWorksCM::Server {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::OpsWorksCM::Server', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','Endpoint' ]
   }
   sub supported_regions {

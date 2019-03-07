@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Config::ConfigurationAggregator {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Config::ConfigurationAggregator', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
   }
   sub supported_regions {

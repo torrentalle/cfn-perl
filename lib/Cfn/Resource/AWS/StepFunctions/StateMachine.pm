@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::StepFunctions::StateMachine {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::StepFunctions::StateMachine', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Name' ]
   }
   sub supported_regions {

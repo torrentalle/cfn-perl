@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::DirectoryService::SimpleAD {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::DirectoryService::SimpleAD', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Alias','DnsIpAddresses' ]
   }
   sub supported_regions {

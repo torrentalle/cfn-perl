@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Kinesis::StreamConsumer {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Kinesis::StreamConsumer', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'ConsumerARN','ConsumerCreationTimestamp','ConsumerName','ConsumerStatus','StreamARN' ]
   }
   sub supported_regions {

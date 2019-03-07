@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::ElasticLoadBalancing::LoadBalancer {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'CanonicalHostedZoneName','CanonicalHostedZoneNameID','DNSName','SourceSecurityGroup.GroupName','SourceSecurityGroup.OwnerAlias' ]
   }
   sub supported_regions {

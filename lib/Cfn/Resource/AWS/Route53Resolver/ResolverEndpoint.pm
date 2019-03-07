@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Route53Resolver::ResolverEndpoint {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Route53Resolver::ResolverEndpoint', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','Direction','HostVPCId','IpAddressCount','Name','ResolverEndpointId' ]
   }
   sub supported_regions {

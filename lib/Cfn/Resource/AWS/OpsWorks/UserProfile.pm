@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::OpsWorks::UserProfile {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::OpsWorks::UserProfile', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'SshUsername' ]
   }
   sub supported_regions {

@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Cloud9::EnvironmentEC2 {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Cloud9::EnvironmentEC2', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','Name' ]
   }
   sub supported_regions {

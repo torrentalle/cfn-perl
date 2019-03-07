@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Config::ConfigRule {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Config::ConfigRule', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','Compliance.Type','ConfigRuleId' ]
   }
   sub supported_regions {

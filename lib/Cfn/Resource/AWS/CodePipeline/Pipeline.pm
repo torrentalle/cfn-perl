@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::CodePipeline::Pipeline {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Version' ]
   }
   sub supported_regions {

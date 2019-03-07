@@ -9,7 +9,8 @@ package Cfn::Resource::AWS::Route53::HostedZone {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Route53::HostedZone', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'NameServers' ]
   }
   sub supported_regions {
