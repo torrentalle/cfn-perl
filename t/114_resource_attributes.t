@@ -12,6 +12,7 @@ use Cfn::Resource::AWS::ApiGateway::RestApi;
   is_deeply($res->AttributeList, [ 'RootResourceId' ], 'AttributeList OK');
   ok($res->hasAttribute('RootResourceId'), 'hasAttribute returns correctly for existing');
   ok(not($res->hasAttribute('UnExistingAttribute')), 'hasAttribute returns correctly for non-existing');
+  ok(scalar(@{ $res->supported_regions }) > 0, 'supported_regions can be called as a method');
 }
 
 {
