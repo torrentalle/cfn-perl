@@ -1779,6 +1779,8 @@ Returns a HashRef representation of the output that is convertible to JSON
 
 L<https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html>
 
+This module kind of resembles troposphere (python): L<https://github.com/cloudtools/troposphere>.
+
 =head1 AUTHOR
 
     Jose Luis Martinez

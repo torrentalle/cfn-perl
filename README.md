@@ -599,6 +599,8 @@ Returns a HashRef representation of the output that is convertible to JSON
 
 [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)
 
+This module kind of resembles troposphere (python): [https://github.com/cloudtools/troposphere](https://github.com/cloudtools/troposphere).
+
 # AUTHOR
 
     Jose Luis Martinez
