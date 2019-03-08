@@ -1,0 +1,144 @@
+#!/usr/bin/env perl
+
+use Cfn;
+use YAML::PP;
+use YAML::PP::Schema;
+
+my $yp = YAML::PP->new();
+
+sub serialize_cfn_value {
+  my ($representer, $node) = @_;
+  my $value = $node->{ value };
+  $node->{ data } = $value->Value;
+  return 1;    
+}
+
+sub serialize_ref {
+    my ($representer, $node) = @_;
+    $node->{tag} = '!Ref';
+    $node->{data} = $node->{ value }->LogicalId;
+    return 1;
+}
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn',
+  code => sub {
+    my ($representer, $node) = @_;
+    my $self = $node->{ value };
+    $node->{ data } = {
+          (defined $self->AWSTemplateFormatVersion)?(AWSTemplateFormatVersion => $self->AWSTemplateFormatVersion):(),
+          (defined $self->Description)?(Description => $self->Description):(),
+          (defined $self->Transform) ? (Transform => $self->Transform) : (),
+          (defined $self->Mappings)?(Mappings => { map { ($_ => $self->Mappings->{ $_ }->Value) } keys %{ $self->Mappings } }):(),
+          (defined $self->Parameters)?(Parameters => { map { ($_ => $self->Parameters->{ $_ }->Value) } keys %{ $self->Parameters } }):(),
+          (defined $self->Outputs)?(Outputs => { map { ($_ => $self->Outputs->{ $_ }->Value) } keys %{ $self->Outputs } }):(),
+          (defined $self->Conditions)?(Conditions => { map { ($_ => $self->Condition($_)->Value) } $self->ConditionList }):(),
+          (defined $self->Metadata)?(Metadata => { map { ($_ => $self->Metadata->{ $_ }->Value) } $self->MetadataList }):(),
+          Resources => { map { ($_ => $self->Resource($_)) } $self->ResourceList },
+     };
+    return 1;
+  },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::DynamicValue',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::Function',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::Function::Condition',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::Function::Ref',
+  code => \&serialize_ref,
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::Function::PseudoParameter',
+  code => \&serialize_ref,
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::Function::GetAtt',
+  code => sub {
+    my ($representer, $node) = @_;
+    my $value = $node->{ value };
+    $node->{ tag } = '!GetAtt';
+    $node->{ data } = sprintf '%s.%s', $value->LogicalId, $value->Property;
+    return 1;
+  },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::Array',
+  code => \&serialize_cfn_value, 
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::Hash',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::Primitive',
+  code => \&serialize_cfn_value, 
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Boolean',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Integer',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Long',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::String',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Double',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::Timestamp',
+  code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_equals => 'Cfn::Value::TypedValue',
+  code => sub { die "Implement me" },
+);
+
+my $cfn = Cfn->new;
+$cfn->addResource('R1', 'AWS::IAM::User', { Path => { Ref => 'AWS::StackName' }, Groups => [ 'Group1', 'Group2' ] });
+$cfn->addResource('R2', 'AWS::IAM::User', { Path => { Ref => 'R1' } });
+$cfn->addResource('R3', 'AWS::IAM::User', { Path => { 'Fn::GetAtt' => [ 'R1', 'Arn' ] } });
+
+use Data::Dumper;
+#print Dumper($cfn);
+
+my $yaml = $yp->dump_string($cfn);
+
+print $yaml;
