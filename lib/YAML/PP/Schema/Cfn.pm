@@ -1,0 +1,105 @@
+package YAML::PP::Schema::Cfn;
+  use base 'YAML::PP::Schema';
+  use strict;
+  use warnings;
+
+  sub new {
+    my ($class, %args) = @_;
+    my $self = bless {}, $class;
+    return $self;
+  }
+
+  sub cfn_value_function {
+    my ($representer, $node) = @_;
+    my $value = $node->{ value };
+    $node->{ tag } = sprintf '!%s', $value->Function;
+    $node->{ data } = $value->Value;
+    return 1;
+  }
+ 
+  sub register {
+    my ($self, %args) = @_;
+    my $schema = $args{schema};
+
+    $schema->add_representer(
+      class_equals => 'Cfn',
+      code => sub {
+        my ($representer, $node) = @_;
+        my $self = $node->{ value };
+        $node->{ data } = {
+              (defined $self->AWSTemplateFormatVersion)?(AWSTemplateFormatVersion => $self->AWSTemplateFormatVersion):(),
+              (defined $self->Description)?(Description => $self->Description):(),
+              (defined $self->Transform) ? (Transform => $self->Transform) : (),
+              (defined $self->Mappings)?(Mappings => { map { ($_ => $self->Mappings->{ $_ }->Value) } keys %{ $self->Mappings } }):(),
+              (defined $self->Parameters)?(Parameters => { map { ($_ => $self->Parameters->{ $_ }->Value) } keys %{ $self->Parameters } }):(),
+              (defined $self->Outputs)?(Outputs => { map { ($_ => $self->Outputs->{ $_ }->Value) } keys %{ $self->Outputs } }):(),
+              (defined $self->Conditions)?(Conditions => { map { ($_ => $self->Condition($_)->Value) } $self->ConditionList }):(),
+              (defined $self->Metadata)?(Metadata => { map { ($_ => $self->Metadata->{ $_ }->Value) } $self->MetadataList }):(),
+              Resources => { map { ($_ => $self->Resource($_)) } $self->ResourceList },
+         };
+        return 1;
+      },
+    );
+    
+    $schema->add_representer(
+      class_equals => 'Cfn::DynamicValue',
+      code => sub { die "Implement me" },
+    );
+    
+    $schema->add_representer(
+      class_equals => 'Cfn::Value::Function',
+      code => \&cfn_value_function,
+    );
+    
+    $schema->add_representer(
+      class_equals => 'Cfn::Value::Function::Condition',
+      code => \&cfn_value_function,
+    );
+    
+    $schema->add_representer(
+      class_equals => 'Cfn::Value::Function::GetAtt',
+      code => sub {
+        my ($representer, $node) = @_;
+        my $value = $node->{ value };
+        $node->{ tag } = '!GetAtt';
+        $node->{ data } = sprintf '%s.%s', $value->LogicalId, $value->Property;
+        return 1;
+      },
+    );
+    
+    $schema->add_representer(
+      class_equals => 'Cfn::Value::TypedValue',
+      code => sub { die "Implement me" },
+    );
+    
+    $schema->add_representer(
+      class_matches => 1,
+      code => sub {
+        my ($representer, $node) = @_;
+        my $value = $node->{ value };
+        if ($value->isa('Cfn::Resource')) {
+          my $self = $value;
+          $node->{ data } = {
+    	(defined $self->Properties) ? (Properties => $self->Properties) : (),
+            (map { $_ => $self->$_->Value }
+              grep { defined $self->$_ } qw/Metadata UpdatePolicy/),
+            (map { $_ => $self->$_ }
+              grep { defined $self->$_ } qw/Type DeletionPolicy DependsOn CreationPolicy Condition/),
+          };
+          return 1;
+        } elsif ($value->isa('Cfn::Resource::Properties')) {
+          my $self = $value;
+          $node->{ data } = { map { my $name = $_->name; (defined $self->$name)?($name => $self->$name):() } $self->meta->get_all_attributes };
+          return 1;
+        } elsif ($value->isa('Cfn::Value::Function::Ref')) {
+          $node->{ tag } = '!Ref';
+          $node->{ data } = $value->LogicalId;
+        } elsif ($value->isa('Cfn::Value')) {
+          $node->{ data } = $value->Value;
+        } else {
+          die "Don't know how to serialize a $value";
+        }
+      }
+    );
+  }
+1;
