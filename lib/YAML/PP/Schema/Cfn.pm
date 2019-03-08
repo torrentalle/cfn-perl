@@ -9,14 +9,6 @@ package YAML::PP::Schema::Cfn;
     return $self;
   }
 
-  sub cfn_value_function {
-    my ($representer, $node) = @_;
-    my $value = $node->{ value };
-    $node->{ tag } = sprintf '!%s', $value->Function;
-    $node->{ data } = $value->Value;
-    return 1;
-  }
- 
   sub register {
     my ($self, %args) = @_;
     my $schema = $args{schema};
@@ -47,27 +39,6 @@ package YAML::PP::Schema::Cfn;
     );
     
     $schema->add_representer(
-      class_equals => 'Cfn::Value::Function',
-      code => \&cfn_value_function,
-    );
-    
-    $schema->add_representer(
-      class_equals => 'Cfn::Value::Function::Condition',
-      code => \&cfn_value_function,
-    );
-    
-    $schema->add_representer(
-      class_equals => 'Cfn::Value::Function::GetAtt',
-      code => sub {
-        my ($representer, $node) = @_;
-        my $value = $node->{ value };
-        $node->{ tag } = '!GetAtt';
-        $node->{ data } = sprintf '%s.%s', $value->LogicalId, $value->Property;
-        return 1;
-      },
-    );
-    
-    $schema->add_representer(
       class_equals => 'Cfn::Value::TypedValue',
       code => sub { die "Implement me" },
     );
@@ -80,7 +51,7 @@ package YAML::PP::Schema::Cfn;
         if ($value->isa('Cfn::Resource')) {
           my $self = $value;
           $node->{ data } = {
-    	(defined $self->Properties) ? (Properties => $self->Properties) : (),
+            (defined $self->Properties) ? (Properties => $self->Properties) : (),
             (map { $_ => $self->$_->Value }
               grep { defined $self->$_ } qw/Metadata UpdatePolicy/),
             (map { $_ => $self->$_ }
@@ -92,10 +63,16 @@ package YAML::PP::Schema::Cfn;
           $node->{ data } = { map { my $name = $_->name; (defined $self->$name)?($name => $self->$name):() } $self->meta->get_all_attributes };
           return 1;
         } elsif ($value->isa('Cfn::Value::Function::Ref')) {
-          $node->{ tag } = '!Ref';
-          $node->{ data } = $value->LogicalId;
+	  #$node->{ tag } = '!Ref';
+          $node->{ data } = { 'Ref' => $value->LogicalId };
+        } elsif ($value->isa('Cfn::Value::Function')) {
+          my $value = $node->{ value };
+	  #$node->{ tag } = sprintf '!%s', $value->Function;
+          $node->{ data } = { $value->Function => $value->Value->Value };
+          return 1;
         } elsif ($value->isa('Cfn::Value')) {
           $node->{ data } = $value->Value;
+	  return 1;
         } else {
           die "Don't know how to serialize a $value";
         }

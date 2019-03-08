@@ -1147,6 +1147,25 @@ package Cfn {
     require JSON;
     return $class->from_hashref(JSON::from_json($json));
   }
+
+  has yaml => (is => 'ro', lazy => 1, default => sub {
+    require YAML::PP;
+    require YAML::PP::Schema::Cfn;
+    my $y = YAML::PP->new(
+      schema => [ 'Cfn' ],
+    );
+  });
+
+  sub as_yaml {
+    my $self = shift;
+    return $self->yaml->dump_string($self);
+  }
+
+  sub from_yaml {
+    my ($class, $yaml) = @_;
+    require YAML::PP;
+    return YAML::PP->new->load_string($yaml);
+  }
 }
 
 package Cfn::MutabilityTrait {
