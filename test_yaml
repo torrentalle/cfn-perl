@@ -1,24 +1,12 @@
 #!/usr/bin/env perl
 
+use strict;
+use warnings;
 use Cfn;
 use YAML::PP;
 use YAML::PP::Schema;
 
 my $yp = YAML::PP->new();
-
-sub serialize_cfn_value {
-  my ($representer, $node) = @_;
-  my $value = $node->{ value };
-  $node->{ data } = $value->Value;
-  return 1;    
-}
-
-sub serialize_ref {
-    my ($representer, $node) = @_;
-    $node->{tag} = '!Ref';
-    $node->{data} = $node->{ value }->LogicalId;
-    return 1;
-}
 
 $yp->schema->add_representer(
   class_equals => 'Cfn',
@@ -40,10 +28,13 @@ $yp->schema->add_representer(
   },
 );
 
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Value',
-  code => sub { die "Implement me" },
-);
+sub cfn_value_function {
+  my ($representer, $node) = @_;
+  my $value = $node->{ value };
+  $node->{ tag } = sprintf '!%s', $value->Function;
+  $node->{ data } = $value->Value;
+  return 1;
+}
 
 $yp->schema->add_representer(
   class_equals => 'Cfn::DynamicValue',
@@ -52,22 +43,12 @@ $yp->schema->add_representer(
 
 $yp->schema->add_representer(
   class_equals => 'Cfn::Value::Function',
-  code => sub { die "Implement me" },
+  code => \&cfn_value_function,
 );
 
 $yp->schema->add_representer(
   class_equals => 'Cfn::Value::Function::Condition',
-  code => sub { die "Implement me" },
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Value::Function::Ref',
-  code => \&serialize_ref,
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Value::Function::PseudoParameter',
-  code => \&serialize_ref,
+  code => \&cfn_value_function,
 );
 
 $yp->schema->add_representer(
@@ -82,59 +63,48 @@ $yp->schema->add_representer(
 );
 
 $yp->schema->add_representer(
-  class_equals => 'Cfn::Value::Array',
-  code => \&serialize_cfn_value, 
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Value::Hash',
-  code => sub { die "Implement me" },
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Value::Primitive',
-  code => \&serialize_cfn_value, 
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Boolean',
-  code => sub { die "Implement me" },
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Integer',
-  code => sub { die "Implement me" },
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Long',
-  code => sub { die "Implement me" },
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::String',
-  code => sub { die "Implement me" },
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Double',
-  code => sub { die "Implement me" },
-);
-
-$yp->schema->add_representer(
-  class_equals => 'Cfn::Value::Timestamp',
-  code => sub { die "Implement me" },
-);
-
-$yp->schema->add_representer(
   class_equals => 'Cfn::Value::TypedValue',
   code => sub { die "Implement me" },
+);
+
+$yp->schema->add_representer(
+  class_matches => 1,
+  code => sub {
+    my ($representer, $node) = @_;
+    my $value = $node->{ value };
+    if ($value->isa('Cfn::Resource')) {
+      my $self = $value;
+      $node->{ data } = {
+	(defined $self->Properties) ? (Properties => $self->Properties) : (),
+        (map { $_ => $self->$_->Value }
+          grep { defined $self->$_ } qw/Metadata UpdatePolicy/),
+        (map { $_ => $self->$_ }
+          grep { defined $self->$_ } qw/Type DeletionPolicy DependsOn CreationPolicy Condition/),
+      };
+      return 1;
+    } elsif ($value->isa('Cfn::Resource::Properties')) {
+      my $self = $value;
+      $node->{ data } = { map { my $name = $_->name; (defined $self->$name)?($name => $self->$name):() } $self->meta->get_all_attributes };
+      return 1;
+    } elsif ($value->isa('Cfn::Value::Function::Ref')) {
+      $node->{ tag } = '!Ref';
+      $node->{ data } = $value->LogicalId;
+    } elsif ($value->isa('Cfn::Value')) {
+      $node->{ data } = $value->Value;
+    } else {
+      die "Don't know how to serialize a $value";
+    }
+  }
 );
 
 my $cfn = Cfn->new;
 $cfn->addResource('R1', 'AWS::IAM::User', { Path => { Ref => 'AWS::StackName' }, Groups => [ 'Group1', 'Group2' ] });
 $cfn->addResource('R2', 'AWS::IAM::User', { Path => { Ref => 'R1' } });
 $cfn->addResource('R3', 'AWS::IAM::User', { Path => { 'Fn::GetAtt' => [ 'R1', 'Arn' ] } });
+$cfn->addResource('S1', 'AWS::CloudFormation::Stack', {
+  TemplateURL => { 'Fn::Join' => [ ':', [ 'http', '//example.com' ] ] },
+  Parameters => { X => 1, Y => 2 }
+});
 
 use Data::Dumper;
 #print Dumper($cfn);
