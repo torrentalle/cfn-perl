@@ -1148,13 +1148,15 @@ package Cfn {
     return $class->from_hashref(JSON::from_json($json));
   }
 
-  has yaml => (is => 'ro', lazy => 1, default => sub {
+  sub _get_yaml_pp {
     require YAML::PP;
     require YAML::PP::Schema::Cfn;
-    my $y = YAML::PP->new(
+    YAML::PP->new(
       schema => [ 'Cfn' ],
     );
-  });
+  }
+
+  has yaml => (is => 'ro', lazy => 1, default => \&_get_yaml_pp);
 
   sub as_yaml {
     my $self = shift;
@@ -1163,8 +1165,8 @@ package Cfn {
 
   sub from_yaml {
     my ($class, $yaml) = @_;
-    require YAML::PP;
-    return YAML::PP->new->load_string($yaml);
+    my $parser = _get_yaml_pp;
+    return $parser->load_string($yaml);
   }
 }
 
