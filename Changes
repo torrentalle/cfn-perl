@@ -1,5 +1,5 @@
 0.03 
-  - Implements the resources in CloudFormation spec 2.25.0 (published as of 2019-03-06)
+  - Implements the resources in CloudFormation spec 2.28.0 (published as of 2019-03-27)
   - Fixed bug in AWS::ServiceDiscovery::Instance Properties: The InstanceAttributes
     Attribute was not declared as a Cfn::Value::Hash
   - New feature: All resource classes get a supported_regions class method with a list

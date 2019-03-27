@@ -1,5 +1,64 @@
 {
   "PropertyTypes": {
+    "AWS::CodeBuild::Project.Artifacts": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html",
+      "Properties": {
+        "Path": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-path",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Type": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ArtifactIdentifier": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-artifactidentifier",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "OverrideArtifactName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-overrideartifactname",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Packaging": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-packaging",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "EncryptionDisabled": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-encryptiondisabled",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Location": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-location",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "NamespaceType": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-namespacetype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::AppStream::Fleet.ComputeCapacity": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html",
       "Properties": {
@@ -46,6 +105,35 @@
         }
       }
     },
+    "AWS::Greengrass::CoreDefinition.Core": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html",
+      "Properties": {
+        "SyncShadow": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html#cfn-greengrass-coredefinition-core-syncshadow",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Immutable"
+        },
+        "ThingArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html#cfn-greengrass-coredefinition-core-thingarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html#cfn-greengrass-coredefinition-core-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "CertificateArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html#cfn-greengrass-coredefinition-core-certificatearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::ElasticLoadBalancingV2::ListenerCertificate.Certificate": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html",
       "Properties": {
@@ -78,6 +166,53 @@
           "Required": true,
           "Type": "List",
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinitionVersion.FunctionConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html",
+      "Properties": {
+        "MemorySize": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-memorysize",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        },
+        "Pinned": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-pinned",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "ExecArgs": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-execargs",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Timeout": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-timeout",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        },
+        "EncodingType": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-encodingtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Environment": {
+          "Type": "Environment",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-environment",
+          "UpdateType": "Immutable"
+        },
+        "Executable": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-executable",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -1190,6 +1325,17 @@
         }
       }
     },
+    "AWS::Greengrass::FunctionDefinitionVersion.DefaultConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html",
+      "Properties": {
+        "Execution": {
+          "Type": "Execution",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html#cfn-greengrass-functiondefinitionversion-defaultconfig-execution",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::ElasticLoadBalancingV2::Listener.AuthenticateOidcConfig": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html",
       "Properties": {
@@ -1687,6 +1833,23 @@
         }
       }
     },
+    "AWS::CodeBuild::Project.LogsConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html",
+      "Properties": {
+        "CloudWatchLogs": {
+          "Type": "CloudWatchLogsConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-cloudwatchlogs",
+          "UpdateType": "Mutable"
+        },
+        "S3Logs": {
+          "Type": "S3LogsConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-s3logs",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::DynamoDB::Table.AttributeDefinition": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html",
       "Properties": {
@@ -1910,6 +2073,23 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-initialvariantweight",
           "PrimitiveType": "Double",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinition.Execution": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-execution.html",
+      "Properties": {
+        "IsolationMode": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-execution.html#cfn-greengrass-functiondefinition-execution-isolationmode",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "RunAs": {
+          "Type": "RunAs",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-execution.html#cfn-greengrass-functiondefinition-execution-runas",
           "UpdateType": "Immutable"
         }
       }
@@ -3638,6 +3818,23 @@
         }
       }
     },
+    "AWS::StepFunctions::Activity.TagsEntry": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html",
+      "Properties": {
+        "Value": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html#cfn-stepfunctions-activity-tagsentry-value",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Key": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html#cfn-stepfunctions-activity-tagsentry-key",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::ECS::Service.LoadBalancer": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancers.html",
       "Properties": {
@@ -3858,6 +4055,18 @@
         }
       }
     },
+    "AWS::Greengrass::ConnectorDefinition.ConnectorDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connectordefinitionversion.html",
+      "Properties": {
+        "Connectors": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connectordefinitionversion.html#cfn-greengrass-connectordefinition-connectordefinitionversion-connectors",
+          "ItemType": "Connector",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::AutoScaling::AutoScalingGroup.NotificationConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html",
       "Properties": {
@@ -3926,6 +4135,29 @@
           "PrimitiveType": "String",
           "Required": false,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinitionVersion.Function": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html",
+      "Properties": {
+        "FunctionArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "FunctionConfiguration": {
+          "Type": "FunctionConfiguration",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionconfiguration",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -4377,6 +4609,35 @@
         }
       }
     },
+    "AWS::Greengrass::DeviceDefinition.Device": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html",
+      "Properties": {
+        "SyncShadow": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html#cfn-greengrass-devicedefinition-device-syncshadow",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Immutable"
+        },
+        "ThingArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html#cfn-greengrass-devicedefinition-device-thingarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html#cfn-greengrass-devicedefinition-device-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "CertificateArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html#cfn-greengrass-devicedefinition-device-certificatearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::Config::ConfigRule.Scope": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html",
       "Properties": {
@@ -4712,6 +4973,18 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-type",
           "PrimitiveType": "String",
           "Required": true,
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::DeviceDefinition.DeviceDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html",
+      "Properties": {
+        "Devices": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html#cfn-greengrass-devicedefinition-devicedefinitionversion-devices",
+          "ItemType": "Device",
           "UpdateType": "Immutable"
         }
       }
@@ -5226,6 +5499,23 @@
         }
       }
     },
+    "AWS::StepFunctions::StateMachine.TagsEntry": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tagsentry.html",
+      "Properties": {
+        "Value": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tagsentry.html#cfn-stepfunctions-statemachine-tagsentry-value",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Key": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tagsentry.html#cfn-stepfunctions-statemachine-tagsentry-key",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Budgets::Budget.Notification": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html",
       "Properties": {
@@ -5252,6 +5542,23 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-thresholdtype",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinitionVersion.Execution": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html",
+      "Properties": {
+        "IsolationMode": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html#cfn-greengrass-functiondefinitionversion-execution-isolationmode",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "RunAs": {
+          "Type": "RunAs",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html#cfn-greengrass-functiondefinitionversion-execution-runas",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -5540,6 +5847,35 @@
           "Required": true,
           "Type": "SseKmsEncryptedObjects",
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::SubscriptionDefinition.Subscription": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html",
+      "Properties": {
+        "Target": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-target",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Source": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-source",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Subject": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html#cfn-greengrass-subscriptiondefinition-subscription-subject",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -5925,6 +6261,41 @@
         }
       }
     },
+    "AWS::Greengrass::LoggerDefinition.Logger": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html",
+      "Properties": {
+        "Space": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-space",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        },
+        "Type": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Level": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-level",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Component": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-component",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::RDS::DBCluster.ScalingConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html",
       "Properties": {
@@ -6138,6 +6509,35 @@
         }
       }
     },
+    "AWS::Greengrass::CoreDefinitionVersion.Core": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html",
+      "Properties": {
+        "SyncShadow": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-syncshadow",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Immutable"
+        },
+        "ThingArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-thingarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "CertificateArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-certificatearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::S3::Bucket.AccessControlTranslation": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-accesscontroltranslation.html",
       "Properties": {
@@ -6203,6 +6603,29 @@
           "PrimitiveType": "String",
           "Required": false,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::ResourceDefinitionVersion.ResourceInstance": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html",
+      "Properties": {
+        "ResourceDataContainer": {
+          "Type": "ResourceDataContainer",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-resourcedatacontainer",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -6361,6 +6784,18 @@
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::CoreDefinition.CoreDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html",
+      "Properties": {
+        "Cores": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html#cfn-greengrass-coredefinition-coredefinitionversion-cores",
+          "ItemType": "Core",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -6531,6 +6966,53 @@
         }
       }
     },
+    "AWS::Greengrass::FunctionDefinition.FunctionConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html",
+      "Properties": {
+        "MemorySize": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html#cfn-greengrass-functiondefinition-functionconfiguration-memorysize",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        },
+        "Pinned": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html#cfn-greengrass-functiondefinition-functionconfiguration-pinned",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "ExecArgs": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html#cfn-greengrass-functiondefinition-functionconfiguration-execargs",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Timeout": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html#cfn-greengrass-functiondefinition-functionconfiguration-timeout",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        },
+        "EncodingType": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html#cfn-greengrass-functiondefinition-functionconfiguration-encodingtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Environment": {
+          "Type": "Environment",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html#cfn-greengrass-functiondefinition-functionconfiguration-environment",
+          "UpdateType": "Immutable"
+        },
+        "Executable": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html#cfn-greengrass-functiondefinition-functionconfiguration-executable",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::IoT::TopicRule.StepFunctionsAction": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-stepfunctionsaction.html",
       "Properties": {
@@ -6685,6 +7167,23 @@
     "AWS::EC2::LaunchTemplate.CapacityReservationPreference": {
       "PrimitiveType": "String"
     },
+    "AWS::Greengrass::ResourceDefinitionVersion.S3MachineLearningModelResourceData": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html",
+      "Properties": {
+        "DestinationPath": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-destinationpath",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "S3Uri": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-s3uri",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::CodePipeline::CustomActionType.ArtifactDetails": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html",
       "Properties": {
@@ -6722,6 +7221,41 @@
           "PrimitiveType": "Integer",
           "Required": true,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::LoggerDefinitionVersion.Logger": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html",
+      "Properties": {
+        "Space": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-space",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        },
+        "Type": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Level": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-level",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Component": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-component",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -6853,6 +7387,34 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration-scalingadjustment",
           "PrimitiveType": "Integer",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinitionVersion.RunAs": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html",
+      "Properties": {
+        "Uid": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-uid",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        },
+        "Gid": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-gid",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinition.DefaultConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html",
+      "Properties": {
+        "Execution": {
+          "Type": "Execution",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html#cfn-greengrass-functiondefinition-defaultconfig-execution",
           "UpdateType": "Mutable"
         }
       }
@@ -7095,6 +7657,23 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sqsparameters",
           "Required": false,
           "Type": "SqsParameters",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::CodeBuild::Project.RegistryCredential": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html",
+      "Properties": {
+        "Credential": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html#cfn-codebuild-project-registrycredential-credential",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "CredentialProvider": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html#cfn-codebuild-project-registrycredential-credentialprovider",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -7432,6 +8011,23 @@
         "Password": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-password",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::CodeBuild::Project.SourceAuth": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html",
+      "Properties": {
+        "Type": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Resource": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-resource",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -7842,6 +8438,23 @@
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::ResourceDefinitionVersion.SageMakerMachineLearningModelResourceData": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html",
+      "Properties": {
+        "DestinationPath": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-destinationpath",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "SageMakerJobArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-sagemakerjobarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -8542,6 +9155,60 @@
         }
       }
     },
+    "AWS::CodeBuild::Project.Environment": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html",
+      "Properties": {
+        "Type": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "EnvironmentVariables": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-environmentvariables",
+          "ItemType": "EnvironmentVariable",
+          "UpdateType": "Mutable"
+        },
+        "PrivilegedMode": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-privilegedmode",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "ImagePullCredentialsType": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-imagepullcredentialstype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Image": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-image",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "RegistryCredential": {
+          "Type": "RegistryCredential",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-registrycredential",
+          "UpdateType": "Mutable"
+        },
+        "ComputeType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-computetype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Certificate": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-certificate",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::S3::Bucket.S3KeyFilter": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html",
       "Properties": {
@@ -9108,6 +9775,36 @@
         }
       }
     },
+    "AWS::Greengrass::FunctionDefinition.Environment": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html",
+      "Properties": {
+        "Variables": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-variables",
+          "PrimitiveType": "Json",
+          "UpdateType": "Immutable"
+        },
+        "Execution": {
+          "Type": "Execution",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-execution",
+          "UpdateType": "Immutable"
+        },
+        "ResourceAccessPolicies": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-resourceaccesspolicies",
+          "ItemType": "ResourceAccessPolicy",
+          "UpdateType": "Immutable"
+        },
+        "AccessSysfs": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-accesssysfs",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::ECS::Service.ServiceRegistry": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html",
       "Properties": {
@@ -9547,6 +10244,29 @@
         }
       }
     },
+    "AWS::CodeBuild::Project.CloudWatchLogsConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html",
+      "Properties": {
+        "Status": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-status",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "GroupName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-groupname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "StreamName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-streamname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::DynamoDB::Table.KeySchema": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-keyschema.html",
       "Properties": {
@@ -9580,6 +10300,29 @@
           "Required": true,
           "Type": "List",
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::ResourceDefinitionVersion.LocalVolumeResourceData": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html",
+      "Properties": {
+        "SourcePath": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html#cfn-greengrass-resourcedefinitionversion-localvolumeresourcedata-sourcepath",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "DestinationPath": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html#cfn-greengrass-resourcedefinitionversion-localvolumeresourcedata-destinationpath",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "GroupOwnerSetting": {
+          "Type": "GroupOwnerSetting",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html#cfn-greengrass-resourcedefinitionversion-localvolumeresourcedata-groupownersetting",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -10443,6 +11186,30 @@
         }
       }
     },
+    "AWS::CodeBuild::Project.ProjectCache": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html",
+      "Properties": {
+        "Modes": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-modes",
+          "UpdateType": "Mutable"
+        },
+        "Type": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Location": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-location",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::WAF::SizeConstraintSet.FieldToMatch": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint-fieldtomatch.html",
       "Properties": {
@@ -10460,6 +11227,17 @@
         }
       }
     },
+    "AWS::CodeBuild::Project.GitSubmodulesConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-gitsubmodulesconfig.html",
+      "Properties": {
+        "FetchSubmodules": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-gitsubmodulesconfig.html#cfn-codebuild-project-gitsubmodulesconfig-fetchsubmodules",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::IoT::TopicRule.LambdaAction": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html",
       "Properties": {
@@ -10468,6 +11246,24 @@
           "PrimitiveType": "String",
           "Required": false,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinition.FunctionDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html",
+      "Properties": {
+        "DefaultConfig": {
+          "Type": "DefaultConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html#cfn-greengrass-functiondefinition-functiondefinitionversion-defaultconfig",
+          "UpdateType": "Immutable"
+        },
+        "Functions": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html#cfn-greengrass-functiondefinition-functiondefinitionversion-functions",
+          "ItemType": "Function",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -11046,6 +11842,13 @@
           "UpdateType": "Mutable"
         }
       }
+    },
+    "AWS::CodeBuild::Project.FilterGroup": {
+      "Type": "List",
+      "Required": false,
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-filtergroup.html",
+      "ItemType": "WebhookFilter",
+      "UpdateType": "Mutable"
     },
     "AWS::GuardDuty::Filter.Condition": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html",
@@ -11663,6 +12466,31 @@
         }
       }
     },
+    "AWS::CodeBuild::Project.VpcConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html",
+      "Properties": {
+        "Subnets": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-subnets",
+          "UpdateType": "Mutable"
+        },
+        "VpcId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-vpcid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "SecurityGroupIds": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-securitygroupids",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::OpsWorksCM::Server.EngineAttribute": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworkscm-server-engineattribute.html",
       "Properties": {
@@ -11712,6 +12540,29 @@
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinition.Function": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-function.html",
+      "Properties": {
+        "FunctionArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-function.html#cfn-greengrass-functiondefinition-function-functionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "FunctionConfiguration": {
+          "Type": "FunctionConfiguration",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-function.html#cfn-greengrass-functiondefinition-function-functionconfiguration",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-function.html#cfn-greengrass-functiondefinition-function-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -12166,6 +13017,23 @@
         }
       }
     },
+    "AWS::Greengrass::FunctionDefinition.RunAs": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html",
+      "Properties": {
+        "Uid": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html#cfn-greengrass-functiondefinition-runas-uid",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        },
+        "Gid": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-runas.html#cfn-greengrass-functiondefinition-runas-gid",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::ECS::Service.PlacementConstraint": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementconstraint.html",
       "Properties": {
@@ -12397,6 +13265,41 @@
         }
       }
     },
+    "AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html",
+      "Properties": {
+        "SecretsManagerSecretResourceData": {
+          "Type": "SecretsManagerSecretResourceData",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-secretsmanagersecretresourcedata",
+          "UpdateType": "Immutable"
+        },
+        "SageMakerMachineLearningModelResourceData": {
+          "Type": "SageMakerMachineLearningModelResourceData",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-sagemakermachinelearningmodelresourcedata",
+          "UpdateType": "Immutable"
+        },
+        "LocalVolumeResourceData": {
+          "Type": "LocalVolumeResourceData",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localvolumeresourcedata",
+          "UpdateType": "Immutable"
+        },
+        "LocalDeviceResourceData": {
+          "Type": "LocalDeviceResourceData",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localdeviceresourcedata",
+          "UpdateType": "Immutable"
+        },
+        "S3MachineLearningModelResourceData": {
+          "Type": "S3MachineLearningModelResourceData",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-s3machinelearningmodelresourcedata",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::ECR::Repository.LifecyclePolicy": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html",
       "Properties": {
@@ -12430,6 +13333,35 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html#cfn-appstream-fleet-vpcconfig-securitygroupids",
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::DeviceDefinitionVersion.Device": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinitionversion-device.html",
+      "Properties": {
+        "SyncShadow": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinitionversion-device.html#cfn-greengrass-devicedefinitionversion-device-syncshadow",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Immutable"
+        },
+        "ThingArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinitionversion-device.html#cfn-greengrass-devicedefinitionversion-device-thingarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinitionversion-device.html#cfn-greengrass-devicedefinitionversion-device-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "CertificateArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinitionversion-device.html#cfn-greengrass-devicedefinitionversion-device-certificatearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -12469,6 +13401,23 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volumes-name",
           "PrimitiveType": "String",
           "Required": false,
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinition.ResourceAccessPolicy": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html",
+      "Properties": {
+        "ResourceId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-resourceid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Permission": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-permission",
+          "PrimitiveType": "String",
           "UpdateType": "Immutable"
         }
       }
@@ -12640,6 +13589,23 @@
           "PrimitiveType": "String",
           "Required": false,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html",
+      "Properties": {
+        "AutoAddGroupOwner": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-autoaddgroupowner",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Immutable"
+        },
+        "GroupOwner": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-groupowner",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -13654,6 +14620,24 @@
         }
       }
     },
+    "AWS::CodeBuild::Project.ProjectTriggers": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html",
+      "Properties": {
+        "FilterGroups": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups",
+          "ItemType": "FilterGroup",
+          "UpdateType": "Mutable"
+        },
+        "Webhook": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::CloudFront::Distribution.Logging": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html",
       "Properties": {
@@ -14024,6 +15008,18 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-failurethreshold",
           "PrimitiveType": "Double",
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::SubscriptionDefinition.SubscriptionDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html",
+      "Properties": {
+        "Subscriptions": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinition-subscriptiondefinitionversion-subscriptions",
+          "ItemType": "Subscription",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -14594,6 +15590,29 @@
         }
       }
     },
+    "AWS::CodeBuild::Project.EnvironmentVariable": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html",
+      "Properties": {
+        "Type": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Value": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-value",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::IoT1Click::Project.PlacementTemplate": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-placementtemplate.html",
       "Properties": {
@@ -14796,6 +15815,29 @@
         }
       }
     },
+    "AWS::Greengrass::ConnectorDefinition.Connector": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html",
+      "Properties": {
+        "ConnectorArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-connectorarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Parameters": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-parameters",
+          "PrimitiveType": "Json",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::S3::Bucket.FilterRule": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html",
       "Properties": {
@@ -14900,6 +15942,23 @@
         }
       }
     },
+    "AWS::Greengrass::FunctionDefinitionVersion.ResourceAccessPolicy": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy.html",
+      "Properties": {
+        "ResourceId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy.html#cfn-greengrass-functiondefinitionversion-resourceaccesspolicy-resourceid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Permission": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy.html#cfn-greengrass-functiondefinitionversion-resourceaccesspolicy-permission",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "Tag": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html",
       "Properties": {
@@ -14967,6 +16026,24 @@
         }
       }
     },
+    "AWS::Greengrass::ResourceDefinitionVersion.SecretsManagerSecretResourceData": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html",
+      "Properties": {
+        "ARN": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-arn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "AdditionalStagingLabelsToDownload": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-additionalstaginglabelstodownload",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::IoT::Thing.AttributePayload": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thing-attributepayload.html",
       "Properties": {
@@ -15016,6 +16093,29 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskdefinitionarn",
           "PrimitiveType": "String",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::CodeBuild::Project.S3LogsConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html",
+      "Properties": {
+        "Status": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-status",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "EncryptionDisabled": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-encryptiondisabled",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Location": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-location",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -15087,6 +16187,35 @@
           "PrimitiveType": "String",
           "Required": false,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::LoggerDefinition.LoggerDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-loggerdefinitionversion.html",
+      "Properties": {
+        "Loggers": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-loggerdefinitionversion.html#cfn-greengrass-loggerdefinition-loggerdefinitionversion-loggers",
+          "ItemType": "Logger",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::ResourceDefinitionVersion.LocalDeviceResourceData": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html",
+      "Properties": {
+        "SourcePath": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-sourcepath",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "GroupOwnerSetting": {
+          "Type": "GroupOwnerSetting",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-groupownersetting",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -15358,6 +16487,35 @@
           "PrimitiveType": "Boolean",
           "Required": false,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::SubscriptionDefinitionVersion.Subscription": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html",
+      "Properties": {
+        "Target": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-target",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Source": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-source",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Subject": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-subject",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -15851,6 +17009,65 @@
         "RoleARN": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-rolearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::CodeBuild::Project.Source": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html",
+      "Properties": {
+        "Type": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ReportBuildStatus": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-reportbuildstatus",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Auth": {
+          "Type": "SourceAuth",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-auth",
+          "UpdateType": "Mutable"
+        },
+        "SourceIdentifier": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-sourceidentifier",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "BuildSpec": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildspec",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "GitCloneDepth": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitclonedepth",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "GitSubmodulesConfig": {
+          "Type": "GitSubmodulesConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitsubmodulesconfig",
+          "UpdateType": "Mutable"
+        },
+        "InsecureSsl": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-insecuressl",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Location": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-location",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -16389,6 +17606,29 @@
         }
       }
     },
+    "AWS::Greengrass::ConnectorDefinitionVersion.Connector": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html",
+      "Properties": {
+        "ConnectorArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-connectorarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Parameters": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-parameters",
+          "PrimitiveType": "Json",
+          "UpdateType": "Immutable"
+        },
+        "Id": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::RDS::OptionGroup.OptionConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html",
       "Properties": {
@@ -16503,6 +17743,53 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthash",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::Group.GroupVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html",
+      "Properties": {
+        "LoggerDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-loggerdefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "DeviceDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-devicedefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "FunctionDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-functiondefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "CoreDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-coredefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "ResourceDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-resourcedefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "ConnectorDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-connectordefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "SubscriptionDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-subscriptiondefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -16720,6 +18007,29 @@
         }
       }
     },
+    "AWS::CodeBuild::Project.WebhookFilter": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html",
+      "Properties": {
+        "Pattern": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-pattern",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Type": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ExcludeMatchedPattern": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-excludematchedpattern",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::CodePipeline::Webhook.WebhookAuthConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html",
       "Properties": {
@@ -16796,6 +18106,36 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-maxlength",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinitionVersion.Environment": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html",
+      "Properties": {
+        "Variables": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-variables",
+          "PrimitiveType": "Json",
+          "UpdateType": "Immutable"
+        },
+        "Execution": {
+          "Type": "Execution",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-execution",
+          "UpdateType": "Immutable"
+        },
+        "ResourceAccessPolicies": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-resourceaccesspolicies",
+          "ItemType": "ResourceAccessPolicy",
+          "UpdateType": "Immutable"
+        },
+        "AccessSysfs": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-accesssysfs",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -17174,6 +18514,49 @@
         }
       }
     },
+    "AWS::Greengrass::Group": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html",
+      "Attributes": {
+        "RoleAttachedAt": {
+          "PrimitiveType": "String"
+        },
+        "LatestVersionArn": {
+          "PrimitiveType": "String"
+        },
+        "Id": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "RoleArn": {
+          "PrimitiveType": "String"
+        },
+        "Name": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "InitialVersion": {
+          "Type": "GroupVersion",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-initialversion",
+          "UpdateType": "Immutable"
+        },
+        "RoleArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-rolearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Events::Rule": {
       "Attributes": {
         "Arn": {
@@ -17331,6 +18714,37 @@
           "PrimitiveType": "String",
           "Required": false,
           "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::ConnectorDefinition": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html",
+      "Attributes": {
+        "LatestVersionArn": {
+          "PrimitiveType": "String"
+        },
+        "Id": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "Name": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "InitialVersion": {
+          "Type": "ConnectorDefinitionVersion",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-initialversion",
+          "UpdateType": "Immutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -18340,6 +19754,13 @@
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
+        "Tags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-tags",
+          "ItemType": "Tag",
+          "UpdateType": "Mutable"
+        },
         "Name": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-name",
@@ -18738,6 +20159,13 @@
         }
       },
       "Properties": {
+        "Tags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-tags",
+          "ItemType": "TagsEntry",
+          "UpdateType": "Mutable"
+        },
         "Name": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-name",
@@ -18869,6 +20297,13 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-redirecturl",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-tags",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         },
         "Name": {
@@ -19039,6 +20474,24 @@
         "Rules": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-rules",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::ConnectorDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html",
+      "Properties": {
+        "Connectors": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html#cfn-greengrass-connectordefinitionversion-connectors",
+          "ItemType": "Connector",
+          "UpdateType": "Immutable"
+        },
+        "ConnectorDefinitionId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html#cfn-greengrass-connectordefinitionversion-connectordefinitionid",
           "PrimitiveType": "String",
           "UpdateType": "Immutable"
         }
@@ -19495,6 +20948,37 @@
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinition": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html",
+      "Attributes": {
+        "LatestVersionArn": {
+          "PrimitiveType": "String"
+        },
+        "Id": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "Name": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "InitialVersion": {
+          "Type": "FunctionDefinitionVersion",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-initialversion",
+          "UpdateType": "Immutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -20440,6 +21924,42 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod",
           "PrimitiveType": "String",
           "Required": false,
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::SubscriptionDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html",
+      "Properties": {
+        "SubscriptionDefinitionId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinitionversion-subscriptiondefinitionid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Subscriptions": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinitionversion-subscriptions",
+          "ItemType": "Subscription",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::CoreDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html",
+      "Properties": {
+        "Cores": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html#cfn-greengrass-coredefinitionversion-cores",
+          "ItemType": "Core",
+          "UpdateType": "Immutable"
+        },
+        "CoreDefinitionId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html#cfn-greengrass-coredefinitionversion-coredefinitionid",
+          "PrimitiveType": "String",
           "UpdateType": "Immutable"
         }
       }
@@ -22697,6 +24217,121 @@
         }
       }
     },
+    "AWS::CodeBuild::Project": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html",
+      "Attributes": {
+        "Arn": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "Description": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "VpcConfig": {
+          "Type": "VpcConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig",
+          "UpdateType": "Mutable"
+        },
+        "SecondarySources": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysources",
+          "ItemType": "Source",
+          "UpdateType": "Mutable"
+        },
+        "EncryptionKey": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Triggers": {
+          "Type": "ProjectTriggers",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers",
+          "UpdateType": "Mutable"
+        },
+        "SecondaryArtifacts": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondaryartifacts",
+          "ItemType": "Artifacts",
+          "UpdateType": "Mutable"
+        },
+        "Source": {
+          "Type": "Source",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Artifacts": {
+          "Type": "Artifacts",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts",
+          "UpdateType": "Mutable"
+        },
+        "BadgeEnabled": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "LogsConfig": {
+          "Type": "LogsConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-logsconfig",
+          "UpdateType": "Mutable"
+        },
+        "ServiceRole": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "QueuedTimeoutInMinutes": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-queuedtimeoutinminutes",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "Environment": {
+          "Type": "Environment",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags",
+          "ItemType": "Tag",
+          "UpdateType": "Mutable"
+        },
+        "TimeoutInMinutes": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "Cache": {
+          "Type": "ProjectCache",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::EC2::TransitGatewayRouteTablePropagation": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetablepropagation.html",
       "Properties": {
@@ -23326,6 +24961,37 @@
         }
       }
     },
+    "AWS::Greengrass::DeviceDefinition": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html",
+      "Attributes": {
+        "LatestVersionArn": {
+          "PrimitiveType": "String"
+        },
+        "Id": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "Name": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "InitialVersion": {
+          "Type": "DeviceDefinitionVersion",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html#cfn-greengrass-devicedefinition-initialversion",
+          "UpdateType": "Immutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html#cfn-greengrass-devicedefinition-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::StepFunctions::StateMachine": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html",
       "Attributes": {
@@ -23350,6 +25016,13 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags",
+          "ItemType": "TagsEntry",
           "UpdateType": "Mutable"
         }
       }
@@ -23647,6 +25320,37 @@
           "ItemType": "Tag",
           "Required": false,
           "Type": "List",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::LoggerDefinition": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html",
+      "Attributes": {
+        "LatestVersionArn": {
+          "PrimitiveType": "String"
+        },
+        "Id": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "Name": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "InitialVersion": {
+          "Type": "LoggerDefinitionVersion",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-initialversion",
+          "UpdateType": "Immutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-name",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -25926,54 +27630,16 @@
           "PrimitiveType": "String",
           "UpdateType": "Immutable"
         },
-        "ApprovedPatches": {
-          "PrimitiveItemType": "String",
-          "Type": "List",
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatches",
-          "UpdateType": "Mutable"
-        },
-        "RejectedPatchesAction": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatchesaction",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "PatchGroups": {
-          "PrimitiveItemType": "String",
-          "Type": "List",
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-patchgroups",
-          "UpdateType": "Mutable"
-        },
         "Description": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-description",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
-        "ApprovedPatchesComplianceLevel": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchescompliancelevel",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "ApprovedPatchesEnableNonSecurity": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity",
-          "PrimitiveType": "Boolean",
-          "UpdateType": "Mutable"
-        },
         "ApprovalRules": {
           "Type": "RuleGroup",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules",
-          "UpdateType": "Mutable"
-        },
-        "GlobalFilters": {
-          "Type": "PatchFilterGroup",
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters",
           "UpdateType": "Mutable"
         },
         "Sources": {
@@ -25994,6 +27660,51 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatches",
+          "UpdateType": "Mutable"
+        },
+        "ApprovedPatches": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatches",
+          "UpdateType": "Mutable"
+        },
+        "RejectedPatchesAction": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatchesaction",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "PatchGroups": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-patchgroups",
+          "UpdateType": "Mutable"
+        },
+        "ApprovedPatchesComplianceLevel": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchescompliancelevel",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ApprovedPatchesEnableNonSecurity": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "GlobalFilters": {
+          "Type": "PatchFilterGroup",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-tags",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -26035,6 +27746,37 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolio.html#cfn-servicecatalog-portfolio-tags",
           "ItemType": "Tag",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::CoreDefinition": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html",
+      "Attributes": {
+        "LatestVersionArn": {
+          "PrimitiveType": "String"
+        },
+        "Id": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "Name": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "InitialVersion": {
+          "Type": "CoreDefinitionVersion",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-initialversion",
+          "UpdateType": "Immutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-name",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -27431,6 +29173,12 @@
         }
       },
       "Properties": {
+        "RootAccess": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-rootaccess",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
         "KmsKeyId": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-kmskeyid",
@@ -28345,6 +30093,24 @@
         }
       }
     },
+    "AWS::Greengrass::DeviceDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html",
+      "Properties": {
+        "DeviceDefinitionId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html#cfn-greengrass-devicedefinitionversion-devicedefinitionid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Devices": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html#cfn-greengrass-devicedefinitionversion-devices",
+          "ItemType": "Device",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::IoT::PolicyPrincipalAttachment": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policyprincipalattachment.html",
       "Properties": {
@@ -28640,6 +30406,37 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverruleassociation.html#cfn-route53resolver-resolverruleassociation-name",
           "PrimitiveType": "String",
           "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::SubscriptionDefinition": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html",
+      "Attributes": {
+        "LatestVersionArn": {
+          "PrimitiveType": "String"
+        },
+        "Id": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "Name": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "InitialVersion": {
+          "Type": "SubscriptionDefinitionVersion",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-initialversion",
+          "UpdateType": "Immutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -29103,6 +30900,42 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-authenticationtype",
           "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::ResourceDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html",
+      "Properties": {
+        "Resources": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html#cfn-greengrass-resourcedefinitionversion-resources",
+          "ItemType": "ResourceInstance",
+          "UpdateType": "Immutable"
+        },
+        "ResourceDefinitionId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html#cfn-greengrass-resourcedefinitionversion-resourcedefinitionid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::LoggerDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html",
+      "Properties": {
+        "LoggerDefinitionId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html#cfn-greengrass-loggerdefinitionversion-loggerdefinitionid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Loggers": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html#cfn-greengrass-loggerdefinitionversion-loggers",
+          "ItemType": "Logger",
           "UpdateType": "Immutable"
         }
       }
@@ -30351,6 +32184,13 @@
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
+        "Tags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-tags",
+          "ItemType": "Tag",
+          "UpdateType": "Mutable"
+        },
         "ImageArn": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-imagearn",
@@ -30384,6 +32224,30 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-rolearn",
           "PrimitiveType": "String",
           "Required": false,
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Greengrass::FunctionDefinitionVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html",
+      "Properties": {
+        "DefaultConfig": {
+          "Type": "DefaultConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-defaultconfig",
+          "UpdateType": "Immutable"
+        },
+        "Functions": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functions",
+          "ItemType": "Function",
+          "UpdateType": "Immutable"
+        },
+        "FunctionDefinitionId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functiondefinitionid",
+          "PrimitiveType": "String",
           "UpdateType": "Immutable"
         }
       }
@@ -30756,6 +32620,59 @@
           "Required": false,
           "Type": "List",
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Greengrass::GroupVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html",
+      "Properties": {
+        "LoggerDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-loggerdefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "DeviceDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-devicedefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "FunctionDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-functiondefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "CoreDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-coredefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "ResourceDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-resourcedefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "ConnectorDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-connectordefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "SubscriptionDefinitionVersionArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-subscriptiondefinitionversionarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "GroupId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-groupid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -31805,5 +33722,5 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "2.25.0"
+  "ResourceSpecificationVersion": "2.28.0"
 }

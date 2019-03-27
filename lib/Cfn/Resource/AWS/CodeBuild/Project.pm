@@ -1,4 +1,4 @@
-# AWS::CodeBuild::Project generated from spec 2.25.0
+# AWS::CodeBuild::Project generated from spec 2.28.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::CodeBuild::Project {
     [ 'Arn' ]
   }
   sub supported_regions {
-    [ 'eu-west-1','us-east-1','us-west-2' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','eu-west-3','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 
@@ -60,6 +60,7 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::S3LogsConfigValue {
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has EncryptionDisabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Location => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
@@ -84,6 +85,27 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::RegistryCredentialVa
   
   has Credential => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has CredentialProvider => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfigValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfigValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has FetchSubmodules => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::EnvironmentVariable',
      as 'Cfn::Value',
@@ -243,6 +265,7 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::SourceValue {
   has Auth => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::SourceAuth', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has BuildSpec => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has GitCloneDepth => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has GitSubmodulesConfig => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InsecureSsl => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Location => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ReportBuildStatus => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
