@@ -22307,7 +22307,7 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-tags",
           "ItemType": "Tag",
-          "UpdateType": "Immutable"
+          "UpdateType": "Mutable"
         },
         "ProvisionedProductName": {
           "Required": false,
@@ -28095,6 +28095,12 @@
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
         "Name": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-name",
@@ -29463,5 +29469,5 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "2.30.0"
+  "ResourceSpecificationVersion": "2.32.0"
 }
