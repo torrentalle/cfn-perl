@@ -3,37 +3,50 @@
 use strict;
 use warnings;
 
+use YAML::PP;
+use FindBin;
+use File::Slurp;
 use Test::More;
 use Cfn;
 
-my $cfn = Cfn->new;
+my $t_dir = "$FindBin::Bin/cfn_yaml/";
+use IO::Dir;
+my $d = IO::Dir->new($t_dir);
 
-$cfn->yaml->schema->add_resolver(
-  tag => '!Ref',
-  implicit => 0,
-  match => [ regex => qr{^(.*)$} => sub {
-    my $value = shift;
-    return { 'Ref' => $value };
-  } ]
-);
+while (my $file = $d->read){
+  next if ($file =~ m/^\./);
+  next if (not $file =~ m/\.yaml$/);
+  my $content = read_file("$t_dir/$file");
+  my $cfn;
+  note "for file $t_dir/$file";
+  eval { $cfn = Cfn->from_yaml($content) };
+  if ($@){
+    if ($@ =~ m/you may need to install the .* module/){
+      TODO:{
+        local $TODO = 'The module for something in this file is not developed yet';
+        fail("File $t_dir/$file didn't parse");
+      };
+    } else {
+      diag($@);
+      fail("File $t_dir/$file didn't parse");
+    }
+  } else {
+    pass("File $t_dir/$file parsed without problems");
+    my $hash = YAML::PP->new->load_string($content);
+    test_ds_vs_parsed($hash, $cfn, $file);
+  }
+}
+$d->close;
 
-$cfn->yaml->schema->add_resolver(
-  tag => '!Sub',
-  implicit => 0,
-  match => [ regex => qr{^(.*)$} => sub {
-    my $value = shift;
-    return { 'Fn::Sub' => $value };
-  } ]
-);
+done_testing;
 
-my $ret = Cfn->from_hashref($cfn->yaml->load_file('t/cfn_yaml/sg.yaml'));
+sub test_ds_vs_parsed {
+  my ($datastruct, $parsed, $test_name) = @_;
 
-use Data::Dumper;
-print Dumper($ret);
-
-print $ret->as_json, "\n";
-
-print $ret->as_yaml, "\n";
-
-
-
+  cmp_ok($parsed->ResourceCount,  '==', scalar(keys %{ $datastruct->{ Resources  } }), "Got the same number of resources for $test_name");
+  cmp_ok($parsed->ParameterCount, '==', scalar(keys %{ $datastruct->{ Parameters } }), "Got the same number of parameter for $test_name");
+  cmp_ok($parsed->OutputCount,    '==', scalar(keys %{ $datastruct->{ Outputs    } }), "Got the same number of ouputs for $test_name");
+  cmp_ok($parsed->MappingCount,   '==', scalar(keys %{ $datastruct->{ Mappings   } }), "Got the same number of mappings for $test_name");
+  cmp_ok($parsed->ConditionCount, '==', scalar(keys %{ $datastruct->{ Conditions } }), "Got the same number of conditions for $test_name");
+  cmp_ok($parsed->MetadataCount,  '==', scalar(keys %{ $datastruct->{ Metadata   } }), "Got the same number of metadata entries for $test_name");
+}

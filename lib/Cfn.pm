@@ -1166,7 +1166,7 @@ package Cfn {
   sub from_yaml {
     my ($class, $yaml) = @_;
     my $parser = _get_yaml_pp;
-    return $parser->load_string($yaml);
+    return $class->from_hashref($parser->load_string($yaml));
   }
 }
 
