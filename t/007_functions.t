@@ -84,4 +84,6 @@ isa_ok($cfn->Resource('t1')->Properties->Prop16, 'Cfn::Value::Function');
 isa_ok($cfn->Resource('t1')->Properties->Prop17, 'Cfn::Value::Function');
 isa_ok($cfn->Resource('t1')->Properties->Prop18, 'Cfn::Value::Function');
 
+isa_ok($cfn->path_to('Resources.t1.Properties.Prop14.Fn::Or.1'), 'Cfn::Value::Function::Condition');
+
 done_testing;
