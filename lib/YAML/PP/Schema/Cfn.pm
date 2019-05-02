@@ -3,6 +3,14 @@ package YAML::PP::Schema::Cfn;
   use strict;
   use warnings;
 
+  sub resolver_fn_for {
+    my $fn = shift;
+    return sub {
+      my $value = shift;
+      return { $fn => $value }
+    }
+  }
+
   sub new {
     my ($class, %args) = @_;
     my $self = bless {}, $class;
@@ -13,6 +21,46 @@ package YAML::PP::Schema::Cfn;
     my ($self, %args) = @_;
     my $schema = $args{schema};
 
+    $schema->add_resolver(
+      tag => '!Ref',
+      implicit => 0,
+      match => [ regex => qr{^(.*)$} => resolver_fn_for('Ref')]
+    );
+    
+    $schema->add_resolver(
+      tag => '!Base64',
+      implicit => 0,
+      match => [ regex => qr{^(.*)$} => resolver_fn_for('Fn::Base64') ]
+    );
+    
+    $schema->add_resolver(
+      tag => '!Sub',
+      implicit => 0,
+      match => [ regex => qr{^(.*)$} => resolver_fn_for('Fn::Sub') ]
+    );
+    
+    $schema->add_resolver(
+      tag => '!GetAZs',
+      implicit => 0,
+      match => [ regex => qr{^(.*)$} => resolver_fn_for('Fn::GetAZs') ]
+    );
+    
+    $schema->add_resolver(
+      tag => '!ImportValue',
+      implicit => 0,
+      match => [ regex => qr{^(.*)$} => resolver_fn_for('Fn::ImportValue') ]
+    );
+    
+    $schema->add_resolver(
+      tag => '!GetAtt',
+      implicit => 0,
+      match => [ regex => qr{^(.*)$} => sub {
+        my $value = shift;
+        my @parts = split /\./, $value, 2;
+        { 'Fn::GetAtt' => [ $parts[0], $parts[1] ] }
+      }]
+    );
+    
     $schema->add_representer(
       class_equals => 'Cfn',
       code => sub {
