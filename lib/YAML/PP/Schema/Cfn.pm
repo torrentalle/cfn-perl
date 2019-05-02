@@ -6,7 +6,7 @@ package YAML::PP::Schema::Cfn;
   sub resolver_fn_for {
     my $fn = shift;
     return sub {
-      my $value = shift;
+      my ($self, $value) = @_;
       return { $fn => $value }
     }
   }

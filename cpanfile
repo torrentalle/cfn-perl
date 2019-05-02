@@ -2,7 +2,7 @@ requires 'Moose';
 requires 'MooseX::StrictConstructor';
 requires 'MooseX::SlurpyConstructor';
 requires 'JSON';
-requires 'YAML::PP';
+requires 'YAML::PP', '>= 0.013';
 requires 'Module::Runtime';
 
 on test => sub {
