@@ -60,6 +60,18 @@ package YAML::PP::Schema::Cfn;
         { 'Fn::GetAtt' => [ $parts[0], $parts[1] ] }
       }]
     );
+
+    $schema->add_sequence_resolver(
+      tag => "!Cidr",
+      on_create => sub {
+        my ($constructor, $event) = @_;
+        return { "!Cidr" => [] };
+      },
+      on_data => sub {
+        my ($constructor, $ref, $items) = @_;
+        push @{ $ref->{"!Cidr"} }, @$items;
+      },
+    );
     
     $schema->add_representer(
       class_equals => 'Cfn',
