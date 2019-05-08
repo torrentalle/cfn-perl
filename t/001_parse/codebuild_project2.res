@@ -1,6 +1,4 @@
-{ "Resources": 
 {
-    "CodeBuildProject": {
         "Type": "AWS::CodeBuild::Project",
         "Properties": {
             "Name": "MyProject",
@@ -55,5 +53,3 @@
             }
         }
     }
-}
-}
