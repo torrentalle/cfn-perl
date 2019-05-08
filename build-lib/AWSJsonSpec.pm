@@ -17,6 +17,7 @@ package AWSJsonSpec::Attribute {
 package AWSJsonSpec::PropertyType {
   use MooseX::DataModel;
 
+  key ItemType => (isa => 'Str');
   key Documentation => (isa => 'Str');
   object Properties => (isa => 'AWSJsonSpec::Property');
 }

@@ -12,25 +12,30 @@ package CfnModel::CfnSubtype;
     }
   );
 
-  sub build_property {
-    my ($self, $name) = @_;
-    return CfnModel::CfnProperty->new(
-      name => $name,
-      parent => $self,
-      root => $self->root,
-      spec => $self->spec->Properties->{ $name },
-    );
-  }
-
   has properties => (is => 'ro', isa => 'HashRef[CfnModel::CfnProperty]', lazy => 1, default => sub {
     my $self = shift;
-    if (not defined $self->spec->Properties){
-      warn $self->name . " doesn't have properties in the spec";
-      return {}
+
+    my $properties;
+    if (defined $self->spec->ItemType) {
+      my ($prefix, $object_name) = split /\./, $self->name, 2;
+      my $item = $self->root->spec->PropertyTypes->{ "$prefix." . $self->spec->ItemType };
+      $properties = $item->Properties;
+    } else {
+      if (defined $self->spec->Properties){
+        $properties = $self->spec->Properties;
+      } else {
+        die $self->name . " doesn't have properties in the spec";
+      }
     }
+
     my $props = {};
-    foreach my $property_name (keys $self->spec->Properties->%*) {
-      $props->{ $property_name } = $self->build_property($property_name);
+    foreach my $property_name (keys %$properties) {
+      $props->{ $property_name } = CfnModel::CfnProperty->new(
+        name => $property_name,
+        parent => $self,
+        root => $self->root,
+        spec => $properties->{ $property_name }
+      );
     }
     return $props;
   });
