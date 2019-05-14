@@ -61,7 +61,8 @@ package CfnModel::CfnResource;
     my $types = {};
     foreach my $type_name (keys $self->root->subtypes->%*) {
       if (my ($baretype_name) = $type_name =~ m/^$namespace\.(.*)$/) {
-        $types->{ $baretype_name } = $self->root->subtypes->{ $type_name };
+        my $subtype = $self->root->subtypes->{ $type_name };
+        $types->{ $baretype_name } = $subtype;
       }
     }
     return $types;
@@ -70,6 +71,24 @@ package CfnModel::CfnResource;
   has subtypes_by_cfn_type => (is => 'ro', isa => 'HashRef[CfnModel::CfnSubtype]', lazy => 1, default => sub {
     my $self = shift;
     return { map { $_->cfn_type => $_ } values $self->subtypes->%* };
+  });
+
+  has arrays_of_arrays => (is => 'ro', isa => 'HashRef[CfnModel::CfnSubtype]', lazy => 1, default => sub {
+    my $self = shift;
+    my $namespace = $self->name;
+    my $types = {};
+    foreach my $type_name (keys $self->root->subtypes->%*) {
+      if (my ($baretype_name) = $type_name =~ m/^$namespace\.(.*)$/) {
+        my $subtype = $self->root->subtypes->{ $type_name };
+        $types->{ $baretype_name } = $subtype if ($subtype->is_an_array);
+      }
+    }
+    return $types;
+  });
+
+  has ordered_arrays_of_arrays => (is => 'ro', isa => 'ArrayRef[Str]', lazy => 1, default => sub {
+    my $self = shift;
+    return [ sort keys %{ $self->arrays_of_arrays } ];
   });
 
   has ordered_subtypes => (is => 'ro', isa => 'ArrayRef[Str]', lazy => 1, default => sub {
@@ -84,6 +103,7 @@ package CfnModel::CfnResource;
       foreach my $prop (values $subtype->properties->%*) {
         if ($prop->cfn_type =~ m/Resource::Properties/ and $prop->of_type ne $st_name) {
           push $deps->{ $st_name }->@*, $prop->of_type;
+          $deps->{ $prop->of_type } = [] if (not defined $deps->{ $prop->of_type });
         }
       }
     }

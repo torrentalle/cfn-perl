@@ -100,6 +100,30 @@ package Cfn::Resource::Properties::[% subtype.cfn_type %]Value {
   [%- END %]
 }
 [%- END # of foreach subtype %]
+[% FOREACH subtype_name IN c.ordered_arrays_of_arrays; subtype = c.arrays_of_arrays.$subtype_name %]
+subtype 'ArrayOfArrayOfCfn::Resource::Properties::[% subtype.cfn_type %]',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfArrayOfCfn::Resource::Properties::[% subtype.cfn_type %]',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('ArrayOfCfn::Resource::Properties::[% subtype.cfn_type %]')->coerce($_)
+       } @$_
+     ]);
+   };
+[% END -%]
 
 package Cfn::Resource::Properties::[% c.name %] {
   use Moose;

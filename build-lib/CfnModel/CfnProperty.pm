@@ -55,6 +55,16 @@ package CfnModel::CfnProperty;
     return (defined $self->spec->Type and $self->spec->Type eq 'List');
   });
 
+  has is_array_of_arrays => (is => 'ro', isa => 'Bool', lazy => 1, default => sub {
+    my $self = shift;
+    return 0 if (not $self->is_array);
+    my $subtype = $self->belongs_to_subtype;
+    return 0 if (not defined $subtype);
+    my $type_in_array = $self->spec->ItemType;
+
+    return (defined $self->root->classes->{ $subtype }->arrays_of_arrays->{ $type_in_array });
+  });
+
   has is_map => (is => 'ro', isa => 'Str', lazy => 1, default => sub {
     my $self = shift;
     return (defined $self->spec->Type and $self->spec->Type eq 'Map');
@@ -85,9 +95,13 @@ package CfnModel::CfnProperty;
     my $self = shift;
 
     if ($self->is_array) {
-      return ($self->is_primitive_type) ?
-               'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue' :
-               'ArrayOfCfn::Resource::Properties::' . $self->of_type;
+      if ($self->is_primitive_type) {
+        return 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue';
+      } elsif ($self->is_array_of_arrays) {
+        return 'ArrayOfArrayOfCfn::Resource::Properties::' . $self->of_type;
+      } else {
+        return 'ArrayOfCfn::Resource::Properties::' . $self->of_type;
+      }
     } elsif ($self->is_map) {
       return ($self->is_primitive_type) ?
                'Cfn::Value::Hash|Cfn::DynamicValue' : 

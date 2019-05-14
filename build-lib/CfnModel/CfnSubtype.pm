@@ -96,6 +96,11 @@ package CfnModel::CfnSubtype;
     return (@in_map >= 1);
   });
 
+  has is_an_array => (is => 'ro', isa => 'Bool', lazy => 1, default => sub {
+    my $self = shift;
+    return (defined $self->spec->Type and $self->spec->Type eq 'List');
+  });
+
   has cfn_type => (is => 'ro', isa => 'Str', lazy => 1, default => sub {
     my $self = shift;
 
