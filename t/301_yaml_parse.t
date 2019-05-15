@@ -16,24 +16,25 @@ my $d = IO::Dir->new($t_dir);
 while (my $file = $d->read){
   next if ($file =~ m/^\./);
   next if (not $file =~ m/\.yaml$/);
-  my $content = read_file("$t_dir/$file");
+  my $full_path = "$t_dir/$file";
+  my $content = read_file($full_path);
   my $cfn;
-  note "for file $t_dir/$file";
+  note "for file $full_path";
   eval { $cfn = Cfn->from_yaml($content) };
   if ($@){
     if ($@ =~ m/you may need to install the .* module/){
       TODO:{
         local $TODO = 'The module for something in this file is not developed yet';
-        fail("File $t_dir/$file didn't parse");
+        fail("File $full_path didn't parse");
       };
     } else {
       diag($@);
-      fail("File $t_dir/$file didn't parse");
+      fail("File $full_path didn't parse");
     }
   } else {
-    pass("File $t_dir/$file parsed without problems");
+    pass("File $full_path parsed without problems");
     my $hash = YAML::PP->new->load_string($content);
-    test_ds_vs_parsed($hash, $cfn, $file);
+    test_ds_vs_parsed($hash, $cfn, $file, $full_path);
   }
 }
 $d->close;
