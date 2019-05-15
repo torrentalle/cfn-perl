@@ -308,6 +308,8 @@ package Cfn::TypeLibrary {
     'List<AWS::EC2::VPC::Id>',
     'AWS::Route53::HostedZone::Id',
     'List<AWS::Route53::HostedZone::Id>',
+    'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>',
+    'AWS::SSM::Parameter::Value<String>',
   ];
 
   subtype 'ArrayOfCfn::Resource::Properties::TagType',
