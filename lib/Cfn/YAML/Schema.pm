@@ -1,4 +1,4 @@
-package YAML::PP::Schema::Cfn;
+package Cfn::YAML::Schema;
   use base 'YAML::PP::Schema';
   use strict;
   use warnings;

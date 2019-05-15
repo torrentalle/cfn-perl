@@ -1150,9 +1150,8 @@ package Cfn {
 
   sub _get_yaml_pp {
     require YAML::PP;
-    require YAML::PP::Schema::Cfn;
     YAML::PP->new(
-      schema => [ 'Cfn' ],
+      schema => [ ':Cfn::YAML::Schema' ],
     );
   }
 
