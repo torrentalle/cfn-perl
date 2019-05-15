@@ -7,7 +7,7 @@ package YAML::PP::Schema::Cfn;
     my $fn = shift;
     return sub {
       my ($self, $value) = @_;
-      return { $fn => $value }
+      return { $fn => $value->{ value } }
     }
   }
 
@@ -55,7 +55,8 @@ package YAML::PP::Schema::Cfn;
       tag => '!GetAtt',
       implicit => 0,
       match => [ regex => qr{^(.*)$} => sub {
-        my $value = shift;
+        my ($self, $event) = @_;
+        my $value = $event->{ value };
         my @parts = split /\./, $value, 2;
         { 'Fn::GetAtt' => [ $parts[0], $parts[1] ] }
       }]
@@ -65,11 +66,11 @@ package YAML::PP::Schema::Cfn;
       tag => "!Cidr",
       on_create => sub {
         my ($constructor, $event) = @_;
-        return { "!Cidr" => [] };
+        return { "Fn::Cidr" => [] };
       },
       on_data => sub {
         my ($constructor, $ref, $items) = @_;
-        push @{ $ref->{"!Cidr"} }, @$items;
+        push @{ $$ref->{"Fn::Cidr"} }, @$items;
       },
     );
     
