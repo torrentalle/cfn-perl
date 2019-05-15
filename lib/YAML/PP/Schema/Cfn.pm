@@ -50,6 +50,15 @@ package YAML::PP::Schema::Cfn;
     );
 
     $schema->add_resolver(
+      tag => "!Condition",
+      implicit => 0,
+      match => [ regex => qr{^(.*)$} => sub {
+        my ($self, $value) = @_;
+        return { Condition => $value->{ value } }
+      } ]
+    );
+
+    $schema->add_resolver(
       tag => '!GetAtt',
       implicit => 0,
       match => [ regex => qr{^(.*)$} => sub {
