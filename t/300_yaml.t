@@ -256,7 +256,7 @@ EOY
 
 yaml(
   q|!Sub 'arn:aws:ec2:${AWS::Region}:${AWS::AccountId}:vpc/${vpc}'|,
-  { },
+  { "Fn::Sub" => 'arn:aws:ec2:${AWS::Region}:${AWS::AccountId}:vpc/${vpc}' },
   '{ "Fn::Sub": "arn:aws:ec2:${AWS::Region}:${AWS::AccountId}:vpc/${vpc}" }'
 );
 
@@ -356,7 +356,7 @@ EOY
 
   yaml($yaml, {
     'Fn::Or' => [
-      {"Fn::Equals" => "sg-mysggroup", { Ref => 'ASecurityGroup' }},
+      {"Fn::Equals" => [ "sg-mysggroup", { Ref => 'ASecurityGroup' } ] },
       {"Condition" => "SomeOtherCondition"}
     ]
   }, $json);
