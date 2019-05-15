@@ -17,6 +17,21 @@ package YAML::PP::Schema::Cfn;
     return $self;
   }
 
+  sub shortcut_tag_resolver {
+    my $tag = shift;
+    return (
+      tag => "!$tag",
+      on_create => sub {
+        my ($constructor, $event) = @_;
+        return { "Fn::$tag" => [] };
+      },
+      on_data => sub {
+        my ($constructor, $ref, $items) = @_;
+        push @{ $$ref->{"Fn::$tag"} }, @$items;
+      }
+    );
+  }
+
   sub register {
     my ($self, %args) = @_;
     my $schema = $args{schema};
@@ -61,21 +76,6 @@ package YAML::PP::Schema::Cfn;
         { 'Fn::GetAtt' => [ $parts[0], $parts[1] ] }
       }]
     );
-
-    sub shortcut_tag_resolver {
-      my $tag = shift;
-      return (
-        tag => "!$tag",
-        on_create => sub {
-          my ($constructor, $event) = @_;
-          return { "Fn::$tag" => [] };
-        },
-        on_data => sub {
-          my ($constructor, $ref, $items) = @_;
-          push @{ $$ref->{"Fn::$tag"} }, @$items;
-        }
-      );
-    }
 
     $schema->add_sequence_resolver(shortcut_tag_resolver('Cidr'));
     $schema->add_sequence_resolver(shortcut_tag_resolver('Join'));
