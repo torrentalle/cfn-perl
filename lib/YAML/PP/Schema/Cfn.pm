@@ -76,6 +76,18 @@ package YAML::PP::Schema::Cfn;
     $schema->add_sequence_resolver(shortcut_sequence_resolver('And'));
     $schema->add_sequence_resolver(shortcut_sequence_resolver('If'));
     $schema->add_sequence_resolver(shortcut_sequence_resolver('Not'));
+
+    $schema->add_mapping_resolver(
+      tag => "!Transform",
+      on_create => sub {
+        my ($constructor, $event) = @_;
+        return { "Fn::Transform" => {} };
+      },
+      on_data => sub {
+        my ($constructor, $ref, $items) = @_;
+        $$ref->{"Fn::Transform"} = { @$items };
+      }
+    );
     
     $schema->add_representer(
       class_equals => 'Cfn',

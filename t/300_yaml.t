@@ -276,7 +276,7 @@ EOY
 }
 
 yaml(
-  '!Transform { "Name" : macro name, "Parameters" : {Key : value, ... } }',
+  '!Transform { "Name" : macro name, "Parameters" : {Key : value } }',
   { 'Fn::Transform' => { "Name" => "macro name", "Parameters" => { Key => 'value' } } },
   '{ "Fn::Transform" : { "Name" : "macro name", "Parameters" : {"Key" : "value" } } }'
 );
