@@ -62,17 +62,32 @@ package YAML::PP::Schema::Cfn;
       }]
     );
 
-    $schema->add_sequence_resolver(
-      tag => "!Cidr",
-      on_create => sub {
-        my ($constructor, $event) = @_;
-        return { "Fn::Cidr" => [] };
-      },
-      on_data => sub {
-        my ($constructor, $ref, $items) = @_;
-        push @{ $$ref->{"Fn::Cidr"} }, @$items;
-      },
-    );
+    sub shortcut_tag_resolver {
+      my $tag = shift;
+      return (
+        tag => "!$tag",
+        on_create => sub {
+          my ($constructor, $event) = @_;
+          return { "Fn::$tag" => [] };
+        },
+        on_data => sub {
+          my ($constructor, $ref, $items) = @_;
+          push @{ $$ref->{"Fn::$tag"} }, @$items;
+        }
+      );
+    }
+
+    $schema->add_sequence_resolver(shortcut_tag_resolver('Cidr'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('Join'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('Select'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('FindInMap'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('Split'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('Sub'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('Equals'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('Or'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('And'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('If'));
+    $schema->add_sequence_resolver(shortcut_tag_resolver('Not'));
     
     $schema->add_representer(
       class_equals => 'Cfn',
