@@ -3,21 +3,13 @@ package YAML::PP::Schema::Cfn;
   use strict;
   use warnings;
 
-  sub resolver_fn_for {
-    my $fn = shift;
-    return sub {
-      my ($self, $value) = @_;
-      return { $fn => $value->{ value } }
-    }
-  }
-
   sub new {
     my ($class, %args) = @_;
     my $self = bless {}, $class;
     return $self;
   }
 
-  sub shortcut_tag_resolver {
+  sub shortcut_sequence_resolver {
     my $tag = shift;
     return (
       tag => "!$tag",
@@ -32,40 +24,31 @@ package YAML::PP::Schema::Cfn;
     );
   }
 
+  sub shortcut_scalar_resolver {
+    my $tag = shift;
+    return (
+      tag => "!$tag",
+      implicit => 0,
+      match => [ regex => qr{^(.*)$} => sub {
+        my ($self, $value) = @_;
+        return { "Fn::$tag" => $value->{ value } }
+      } ]
+    );
+  }
+
   sub register {
     my ($self, %args) = @_;
     my $schema = $args{schema};
 
     $schema->add_resolver(
-      tag => '!Ref',
+      tag => "!Ref",
       implicit => 0,
-      match => [ regex => qr{^(.*)$} => resolver_fn_for('Ref')]
+      match => [ regex => qr{^(.*)$} => sub {
+        my ($self, $value) = @_;
+        return { Ref => $value->{ value } }
+      } ]
     );
-    
-    $schema->add_resolver(
-      tag => '!Base64',
-      implicit => 0,
-      match => [ regex => qr{^(.*)$} => resolver_fn_for('Fn::Base64') ]
-    );
-    
-    $schema->add_resolver(
-      tag => '!Sub',
-      implicit => 0,
-      match => [ regex => qr{^(.*)$} => resolver_fn_for('Fn::Sub') ]
-    );
-    
-    $schema->add_resolver(
-      tag => '!GetAZs',
-      implicit => 0,
-      match => [ regex => qr{^(.*)$} => resolver_fn_for('Fn::GetAZs') ]
-    );
-    
-    $schema->add_resolver(
-      tag => '!ImportValue',
-      implicit => 0,
-      match => [ regex => qr{^(.*)$} => resolver_fn_for('Fn::ImportValue') ]
-    );
-    
+
     $schema->add_resolver(
       tag => '!GetAtt',
       implicit => 0,
@@ -77,17 +60,22 @@ package YAML::PP::Schema::Cfn;
       }]
     );
 
-    $schema->add_sequence_resolver(shortcut_tag_resolver('Cidr'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('Join'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('Select'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('FindInMap'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('Split'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('Sub'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('Equals'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('Or'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('And'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('If'));
-    $schema->add_sequence_resolver(shortcut_tag_resolver('Not'));
+    $schema->add_resolver(shortcut_scalar_resolver('Base64'));
+    $schema->add_resolver(shortcut_scalar_resolver('Sub'));
+    $schema->add_resolver(shortcut_scalar_resolver('GetAZs'));
+    $schema->add_resolver(shortcut_scalar_resolver('ImportValue'));
+    
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('Cidr'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('Join'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('Select'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('FindInMap'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('Split'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('Sub'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('Equals'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('Or'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('And'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('If'));
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('Not'));
     
     $schema->add_representer(
       class_equals => 'Cfn',
