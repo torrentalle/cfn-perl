@@ -242,7 +242,7 @@ yaml(
 
 {
   my $yaml = <<EOY;
-Name: !Sub
+!Sub
   - www.\${Domain}
   - { Domain: !Ref RootDomainName }
 EOY
