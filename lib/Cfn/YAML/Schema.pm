@@ -74,6 +74,7 @@ package Cfn::YAML::Schema;
     $schema->add_resolver(shortcut_scalar_resolver('GetAZs'));
     $schema->add_resolver(shortcut_scalar_resolver('ImportValue'));
     
+    $schema->add_sequence_resolver(shortcut_sequence_resolver('GetAtt'));
     $schema->add_sequence_resolver(shortcut_sequence_resolver('Cidr'));
     $schema->add_sequence_resolver(shortcut_sequence_resolver('Join'));
     $schema->add_sequence_resolver(shortcut_sequence_resolver('Select'));

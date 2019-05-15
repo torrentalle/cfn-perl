@@ -362,6 +362,10 @@ EOY
   }, $json);
 }
 
+yaml(<<EOY, { "Fn::GetAtt" => [ 'ElasticLoadBalancer', 'SourceSecurityGroup.OwnerAlias' ] }, '{ "Fn::GetAtt" : [ "ElasticLoadBalancer", "SourceSecurityGroup.OwnerAlias" ] }');
+!GetAtt [ElasticLoadBalancer, SourceSecurityGroup.OwnerAlias]
+EOY
+
 done_testing;
 
 __END__
