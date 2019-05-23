@@ -1,4 +1,5 @@
 0.06 
+  - Implements the resources in CloudFormation spec 3.2.0 (published as of 2019-05-23)
 
 0.05 2019-05-15
   - Implements the resources in CloudFormation spec 3.0.0 (published as of 2019-05-15)
