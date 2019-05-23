@@ -137,7 +137,8 @@ package Cfn::TypeLibrary {
     from 'Object', via {
       my $val = $_;
 
-      die "Cannot coerce a boolean from a non JSON::PP::Boolean" if (not $val->isa('JSON::PP::Boolean'));
+      use Data::Dumper;
+      die "Cannot coerce a boolean from a non JSON::PP::Boolean " . Dumper($val) if (not $val->isa('JSON::PP::Boolean'));
       if ($val == 1) {
         Cfn::Boolean->new( Value => 1, stringy => 0 );
       } elsif($val == 0) {
