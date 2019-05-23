@@ -14,7 +14,7 @@ my @files = @ARGV;
 @files = glob('t/001_parse/*.res') if (not @files);
 
 foreach my $file (@files){
-  my $struct = eval { from_json(read_file($file)) };
+  my $struct = eval { decode_json(read_file($file)) };
   if ($@) { fail("Error in $file: $@") }
 
   my $tname = "Resource from $file via generic hashref";
