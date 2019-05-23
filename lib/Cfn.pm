@@ -563,7 +563,7 @@ package Cfn::Value::Primitive {
 
 package Cfn::Boolean {
   use Moose;
-  use JSON;
+  require Cpanel::JSON::XS;
   extends 'Cfn::Value::Primitive';
   has '+Value' => (isa => 'Bool');
   has stringy => (is => 'ro', required => 1, isa => 'Bool');
@@ -572,7 +572,7 @@ package Cfn::Boolean {
     if ($self->stringy){
       return ($self->Value)?'true':'false';
     } else {
-      return ($self->Value)?JSON->true:JSON->false;
+      return ($self->Value)?Cpanel::JSON::XS->true:Cpanel::JSON::XS->false;
     }
   }
 }
@@ -1138,9 +1138,9 @@ package Cfn {
   }
 
   has json => (is => 'ro', lazy => 1, default => sub {
-      require JSON;
-      return JSON->new->canonical
-    });
+    require Cpanel::JSON::XS;
+    return Cpanel::JSON::XS->new->canonical
+  });
 
   sub as_json {
     my $self = shift;
@@ -1151,8 +1151,8 @@ package Cfn {
   sub from_json {
     my ($class, $json) = @_;
 
-    require JSON;
-    return $class->from_hashref(JSON::from_json($json));
+    require Cpanel::JSON::XS;
+    return $class->from_hashref(Cpanel::JSON::XS::decode_json($json));
   }
 }
 

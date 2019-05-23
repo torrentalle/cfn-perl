@@ -9,7 +9,7 @@ use Test::Exception;
 use FindBin;
 use Cfn;
 use File::Slurp;
-use JSON;
+use Cpanel::JSON::XS;
 
 my @tests = (
   { Resources => {
@@ -82,7 +82,7 @@ while (my $file = $d->read){
     }
   } else {
     pass("JSON file $t_dir/$file parsed without problems");
-    my $hash = from_json($content);
+    my $hash = decode_json($content);
     test_ds_vs_parsed($hash, $cfn, $file);
   }
 }

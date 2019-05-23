@@ -17,6 +17,7 @@ while (my $file = $d->read){
   next if ($file =~ m/^\./);
   next if (not $file =~ m/\.json$/);
   my $content = read_file("$t_dir/$file");
+  note "$t_dir/$file";
   my $cfn = Cfn->from_json($content);
   my $crawl = Cfn::Crawler->new(
     cfn => $cfn,
