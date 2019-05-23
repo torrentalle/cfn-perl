@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Test::More;
 
-use JSON;
+use Cpanel::JSON::XS;
 use File::Slurp;
 
 use Moose::Util::TypeConstraints;
