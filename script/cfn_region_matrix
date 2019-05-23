@@ -32,9 +32,13 @@ my @regions = sort keys %seen_regions;
 my @table_titles = map { shorten_region($_) } @regions;
 my %title_lengths = map { $_ => length(shorten_region($_)) } @regions;
 
-say '|', (join '|', @table_titles), '|';
+
+my $longest_service = 0;
+$_ > $longest_service and $longest_service = $_ foreach map { length $_ } @cfn_modules;
+
+say '|', (' ' x $longest_service) ,'|', (join '|', @table_titles), '|';
 foreach my $module (@cfn_modules) {
   my $in_region = $modules_in_region{ $module };
   my @asterisks = map { $in_region->{ $_ } ? '*' x $title_lengths{$_} : ' ' x $title_lengths{$_} } (@regions);
-  say '|', (join '|', @asterisks), '|';
+  say '|', $module, ' ' x ($longest_service - length($module)), '|', (join '|', @asterisks), '|';
 }
