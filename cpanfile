@@ -1,3 +1,4 @@
+requires 'perl' => '5.016000';
 requires 'Moose';
 requires 'MooseX::StrictConstructor';
 requires 'MooseX::SlurpyConstructor';
