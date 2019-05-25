@@ -1,4 +1,4 @@
-# AWS::Cognito::UserPool generated from spec 2.22.0
+# AWS::Cognito::UserPool generated from spec 2.32.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPool',
@@ -9,8 +9,12 @@ package Cfn::Resource::AWS::Cognito::UserPool {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Cognito::UserPool', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn','ProviderName','ProviderURL' ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-2','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-2' ]
   }
 }
 
@@ -246,6 +250,7 @@ package Cfn::Resource::Properties::AWS::Cognito::UserPool::EmailConfigurationVal
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has EmailSendingAccount => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ReplyToEmailAddress => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SourceArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }

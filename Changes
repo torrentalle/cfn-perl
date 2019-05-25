@@ -1,7 +1,30 @@
-0.02
+0.06 
+  - Add parameter types for SSM
+    https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#parameters-section-ssm-examples
+
+0.05 2019-05-15
+  - Implements the resources in CloudFormation spec 3.0.0 (published as of 2019-05-15)
+  - AWS::Serverless::API resource up to date (not in the spec)
+
+0.04 2019-04-24
+  - Implements the resources in CloudFormation spec 2.30.0 (published as of 2019-04-14)
+
+0.03 2019-03-27
+  - Implements the resources in CloudFormation spec 2.28.0 (published as of 2019-03-27)
+  - Fixed bug in AWS::ServiceDiscovery::Instance Properties: The InstanceAttributes
+    Attribute was not declared as a Cfn::Value::Hash
+  - New feature: All resource classes get a supported_regions class method with a list
+    of the regions where the resource is supported.
+  - The AttributeList instance method can now also be called as a class method
+
+0.02 2019-02-27
+  - Support for UpdateReplacePolicy 
+  - Add AWS::Partion and AWS::URLSuffix as PseudoParameters. They are now recognized as
+    Cfn::Value::Function::PseudoParameter
   - Support for returning ArrayRefs and HashRefs from Cfn::DynamicValues. If the values
     returned from a DynamicValue is itself a HashRef or an ArrayRef with DynamicValues 
-    too, they will get resolved too. 
+    too, they will get resolved too.
+  - The changes method on Cfn::Diff can be called directly instead of calling ->diff before
   - Implements the resources in CloudFormation spec 2.24.0 (published as of 2019-02-25)
   - Cfn gets a new method resolve_dynamicvalues that returns a new Cfn with all it's
     Cfn::DynamicValues resolved
@@ -9,6 +32,8 @@
     since the return value of a DynamicValue is not known beforehand.
   - Cfn::Diff gets a new attribute resolve_dynamicvalues that when activated will resolve
     all Cfn::DynamicValues before diffing
+  - Cfn::Crawl by default doesn't resolve Dynamic values, but now gets a resolve_dynamicvalues
+    attribute to resolve them before crawling
 
 0.01 2019-02-15
   - First release of this module as a separate entity from CloudDeploy.

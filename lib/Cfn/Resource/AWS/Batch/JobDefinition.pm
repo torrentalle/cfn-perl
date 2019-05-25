@@ -1,4 +1,4 @@
-# AWS::Batch::JobDefinition generated from spec 2.22.0
+# AWS::Batch::JobDefinition generated from spec 2.30.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition',
@@ -9,8 +9,12 @@ package Cfn::Resource::AWS::Batch::JobDefinition {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Batch::JobDefinition', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','eu-west-3','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 
@@ -124,6 +128,50 @@ package Cfn::Resource::Properties::AWS::Batch::JobDefinition::UlimitValue {
   has HardLimit => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SoftLimit => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirement',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirement',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirement')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirement',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirement',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirementValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirementValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Value => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::Batch::JobDefinition::MountPoints',
      as 'Cfn::Value',
@@ -242,6 +290,7 @@ package Cfn::Resource::Properties::AWS::Batch::JobDefinition::ContainerPropertie
   has MountPoints => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Batch::JobDefinition::MountPoints', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Privileged => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ReadonlyRootFilesystem => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ResourceRequirements => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirement', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Ulimits => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Batch::JobDefinition::Ulimit', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has User => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Vcpus => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

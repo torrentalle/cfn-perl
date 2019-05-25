@@ -1,5 +1,7 @@
 #!/usr/bin/env perl
 
+use strict;
+use warnings;
 use Test::More;
 use Cfn;
 use Cfn::Crawler;
@@ -39,6 +41,37 @@ while (my $file = $d->read){
     my $path = $match->path;
     cmp_ok($cfn->path_to($path), 'eq', $match->element, "Path $path is resolved to same element");
   }
+}
+
+{
+  my $o = Cfn->new;
+  $o->addResource(R1 => 'AWS::IAM::User', { Path => Cfn::DynamicValue->new(Value => sub { return '/' }) });
+
+  my $crawl = Cfn::Crawler->new(
+    cfn => $o,
+    criteria => sub {
+      $_[0]->isa('Cfn::DynamicValue');
+    }
+  );
+
+  my @elements = $crawl->all;
+  cmp_ok(scalar(@elements), '==', 1);
+}
+
+{
+  my $o = Cfn->new;
+  $o->addResource(R1 => 'AWS::IAM::User', { Path => Cfn::DynamicValue->new(Value => sub { return '/' }) });
+
+  my $crawl = Cfn::Crawler->new(
+    resolve_dynamicvalues => 1,
+    cfn => $o,
+    criteria => sub {
+      $_[0]->isa('Cfn::DynamicValue');
+    }
+  );
+
+  my @elements = $crawl->all;
+  cmp_ok(scalar(@elements), '==', 0);
 }
 
 done_testing;

@@ -1,4 +1,4 @@
-# AWS::Inspector::ResourceGroup generated from spec 1.12.0
+# AWS::Inspector::ResourceGroup generated from spec 3.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Inspector::ResourceGroup',
@@ -9,8 +9,12 @@ package Cfn::Resource::AWS::Inspector::ResourceGroup {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Inspector::ResourceGroup', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [ 'Arn' ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 

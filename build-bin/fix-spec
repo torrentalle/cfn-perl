@@ -24,17 +24,17 @@ $iotthing->{PrimitiveType} = 'Json';
 
 delete $doc->{PropertyTypes}{'AWS::IoT::Thing.AttributePayload'};
 
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-instanceattributes
+# the docs state that InstanceAttributes is a Map. This Map is declared as a PrimitiveType
+my $sd_instanceatts = $doc->{ResourceTypes}{'AWS::ServiceDiscovery::Instance'}{Properties}{InstanceAttributes};
+$sd_instanceatts->{ Type } = 'Map';
+$sd_instanceatts->{ PrimitiveType } = 'String'; 
+
 my $ssmassoc = $doc->{ResourceTypes}{'AWS::SSM::Association'}{Properties}{Parameters};
 delete $ssmassoc->{ItemType};
 $ssmassoc->{PrimitiveType} = 'Json';
 
 delete $doc->{PropertyTypes}{'AWS::SSM::Association.ParameterValues'};
-
-# delete a property that is undocumented and ill-defined (no properties)
-warn "take a look to see if the filtergroup property has been documented: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups";
-delete $doc->{PropertyTypes}{'AWS::CodeBuild::Project.FilterGroup'};
-delete $doc->{PropertyTypes}{'AWS::CodeBuild::Project.ProjectTriggers'}->{ Properties }->{ FilterGroups };
-
 
 delete $doc->{PropertyTypes}{'AWS::EC2::LaunchTemplate.CapacityReservationPreference'};
 delete $doc->{PropertyTypes}{'AWS::EC2::LaunchTemplate.CapacityReservationSpecification'}{Properties}{CapacityReservationPreference}{Type};

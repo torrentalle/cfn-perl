@@ -1,4 +1,4 @@
-# AWS::RoboMaker::RobotApplicationVersion generated from spec 2.24.0
+# AWS::RoboMaker::RobotApplicationVersion generated from spec 2.32.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::RoboMaker::RobotApplicationVersion',
@@ -9,8 +9,12 @@ package Cfn::Resource::AWS::RoboMaker::RobotApplicationVersion {
   use Moose;
   extends 'Cfn::Resource';
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::RoboMaker::RobotApplicationVersion', is => 'rw', coerce => 1);
-  sub _build_attributes {
+  
+  sub AttributeList {
     [  ]
+  }
+  sub supported_regions {
+    [ 'ap-northeast-1','eu-west-1','us-east-1','us-west-2' ]
   }
 }
 

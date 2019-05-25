@@ -4,6 +4,7 @@ requires 'MooseX::SlurpyConstructor';
 requires 'JSON';
 requires 'YAML::PP', '>= 0.015';
 requires 'Module::Runtime';
+requires 'Module::Find';
 
 on test => sub {
   requires 'Data::Printer';
@@ -22,4 +23,6 @@ on develop => sub {
   requires 'JSON::MaybeXS';
   requires 'Sort::Topological';
   requires 'Template';
+  requires 'Mojo::UserAgent';
+  requires 'IO::Socket::SSL';
 };

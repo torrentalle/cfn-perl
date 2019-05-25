@@ -66,6 +66,11 @@ package Cfn::TypeLibrary {
     where { $_ eq 'Delete' or $_ eq 'Retain' or $_ eq 'Snapshot' },
     message { "$_ is an invalid DeletionPolicy" };
 
+  subtype 'Cfn::Resource::UpdateReplacePolicy',
+    as 'Str',
+    where { $_ eq 'Delete' or $_ eq 'Retain' or $_ eq 'Snapshot' },
+    message { "$_ is an invalid UpdateReplacePolicy" };
+
   subtype 'Cfn::Value::ArrayOfPrimitives',
     as 'Cfn::Value::Array',
     where { @{ $_[0]->Value } == grep { $_->isa('Cfn::Value::Primitive') } @{ $_[0]->Value } },
@@ -303,6 +308,28 @@ package Cfn::TypeLibrary {
     'List<AWS::EC2::VPC::Id>',
     'AWS::Route53::HostedZone::Id',
     'List<AWS::Route53::HostedZone::Id>',
+    'AWS::SSM::Parameter::Name',
+    'AWS::SSM::Parameter::Value<String>',
+    'AWS::SSM::Parameter::Value<List<String>>',
+    'AWS::SSM::Parameter::Value<CommaDelimitedList>',
+    'AWS::SSM::Parameter::Value<AWS::EC2::AvailabilityZone::Name>',
+    'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>',
+    'AWS::SSM::Parameter::Value<AWS::EC2::Instance::Id>',
+    'AWS::SSM::Parameter::Value<AWS::EC2::SecurityGroup::GroupName>',
+    'AWS::SSM:;Parameter::Value<AWS::EC2::SecurityGroup::Id>',
+    'AWS::SSM::Parameter::Value<AWS::EC2::Subnet::Id>',
+    'AWS::SSM::Parameter::Value<AWS::EC2::Volume::Id>',
+    'AWS::SSM::Parameter::Value<AWS::EC2::VPC::Id>',
+    'AWS::SSM::Parameter::Value<AWS::Route53::HostedZone::Id>',
+    'AWS::SSM::Parameter::Value<List<AWS::EC2::AvailabilityZone::Name>>',
+    'AWS::SSM::Parameter::Value<List<AWS::EC2::Image::Id>>',
+    'AWS::SSM::Parameter::Value<List<AWS::EC2::Instance::Id>>',
+    'AWS::SSM::Parameter::Value<List<AWS::EC2::SecurityGroup::GroupName>>',
+    'AWS::SSM::Parameter::Value<List<AWS::EC2::SecurityGroup::Id>>',
+    'AWS::SSM::Parameter::Value<List<AWS::EC2::Subnet::Id>>',
+    'AWS::SSM::Parameter::Value<List<AWS::EC2::Volume::Id>>',
+    'AWS::SSM::Parameter::Value<List<AWS::EC2::VPC::Id>>',
+    'AWS::SSM::Parameter::Value<List<AWS::Route53::HostedZone::Id>>',
   ];
 
   subtype 'ArrayOfCfn::Resource::Properties::TagType',
@@ -345,9 +372,11 @@ package Cfn::TypeLibrary {
     'AWS::AccountId',
     'AWS::NotificationARNs',
     'AWS::NoValue',
+    'AWS::Partition',
     'AWS::Region',
     'AWS::StackId',
     'AWS::StackName',
+    'AWS::URLSuffix',
   ];
 
   coerce 'Cfn::Internal::Options',
@@ -640,8 +669,6 @@ package Cfn::Resource {
     return @matches == 1;
   }
 
-  has AttributeList => (isa => 'ArrayRef[Str]', is => 'ro', lazy => 1, builder => '_build_attributes');
-
   sub DependsOnList {
     my $self = shift;
     return () if (not defined $self->DependsOn);
@@ -652,6 +679,7 @@ package Cfn::Resource {
   has Metadata => (isa => 'Cfn::Value::Hash', is => 'rw', coerce => 1);
   has UpdatePolicy => (isa => 'Cfn::Resource::UpdatePolicy', is => 'rw', coerce => 1);
   has CreationPolicy => (isa => 'HashRef', is => 'rw');
+  has UpdateReplacePolicy => (isa => 'Cfn::Resource::UpdateReplacePolicy', is => 'rw');
 
   sub as_hashref {
     my $self = shift;
@@ -660,7 +688,7 @@ package Cfn::Resource {
       (map { $_ => $self->$_->as_hashref(@args) }
         grep { defined $self->$_ } qw/Properties Metadata UpdatePolicy/),
       (map { $_ => $self->$_ }
-        grep { defined $self->$_ } qw/Type DeletionPolicy DependsOn CreationPolicy Condition/),
+        grep { defined $self->$_ } qw/Type DeletionPolicy UpdateReplacePolicy DependsOn CreationPolicy Condition/),
     }
   }
 
@@ -870,12 +898,13 @@ package Cfn {
   use Moose;
   use Moose::Util;
   use Scalar::Util;
+  use Cfn::ResourceModules;
+
   has AWSTemplateFormatVersion => (isa => 'Str', is => 'rw');
   has Description => (isa => 'Str', is => 'rw');
   has Transform => (isa => 'Cfn::Transform', is => 'rw', coerce => 1);
 
-  our $VERSION = '0.01';
-  #ABSTRACT: An object model for CloudFormation documents
+  our $VERSION = '0.06';
 
   has Parameters => (
     is => 'rw',
@@ -952,13 +981,13 @@ package Cfn {
     default => sub { Cfn::Internal::Options->new },
   );
 
-  use Module::Runtime qw//;
+  sub list_resource_modules {
+    return Cfn::ResourceModules::list();
+  }
+
   sub load_resource_module {
     my (undef, $type) = @_;
-    my $cfn_resource_class = "Cfn::Resource::$type";
-    my $retval = Module::Runtime::require_module($cfn_resource_class);
-    die "Couldn't load $cfn_resource_class" if (not $retval);
-    return $cfn_resource_class;
+    return Cfn::ResourceModules::load($type);
   }
 
   sub ResourcesOfType {
@@ -1543,9 +1572,9 @@ of the reference in the C<Value> attribute. Note that the Value attribute contai
 another C<Cfn::Value>. It derives from C<Cfn::Value::Function>
 
   $cfn->addResource('R1', 'AWS::IAM::User', Path => { Ref => 'AWS::Region' });
-  $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::Value::Function::PseudoParam
+  $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::Value::Function::PseudoParameter
 
-=head2 Cfn::Value::Function::PseudoParam
+=head2 Cfn::Value::Function::PseudoParameter
 
 This is a subclass of C<Cfn::Value::Function::Ref> used to hold what CloudFormation
 calls PseudoParameters.
@@ -1664,11 +1693,19 @@ Holds the UpdatePolicy. Validates that the UpdatePolicy is valid
 
 HashRef with the CreationPolicy. Doesn't validate CreationPolicies.
 
+=head2 Methods for Cfn::Resource objects
+
 =head3 AttributeList
 
-Holds a Hashref of attributes that can be recalled in CloudFormation via C<Fn::GetAtt>
+Returns an ArrayRef of attributes that can be recalled in CloudFormation via C<Fn::GetAtt>.
 
-=head2 Methods for Cfn::Resource objects
+Can also be retrieved as a class method C<Cfn::Resource::...->AttributeList>
+
+=head3 supported_regions
+
+Returns an ArrayRef of the AWS regions where the resource can be provisioned.
+
+Can also be retrieved as a class method C<Cfn::Resource::...->supported_regions>
 
 =head3 DependsOnList
 
@@ -1679,7 +1716,8 @@ if the DependsOn attribute is a String or an ArrayRef of Strings.
 
 =head3 hasAttribute($attribute)
 
-Returns true if the specified attribute is in the C<AttributeList>
+Returns true if the specified attribute is in the C<AttributeList>. Note that some resources
+(AWS::CloudFormation::CustomResource) can return true for values that are not in AttributeList
 
 =head3 as_hashref
 
@@ -1782,6 +1820,8 @@ Returns a HashRef representation of the output that is convertible to JSON
 =head1 SEE ALSO
 
 L<https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html>
+
+This module kind of resembles troposphere (python): L<https://github.com/cloudtools/troposphere>.
 
 =head1 AUTHOR
 

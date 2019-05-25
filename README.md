@@ -52,7 +52,7 @@ This method creates a Cfn object from a JSON string that containes a CloudFormat
 
 ### json
 
-When serializing to JSON with `as_json`, the encode method on on this object is called passing the
+When serializing to JSON with `as_json`, the encode method on this object is called passing the
 documents hashref representation. By default the JSON generated is "ugly", that is, all in one line,
 but in canonical form (so a given serialization always has attributes in the same order).
 
@@ -155,6 +155,15 @@ has no objects in it. It is suitable for converting to JSON and passing to Cloud
 object model asking it's components to serialize (calling their `as_hashref`). Objects
 can decide how they serialize to a hashref.
 
+When `$cfn-`as\_hashref> is invoked, all the dynamic values in the Cfn object will be 
+called with the `$cfn` instance as the first parameter to their subroutine
+
+    $cfn->addResource('R1', 'AWS::IAM::User', Path => Cfn::DynamicValue->new(Value => sub {
+      my $cfn = shift;
+      return $cfn->ResourceCount + 41
+    }));
+    $cfn->as_hashref->{ Resources }->{ R1 }->{ Properties }->{ Path } # == 42
+
 ### as\_json
 
 Returns a JSON representation of `as_hashref`. Just a shortcut
@@ -164,6 +173,10 @@ Returns a JSON representation of `as_hashref`. Just a shortcut
 Given a path in the format `'Resources.R1.Properties.PropName'` it will return the value
 stored in PropName of the resource R1. Use `'Resource.R1.Properties.ArrayProp.0'` to access
 Arrays.
+
+### resolve\_dynamicvalues
+
+Returns a new `Cfn` object with all `Cfn::DynamicValues` resolved.
 
 ### ResourcesOfType($type)
 
@@ -316,6 +329,15 @@ when as\_hashref is called.
     $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::DynamicValue
     $cfn->path_to('Resources.R1.Properties.Path')->as_hashref # eq 'Hello'
 
+When `$cfn-`as\_hashref> is invoked, all the dynamic values in the Cfn object will be 
+called with the `$cfn` instance as the first parameter to their subroutine
+
+    $cfn->addResource('R1', 'AWS::IAM::User', Path => Cfn::DynamicValue->new(Value => sub {
+      my $cfn = shift;
+      return $cfn->ResourceCount + 41
+    }));
+    $cfn->as_hashref->{ Resources }->{ R1 }->{ Properties }->{ Path } # == 42
+
 ## Cfn::Value::Function
 
 All function statements derive from Cfn::Value::Function. 
@@ -329,9 +351,9 @@ of the reference in the `Value` attribute. Note that the Value attribute contain
 another `Cfn::Value`. It derives from `Cfn::Value::Function`
 
     $cfn->addResource('R1', 'AWS::IAM::User', Path => { Ref => 'AWS::Region' });
-    $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::Value::Function::PseudoParam
+    $cfn->path_to('Resources.R1.Properties.Path') # isa Cfn::Value::Function::PseudoParameter
 
-## Cfn::Value::Function::PseudoParam
+## Cfn::Value::Function::PseudoParameter
 
 This is a subclass of `Cfn::Value::Function::Ref` used to hold what CloudFormation
 calls PseudoParameters.
@@ -449,11 +471,19 @@ Holds the UpdatePolicy. Validates that the UpdatePolicy is valid
 
 HashRef with the CreationPolicy. Doesn't validate CreationPolicies.
 
+## Methods for Cfn::Resource objects
+
 ### AttributeList
 
-Holds a Hashref of attributes that can be recalled in CloudFormation via `Fn::GetAtt`
+Returns an ArrayRef of attributes that can be recalled in CloudFormation via `Fn::GetAtt`.
 
-## Methods for Cfn::Resource objects
+Can also be retrieved as a class method `Cfn::Resource::...-`AttributeList>
+
+### supported\_regions
+
+Returns an ArrayRef of the AWS regions where the resource can be provisioned.
+
+Can also be retrieved as a class method `Cfn::Resource::...-`supported\_regions>
 
 ### DependsOnList
 
@@ -464,7 +494,8 @@ if the DependsOn attribute is a String or an ArrayRef of Strings.
 
 ### hasAttribute($attribute)
 
-Returns true if the specified attribute is in the `AttributeList`
+Returns true if the specified attribute is in the `AttributeList`. Note that some resources
+(AWS::CloudFormation::CustomResource) can return true for values that are not in AttributeList
 
 ### as\_hashref
 
@@ -567,6 +598,8 @@ Returns a HashRef representation of the output that is convertible to JSON
 # SEE ALSO
 
 [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)
+
+This module kind of resembles troposphere (python): [https://github.com/cloudtools/troposphere](https://github.com/cloudtools/troposphere).
 
 # AUTHOR
 
