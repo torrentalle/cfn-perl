@@ -351,7 +351,7 @@ EOY
 EOJ
 
 my $yaml = <<EOY;
-!Or [!Equals [sg-mysggroup, !Ref ASecurityGroup], !Condition: SomeOtherCondition]
+!Or [!Equals [sg-mysggroup, !Ref ASecurityGroup], !Condition SomeOtherCondition]
 EOY
 
   yaml($yaml, {
