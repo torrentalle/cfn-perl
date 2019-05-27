@@ -31,6 +31,7 @@ package Cfn::YAML::Schema;
 
   our $mapping_tags = {
     Transform => 1,
+    Base64 => 1,
   };
 
   sub register {

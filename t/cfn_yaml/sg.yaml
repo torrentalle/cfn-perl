@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Conditions:
-  Cond1: !Or [!Equals [sg-mysggroup, !Ref ASecurityGroup], !Condition: SomeOtherCondition]
+  Cond1: !Or [!Equals [sg-mysggroup, !Ref ASecurityGroup], !Condition SomeOtherCondition]
 Resources:
   ClientSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
