@@ -55,14 +55,18 @@ package Cfn::YAML::Schema;
     );
 
     $schema->add_mapping_resolver(
-      tag => "!Transform",
+      tag => qr/^!.*/,
       on_create => sub {
         my ($constructor, $event) = @_;
-        return { "Fn::Transform" => {} };
+	my $tag = $event->{ tag };
+	$tag =~ s/^!//;
+        return { "Fn::$tag" => { } };
       },
       on_data => sub {
         my ($constructor, $ref, $items) = @_;
-        $$ref->{"Fn::Transform"} = { @$items };
+	my $struct = $$ref;
+	my $key = [ keys %$struct ]->[ 0 ];
+        $struct->{ $key } = { @$items };
       }
     );
     
