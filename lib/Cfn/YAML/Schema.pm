@@ -9,21 +9,6 @@ package Cfn::YAML::Schema;
     return $self;
   }
 
-  sub shortcut_sequence_resolver {
-    my $tag = shift;
-    return (
-      tag => "!$tag",
-      on_create => sub {
-        my ($constructor, $event) = @_;
-        return { "Fn::$tag" => [] };
-      },
-      on_data => sub {
-        my ($constructor, $ref, $items) = @_;
-        push @{ $$ref->{"Fn::$tag"} }, @$items;
-      }
-    );
-  }
-
   sub register {
     my ($self, %args) = @_;
     my $schema = $args{schema};
@@ -52,34 +37,22 @@ package Cfn::YAML::Schema;
       } ]
     );
 
-    $schema->add_resolver(
-      tag => '!GetAtt',
-      implicit => 0,
-      match => [ regex => qr{^(.*)$} => sub {
-        my ($self, $event) = @_;
-        my $value = $event->{ value };
-        my @parts = split /\./, $value, 2;
-        { 'Fn::GetAtt' => [ $parts[0], $parts[1] ] }
-      }]
-    );
 
-    $schema->add_resolver(shortcut_scalar_resolver('Base64'));
-    $schema->add_resolver(shortcut_scalar_resolver('Sub'));
-    $schema->add_resolver(shortcut_scalar_resolver('GetAZs'));
-    $schema->add_resolver(shortcut_scalar_resolver('ImportValue'));
-    
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('GetAtt'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('Cidr'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('Join'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('Select'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('FindInMap'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('Split'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('Sub'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('Equals'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('Or'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('And'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('If'));
-    $schema->add_sequence_resolver(shortcut_sequence_resolver('Not'));
+    $schema->add_sequence_resolver(
+      tag => qr/^!.*/,
+      on_create => sub {
+        my ($constructor, $event) = @_;
+	my $tag = $event->{ tag };
+	$tag =~ s/^!//;
+        return { "Fn::$tag" => [ ] };
+      },
+      on_data => sub {
+        my ($constructor, $ref, $items) = @_;
+	my $struct = $$ref;
+	my $key = [ keys %$struct ]->[ 0 ];
+        push @{ $struct->{ $key } }, @$items;
+      }, 
+    );
 
     $schema->add_mapping_resolver(
       tag => "!Transform",
