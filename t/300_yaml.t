@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Exception;
 use JSON::MaybeXS;
 use Data::Dumper;
 use YAML::PP;
@@ -365,6 +366,25 @@ EOY
 yaml(<<EOY, { "Fn::GetAtt" => [ 'ElasticLoadBalancer', 'SourceSecurityGroup.OwnerAlias' ] }, '{ "Fn::GetAtt" : [ "ElasticLoadBalancer", "SourceSecurityGroup.OwnerAlias" ] }');
 !GetAtt [ElasticLoadBalancer, SourceSecurityGroup.OwnerAlias]
 EOY
+
+{
+  throws_ok(sub {
+    my $parsed_yaml = $cfn->yaml->load_string('!UnsupportedScalar XxX');
+  }, qr/Unsupported scalar tag '!UnsupportedScalar'/);
+}
+
+{
+  throws_ok(sub {
+    my $parsed_yaml = $cfn->yaml->load_string('!UnsupportedSequence [ XxX, YyY ]');
+  }, qr/Unsupported sequence tag '!UnsupportedSequence'/);
+}
+
+{
+  throws_ok(sub {
+    my $parsed_yaml = $cfn->yaml->load_string('!UnsupportedMapping { "Key": Value }');
+  }, qr/Unsupported mapping tag '!UnsupportedMapping'/);
+}
+
 
 done_testing;
 

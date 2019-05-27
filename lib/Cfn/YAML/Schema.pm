@@ -9,23 +9,33 @@ package Cfn::YAML::Schema;
     return $self;
   }
 
+  our $tag_subs = {
+    '!Ref'         => sub { { Ref => $_[0] } },
+    '!Condition'   => sub { { Condition => $_[0] } },
+    '!Base64'      => sub { { 'Fn::Base64'      => $_[0] } },
+    '!Sub'         => sub { { 'Fn::Sub'         => $_[0] } },
+    '!GetAZs'      => sub { { 'Fn::GetAZs'      => $_[0] } },
+    '!ImportValue' => sub { { 'Fn::ImportValue' => $_[0] } },
+    '!GetAtt' => sub {
+      my $value = shift;
+      my @parts = split /\./, $value, 2;
+      { 'Fn::GetAtt' => [ $parts[0], $parts[1] ] }
+    },
+  };
+
+  our $sequence_tags = {
+    GetAtt => 1, Cidr => 1, Join => 1, FindInMap => 1, Split => 1, 
+    Sub => 1, Equals => 1, Or => 1, And => 1, If => 1, Not => 1,
+    Select => 1,
+  };
+
+  our $mapping_tags = {
+    Transform => 1,
+  };
+
   sub register {
     my ($self, %args) = @_;
     my $schema = $args{schema};
-
-    my $tag_subs = {
-      '!Ref'         => sub { { Ref => $_[0] } },
-      '!Condition'   => sub { { Condition => $_[0] } },
-      '!Base64'      => sub { { 'Fn::Base64'      => $_[0] } },
-      '!Sub'         => sub { { 'Fn::Sub'         => $_[0] } },
-      '!GetAZs'      => sub { { 'Fn::GetAZs'      => $_[0] } },
-      '!ImportValue' => sub { { 'Fn::ImportValue' => $_[0] } },
-      '!GetAtt' => sub {
-        my $value = shift;
-        my @parts = split /\./, $value, 2;
-        { 'Fn::GetAtt' => [ $parts[0], $parts[1] ] }
-      },
-    };
 
     $schema->add_resolver(
       tag => qr/^!.*/,
@@ -33,10 +43,10 @@ package Cfn::YAML::Schema;
       match => [ regex => qr{^(.*)$} => sub {
         my ($self, $event) = @_;
 	my $tag = $event->{ tag };
+	die "Unsupported scalar tag '$tag'" if (not defined $tag_subs->{ $tag });
 	return $tag_subs->{ $tag }->($event->{ value });
       } ]
     );
-
 
     $schema->add_sequence_resolver(
       tag => qr/^!.*/,
@@ -44,6 +54,7 @@ package Cfn::YAML::Schema;
         my ($constructor, $event) = @_;
 	my $tag = $event->{ tag };
 	$tag =~ s/^!//;
+	die "Unsupported sequence tag '$event->{ tag }'" if (not defined $sequence_tags->{ $tag });
         return { "Fn::$tag" => [ ] };
       },
       on_data => sub {
@@ -60,6 +71,7 @@ package Cfn::YAML::Schema;
         my ($constructor, $event) = @_;
 	my $tag = $event->{ tag };
 	$tag =~ s/^!//;
+	die "Unsupported mapping tag '$event->{ tag }'" if (not defined $mapping_tags->{ $tag });
         return { "Fn::$tag" => { } };
       },
       on_data => sub {
