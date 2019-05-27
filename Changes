@@ -1,4 +1,5 @@
 0.06 
+  - YAML CloudFormation support. Added from_yaml and as_yaml methods to Cfn.
   - Add parameter types for SSM
     https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#parameters-section-ssm-examples
 
