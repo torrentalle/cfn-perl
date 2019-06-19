@@ -3,6 +3,7 @@ requires 'Moose';
 requires 'MooseX::StrictConstructor';
 requires 'MooseX::SlurpyConstructor';
 requires 'JSON';
+requires 'YAML::PP', '>= 0.015';
 requires 'Module::Runtime';
 requires 'Module::Find';
 
