@@ -1,5 +1,7 @@
 0.06 
   - YAML CloudFormation support. Added from_yaml and as_yaml methods to Cfn.
+  - Implements the resources in CloudFormation spec 3.3.0 (published as of 2019-05-29)
+  - Declare minimum Perl version of 5.16, due to heavy usage of package { } syntax
   - Add parameter types for SSM
     https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#parameters-section-ssm-examples
 

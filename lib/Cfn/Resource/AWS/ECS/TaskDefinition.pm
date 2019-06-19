@@ -1,4 +1,4 @@
-# AWS::ECS::TaskDefinition generated from spec 2.25.0
+# AWS::ECS::TaskDefinition generated from spec 3.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition',
@@ -537,6 +537,50 @@ package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::DockerVolumeConfigu
   has Labels => (isa => 'Cfn::Value::Hash|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Scope => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
+subtype 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependency',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependency',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependency')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependency',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependency',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependencyValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependencyValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Condition => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ContainerName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::Volume',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -626,6 +670,29 @@ package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::TaskDefinitionPlace
   has Expression => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
+
+subtype 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ProxyConfiguration',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ProxyConfiguration',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ProxyConfigurationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ProxyConfigurationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ContainerName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ProxyConfigurationProperties => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::KeyValuePair', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDefinition',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -669,6 +736,7 @@ package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDefinition
   
   has Command => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Cpu => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has DependsOn => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependency', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has DisableNetworking => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has DnsSearchDomains => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has DnsServers => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
@@ -692,6 +760,8 @@ package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDefinition
   has Privileged => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ReadonlyRootFilesystem => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has RepositoryCredentials => (isa => 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::RepositoryCredentials', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has StartTimeout => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has StopTimeout => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Ulimits => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::Ulimit', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has User => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has VolumesFrom => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::VolumeFrom', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
@@ -710,6 +780,7 @@ package Cfn::Resource::Properties::AWS::ECS::TaskDefinition {
   has Memory => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has NetworkMode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has PlacementConstraints => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::TaskDefinitionPlacementConstraint', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ProxyConfiguration => (isa => 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ProxyConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has RequiresCompatibilities => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has TaskRoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Volumes => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::Volume', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
