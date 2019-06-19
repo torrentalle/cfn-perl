@@ -1,4 +1,4 @@
-0.06 
+0.06 2019-06-19
   - YAML CloudFormation support. Added from_yaml and as_yaml methods to Cfn.
   - Implements the resources in CloudFormation spec 3.3.0 (published as of 2019-05-29)
   - Declare minimum Perl version of 5.16, due to heavy usage of package { } syntax
