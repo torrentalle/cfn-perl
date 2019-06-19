@@ -1,3 +1,5 @@
+0.07 
+
 0.06 2019-06-19
   - Implements the resources in CloudFormation spec 3.4.0 (published as of 2019-06-19)
   - YAML CloudFormation support. Added from_yaml and as_yaml methods to Cfn.
