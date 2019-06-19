@@ -23,6 +23,15 @@ package TestClass {
     }
   };
 
+  resource User1_1 => 'AWS::IAM::User', {
+    UserName => 'myuser',
+    Path => '{{resolve:ssm:IAMUserPassword:10}}',
+    LoginProfile => {
+      Password => '{{resolve:ssm:IAMUserPassword:10}}',
+    }
+  };
+
+
   resource User2 => 'AWS::IAM::User', {
     UserName => 'myuser',
     Path => '{{resolve:secretsmanager:MyRDSSecret:SecretString:username}}',
@@ -50,8 +59,10 @@ package TestClass {
 
 my $obj = TestClass->new;
 
-isa_ok($obj->User1->Properties->LoginProfile->Password, 'Cfn::DynamicSSMParameter');
-isa_ok($obj->User1->Properties->Path, 'Cfn::String');
+isa_ok($obj->User1->Properties->LoginProfile->Password, 'Cfn::DynamicSecureSSMParameter');
+isa_ok($obj->User1->Properties->Path, 'Cfn::DynamicSecureSSMParameter');
+isa_ok($obj->User1_1->Properties->LoginProfile->Password, 'Cfn::DynamicSSMParameter');
+isa_ok($obj->User1_1->Properties->Path, 'Cfn::DynamicSSMParameter');
 isa_ok($obj->User2->Properties->LoginProfile->Password, 'Cfn::DynamicSecretsManager');
 isa_ok($obj->User2->Properties->Path, 'Cfn::DynamicSecretsManager');
 
@@ -62,6 +73,7 @@ isa_ok($obj->User6->Properties->Path, 'Cfn::DynamicSecretsManager');
 isa_ok($obj->User7->Properties->Path, 'Cfn::DynamicSecretsManager');
 
 cmp_ok($obj->as_hashref->{ Resources }->{ User1 }->{ Properties }->{ LoginProfile }->{ Password }, 'eq', '{{resolve:ssm-secure:IAMUserPassword:10}}');
+cmp_ok($obj->as_hashref->{ Resources }->{ User1_1 }->{ Properties }->{ LoginProfile }->{ Password }, 'eq', '{{resolve:ssm:IAMUserPassword:10}}');
 cmp_ok($obj->as_hashref->{ Resources }->{ User2 }->{ Properties }->{ LoginProfile }->{ Password }, 'eq', '{{resolve:secretsmanager:MyRDSSecret:SecretString:username}}');
 
 sub path_for_user {
@@ -89,4 +101,5 @@ foreach my $test ([ 'AWS::DirectoryService::MicrosoftAD', '', 'Password' ],
 
 }
 
-done_testing;
+done_testing; 
+

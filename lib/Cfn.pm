@@ -158,7 +158,7 @@ package Cfn::TypeLibrary {
     from 'HashRef', via \&coerce_hashref_to_function;
 
   coerce 'Cfn::Value::String',
-    from 'Str',  via { Cfn::String->new( Value => $_ ) },
+    from 'Str',  via { string_to_string_or_dynamicvalue($_) },
     from 'HashRef', via \&coerce_hashref_to_function;
 
   coerce 'Cfn::Value::Double',
@@ -183,35 +183,52 @@ package Cfn::TypeLibrary {
   coerce 'Cfn::Value::Hash',
     from 'HashRef',  via (\&coerce_hash);
 
-  coerce 'Cfn::Value::DynamicReference',
-    from 'Str',  via {
-      my $value = $_;
-      if ($value =~ m/^\{\{(.*)\}\}$/) {
-        my $resolve_statement = $1;
-        my ($resolve, $type, @rest) = split /:/, $resolve_statement;
-        if ($resolve eq 'resolve' and $type eq 'ssm-secure') {
-          die "ssm-secure resolve incorrect format" if (@rest != 2);
-          my ($parameter, $version) = @rest;
-          return Cfn::DynamicSSMParameter->new(
-            parameter => $parameter,
-            version => $version,
-          );
-        } elsif ($resolve eq 'resolve' and $type eq 'secretsmanager') {
-          my $secret_id = shift @rest;
-          my $secret_string = shift @rest;
-          return Cfn::DynamicSecretsManager->new(
-            secret_id => $secret_id,
-            secret_string => $secret_string,
-            parameters => \@rest,
-          );
+  # This is used to coerce string values into a Cfn::String object (just a plain string)
+  # or a cloudformation Dynamic Reference (which can appear in strings as {{...}}
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html
+  sub string_to_string_or_dynamicvalue {
+    my $value = shift;
+    if ($value =~ m/^\{\{(.*)\}\}$/) {
+      my $resolve_statement = $1;
+      my ($resolve, $type, @rest) = split /:/, $resolve_statement;
+      if ($resolve eq 'resolve' and ($type eq 'ssm' or $type eq 'ssm-secure')) {
+        die "ssm resolve incorrect format" if (@rest != 2);
+        my $class;
+        $class = 'Cfn::DynamicSSMParameter' if ($type eq 'ssm');
+        $class = 'Cfn::DynamicSecureSSMParameter' if ($type eq 'ssm-secure');
+
+        my ($parameter, $version) = @rest;
+        return $class->new(
+          parameter => $parameter,
+          version => $version,
+        );
+      } elsif ($resolve eq 'resolve' and $type eq 'secretsmanager') {
+        my ($secret_id, $secret_string, @parameters);
+        # there are two type of secret_ids, one that is bound to the current
+        # account that is just a string with the id, and another that is a whole
+        # arn pointing to a secret (in another account, for example)
+        if ($rest[0] eq 'arn') {
+          $secret_id = join ':', @rest[0..6];
+          $secret_string = $rest[7];
+          @parameters = @rest[8..scalar(@rest)-1];
         } else {
-          die "Unrecognized resolve $value";
+          $secret_id = shift @rest;
+          $secret_string = shift @rest;
+          @parameters = @rest;
         }
+
+        return Cfn::DynamicSecretsManager->new(
+          secret_id => $secret_id,
+          (defined $secret_string) ? (secret_string => $secret_string) : (),
+          parameters => \@parameters,
+        );
       } else {
-        Cfn::String->new( Value => $value );
+        die "Unrecognized resolve $value";
       }
-    },
-    from 'HashRef', via \&coerce_hashref_to_function;
+    } else {
+      Cfn::String->new( Value => $value );
+    }
+  };
 
   subtype 'Cfn::Transform',
        as 'ArrayRef[Str]';
@@ -672,11 +689,19 @@ package Cfn::DynamicSSMParameter {
 
   has parameter => (is => 'ro', isa => 'Str', required => 1);
   has version => (is => 'ro', isa => 'Str', required => 1);
+  has secure => (is => 'ro', isa => 'Bool', default => 0);
 
   sub as_hashref {
     my $self = shift;
-    return sprintf '{{resolve:ssm-secure:%s:%s}}', $self->parameter, $self->version;
+    my $type = $self->secure ? 'ssm-secure' : 'ssm';
+    return sprintf '{{resolve:%s:%s:%s}}', $type, $self->parameter, $self->version;
   }
+}
+
+package Cfn::DynamicSecureSSMParameter {
+  use Moose;
+  extends 'Cfn::DynamicSSMParameter';
+  has '+secure' => (default => 1);
 }
 
 package Cfn::DynamicSecretsManager {
@@ -685,17 +710,21 @@ package Cfn::DynamicSecretsManager {
   extends 'Cfn::DynamicReference';
  
   has secret_id => (is => 'ro', isa => 'Str', required => 1);
-  has secret_string => (is => 'ro', isa => 'Str', required => 1);
-  has parameters => (is => 'ro', isa => 'ArrayRef', required => 1);  
+  has secret_string => (is => 'ro', isa => 'Str');
+  has parameters => (is => 'ro', isa => 'ArrayRef');  
 
   sub as_hashref {
     my $self = shift;
     my $suffix = join ':', @{ $self->parameters };
     $suffix = ":$suffix" if ($suffix ne '');
 
-    return sprintf '{{resolve:secretsmanager:%s:%s%s}}',
+    my $ss = $self->secret_string if (defined $self->secret_string);
+    $ss = '' if (not defined $ss);
+    $ss = ":$ss" if ($ss ne '');
+
+    return sprintf '{{resolve:secretsmanager:%s%s%s}}',
                    $self->secret_id,
-                   $self->secret_string,
+                   $ss,
                    $suffix;
   }
 }

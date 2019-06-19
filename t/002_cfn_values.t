@@ -49,4 +49,57 @@ $val = $tc->coerce({
 });
 isa_ok($val, 'Cfn::Value::Hash');
 
+my $string_coerce = find_type_constraint('Cfn::Value::String');
+{ 
+  my $v = $string_coerce->coerce('XXXX');
+  isa_ok($v, 'Cfn::String');
+  cmp_ok($v->Value, 'eq', 'XXXX');
+}
+
+{ my $v = $string_coerce->coerce('{{resolve:ssm:IAMUser:10}}');
+  isa_ok($v, 'Cfn::DynamicSSMParameter');
+  cmp_ok($v->secure, '==', 0);
+  cmp_ok($v->parameter, 'eq', 'IAMUser');
+  cmp_ok($v->version, '==', 10);
+  cmp_ok($v->as_hashref, 'eq', '{{resolve:ssm:IAMUser:10}}');
+}
+{ my $v = $string_coerce->coerce('{{resolve:ssm-secure:IAMUserPassword:42}}');
+  isa_ok($v, 'Cfn::DynamicSecureSSMParameter');
+  cmp_ok($v->secure, '==', 1);
+  cmp_ok($v->parameter, 'eq', 'IAMUserPassword');
+  cmp_ok($v->version, '==', 42);
+  cmp_ok($v->as_hashref, 'eq', '{{resolve:ssm-secure:IAMUserPassword:42}}');
+}
+{ my $v = $string_coerce->coerce('{{resolve:secretsmanager:MySecret}}');
+  isa_ok($v, 'Cfn::DynamicSecretsManager');
+  cmp_ok($v->secret_id, 'eq', 'MySecret');
+  cmp_ok($v->as_hashref, 'eq', '{{resolve:secretsmanager:MySecret}}');
+}
+{ my $v = $string_coerce->coerce('{{resolve:secretsmanager:MySecret::::}}');
+  isa_ok($v, 'Cfn::DynamicSecretsManager');
+  cmp_ok($v->secret_id, 'eq', 'MySecret');
+  cmp_ok($v->as_hashref, 'eq', '{{resolve:secretsmanager:MySecret}}');
+}
+{ my $v = $string_coerce->coerce('{{resolve:secretsmanager:MySecret:SecretString:password}}');
+  isa_ok($v, 'Cfn::DynamicSecretsManager');
+  cmp_ok($v->secret_id, 'eq', 'MySecret');
+  cmp_ok($v->secret_string, 'eq', 'SecretString');
+  is_deeply($v->parameters, [ 'password' ]);
+}
+{ my $v = $string_coerce->coerce('{{resolve:secretsmanager:MySecret:SecretString:password:SecretString:EXAMPLE1-90ab-cdef-fedc-ba987EXAMPLE}}');
+  isa_ok($v, 'Cfn::DynamicSecretsManager');
+  cmp_ok($v->secret_id, 'eq', 'MySecret');
+  cmp_ok($v->secret_string, 'eq', 'SecretString');
+  is_deeply($v->parameters, [ 'password', 'SecretString', 'EXAMPLE1-90ab-cdef-fedc-ba987EXAMPLE' ]);
+}
+{ my $v = $string_coerce->coerce('{{resolve:secretsmanager:arn:aws:secretsmanager:us-west-2:123456789012:secret:MySecret-asd123:SecretString:password}}');
+  isa_ok($v, 'Cfn::DynamicSecretsManager');
+  cmp_ok($v->secret_id, 'eq', 'arn:aws:secretsmanager:us-west-2:123456789012:secret:MySecret-asd123');
+  cmp_ok($v->secret_string, 'eq', 'SecretString');
+  is_deeply($v->parameters, [ 'password' ]);
+}
+{ my $v = $string_coerce->coerce('{{resolve:secretsmanager:arn:aws:secretsmanager:us-west-2:123456789012:secret:MySecretName-asd123:SecretString:password:AWSPENDING}}');
+  isa_ok($v, 'Cfn::DynamicSecretsManager');
+}
+
 done_testing();
