@@ -111,6 +111,7 @@ package Cfn::TypeLibrary {
   subtype 'Cfn::Value::Double',    as 'Cfn::Value';
   subtype 'Cfn::Value::Timestamp', as 'Cfn::Value';
   subtype 'Cfn::Value::Json',      as 'Cfn::Value';
+  subtype 'Cfn::Value::DynamicReference', as 'Cfn::Value';
 
   coerce 'Cfn::Value::Boolean',
     from 'Int', via {
@@ -181,6 +182,36 @@ package Cfn::TypeLibrary {
 
   coerce 'Cfn::Value::Hash',
     from 'HashRef',  via (\&coerce_hash);
+
+  coerce 'Cfn::Value::DynamicReference',
+    from 'Str',  via {
+      my $value = $_;
+      if ($value =~ m/^\{\{(.*)\}\}$/) {
+        my $resolve_statement = $1;
+        my ($resolve, $type, @rest) = split /:/, $resolve_statement;
+        if ($resolve eq 'resolve' and $type eq 'ssm-secure') {
+          die "ssm-secure resolve incorrect format" if (@rest != 2);
+          my ($parameter, $version) = @rest;
+          return Cfn::DynamicSSMParameter->new(
+            parameter => $parameter,
+            version => $version,
+          );
+        } elsif ($resolve eq 'resolve' and $type eq 'secretsmanager') {
+          my $secret_id = shift @rest;
+          my $secret_string = shift @rest;
+          return Cfn::DynamicSecretsManager->new(
+            secret_id => $secret_id,
+            secret_string => $secret_string,
+            parameters => \@rest,
+          );
+        } else {
+          die "Unrecognized resolve $value";
+        }
+      } else {
+        Cfn::String->new( Value => $value );
+      }
+    },
+    from 'HashRef', via \&coerce_hashref_to_function;
 
   subtype 'Cfn::Transform',
        as 'ArrayRef[Str]';
@@ -627,6 +658,46 @@ package Cfn::Timestamp {
   use Moose;
   extends 'Cfn::Value::Primitive';
   has '+Value' => (isa => 'Str');
+}
+
+package Cfn::DynamicReference {
+  use Moose;
+  extends 'Cfn::Value';
+}
+
+package Cfn::DynamicSSMParameter {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::DynamicReference';
+
+  has parameter => (is => 'ro', isa => 'Str', required => 1);
+  has version => (is => 'ro', isa => 'Str', required => 1);
+
+  sub as_hashref {
+    my $self = shift;
+    return sprintf '{{resolve:ssm-secure:%s:%s}}', $self->parameter, $self->version;
+  }
+}
+
+package Cfn::DynamicSecretsManager {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::DynamicReference';
+ 
+  has secret_id => (is => 'ro', isa => 'Str', required => 1);
+  has secret_string => (is => 'ro', isa => 'Str', required => 1);
+  has parameters => (is => 'ro', isa => 'ArrayRef', required => 1);  
+
+  sub as_hashref {
+    my $self = shift;
+    my $suffix = join ':', @{ $self->parameters };
+    $suffix = ":$suffix" if ($suffix ne '');
+
+    return sprintf '{{resolve:secretsmanager:%s:%s%s}}',
+                   $self->secret_id,
+                   $self->secret_string,
+                   $suffix;
+  }
 }
 
 package Cfn::Resource {
