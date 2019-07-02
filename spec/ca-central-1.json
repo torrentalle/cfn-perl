@@ -2403,6 +2403,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-dns",
           "UpdateType": "Mutable"
+        },
+        "AWSCloudMap": {
+          "Type": "AwsCloudMapServiceDiscovery",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-awscloudmap",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -4202,6 +4208,29 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-topic",
           "PrimitiveType": "String",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Backup::BackupSelection.ConditionResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html",
+      "Properties": {
+        "ConditionValue": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditionvalue",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ConditionKey": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditionkey",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ConditionType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditiontype",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -6027,6 +6056,18 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-maxprice",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
+        },
+        "BlockDurationMinutes": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-blockdurationminutes",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "ValidUntil": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-validuntil",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -6903,23 +6944,6 @@
         }
       }
     },
-    "AWS::AppMesh::VirtualNode.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tagref.html",
-      "Properties": {
-        "Value": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tagref.html#cfn-appmesh-virtualnode-tagref-value",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tagref.html#cfn-appmesh-virtualnode-tagref-key",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        }
-      }
-    },
     "AWS::CodeBuild::Project.RegistryCredential": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html",
       "Properties": {
@@ -7198,6 +7222,17 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricvalue",
           "PrimitiveType": "String",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Config::RemediationConfiguration.ResourceValue": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html",
+      "Properties": {
+        "Value": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html#cfn-config-remediationconfiguration-resourcevalue-value",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -7945,23 +7980,6 @@
         }
       }
     },
-    "AWS::AppMesh::Mesh.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-tagref.html",
-      "Properties": {
-        "Value": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-tagref.html#cfn-appmesh-mesh-tagref-value",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-tagref.html#cfn-appmesh-mesh-tagref-key",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        }
-      }
-    },
     "AWS::AutoScalingPlans::ScalingPlan.MetricDimension": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html",
       "Properties": {
@@ -7975,6 +7993,23 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-name",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Backup::BackupPlan.LifecycleResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html",
+      "Properties": {
+        "DeleteAfterDays": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-deleteafterdays",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        },
+        "MoveToColdStorageAfterDays": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays",
+          "PrimitiveType": "Double",
           "UpdateType": "Mutable"
         }
       }
@@ -8195,23 +8230,6 @@
           "PrimitiveItemType": "String",
           "Required": false,
           "Type": "List",
-          "UpdateType": "Mutable"
-        }
-      }
-    },
-    "AWS::AppMesh::VirtualService.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-tagref.html",
-      "Properties": {
-        "Value": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-tagref.html#cfn-appmesh-virtualservice-tagref-value",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-tagref.html#cfn-appmesh-virtualservice-tagref-key",
-          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -8773,6 +8791,23 @@
         }
       }
     },
+    "AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html",
+      "Properties": {
+        "Value": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-value",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Key": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-key",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Events::Rule.InputTransformer": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-inputtransformer.html",
       "Properties": {
@@ -9092,6 +9127,30 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html#cfn-cloudfront-distribution-georestriction-restrictiontype",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html",
+      "Properties": {
+        "NamespaceName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-namespacename",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ServiceName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-servicename",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Attributes": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-attributes",
+          "ItemType": "AwsCloudMapInstanceAttribute",
           "UpdateType": "Mutable"
         }
       }
@@ -9493,6 +9552,18 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-compliancelevel",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Config::RemediationConfiguration.StaticValue": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html",
+      "Properties": {
+        "Values": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html#cfn-config-remediationconfiguration-staticvalue-values",
           "UpdateType": "Mutable"
         }
       }
@@ -10181,6 +10252,23 @@
         }
       }
     },
+    "AWS::Config::RemediationConfiguration.RemediationParameterValue": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html",
+      "Properties": {
+        "ResourceValue": {
+          "Type": "ResourceValue",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-resourcevalue",
+          "UpdateType": "Mutable"
+        },
+        "StaticValue": {
+          "Type": "StaticValue",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-staticvalue",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::IoT::TopicRule.LambdaAction": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html",
       "Properties": {
@@ -10188,23 +10276,6 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html#cfn-iot-topicrule-lambdaaction-functionarn",
           "PrimitiveType": "String",
           "Required": false,
-          "UpdateType": "Mutable"
-        }
-      }
-    },
-    "AWS::AppMesh::VirtualRouter.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-tagref.html",
-      "Properties": {
-        "Value": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-tagref.html#cfn-appmesh-virtualrouter-tagref-value",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-tagref.html#cfn-appmesh-virtualrouter-tagref-key",
-          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -10809,6 +10880,24 @@
         }
       }
     },
+    "AWS::Backup::BackupPlan.BackupPlanResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html",
+      "Properties": {
+        "BackupPlanName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "BackupPlanRule": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanrule",
+          "ItemType": "BackupRuleResourceType",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::CloudTrail::Trail.DataResource": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-dataresource.html",
       "Properties": {
@@ -10910,6 +10999,24 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit",
           "PrimitiveType": "Double",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Backup::BackupVault.NotificationObjectType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html",
+      "Properties": {
+        "SNSTopicArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html#cfn-backup-backupvault-notificationobjecttype-snstopicarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "BackupVaultEvents": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html#cfn-backup-backupvault-notificationobjecttype-backupvaultevents",
           "UpdateType": "Mutable"
         }
       }
@@ -12748,6 +12855,55 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-route-parameterconstraints.html#cfn-apigatewayv2-route-parameterconstraints-required",
           "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html",
+      "Properties": {
+        "StackSetAccounts": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetaccounts",
+          "UpdateType": "Mutable"
+        },
+        "StackSetFailureToleranceCount": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancecount",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "StackSetMaxConcurrencyPercentage": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencypercentage",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "StackSetMaxConcurrencyCount": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencycount",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "StackSetRegions": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetregions",
+          "UpdateType": "Mutable"
+        },
+        "StackSetOperationType": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetoperationtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "StackSetFailureTolerancePercentage": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancepercentage",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         }
       }
@@ -14633,6 +14789,37 @@
         }
       }
     },
+    "AWS::Backup::BackupSelection.BackupSelectionResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html",
+      "Properties": {
+        "ListOfTags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags",
+          "ItemType": "ConditionResourceType",
+          "UpdateType": "Mutable"
+        },
+        "SelectionName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-selectionname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "IamRoleArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-iamrolearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Resources": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::EC2::Instance.BlockDeviceMapping": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html",
       "Properties": {
@@ -14945,23 +15132,6 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey-type",
           "PrimitiveType": "String",
           "Required": true,
-          "UpdateType": "Mutable"
-        }
-      }
-    },
-    "AWS::AppMesh::Route.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tagref.html",
-      "Properties": {
-        "Value": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tagref.html#cfn-appmesh-route-tagref-value",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tagref.html#cfn-appmesh-route-tagref-key",
-          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -16088,6 +16258,53 @@
         }
       }
     },
+    "AWS::Backup::BackupPlan.BackupRuleResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html",
+      "Properties": {
+        "CompletionWindowMinutes": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-completionwindowminutes",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        },
+        "ScheduleExpression": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-scheduleexpression",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "RecoveryPointTags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-recoverypointtags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "Lifecycle": {
+          "Type": "LifecycleResourceType",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-lifecycle",
+          "UpdateType": "Mutable"
+        },
+        "TargetBackupVault": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-targetbackupvault",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "StartWindowMinutes": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-startwindowminutes",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        },
+        "RuleName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-rulename",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Elasticsearch::Domain.EncryptionAtRestOptions": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html",
       "Properties": {
@@ -16723,6 +16940,34 @@
         }
       }
     },
+    "AWS::Backup::BackupPlan": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html",
+      "Attributes": {
+        "VersionId": {
+          "PrimitiveType": "String"
+        },
+        "BackupPlanId": {
+          "PrimitiveType": "String"
+        },
+        "BackupPlanArn": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "BackupPlan": {
+          "Type": "BackupPlanResourceType",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#cfn-backup-backupplan-backupplan",
+          "UpdateType": "Mutable"
+        },
+        "BackupPlanTags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#cfn-backup-backupplan-backupplantags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::CodePipeline::CustomActionType": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html",
       "Properties": {
@@ -16811,7 +17056,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -16855,7 +17100,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -17068,7 +17313,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -18792,6 +19037,12 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainnameconfigurations",
           "ItemType": "DomainNameConfiguration",
           "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -19420,6 +19671,31 @@
         }
       }
     },
+    "AWS::Backup::BackupSelection": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html",
+      "Attributes": {
+        "BackupPlanId": {
+          "PrimitiveType": "String"
+        },
+        "SelectionId": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "BackupSelection": {
+          "Type": "BackupSelectionResourceType",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupselection",
+          "UpdateType": "Immutable"
+        },
+        "BackupPlanId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupplanid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::Redshift::Cluster": {
       "Attributes": {
         "Endpoint.Address": {
@@ -19783,7 +20059,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -21116,6 +21392,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-defaultroutesettings",
           "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -21448,6 +21730,58 @@
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::SecurityHub::Hub": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html",
+      "Properties": {
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Config::RemediationConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html",
+      "Properties": {
+        "TargetVersion": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetversion",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Parameters": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-parameters",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "TargetType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targettype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ConfigRuleName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-configrulename",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "ResourceType": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-resourcetype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "TargetId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -22715,6 +23049,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameters",
           "ItemType": "ProvisioningParameter",
+          "UpdateType": "Mutable"
+        },
+        "ProvisioningPreferences": {
+          "Type": "ProvisioningPreferences",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences",
           "UpdateType": "Mutable"
         },
         "ProductName": {
@@ -24857,6 +25197,49 @@
         }
       }
     },
+    "AWS::Backup::BackupVault": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html",
+      "Attributes": {
+        "BackupVaultName": {
+          "PrimitiveType": "String"
+        },
+        "BackupVaultArn": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "BackupVaultTags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaulttags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "BackupVaultName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaultname",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "EncryptionKeyArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-encryptionkeyarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Notifications": {
+          "Type": "NotificationObjectType",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-notifications",
+          "UpdateType": "Mutable"
+        },
+        "AccessPolicy": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-accesspolicy",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Config::ConfigurationRecorder": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html",
       "Properties": {
@@ -26350,6 +26733,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableschemavalidation",
           "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-tags",
+          "PrimitiveType": "Json",
           "UpdateType": "Mutable"
         },
         "Name": {
@@ -28608,7 +28997,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -29440,6 +29829,67 @@
         }
       }
     },
+    "AWS::ServiceCatalog::StackSetConstraint": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html",
+      "Properties": {
+        "Description": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-description",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "StackInstanceControl": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-stackinstancecontrol",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AcceptLanguage": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-acceptlanguage",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "PortfolioId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-portfolioid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "ProductId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-productid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "RegionList": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-regionlist",
+          "UpdateType": "Mutable"
+        },
+        "AdminRole": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-adminrole",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AccountList": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-accountlist",
+          "UpdateType": "Mutable"
+        },
+        "ExecutionRole": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-executionrole",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Glue::Crawler": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html",
       "Properties": {
@@ -30041,5 +30491,5 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "3.4.0"
+  "ResourceSpecificationVersion": "4.1.0"
 }

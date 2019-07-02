@@ -447,6 +447,17 @@
         }
       }
     },
+    "AWS::MediaLive::Channel.MediaPackageOutputDestinationSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackageoutputdestinationsettings.html",
+      "Properties": {
+        "ChannelId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackageoutputdestinationsettings.html#cfn-medialive-channel-mediapackageoutputdestinationsettings-channelid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::ApiGateway::Deployment.DeploymentCanarySettings": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html",
       "Properties": {
@@ -925,6 +936,17 @@
         }
       }
     },
+    "AWS::MediaLive::InputSecurityGroup.InputWhitelistRuleCidr": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-inputsecuritygroup-inputwhitelistrulecidr.html",
+      "Properties": {
+        "Cidr": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-inputsecuritygroup-inputwhitelistrulecidr.html#cfn-medialive-inputsecuritygroup-inputwhitelistrulecidr-cidr",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-lambdaoutput.html",
       "Properties": {
@@ -1044,6 +1066,35 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html#cfn-directoryservice-microsoftad-vpcsettings-vpcid",
           "PrimitiveType": "String",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.HlsInputSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html",
+      "Properties": {
+        "BufferSegments": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-buffersegments",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "Retries": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retries",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "Bandwidth": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-bandwidth",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "RetryInterval": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retryinterval",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         }
       }
@@ -1270,6 +1321,12 @@
           "Type": "DnsServiceDiscovery",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-dns",
+          "UpdateType": "Mutable"
+        },
+        "AWSCloudMap": {
+          "Type": "AwsCloudMapServiceDiscovery",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-awscloudmap",
           "UpdateType": "Mutable"
         }
       }
@@ -2737,6 +2794,17 @@
         }
       }
     },
+    "AWS::MediaLive::Channel.VideoSelectorProgramId": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorprogramid.html",
+      "Properties": {
+        "ProgramId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorprogramid.html#cfn-medialive-channel-videoselectorprogramid-programid",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::ElasticLoadBalancingV2::ListenerRule.SourceIpConfig": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-sourceipconfig.html",
       "Properties": {
@@ -3123,6 +3191,18 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-maxprice",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
+        },
+        "BlockDurationMinutes": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-blockdurationminutes",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "ValidUntil": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-validuntil",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -3150,6 +3230,29 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption.html#cfn-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption-logstreamarn",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.InputAttachment": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html",
+      "Properties": {
+        "InputAttachmentName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputattachmentname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "InputId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "InputSettings": {
+          "Type": "InputSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputsettings",
           "UpdateType": "Mutable"
         }
       }
@@ -3805,6 +3908,17 @@
         }
       }
     },
+    "AWS::Config::RemediationConfiguration.ResourceValue": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html",
+      "Properties": {
+        "Value": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html#cfn-config-remediationconfiguration-resourcevalue-value",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::EC2::SpotFleet.EbsBlockDevice": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings-ebs.html",
       "Properties": {
@@ -3878,6 +3992,35 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets",
           "ItemType": "JdbcTarget",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.EmbeddedSourceSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html",
+      "Properties": {
+        "Source608ChannelNumber": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-source608channelnumber",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "Scte20Detection": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-scte20detection",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Source608TrackNumber": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-source608tracknumber",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "Convert608To708": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-convert608to708",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -4003,6 +4146,29 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-weight",
           "PrimitiveType": "Integer",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.InputSpecification": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html",
+      "Properties": {
+        "Codec": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html#cfn-medialive-channel-inputspecification-codec",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "MaximumBitrate": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html#cfn-medialive-channel-inputspecification-maximumbitrate",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Resolution": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html#cfn-medialive-channel-inputspecification-resolution",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -4248,19 +4414,19 @@
         }
       }
     },
-    "AWS::AppMesh::Mesh.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-tagref.html",
+    "AWS::Backup::BackupPlan.LifecycleResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html",
       "Properties": {
-        "Value": {
+        "DeleteAfterDays": {
           "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-tagref.html#cfn-appmesh-mesh-tagref-value",
-          "PrimitiveType": "String",
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-deleteafterdays",
+          "PrimitiveType": "Double",
           "UpdateType": "Mutable"
         },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-tagref.html#cfn-appmesh-mesh-tagref-key",
-          "PrimitiveType": "String",
+        "MoveToColdStorageAfterDays": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays",
+          "PrimitiveType": "Double",
           "UpdateType": "Mutable"
         }
       }
@@ -4747,6 +4913,23 @@
         }
       }
     },
+    "AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html",
+      "Properties": {
+        "Value": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-value",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Key": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-key",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Route53::HostedZone.HostedZoneConfig": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzoneconfig.html",
       "Properties": {
@@ -4921,6 +5104,17 @@
           "PrimitiveType": "String",
           "Required": false,
           "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.Scte27SourceSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html",
+      "Properties": {
+        "Pid": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html#cfn-medialive-channel-scte27sourcesettings-pid",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -5659,6 +5853,17 @@
         }
       }
     },
+    "AWS::MediaLive::Channel.VideoSelectorPid": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorpid.html",
+      "Properties": {
+        "Pid": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorpid.html#cfn-medialive-channel-videoselectorpid-pid",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::ECS::Service.DeploymentConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html",
       "Properties": {
@@ -5806,6 +6011,67 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarm.html#cfn-codedeploy-deploymentgroup-alarm-name",
           "PrimitiveType": "String",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.InputSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html",
+      "Properties": {
+        "DeblockFilter": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-deblockfilter",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "FilterStrength": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-filterstrength",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "InputFilter": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-inputfilter",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "SourceEndBehavior": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-sourceendbehavior",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "VideoSelector": {
+          "Type": "VideoSelector",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-videoselector",
+          "UpdateType": "Mutable"
+        },
+        "AudioSelectors": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-audioselectors",
+          "ItemType": "AudioSelector",
+          "UpdateType": "Mutable"
+        },
+        "CaptionSelectors": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-captionselectors",
+          "ItemType": "CaptionSelector",
+          "UpdateType": "Mutable"
+        },
+        "DenoiseFilter": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-denoisefilter",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "NetworkInputSettings": {
+          "Type": "NetworkInputSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-networkinputsettings",
           "UpdateType": "Mutable"
         }
       }
@@ -6173,6 +6439,25 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html#cfn-batch-jobdefinition-environment-name",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Input.InputVpcRequest": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html",
+      "Properties": {
+        "SecurityGroupIds": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-securitygroupids",
+          "UpdateType": "Mutable"
+        },
+        "SubnetIds": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-subnetids",
           "UpdateType": "Mutable"
         }
       }
@@ -6764,6 +7049,40 @@
         }
       }
     },
+    "AWS::MediaLive::Channel.AudioSelector": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselector.html",
+      "Properties": {
+        "SelectorSettings": {
+          "Type": "AudioSelectorSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselector.html#cfn-medialive-channel-audioselector-selectorsettings",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselector.html#cfn-medialive-channel-audioselector-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.AudioLanguageSelection": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiolanguageselection.html",
+      "Properties": {
+        "LanguageCode": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiolanguageselection.html#cfn-medialive-channel-audiolanguageselection-languagecode",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "LanguageSelectionPolicy": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiolanguageselection.html#cfn-medialive-channel-audiolanguageselection-languageselectionpolicy",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::S3::Bucket.CorsConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html",
       "Properties": {
@@ -6933,6 +7252,10 @@
         }
       }
     },
+    "AWS::MediaLive::Channel.AribSourceSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aribsourcesettings.html",
+      "Properties": {}
+    },
     "AWS::DynamoDB::Table.PointInTimeRecoverySpecification": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html",
       "Properties": {
@@ -6996,6 +7319,17 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration",
           "Required": false,
           "Type": "ShutdownEventConfiguration",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.AudioPidSelection": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiopidselection.html",
+      "Properties": {
+        "Pid": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiopidselection.html#cfn-medialive-channel-audiopidselection-pid",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         }
       }
@@ -7350,6 +7684,17 @@
         }
       }
     },
+    "AWS::MediaLive::Channel.DvbSubSourceSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubsourcesettings.html",
+      "Properties": {
+        "Pid": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubsourcesettings.html#cfn-medialive-channel-dvbsubsourcesettings-pid",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::S3::Bucket.NoncurrentVersionTransition": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html",
       "Properties": {
@@ -7363,6 +7708,87 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-transitionindays",
           "PrimitiveType": "Integer",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.CaptionSelectorSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html",
+      "Properties": {
+        "DvbSubSourceSettings": {
+          "Type": "DvbSubSourceSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-dvbsubsourcesettings",
+          "UpdateType": "Mutable"
+        },
+        "Scte27SourceSettings": {
+          "Type": "Scte27SourceSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte27sourcesettings",
+          "UpdateType": "Mutable"
+        },
+        "AribSourceSettings": {
+          "Type": "AribSourceSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-aribsourcesettings",
+          "UpdateType": "Mutable"
+        },
+        "EmbeddedSourceSettings": {
+          "Type": "EmbeddedSourceSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-embeddedsourcesettings",
+          "UpdateType": "Mutable"
+        },
+        "Scte20SourceSettings": {
+          "Type": "Scte20SourceSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte20sourcesettings",
+          "UpdateType": "Mutable"
+        },
+        "TeletextSourceSettings": {
+          "Type": "TeletextSourceSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-teletextsourcesettings",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.VideoSelectorSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html",
+      "Properties": {
+        "VideoSelectorProgramId": {
+          "Type": "VideoSelectorProgramId",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorprogramid",
+          "UpdateType": "Mutable"
+        },
+        "VideoSelectorPid": {
+          "Type": "VideoSelectorPid",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorpid",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Input.InputSourceRequest": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html",
+      "Properties": {
+        "Username": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-username",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "PasswordParam": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-passwordparam",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Url": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-url",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -7601,6 +8027,17 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname",
           "PrimitiveType": "String",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.TeletextSourceSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-teletextsourcesettings.html",
+      "Properties": {
+        "PageNumber": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-teletextsourcesettings.html#cfn-medialive-channel-teletextsourcesettings-pagenumber",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -7882,6 +8319,17 @@
         }
       }
     },
+    "AWS::MediaLive::Input.InputDestinationRequest": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html",
+      "Properties": {
+        "StreamName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-streamname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::KinesisAnalyticsV2::Application.ApplicationSnapshotConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html",
       "Properties": {
@@ -8055,6 +8503,37 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html#cfn-route53-healthcheck-alarmidentifier-region",
           "PrimitiveType": "String",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Backup::BackupSelection.BackupSelectionResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html",
+      "Properties": {
+        "ListOfTags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags",
+          "ItemType": "ConditionResourceType",
+          "UpdateType": "Mutable"
+        },
+        "SelectionName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-selectionname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "IamRoleArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-iamrolearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Resources": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources",
           "UpdateType": "Mutable"
         }
       }
@@ -8679,6 +9158,53 @@
         }
       }
     },
+    "AWS::Backup::BackupPlan.BackupRuleResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html",
+      "Properties": {
+        "CompletionWindowMinutes": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-completionwindowminutes",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        },
+        "ScheduleExpression": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-scheduleexpression",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "RecoveryPointTags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-recoverypointtags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "Lifecycle": {
+          "Type": "LifecycleResourceType",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-lifecycle",
+          "UpdateType": "Mutable"
+        },
+        "TargetBackupVault": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-targetbackupvault",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "StartWindowMinutes": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-startwindowminutes",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        },
+        "RuleName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-rulename",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::ElasticBeanstalk::Application.MaxAgeRule": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html",
       "Properties": {
@@ -8778,6 +9304,23 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html#cfn-apigateway-deployment-accesslogsetting-format",
           "PrimitiveType": "String",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.NetworkInputSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html",
+      "Properties": {
+        "ServerValidation": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-servervalidation",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "HlsInputSettings": {
+          "Type": "HlsInputSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-hlsinputsettings",
           "UpdateType": "Mutable"
         }
       }
@@ -9085,6 +9628,17 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sqsparameters.html#cfn-events-rule-sqsparameters-messagegroupid",
           "PrimitiveType": "String",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Input.MediaConnectFlowRequest": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-mediaconnectflowrequest.html",
+      "Properties": {
+        "FlowArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-mediaconnectflowrequest.html#cfn-medialive-input-mediaconnectflowrequest-flowarn",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -10365,8 +10919,25 @@
           "UpdateType": "Mutable"
         },
         "Port": {
-          "Required": true,
+          "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-port",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.Scte20SourceSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html",
+      "Properties": {
+        "Source608ChannelNumber": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html#cfn-medialive-channel-scte20sourcesettings-source608channelnumber",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "Convert608To708": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html#cfn-medialive-channel-scte20sourcesettings-convert608to708",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -11553,6 +12124,29 @@
         }
       }
     },
+    "AWS::Backup::BackupSelection.ConditionResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html",
+      "Properties": {
+        "ConditionValue": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditionvalue",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ConditionKey": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditionkey",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ConditionType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditiontype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Glue::Table.SkewedInfo": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html",
       "Properties": {
@@ -12011,6 +12605,23 @@
           "Type": "CustomizedScalingMetricSpecification",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-customizedscalingmetricspecification",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.AudioSelectorSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html",
+      "Properties": {
+        "AudioPidSelection": {
+          "Type": "AudioPidSelection",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiopidselection",
+          "UpdateType": "Mutable"
+        },
+        "AudioLanguageSelection": {
+          "Type": "AudioLanguageSelection",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiolanguageselection",
           "UpdateType": "Mutable"
         }
       }
@@ -13045,23 +13656,6 @@
         }
       }
     },
-    "AWS::AppMesh::VirtualNode.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tagref.html",
-      "Properties": {
-        "Value": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tagref.html#cfn-appmesh-virtualnode-tagref-value",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tagref.html#cfn-appmesh-virtualnode-tagref-key",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        }
-      }
-    },
     "AWS::Events::Rule.Target": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html",
       "Properties": {
@@ -13787,23 +14381,6 @@
         }
       }
     },
-    "AWS::AppMesh::VirtualService.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-tagref.html",
-      "Properties": {
-        "Value": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-tagref.html#cfn-appmesh-virtualservice-tagref-value",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-tagref.html#cfn-appmesh-virtualservice-tagref-key",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        }
-      }
-    },
     "AWS::AppMesh::VirtualNode.HealthCheck": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html",
       "Properties": {
@@ -13893,6 +14470,29 @@
         "RecordRowPath": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-jsonmappingparameters.html#cfn-kinesisanalytics-applicationreferencedatasource-jsonmappingparameters-recordrowpath",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.VideoSelector": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html",
+      "Properties": {
+        "SelectorSettings": {
+          "Type": "VideoSelectorSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-selectorsettings",
+          "UpdateType": "Mutable"
+        },
+        "ColorSpace": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-colorspace",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ColorSpaceUsage": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-colorspaceusage",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -14070,6 +14670,35 @@
         }
       }
     },
+    "AWS::MediaLive::Channel.OutputDestinationSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html",
+      "Properties": {
+        "StreamName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-streamname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Username": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-username",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "PasswordParam": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-passwordparam",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Url": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-url",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::MSK::Cluster.EBSStorageInfo": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html",
       "Properties": {
@@ -14172,6 +14801,30 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html#cfn-cloudfront-distribution-georestriction-restrictiontype",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html",
+      "Properties": {
+        "NamespaceName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-namespacename",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ServiceName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-servicename",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Attributes": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-attributes",
+          "ItemType": "AwsCloudMapInstanceAttribute",
           "UpdateType": "Mutable"
         }
       }
@@ -14392,6 +15045,18 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-compliancelevel",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Config::RemediationConfiguration.StaticValue": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html",
+      "Properties": {
+        "Values": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html#cfn-config-remediationconfiguration-staticvalue-values",
           "UpdateType": "Mutable"
         }
       }
@@ -14871,19 +15536,19 @@
         }
       }
     },
-    "AWS::AppMesh::VirtualRouter.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-tagref.html",
+    "AWS::Config::RemediationConfiguration.RemediationParameterValue": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html",
       "Properties": {
-        "Value": {
+        "ResourceValue": {
+          "Type": "ResourceValue",
           "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-tagref.html#cfn-appmesh-virtualrouter-tagref-value",
-          "PrimitiveType": "String",
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-resourcevalue",
           "UpdateType": "Mutable"
         },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-tagref.html#cfn-appmesh-virtualrouter-tagref-key",
-          "PrimitiveType": "String",
+        "StaticValue": {
+          "Type": "StaticValue",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-staticvalue",
           "UpdateType": "Mutable"
         }
       }
@@ -15257,6 +15922,24 @@
         }
       }
     },
+    "AWS::Backup::BackupPlan.BackupPlanResourceType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html",
+      "Properties": {
+        "BackupPlanName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "BackupPlanRule": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanrule",
+          "ItemType": "BackupRuleResourceType",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::CloudTrail::Trail.DataResource": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-dataresource.html",
       "Properties": {
@@ -15293,6 +15976,31 @@
         }
       }
     },
+    "AWS::MediaLive::Channel.OutputDestination": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html",
+      "Properties": {
+        "Id": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-id",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Settings": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-settings",
+          "ItemType": "OutputDestinationSettings",
+          "UpdateType": "Mutable"
+        },
+        "MediaPackageSettings": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-mediapackagesettings",
+          "ItemType": "MediaPackageOutputDestinationSettings",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::IoT::TopicRule.DynamoDBv2Action": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html",
       "Properties": {
@@ -15323,6 +16031,24 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit",
           "PrimitiveType": "Double",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Backup::BackupVault.NotificationObjectType": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html",
+      "Properties": {
+        "SNSTopicArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html#cfn-backup-backupvault-notificationobjecttype-snstopicarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "BackupVaultEvents": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html#cfn-backup-backupvault-notificationobjecttype-backupvaultevents",
           "UpdateType": "Mutable"
         }
       }
@@ -16419,23 +17145,6 @@
         }
       }
     },
-    "AWS::Amplify::App.Token": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-token.html",
-      "Properties": {
-        "Value": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-token.html#cfn-amplify-app-token-value",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-token.html#cfn-amplify-app-token-key",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        }
-      }
-    },
     "AWS::EC2::LaunchTemplate.CpuOptions": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html",
       "Properties": {
@@ -16601,6 +17310,55 @@
           "PrimitiveItemType": "String",
           "Required": false,
           "Type": "Map",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html",
+      "Properties": {
+        "StackSetAccounts": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetaccounts",
+          "UpdateType": "Mutable"
+        },
+        "StackSetFailureToleranceCount": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancecount",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "StackSetMaxConcurrencyPercentage": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencypercentage",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "StackSetMaxConcurrencyCount": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencycount",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "StackSetRegions": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetregions",
+          "UpdateType": "Mutable"
+        },
+        "StackSetOperationType": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetoperationtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "StackSetFailureTolerancePercentage": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancepercentage",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         }
       }
@@ -16976,6 +17734,29 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-openxjsonserde.html#cfn-kinesisfirehose-deliverystream-openxjsonserde-convertdotsinjsonkeystounderscores",
           "PrimitiveType": "Boolean",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::Channel.CaptionSelector": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html",
+      "Properties": {
+        "LanguageCode": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-languagecode",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "SelectorSettings": {
+          "Type": "CaptionSelectorSettings",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-selectorsettings",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-name",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -17963,23 +18744,6 @@
         "RoleARN": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-rolearn",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        }
-      }
-    },
-    "AWS::AppMesh::Route.TagRef": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tagref.html",
-      "Properties": {
-        "Value": {
-          "Required": false,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tagref.html#cfn-appmesh-route-tagref-value",
-          "PrimitiveType": "String",
-          "UpdateType": "Mutable"
-        },
-        "Key": {
-          "Required": true,
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tagref.html#cfn-appmesh-route-tagref-key",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -19252,6 +20016,82 @@
         }
       }
     },
+    "AWS::MediaLive::Input": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html",
+      "Attributes": {
+        "Destinations": {
+          "PrimitiveItemType": "String",
+          "Type": "List"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "Sources": {
+          "PrimitiveItemType": "String",
+          "Type": "List"
+        }
+      },
+      "Properties": {
+        "Type": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-type",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Destinations": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-destinations",
+          "ItemType": "InputDestinationRequest",
+          "UpdateType": "Mutable"
+        },
+        "Vpc": {
+          "Type": "InputVpcRequest",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-vpc",
+          "UpdateType": "Immutable"
+        },
+        "MediaConnectFlows": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-mediaconnectflows",
+          "ItemType": "MediaConnectFlowRequest",
+          "UpdateType": "Mutable"
+        },
+        "InputSecurityGroups": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputsecuritygroups",
+          "UpdateType": "Mutable"
+        },
+        "Sources": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-sources",
+          "ItemType": "InputSourceRequest",
+          "UpdateType": "Mutable"
+        },
+        "RoleArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-rolearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Events::Rule": {
       "Attributes": {
         "Arn": {
@@ -19448,6 +20288,34 @@
         }
       }
     },
+    "AWS::Backup::BackupPlan": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html",
+      "Attributes": {
+        "VersionId": {
+          "PrimitiveType": "String"
+        },
+        "BackupPlanId": {
+          "PrimitiveType": "String"
+        },
+        "BackupPlanArn": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "BackupPlan": {
+          "Type": "BackupPlanResourceType",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#cfn-backup-backupplan-backupplan",
+          "UpdateType": "Mutable"
+        },
+        "BackupPlanTags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#cfn-backup-backupplan-backupplantags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::AppMesh::VirtualNode": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html",
       "Attributes": {
@@ -19487,7 +20355,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -19531,7 +20399,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -19744,7 +20612,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -21713,6 +22581,12 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainnameconfigurations",
           "ItemType": "DomainNameConfiguration",
           "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -22396,6 +23270,31 @@
         }
       }
     },
+    "AWS::Backup::BackupSelection": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html",
+      "Attributes": {
+        "BackupPlanId": {
+          "PrimitiveType": "String"
+        },
+        "SelectionId": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "BackupSelection": {
+          "Type": "BackupSelectionResourceType",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupselection",
+          "UpdateType": "Immutable"
+        },
+        "BackupPlanId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupplanid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::CloudWatch::Alarm": {
       "Attributes": {
         "Arn": {
@@ -22704,7 +23603,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -24211,6 +25110,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-defaultroutesettings",
           "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -24629,6 +25534,17 @@
         }
       }
     },
+    "AWS::SecurityHub::Hub": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html",
+      "Properties": {
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Glue::Connection": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html",
       "Properties": {
@@ -24643,6 +25559,47 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-catalogid",
           "PrimitiveType": "String",
           "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::Config::RemediationConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html",
+      "Properties": {
+        "TargetVersion": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetversion",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Parameters": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-parameters",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "TargetType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targettype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ConfigRuleName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-configrulename",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "ResourceType": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-resourcetype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "TargetId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -26132,6 +27089,12 @@
           "ItemType": "ProvisioningParameter",
           "UpdateType": "Mutable"
         },
+        "ProvisioningPreferences": {
+          "Type": "ProvisioningPreferences",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences",
+          "UpdateType": "Mutable"
+        },
         "ProductName": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productname",
@@ -26408,6 +27371,29 @@
           "ItemType": "StageDeclaration",
           "Required": true,
           "Type": "List",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::MediaLive::InputSecurityGroup": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html",
+      "Attributes": {
+        "Arn": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "WhitelistRules": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules",
+          "ItemType": "InputWhitelistRuleCidr",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-tags",
+          "PrimitiveType": "Json",
           "UpdateType": "Mutable"
         }
       }
@@ -26996,7 +27982,7 @@
           "UpdateType": "Mutable"
         },
         "Repository": {
-          "Required": true,
+          "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-repository",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
@@ -28558,6 +29544,49 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration",
           "Required": false,
           "Type": "TargetTrackingConfiguration",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Backup::BackupVault": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html",
+      "Attributes": {
+        "BackupVaultName": {
+          "PrimitiveType": "String"
+        },
+        "BackupVaultArn": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "BackupVaultTags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaulttags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "BackupVaultName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaultname",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "EncryptionKeyArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-encryptionkeyarn",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Notifications": {
+          "Type": "NotificationObjectType",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-notifications",
+          "UpdateType": "Mutable"
+        },
+        "AccessPolicy": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-accesspolicy",
+          "PrimitiveType": "Json",
           "UpdateType": "Mutable"
         }
       }
@@ -30135,6 +31164,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableschemavalidation",
           "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-tags",
+          "PrimitiveType": "Json",
           "UpdateType": "Mutable"
         },
         "Name": {
@@ -32629,7 +33664,7 @@
           "Type": "List",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-tags",
-          "ItemType": "TagRef",
+          "ItemType": "Tag",
           "UpdateType": "Mutable"
         }
       }
@@ -32688,6 +33723,12 @@
         "MaxUserDurationInSeconds": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxuserdurationinseconds",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "IdleDisconnectTimeoutInSeconds": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-idledisconnecttimeoutinseconds",
           "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         },
@@ -33212,6 +34253,76 @@
         }
       }
     },
+    "AWS::MediaLive::Channel": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html",
+      "Attributes": {
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "Inputs": {
+          "PrimitiveItemType": "String",
+          "Type": "List"
+        }
+      },
+      "Properties": {
+        "InputAttachments": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputattachments",
+          "ItemType": "InputAttachment",
+          "UpdateType": "Mutable"
+        },
+        "InputSpecification": {
+          "Type": "InputSpecification",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputspecification",
+          "UpdateType": "Mutable"
+        },
+        "ChannelClass": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-channelclass",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "EncoderSettings": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-encodersettings",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "Destinations": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-destinations",
+          "ItemType": "OutputDestination",
+          "UpdateType": "Mutable"
+        },
+        "LogLevel": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-loglevel",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "RoleArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-rolearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::GuardDuty::IPSet": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-ipset.html",
       "Properties": {
@@ -33680,6 +34791,67 @@
         "Name": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::ServiceCatalog::StackSetConstraint": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html",
+      "Properties": {
+        "Description": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-description",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "StackInstanceControl": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-stackinstancecontrol",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AcceptLanguage": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-acceptlanguage",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "PortfolioId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-portfolioid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "ProductId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-productid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "RegionList": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-regionlist",
+          "UpdateType": "Mutable"
+        },
+        "AdminRole": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-adminrole",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AccountList": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-accountlist",
+          "UpdateType": "Mutable"
+        },
+        "ExecutionRole": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-executionrole",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -34315,5 +35487,5 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "3.4.0"
+  "ResourceSpecificationVersion": "4.1.0"
 }
