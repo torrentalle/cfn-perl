@@ -25,7 +25,19 @@ package Cfn::TypeLibrary {
       return undef;
     }
   }
-  
+
+  coerce 'Cfn::Resource::CreationPolicy',
+    from 'HashRef',
+    via { Cfn::Resource::CreationPolicy->new( %$_ ) };
+
+  coerce 'Cfn::Resource::CreationPolicy::AutoScalingCreationPolicy',
+    from 'HashRef',
+    via { Cfn::Resource::CreationPolicy::AutoScalingCreationPolicy->new( %$_ ) };
+
+  coerce 'Cfn::Resource::CreationPolicy::ResourceSignal',
+    from 'HashRef',
+    via { Cfn::Resource::CreationPolicy::ResourceSignal->new( %$_ ) };
+
   coerce 'Cfn::Resource::UpdatePolicy',
     from 'HashRef',
     via { Cfn::Resource::UpdatePolicy->new( %$_ ) };
@@ -678,7 +690,7 @@ package Cfn::Resource {
 
   has Metadata => (isa => 'Cfn::Value::Hash', is => 'rw', coerce => 1);
   has UpdatePolicy => (isa => 'Cfn::Resource::UpdatePolicy', is => 'rw', coerce => 1);
-  has CreationPolicy => (isa => 'HashRef', is => 'rw');
+  has CreationPolicy => (isa => 'Cfn::Resource::CreationPolicy', is => 'rw', coerce => 1);
   has UpdateReplacePolicy => (isa => 'Cfn::Resource::UpdateReplacePolicy', is => 'rw');
 
   sub as_hashref {
@@ -686,9 +698,9 @@ package Cfn::Resource {
     my @args = @_;
     return {
       (map { $_ => $self->$_->as_hashref(@args) }
-        grep { defined $self->$_ } qw/Properties Metadata UpdatePolicy/),
+        grep { defined $self->$_ } qw/Properties Metadata UpdatePolicy CreationPolicy/),
       (map { $_ => $self->$_ }
-        grep { defined $self->$_ } qw/Type DeletionPolicy UpdateReplacePolicy DependsOn CreationPolicy Condition/),
+        grep { defined $self->$_ } qw/Type DeletionPolicy UpdateReplacePolicy DependsOn Condition/),
     }
   }
 
@@ -781,6 +793,26 @@ package Cfn::Resource::Properties {
       }
     }
   }
+}
+
+package Cfn::Resource::CreationPolicy {
+  use Moose;
+  extends 'Cfn::Value::TypedValue';
+  has AutoScalingCreationPolicy => (isa => 'Cfn::Resource::CreationPolicy::AutoScalingCreationPolicy', is => 'rw', coerce => 1);
+  has ResourceSignal => (isa => 'Cfn::Resource::CreationPolicy::ResourceSignal', is => 'rw', coerce => 1);
+}
+
+package Cfn::Resource::CreationPolicy::AutoScalingCreationPolicy {
+  use Moose;
+  extends 'Cfn::Value::TypedValue';
+  has MinSuccessfulInstancesPercent => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1);
+}
+
+package Cfn::Resource::CreationPolicy::ResourceSignal {
+  use Moose;
+  extends 'Cfn::Value::TypedValue';
+  has Count => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1);
+  has Timeout => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1);
 }
 
 package Cfn::Resource::UpdatePolicy {
