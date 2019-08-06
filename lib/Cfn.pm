@@ -904,7 +904,7 @@ package Cfn {
   has Description => (isa => 'Str', is => 'rw');
   has Transform => (isa => 'Cfn::Transform', is => 'rw', coerce => 1);
 
-  our $VERSION = '0.08';
+  our $VERSION = '0.09';
 
   has Parameters => (
     is => 'rw',
