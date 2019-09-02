@@ -3373,6 +3373,23 @@
         }
       }
     },
+    "AWS::RoboMaker::RobotApplication.RobotSoftwareSuite": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-robotsoftwaresuite.html",
+      "Properties": {
+        "Version": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-robotsoftwaresuite.html#cfn-robomaker-robotapplication-robotsoftwaresuite-version",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-robotsoftwaresuite.html#cfn-robomaker-robotapplication-robotsoftwaresuite-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::CodePipeline::Pipeline.ArtifactStoreMap": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstoremap.html",
       "Properties": {
@@ -3789,6 +3806,30 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzonetags.html#cfn-route53-hostedzonetags-value",
           "PrimitiveType": "String",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppSync::GraphQLApi.Tags": {
+      "Type": "List",
+      "Required": false,
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-tags.html",
+      "ItemType": "Tag",
+      "UpdateType": "Mutable"
+    },
+    "AWS::RoboMaker::SimulationApplication.RenderingEngine": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html",
+      "Properties": {
+        "Version": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html#cfn-robomaker-simulationapplication-renderingengine-version",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html#cfn-robomaker-simulationapplication-renderingengine-name",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -5472,6 +5513,41 @@
         }
       }
     },
+    "AWS::AppMesh::Route.HeaderMatchMethod": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html",
+      "Properties": {
+        "Suffix": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-suffix",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Regex": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-regex",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Exact": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-exact",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Prefix": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-prefix",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Range": {
+          "Type": "MatchRange",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-range",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::SNS::Topic.Subscription": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html",
       "Properties": {
@@ -6544,6 +6620,12 @@
           "Type": "HttpRoute",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-httproute",
+          "UpdateType": "Mutable"
+        },
+        "Priority": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-priority",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         },
         "TcpRoute": {
@@ -7643,6 +7725,29 @@
           "Type": "EgressFilter",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::RoboMaker::RobotApplication.SourceConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html",
+      "Properties": {
+        "S3Bucket": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html#cfn-robomaker-robotapplication-sourceconfig-s3bucket",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Architecture": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html#cfn-robomaker-robotapplication-sourceconfig-architecture",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "S3Key": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-sourceconfig.html#cfn-robomaker-robotapplication-sourceconfig-s3key",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -8888,6 +8993,23 @@
         }
       }
     },
+    "AWS::RoboMaker::SimulationApplication.SimulationSoftwareSuite": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html",
+      "Properties": {
+        "Version": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite-version",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Backup::BackupSelection.BackupSelectionResourceType": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html",
       "Properties": {
@@ -8959,6 +9081,35 @@
         "HeaderName": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html#cfn-cloudfront-distribution-origincustomheader-headername",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppSync::GraphQLApi.UserPoolConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html",
+      "Properties": {
+        "AppIdClientRegex": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-appidclientregex",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "UserPoolId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-userpoolid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AwsRegion": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-awsregion",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "DefaultAction": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-defaultaction",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -11433,6 +11584,23 @@
         }
       }
     },
+    "AWS::RoboMaker::SimulationApplication.RobotSoftwareSuite": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-robotsoftwaresuite.html",
+      "Properties": {
+        "Version": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-robotsoftwaresuite.html#cfn-robomaker-simulationapplication-robotsoftwaresuite-version",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-robotsoftwaresuite.html#cfn-robomaker-simulationapplication-robotsoftwaresuite-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::S3::Bucket.ServerSideEncryptionRule": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html",
       "Properties": {
@@ -13202,6 +13370,29 @@
         }
       }
     },
+    "AWS::AppMesh::Route.HttpRouteHeader": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html",
+      "Properties": {
+        "Invert": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-invert",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Match": {
+          "Type": "HeaderMatchMethod",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-match",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::EC2::SpotFleet.ClassicLoadBalancersConfig": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-classicloadbalancersconfig.html",
       "Properties": {
@@ -14013,6 +14204,35 @@
         }
       }
     },
+    "AWS::AppSync::GraphQLApi.OpenIDConnectConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html",
+      "Properties": {
+        "Issuer": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-issuer",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ClientId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-clientid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AuthTTL": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-authttl",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        },
+        "IatTTL": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-iatttl",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::EMR::Cluster.SimpleScalingPolicyConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html",
       "Properties": {
@@ -14032,6 +14252,29 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-cluster-simplescalingpolicyconfiguration-scalingadjustment",
           "PrimitiveType": "Integer",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppSync::GraphQLApi.LogConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html",
+      "Properties": {
+        "CloudWatchLogsRoleArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-cloudwatchlogsrolearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ExcludeVerboseContent": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-excludeverbosecontent",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "FieldLogLevel": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -14263,6 +14506,29 @@
         "RoleARN": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisstreamsinput.html#cfn-kinesisanalytics-application-kinesisstreamsinput-rolearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::RoboMaker::SimulationApplication.SourceConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-sourceconfig.html",
+      "Properties": {
+        "S3Bucket": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-sourceconfig.html#cfn-robomaker-simulationapplication-sourceconfig-s3bucket",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Architecture": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-sourceconfig.html#cfn-robomaker-simulationapplication-sourceconfig-architecture",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "S3Key": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-sourceconfig.html#cfn-robomaker-simulationapplication-sourceconfig-s3key",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -14558,9 +14824,28 @@
     "AWS::AppMesh::Route.HttpRouteMatch": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html",
       "Properties": {
+        "Scheme": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-scheme",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Headers": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-headers",
+          "ItemType": "HttpRouteHeader",
+          "UpdateType": "Mutable"
+        },
         "Prefix": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-prefix",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Method": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-method",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -16705,6 +16990,29 @@
         }
       }
     },
+    "AWS::AppSync::GraphQLApi.CognitoUserPoolConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html",
+      "Properties": {
+        "AppIdClientRegex": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-appidclientregex",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "UserPoolId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-userpoolid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AwsRegion": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-awsregion",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Glue::SecurityConfiguration.JobBookmarksEncryption": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-jobbookmarksencryption.html",
       "Properties": {
@@ -16744,6 +17052,13 @@
           "UpdateType": "Mutable"
         }
       }
+    },
+    "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProviders": {
+      "Type": "List",
+      "Required": false,
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationproviders.html",
+      "ItemType": "AdditionalAuthenticationProvider",
+      "UpdateType": "Mutable"
     },
     "AWS::KinesisAnalyticsV2::Application.InputProcessingConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputprocessingconfiguration.html",
@@ -18267,6 +18582,29 @@
         }
       }
     },
+    "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html",
+      "Properties": {
+        "OpenIDConnectConfig": {
+          "Type": "OpenIDConnectConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-openidconnectconfig",
+          "UpdateType": "Mutable"
+        },
+        "UserPoolConfig": {
+          "Type": "CognitoUserPoolConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-userpoolconfig",
+          "UpdateType": "Mutable"
+        },
+        "AuthenticationType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-authenticationtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::ECS::TaskDefinition.LinuxParameters": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html",
       "Properties": {
@@ -19397,6 +19735,23 @@
           "Type": "RecordFormat",
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referenceschema.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referenceschema-recordformat",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppMesh::Route.MatchRange": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html",
+      "Properties": {
+        "Start": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html#cfn-appmesh-route-matchrange-start",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "End": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html#cfn-appmesh-route-matchrange-end",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         }
       }
@@ -23255,6 +23610,64 @@
         }
       }
     },
+    "AWS::AppSync::GraphQLApi": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html",
+      "Attributes": {
+        "GraphQLUrl": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "ApiId": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "OpenIDConnectConfig": {
+          "Type": "OpenIDConnectConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-openidconnectconfig",
+          "UpdateType": "Mutable"
+        },
+        "UserPoolConfig": {
+          "Type": "UserPoolConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-userpoolconfig",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Type": "Tags",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-tags",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AuthenticationType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-authenticationtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "LogConfig": {
+          "Type": "LogConfig",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-logconfig",
+          "UpdateType": "Mutable"
+        },
+        "AdditionalAuthenticationProviders": {
+          "Type": "AdditionalAuthenticationProviders",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-additionalauthenticationproviders",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::CloudFront::StreamingDistribution": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html",
       "Attributes": {
@@ -26699,6 +27112,35 @@
         }
       }
     },
+    "AWS::CodeBuild::SourceCredential": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html",
+      "Properties": {
+        "ServerType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-servertype",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Username": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-username",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Token": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-token",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AuthType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-authtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::AmazonMQ::ConfigurationAssociation": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html",
       "Properties": {
@@ -28887,6 +29329,62 @@
         }
       }
     },
+    "AWS::RoboMaker::SimulationApplication": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html",
+      "Attributes": {
+        "CurrentRevisionId": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "RenderingEngine": {
+          "Type": "RenderingEngine",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine",
+          "UpdateType": "Immutable"
+        },
+        "SimulationSoftwareSuite": {
+          "Type": "SimulationSoftwareSuite",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite",
+          "UpdateType": "Immutable"
+        },
+        "CurrentRevisionId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-currentrevisionid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "RobotSoftwareSuite": {
+          "Type": "RobotSoftwareSuite",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite",
+          "UpdateType": "Immutable"
+        },
+        "Sources": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-sources",
+          "ItemType": "SourceConfig",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::Amplify::App": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html",
       "Attributes": {
@@ -30506,6 +31004,40 @@
         }
       }
     },
+    "AWS::RoboMaker::SimulationApplicationVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html",
+      "Properties": {
+        "CurrentRevisionId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html#cfn-robomaker-simulationapplicationversion-currentrevisionid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Application": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html#cfn-robomaker-simulationapplicationversion-application",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::RoboMaker::RobotApplicationVersion": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html",
+      "Properties": {
+        "CurrentRevisionId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html#cfn-robomaker-robotapplicationversion-currentrevisionid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Application": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html#cfn-robomaker-robotapplicationversion-application",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::AutoScaling::ScalingPolicy": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html",
       "Properties": {
@@ -31592,6 +32124,119 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxcapacity",
           "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Neptune::DBCluster": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html",
+      "Attributes": {
+        "ClusterResourceId": {
+          "PrimitiveType": "String"
+        },
+        "Endpoint": {
+          "PrimitiveType": "String"
+        },
+        "Port": {
+          "PrimitiveType": "String"
+        },
+        "ReadEndpoint": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "StorageEncrypted": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-storageencrypted",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Immutable"
+        },
+        "KmsKeyId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-kmskeyid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "AvailabilityZones": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-availabilityzones",
+          "UpdateType": "Immutable"
+        },
+        "SnapshotIdentifier": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Port": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-port",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "DBClusterIdentifier": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusteridentifier",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "PreferredMaintenanceWindow": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredmaintenancewindow",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "IamAuthEnabled": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-iamauthenabled",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "DBSubnetGroupName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbsubnetgroupname",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "PreferredBackupWindow": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-preferredbackupwindow",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "VpcSecurityGroupIds": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-vpcsecuritygroupids",
+          "UpdateType": "Mutable"
+        },
+        "DBClusterParameterGroupName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbclusterparametergroupname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "BackupRetentionPeriod": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-backupretentionperiod",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-tags",
+          "ItemType": "Tag",
+          "UpdateType": "Mutable"
+        },
+        "EnableCloudwatchLogsExports": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-enablecloudwatchlogsexports",
           "UpdateType": "Mutable"
         }
       }
@@ -32783,6 +33428,50 @@
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::RoboMaker::RobotApplication": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html",
+      "Attributes": {
+        "CurrentRevisionId": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "CurrentRevisionId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-currentrevisionid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "RobotSoftwareSuite": {
+          "Type": "RobotSoftwareSuite",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-robotsoftwaresuite",
+          "UpdateType": "Immutable"
+        },
+        "Sources": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-sources",
+          "ItemType": "SourceConfig",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -34705,6 +35394,41 @@
         }
       }
     },
+    "AWS::RoboMaker::Robot": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html",
+      "Properties": {
+        "Fleet": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-fleet",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Architecture": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-architecture",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "GreengrassGroupId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-greengrassgroupid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::EC2::VPCGatewayAttachment": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html",
       "Properties": {
@@ -36462,9 +37186,21 @@
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
+        "CdcStartPosition": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstartposition",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
         "ReplicationTaskIdentifier": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtaskidentifier",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "CdcStopPosition": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstopposition",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
@@ -36816,6 +37552,28 @@
         }
       }
     },
+    "AWS::RoboMaker::Fleet": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html",
+      "Attributes": {
+        "Arn": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html#cfn-robomaker-fleet-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html#cfn-robomaker-fleet-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        }
+      }
+    },
     "AWS::Glue::Classifier": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html",
       "Properties": {
@@ -36846,5 +37604,5 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "5.0.0"
+  "ResourceSpecificationVersion": "5.3.0"
 }
