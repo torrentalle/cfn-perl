@@ -1,4 +1,4 @@
-# AWS::CodeBuild::Project generated from spec 2.25.0
+# AWS::CodeBuild::Project generated from spec 5.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::CodeBuild::Project {
     [ 'Arn' ]
   }
   sub supported_regions {
-    [ 'eu-west-1','us-east-1','us-west-2' ]
+    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','cn-north-1','cn-northwest-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 
@@ -60,6 +60,7 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::S3LogsConfigValue {
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has EncryptionDisabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Location => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
@@ -84,6 +85,69 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::RegistryCredentialVa
   
   has Credential => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has CredentialProvider => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfigValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfigValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has FetchSubmodules => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroupValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroupValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::EnvironmentVariable',
      as 'Cfn::Value',
@@ -243,6 +307,7 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::SourceValue {
   has Auth => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::SourceAuth', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has BuildSpec => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has GitCloneDepth => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has GitSubmodulesConfig => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InsecureSsl => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Location => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ReportBuildStatus => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
@@ -268,7 +333,52 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectTriggersValue
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has FilterGroups => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Webhook => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersion',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersion',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersion')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersion',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersion',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersionValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersionValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has SourceIdentifier => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SourceVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectCache',
@@ -410,9 +520,11 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project {
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has QueuedTimeoutInMinutes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SecondaryArtifacts => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::Artifacts', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SecondarySourceVersions => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersion', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SecondarySources => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::Source', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ServiceRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Source => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::Source', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SourceVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TimeoutInMinutes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Triggers => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectTriggers', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

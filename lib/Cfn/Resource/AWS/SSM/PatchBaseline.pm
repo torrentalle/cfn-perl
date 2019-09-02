@@ -1,4 +1,4 @@
-# AWS::SSM::PatchBaseline generated from spec 2.25.0
+# AWS::SSM::PatchBaseline generated from spec 2.28.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline',
@@ -214,6 +214,7 @@ package Cfn::Resource::Properties::AWS::SSM::PatchBaseline {
   has RejectedPatches => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RejectedPatchesAction => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Sources => (isa => 'ArrayOfCfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchSource', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;
