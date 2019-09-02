@@ -1,4 +1,4 @@
-0.09
+0.09 2019-09-02
   - Implements the resources in CloudFormation spec 5.3.0 (published as of 2019-09-02)
   - Added region-support information for all resources for ap-east-1, cn-north-1,
     cn-northwest-1, us-gov-east-1, us-gov-west-1 and me-south-1
