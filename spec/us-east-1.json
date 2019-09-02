@@ -205,6 +205,35 @@
         }
       }
     },
+    "AWS::Glue::MLTransform.FindMatchesParameters": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html",
+      "Properties": {
+        "PrecisionRecallTradeoff": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-precisionrecalltradeoff",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        },
+        "EnforceProvidedLabels": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-enforceprovidedlabels",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "PrimaryKeyColumnName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-primarykeycolumnname",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "AccuracyCostTradeoff": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-accuracycosttradeoff",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::S3::Bucket.BucketEncryption": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-bucketencryption.html",
       "Properties": {
@@ -1293,6 +1322,29 @@
         }
       }
     },
+    "AWS::ManagedBlockchain::Member.MemberConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html",
+      "Properties": {
+        "Description": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html#cfn-managedblockchain-member-memberconfiguration-description",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "MemberFrameworkConfiguration": {
+          "Type": "MemberFrameworkConfiguration",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html#cfn-managedblockchain-member-memberconfiguration-memberframeworkconfiguration",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html#cfn-managedblockchain-member-memberconfiguration-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html",
       "Properties": {
@@ -1434,6 +1486,29 @@
         }
       }
     },
+    "AWS::SageMaker::Workteam.CognitoMemberDefinition": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html",
+      "Properties": {
+        "CognitoUserPool": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitouserpool",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "CognitoClientId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitoclientid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "CognitoUserGroup": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitousergroup",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Lambda::Function.VpcConfig": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html",
       "Properties": {
@@ -1468,6 +1543,29 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-s3encryption.html#cfn-glue-securityconfiguration-s3encryption-s3encryptionmode",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::ManagedBlockchain::Member.ApprovalThresholdPolicy": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html",
+      "Properties": {
+        "ThresholdComparator": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html#cfn-managedblockchain-member-approvalthresholdpolicy-thresholdcomparator",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "ThresholdPercentage": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html#cfn-managedblockchain-member-approvalthresholdpolicy-thresholdpercentage",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "ProposalDurationInHours": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html#cfn-managedblockchain-member-approvalthresholdpolicy-proposaldurationinhours",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         }
       }
@@ -1553,6 +1651,23 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html#cfn-appmesh-route-weightedtarget-weight",
           "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::ManagedBlockchain::Node.NodeConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html",
+      "Properties": {
+        "AvailabilityZone": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html#cfn-managedblockchain-node-nodeconfiguration-availabilityzone",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "InstanceType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html#cfn-managedblockchain-node-nodeconfiguration-instancetype",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -5781,6 +5896,17 @@
         }
       }
     },
+    "AWS::LakeFormation::DataLakeSettings.DataLakePrincipal": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-datalakeprincipal.html",
+      "Properties": {
+        "DataLakePrincipalIdentifier": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-datalakeprincipal.html#cfn-lakeformation-datalakesettings-datalakeprincipal-datalakeprincipalidentifier",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::IoTAnalytics::Pipeline.SelectAttributes": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html",
       "Properties": {
@@ -6161,6 +6287,17 @@
         }
       }
     },
+    "AWS::ManagedBlockchain::Member.NetworkFrameworkConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkframeworkconfiguration.html",
+      "Properties": {
+        "NetworkFabricConfiguration": {
+          "Type": "NetworkFabricConfiguration",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkframeworkconfiguration.html#cfn-managedblockchain-member-networkframeworkconfiguration-networkfabricconfiguration",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html",
       "Properties": {
@@ -6427,6 +6564,47 @@
         }
       }
     },
+    "AWS::ManagedBlockchain::Member.NetworkConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html",
+      "Properties": {
+        "Description": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-description",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "FrameworkVersion": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-frameworkversion",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "VotingPolicy": {
+          "Type": "VotingPolicy",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-votingpolicy",
+          "UpdateType": "Mutable"
+        },
+        "Framework": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-framework",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "NetworkFrameworkConfiguration": {
+          "Type": "NetworkFrameworkConfiguration",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-networkframeworkconfiguration",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::MediaLive::Channel.Scte27SourceSettings": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html",
       "Properties": {
@@ -6649,6 +6827,41 @@
           "Type": "Coordinates",
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppMesh::Route.HeaderMatchMethod": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html",
+      "Properties": {
+        "Suffix": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-suffix",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Regex": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-regex",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Exact": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-exact",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Prefix": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-prefix",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Range": {
+          "Type": "MatchRange",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-range",
           "UpdateType": "Mutable"
         }
       }
@@ -7865,6 +8078,12 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-httproute",
           "UpdateType": "Mutable"
         },
+        "Priority": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-priority",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
         "TcpRoute": {
           "Type": "TcpRoute",
           "Required": false,
@@ -8132,6 +8351,17 @@
         }
       }
     },
+    "AWS::ManagedBlockchain::Member.MemberFrameworkConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberframeworkconfiguration.html",
+      "Properties": {
+        "MemberFabricConfiguration": {
+          "Type": "MemberFabricConfiguration",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberframeworkconfiguration.html#cfn-managedblockchain-member-memberframeworkconfiguration-memberfabricconfiguration",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::EMR::Cluster.CloudWatchAlarmDefinition": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html",
       "Properties": {
@@ -8216,6 +8446,17 @@
         "Separator": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-separator",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::LakeFormation::Permissions.DatabaseResource": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html",
+      "Properties": {
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html#cfn-lakeformation-permissions-databaseresource-name",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -9765,6 +10006,17 @@
         }
       }
     },
+    "AWS::LakeFormation::Permissions.DataLakePrincipal": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-datalakeprincipal.html",
+      "Properties": {
+        "DataLakePrincipalIdentifier": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-datalakeprincipal.html#cfn-lakeformation-permissions-datalakeprincipal-datalakeprincipalidentifier",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::MediaLive::Input.InputSourceRequest": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html",
       "Properties": {
@@ -9956,6 +10208,23 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html#cfn-elasticsearch-domain-snapshotoptions-automatedsnapshotstarthour",
           "PrimitiveType": "Integer",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::LakeFormation::Permissions.TableResource": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html",
+      "Properties": {
+        "DatabaseName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-databasename",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-name",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -10881,6 +11150,17 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-defaultaction",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::SageMaker::Workteam.MemberDefinition": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html",
+      "Properties": {
+        "CognitoMemberDefinition": {
+          "Type": "CognitoMemberDefinition",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html#cfn-sagemaker-workteam-memberdefinition-cognitomemberdefinition",
           "UpdateType": "Mutable"
         }
       }
@@ -13157,6 +13437,23 @@
         }
       }
     },
+    "AWS::LakeFormation::Permissions.Resource": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html",
+      "Properties": {
+        "TableResource": {
+          "Type": "TableResource",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-tableresource",
+          "UpdateType": "Mutable"
+        },
+        "DatabaseResource": {
+          "Type": "DatabaseResource",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-databaseresource",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::AppMesh::VirtualNode.VirtualServiceBackend": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html",
       "Properties": {
@@ -14958,6 +15255,17 @@
         }
       }
     },
+    "AWS::ManagedBlockchain::Member.NetworkFabricConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkfabricconfiguration.html",
+      "Properties": {
+        "Edition": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkfabricconfiguration.html#cfn-managedblockchain-member-networkfabricconfiguration-edition",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Glue::Partition.Order": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html",
       "Properties": {
@@ -15733,6 +16041,29 @@
           "ItemType": "ClassicLoadBalancer",
           "Required": true,
           "Type": "List",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppMesh::Route.HttpRouteHeader": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html",
+      "Properties": {
+        "Invert": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-invert",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Match": {
+          "Type": "HeaderMatchMethod",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-match",
           "UpdateType": "Mutable"
         }
       }
@@ -16858,6 +17189,12 @@
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
+        "ExcludeVerboseContent": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-excludeverbosecontent",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
         "FieldLogLevel": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel",
@@ -17607,9 +17944,28 @@
     "AWS::AppMesh::Route.HttpRouteMatch": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html",
       "Properties": {
+        "Scheme": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-scheme",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Headers": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-headers",
+          "ItemType": "HttpRouteHeader",
+          "UpdateType": "Mutable"
+        },
         "Prefix": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-prefix",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Method": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-method",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -18200,6 +18556,17 @@
         }
       }
     },
+    "AWS::ManagedBlockchain::Member.VotingPolicy": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-votingpolicy.html",
+      "Properties": {
+        "ApprovalThresholdPolicy": {
+          "Type": "ApprovalThresholdPolicy",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-votingpolicy.html#cfn-managedblockchain-member-votingpolicy-approvalthresholdpolicy",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::IoTAnalytics::Pipeline.Datastore": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-datastore.html",
       "Properties": {
@@ -18643,6 +19010,17 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateconfigrequest-overrides",
           "ItemType": "FleetLaunchTemplateOverridesRequest",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::SageMaker::Workteam.NotificationConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-notificationconfiguration.html",
+      "Properties": {
+        "NotificationTopicArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-notificationconfiguration.html#cfn-sagemaker-workteam-notificationconfiguration-notificationtopicarn",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -19231,6 +19609,23 @@
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-triggeringdataset.html#cfn-iotanalytics-dataset-triggeringdataset-datasetname",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Glue::MLTransform.TransformParameters": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html",
+      "Properties": {
+        "TransformType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html#cfn-glue-mltransform-transformparameters-transformtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "FindMatchesParameters": {
+          "Type": "FindMatchesParameters",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters",
           "UpdateType": "Mutable"
         }
       }
@@ -19992,6 +20387,13 @@
       "Required": false,
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-filtergroup.html",
       "ItemType": "WebhookFilter",
+      "UpdateType": "Mutable"
+    },
+    "AWS::LakeFormation::DataLakeSettings.Admins": {
+      "Type": "List",
+      "Required": false,
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-admins.html",
+      "ItemType": "DataLakePrincipal",
       "UpdateType": "Mutable"
     },
     "AWS::EC2::LaunchTemplate.Ipv6Add": {
@@ -21950,6 +22352,24 @@
         }
       }
     },
+    "AWS::SSM::MaintenanceWindowTarget.Targets": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html",
+      "Properties": {
+        "Values": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html#cfn-ssm-maintenancewindowtarget-targets-values",
+          "UpdateType": "Mutable"
+        },
+        "Key": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html#cfn-ssm-maintenancewindowtarget-targets-key",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::CloudFront::StreamingDistribution.Logging": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html",
       "Properties": {
@@ -22927,6 +23347,23 @@
         }
       }
     },
+    "AWS::ManagedBlockchain::Member.MemberFabricConfiguration": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberfabricconfiguration.html",
+      "Properties": {
+        "AdminUsername": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberfabricconfiguration.html#cfn-managedblockchain-member-memberfabricconfiguration-adminusername",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AdminPassword": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberfabricconfiguration.html#cfn-managedblockchain-member-memberfabricconfiguration-adminpassword",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Cognito::UserPool.InviteMessageTemplate": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-invitemessagetemplate.html",
       "Properties": {
@@ -23636,6 +24073,23 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentname",
           "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppMesh::Route.MatchRange": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html",
+      "Properties": {
+        "Start": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html#cfn-appmesh-route-matchrange-start",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "End": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html#cfn-appmesh-route-matchrange-end",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         }
       }
@@ -24458,6 +24912,18 @@
         }
       }
     },
+    "AWS::Glue::MLTransform.InputRecordTables": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables.html",
+      "Properties": {
+        "GlueTables": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables.html#cfn-glue-mltransform-inputrecordtables-gluetables",
+          "ItemType": "GlueTables",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::DMS::Endpoint.ElasticsearchSettings": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-elasticsearchsettings.html",
       "Properties": {
@@ -24654,6 +25120,35 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionweight",
           "PrimitiveType": "Double",
           "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Glue::MLTransform.GlueTables": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html",
+      "Properties": {
+        "ConnectionName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-connectionname",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "TableName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-tablename",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "DatabaseName": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-databasename",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "CatalogId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-catalogid",
+          "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
       }
@@ -25407,6 +25902,48 @@
         }
       }
     },
+    "AWS::SageMaker::Workteam": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html",
+      "Attributes": {
+        "WorkteamName": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "Description": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-description",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "NotificationConfiguration": {
+          "Type": "NotificationConfiguration",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-notificationconfiguration",
+          "UpdateType": "Mutable"
+        },
+        "WorkteamName": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-workteamname",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "MemberDefinitions": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-memberdefinitions",
+          "ItemType": "MemberDefinition",
+          "UpdateType": "Mutable"
+        },
+        "Tags": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-tags",
+          "ItemType": "Tag",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::RAM::ResourceShare": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html",
       "Attributes": {
@@ -26068,6 +26605,43 @@
         }
       }
     },
+    "AWS::ManagedBlockchain::Member": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html",
+      "Attributes": {
+        "MemberId": {
+          "PrimitiveType": "String"
+        },
+        "NetworkId": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "MemberConfiguration": {
+          "Type": "MemberConfiguration",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-memberconfiguration",
+          "UpdateType": "Mutable"
+        },
+        "NetworkConfiguration": {
+          "Type": "NetworkConfiguration",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-networkconfiguration",
+          "UpdateType": "Mutable"
+        },
+        "NetworkId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-networkid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "InvitationId": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-invitationid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::CloudWatch::Dashboard": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html",
       "Properties": {
@@ -26564,6 +27138,29 @@
         }
       }
     },
+    "AWS::LakeFormation::Resource": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html",
+      "Properties": {
+        "ResourceArn": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-resourcearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "UseServiceLinkedRole": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-useservicelinkedrole",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "RoleArn": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-rolearn",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::SNS::Subscription": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html",
       "Properties": {
@@ -26819,6 +27416,37 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagename",
           "PrimitiveType": "String",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::LakeFormation::Permissions": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html",
+      "Properties": {
+        "DataLakePrincipal": {
+          "Type": "DataLakePrincipal",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-datalakeprincipal",
+          "UpdateType": "Mutable"
+        },
+        "Resource": {
+          "Type": "Resource",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-resource",
+          "UpdateType": "Mutable"
+        },
+        "Permissions": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-permissions",
+          "UpdateType": "Mutable"
+        },
+        "PermissionsWithGrantOption": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-permissionswithgrantoption",
           "UpdateType": "Mutable"
         }
       }
@@ -27676,6 +28304,17 @@
         }
       }
     },
+    "AWS::LakeFormation::DataLakeSettings": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html",
+      "Properties": {
+        "Admins": {
+          "Type": "Admins",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-admins",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::ElasticLoadBalancing::LoadBalancer": {
       "Attributes": {
         "CanonicalHostedZoneName": {
@@ -28181,6 +28820,12 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html#cfn-greengrass-resourcedefinition-initialversion",
           "UpdateType": "Immutable"
         },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html#cfn-greengrass-resourcedefinition-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
         "Name": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html#cfn-greengrass-resourcedefinition-name",
@@ -28374,6 +29019,35 @@
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::CodeBuild::SourceCredential": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html",
+      "Properties": {
+        "ServerType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-servertype",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Username": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-username",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Token": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-token",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AuthType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-authtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -28833,6 +29507,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html#cfn-greengrass-devicedefinition-initialversion",
           "UpdateType": "Immutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html#cfn-greengrass-devicedefinition-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
         },
         "Name": {
           "Required": true,
@@ -31140,6 +31820,48 @@
         }
       }
     },
+    "AWS::SSM::MaintenanceWindowTarget": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html",
+      "Properties": {
+        "OwnerInformation": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-ownerinformation",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Description": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-description",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "WindowId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-windowid",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "ResourceType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-resourcetype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Targets": {
+          "Type": "List",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-targets",
+          "ItemType": "Targets",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::IoT1Click::Placement": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html",
       "Attributes": {
@@ -31485,6 +32207,43 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-name",
           "PrimitiveType": "String",
           "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::ManagedBlockchain::Node": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html",
+      "Attributes": {
+        "MemberId": {
+          "PrimitiveType": "String"
+        },
+        "NodeId": {
+          "PrimitiveType": "String"
+        },
+        "Arn": {
+          "PrimitiveType": "String"
+        },
+        "NetworkId": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Properties": {
+        "MemberId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-memberid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "NetworkId": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-networkid",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "NodeConfiguration": {
+          "Type": "NodeConfiguration",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-nodeconfiguration",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -34377,6 +35136,71 @@
         }
       }
     },
+    "AWS::Glue::MLTransform": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html",
+      "Properties": {
+        "Role": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-role",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "MaxRetries": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxretries",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "WorkerType": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-workertype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Description": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-description",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Timeout": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-timeout",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "TransformParameters": {
+          "Type": "TransformParameters",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-transformparameters",
+          "UpdateType": "Mutable"
+        },
+        "InputRecordTables": {
+          "Type": "InputRecordTables",
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-inputrecordtables",
+          "UpdateType": "Immutable"
+        },
+        "NumberOfWorkers": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-numberofworkers",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "MaxCapacity": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxcapacity",
+          "PrimitiveType": "Double",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Transfer::Server": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html",
       "Attributes": {
@@ -34891,6 +35715,12 @@
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
         "Name": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-name",
@@ -35267,6 +36097,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-initialversion",
           "UpdateType": "Immutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
         },
         "Name": {
           "Required": true,
@@ -36244,6 +37080,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-initialversion",
           "UpdateType": "Immutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
         },
         "Name": {
           "Required": true,
@@ -37317,6 +38159,12 @@
           "Type": "ConnectionLogOptions",
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-connectionlogoptions",
+          "UpdateType": "Mutable"
+        },
+        "SplitTunnel": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-splittunnel",
+          "PrimitiveType": "Boolean",
           "UpdateType": "Mutable"
         },
         "Description": {
@@ -39156,6 +40004,12 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-initialversion",
           "UpdateType": "Immutable"
         },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
         "Name": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-name",
@@ -40516,6 +41370,12 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-initialversion",
           "UpdateType": "Immutable"
         },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
+        },
         "Name": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-name",
@@ -41262,6 +42122,13 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-tags",
           "ItemType": "Tag",
           "UpdateType": "Mutable"
+        },
+        "EnableCloudwatchLogsExports": {
+          "PrimitiveItemType": "String",
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-enablecloudwatchlogsexports",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -41750,6 +42617,12 @@
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-initialversion",
           "UpdateType": "Immutable"
+        },
+        "Tags": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-tags",
+          "PrimitiveType": "Json",
+          "UpdateType": "Mutable"
         },
         "Name": {
           "Required": true,
@@ -44089,9 +44962,21 @@
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
+        "CdcStartPosition": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstartposition",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
         "ReplicationTaskIdentifier": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtaskidentifier",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "CdcStopPosition": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstopposition",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
@@ -44354,5 +45239,5 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "5.0.0"
+  "ResourceSpecificationVersion": "5.3.0"
 }

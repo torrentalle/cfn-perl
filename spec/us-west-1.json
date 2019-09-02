@@ -5380,6 +5380,29 @@
         }
       }
     },
+    "AWS::AppMesh::Route.HttpRouteHeader": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html",
+      "Properties": {
+        "Invert": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-invert",
+          "PrimitiveType": "Boolean",
+          "UpdateType": "Mutable"
+        },
+        "Name": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-name",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Match": {
+          "Type": "HeaderMatchMethod",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-match",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::ApplicationAutoScaling::ScalingPolicy.MetricDimension": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-metricdimension.html",
       "Properties": {
@@ -7686,9 +7709,28 @@
     "AWS::AppMesh::Route.HttpRouteMatch": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html",
       "Properties": {
+        "Scheme": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-scheme",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Headers": {
+          "Type": "List",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-headers",
+          "ItemType": "HttpRouteHeader",
+          "UpdateType": "Mutable"
+        },
         "Prefix": {
           "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-prefix",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Method": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-method",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         }
@@ -9541,6 +9583,41 @@
         }
       }
     },
+    "AWS::AppMesh::Route.HeaderMatchMethod": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html",
+      "Properties": {
+        "Suffix": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-suffix",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Regex": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-regex",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Exact": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-exact",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Prefix": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-prefix",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Range": {
+          "Type": "MatchRange",
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-range",
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::SNS::Topic.Subscription": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html",
       "Properties": {
@@ -11064,6 +11141,12 @@
           "Type": "HttpRoute",
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-httproute",
+          "UpdateType": "Mutable"
+        },
+        "Priority": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-priority",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         },
         "TcpRoute": {
@@ -15437,6 +15520,23 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-monitoring.html#cfn-ec2-spotfleet-spotfleetmonitoring-enabled",
           "PrimitiveType": "Boolean",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::AppMesh::Route.MatchRange": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html",
+      "Properties": {
+        "Start": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html#cfn-appmesh-route-matchrange-start",
+          "PrimitiveType": "Integer",
+          "UpdateType": "Mutable"
+        },
+        "End": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-matchrange.html#cfn-appmesh-route-matchrange-end",
+          "PrimitiveType": "Integer",
           "UpdateType": "Mutable"
         }
       }
@@ -22634,6 +22734,35 @@
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::CodeBuild::SourceCredential": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html",
+      "Properties": {
+        "ServerType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-servertype",
+          "PrimitiveType": "String",
+          "UpdateType": "Immutable"
+        },
+        "Username": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-username",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "Token": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-token",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "AuthType": {
+          "Required": true,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-authtype",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -31210,9 +31339,21 @@
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
+        "CdcStartPosition": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstartposition",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
         "ReplicationTaskIdentifier": {
           "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationtaskidentifier",
+          "PrimitiveType": "String",
+          "UpdateType": "Mutable"
+        },
+        "CdcStopPosition": {
+          "Required": false,
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-cdcstopposition",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
         },
@@ -31594,5 +31735,5 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "5.0.0"
+  "ResourceSpecificationVersion": "5.3.0"
 }
