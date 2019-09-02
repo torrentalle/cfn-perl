@@ -66,7 +66,7 @@ sub _render_property {
     return "'true|false',",
   } elsif ($type eq 'Cfn::Value::Timestamp') {
     return "'',";
-  } elsif ($type eq 'Cfn::Value::Array|Cfn::Value::Function') {
+  } elsif ($type =~ m/Cfn::Value::Array/) {
     return "[ '', ],";
   } elsif ($type eq 'Cfn::Value::Hash') {
     return "{ },";
