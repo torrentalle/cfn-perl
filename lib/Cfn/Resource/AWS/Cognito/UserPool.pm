@@ -1,4 +1,4 @@
-# AWS::Cognito::UserPool generated from spec 6.0.0
+# AWS::Cognito::UserPool generated from spec 6.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPool',
@@ -362,6 +362,7 @@ package Cfn::Resource::Properties::AWS::Cognito::UserPool {
   has EmailConfiguration => (isa => 'Cfn::Resource::Properties::AWS::Cognito::UserPool::EmailConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EmailVerificationMessage => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EmailVerificationSubject => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has EnabledMfas => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has LambdaConfig => (isa => 'Cfn::Resource::Properties::AWS::Cognito::UserPool::LambdaConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MfaConfiguration => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Policies => (isa => 'Cfn::Resource::Properties::AWS::Cognito::UserPool::Policies', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
