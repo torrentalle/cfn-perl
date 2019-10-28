@@ -3308,6 +3308,12 @@
       "AWS::Batch::ComputeEnvironment.ComputeResources" : {
          "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html",
          "Properties" : {
+            "AllocationStrategy" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-allocationstrategy",
+               "PrimitiveType" : "String",
+               "Required" : false,
+               "UpdateType" : "Immutable"
+            },
             "BidPercentage" : {
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-bidpercentage",
                "PrimitiveType" : "Integer",
@@ -6225,6 +6231,12 @@
          "Properties" : {
             "AmbiguousRoleResolution" : {
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-ambiguousroleresolution",
+               "PrimitiveType" : "String",
+               "Required" : false,
+               "UpdateType" : "Mutable"
+            },
+            "IdentityProvider" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-identityprovider",
                "PrimitiveType" : "String",
                "Required" : false,
                "UpdateType" : "Mutable"
@@ -9841,17 +9853,17 @@
             }
          }
       },
-      "AWS::EC2::TrafficMirrorFilterRule.TrafficMirrorPortRangeRequest" : {
-         "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrangerequest.html",
+      "AWS::EC2::TrafficMirrorFilterRule.TrafficMirrorPortRange" : {
+         "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html",
          "Properties" : {
             "FromPort" : {
-               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrangerequest.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrangerequest-fromport",
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-fromport",
                "PrimitiveType" : "Integer",
                "Required" : true,
                "UpdateType" : "Mutable"
             },
             "ToPort" : {
-               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrangerequest.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrangerequest-toport",
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-toport",
                "PrimitiveType" : "Integer",
                "Required" : true,
                "UpdateType" : "Mutable"
@@ -13671,6 +13683,48 @@
             }
          }
       },
+      "AWS::FSx::FileSystem.SelfManagedActiveDirectoryConfiguration" : {
+         "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html",
+         "Properties" : {
+            "DnsIps" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-dnsips",
+               "PrimitiveItemType" : "String",
+               "Required" : false,
+               "Type" : "List",
+               "UpdateType" : "Mutable"
+            },
+            "DomainName" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-domainname",
+               "PrimitiveType" : "String",
+               "Required" : false,
+               "UpdateType" : "Immutable"
+            },
+            "FileSystemAdministratorsGroup" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-filesystemadministratorsgroup",
+               "PrimitiveType" : "String",
+               "Required" : false,
+               "UpdateType" : "Immutable"
+            },
+            "OrganizationalUnitDistinguishedName" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-organizationalunitdistinguishedname",
+               "PrimitiveType" : "String",
+               "Required" : false,
+               "UpdateType" : "Immutable"
+            },
+            "Password" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-password",
+               "PrimitiveType" : "String",
+               "Required" : false,
+               "UpdateType" : "Mutable"
+            },
+            "UserName" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-username",
+               "PrimitiveType" : "String",
+               "Required" : false,
+               "UpdateType" : "Mutable"
+            }
+         }
+      },
       "AWS::FSx::FileSystem.WindowsConfiguration" : {
          "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html",
          "Properties" : {
@@ -13696,6 +13750,12 @@
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-dailyautomaticbackupstarttime",
                "PrimitiveType" : "String",
                "Required" : false,
+               "UpdateType" : "Mutable"
+            },
+            "SelfManagedActiveDirectoryConfiguration" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration",
+               "Required" : false,
+               "Type" : "SelfManagedActiveDirectoryConfiguration",
                "UpdateType" : "Mutable"
             },
             "ThroughputCapacity" : {
@@ -26071,7 +26131,7 @@
          }
       }
    },
-   "ResourceSpecificationVersion" : "6.3.0",
+   "ResourceSpecificationVersion" : "7.1.0",
    "ResourceTypes" : {
       "AWS::AmazonMQ::Broker" : {
          "Attributes" : {
@@ -34109,7 +34169,7 @@
                "ItemType" : "Tag",
                "Required" : false,
                "Type" : "List",
-               "UpdateType" : "Immutable"
+               "UpdateType" : "Mutable"
             }
          }
       },
@@ -34131,7 +34191,7 @@
             "DestinationPortRange" : {
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-destinationportrange",
                "Required" : false,
-               "Type" : "TrafficMirrorPortRangeRequest",
+               "Type" : "TrafficMirrorPortRange",
                "UpdateType" : "Mutable"
             },
             "Protocol" : {
@@ -34161,7 +34221,7 @@
             "SourcePortRange" : {
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-sourceportrange",
                "Required" : false,
-               "Type" : "TrafficMirrorPortRangeRequest",
+               "Type" : "TrafficMirrorPortRange",
                "UpdateType" : "Mutable"
             },
             "TrafficDirection" : {
@@ -34210,7 +34270,7 @@
                "ItemType" : "Tag",
                "Required" : false,
                "Type" : "List",
-               "UpdateType" : "Immutable"
+               "UpdateType" : "Mutable"
             },
             "TrafficMirrorFilterId" : {
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-trafficmirrorfilterid",
@@ -34258,7 +34318,7 @@
                "ItemType" : "Tag",
                "Required" : false,
                "Type" : "List",
-               "UpdateType" : "Immutable"
+               "UpdateType" : "Mutable"
             }
          }
       },
@@ -36804,6 +36864,34 @@
             }
          }
       },
+      "AWS::Events::EventBus" : {
+         "Attributes" : {
+            "Arn" : {
+               "PrimitiveType" : "String"
+            },
+            "Name" : {
+               "PrimitiveType" : "String"
+            },
+            "Policy" : {
+               "PrimitiveType" : "String"
+            }
+         },
+         "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html",
+         "Properties" : {
+            "EventSourceName" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-eventsourcename",
+               "PrimitiveType" : "String",
+               "Required" : false,
+               "UpdateType" : "Immutable"
+            },
+            "Name" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-name",
+               "PrimitiveType" : "String",
+               "Required" : true,
+               "UpdateType" : "Immutable"
+            }
+         }
+      },
       "AWS::Events::EventBusPolicy" : {
          "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html",
          "Properties" : {
@@ -36905,7 +36993,7 @@
             "FileSystemType" : {
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-filesystemtype",
                "PrimitiveType" : "String",
-               "Required" : false,
+               "Required" : true,
                "UpdateType" : "Immutable"
             },
             "KmsKeyId" : {
@@ -36936,7 +37024,7 @@
             "SubnetIds" : {
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-subnetids",
                "PrimitiveItemType" : "String",
-               "Required" : false,
+               "Required" : true,
                "Type" : "List",
                "UpdateType" : "Immutable"
             },
@@ -40143,7 +40231,7 @@
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes",
                "PrimitiveType" : "Integer",
                "Required" : true,
-               "UpdateType" : "Immutable"
+               "UpdateType" : "Mutable"
             },
             "Tags" : {
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-tags",
