@@ -1,4 +1,4 @@
-# AWS::EC2::TrafficMirrorFilter generated from spec 6.3.0
+# AWS::EC2::TrafficMirrorFilter generated from spec 7.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilter',
@@ -27,7 +27,7 @@ package Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilter {
   
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has NetworkServices => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

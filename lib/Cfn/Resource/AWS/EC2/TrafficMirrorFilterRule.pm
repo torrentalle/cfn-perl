@@ -1,4 +1,4 @@
-# AWS::EC2::TrafficMirrorFilterRule generated from spec 6.3.0
+# AWS::EC2::TrafficMirrorFilterRule generated from spec 7.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule',
@@ -20,20 +20,20 @@ package Cfn::Resource::AWS::EC2::TrafficMirrorFilterRule {
 
 
 
-subtype 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeRequest',
+subtype 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRange',
      as 'Cfn::Value';
 
-coerce 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeRequest',
+coerce 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRange',
   from 'HashRef',
    via {
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeValue->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeValue {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -49,12 +49,12 @@ package Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule {
   
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DestinationCidrBlock => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has DestinationPortRange => (isa => 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeRequest', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DestinationPortRange => (isa => 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRange', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Protocol => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RuleAction => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RuleNumber => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SourceCidrBlock => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has SourcePortRange => (isa => 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeRequest', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SourcePortRange => (isa => 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRange', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TrafficDirection => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TrafficMirrorFilterId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }

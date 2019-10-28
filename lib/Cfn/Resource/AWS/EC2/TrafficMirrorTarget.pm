@@ -1,4 +1,4 @@
-# AWS::EC2::TrafficMirrorTarget generated from spec 6.3.0
+# AWS::EC2::TrafficMirrorTarget generated from spec 7.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorTarget',
@@ -28,7 +28,7 @@ package Cfn::Resource::Properties::AWS::EC2::TrafficMirrorTarget {
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has NetworkInterfaceId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has NetworkLoadBalancerArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
-  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;
