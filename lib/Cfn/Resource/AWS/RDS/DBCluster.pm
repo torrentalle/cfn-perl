@@ -1,4 +1,4 @@
-# AWS::RDS::DBCluster generated from spec 6.0.0
+# AWS::RDS::DBCluster generated from spec 7.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::RDS::DBCluster',
@@ -86,7 +86,6 @@ package Cfn::Resource::Properties::AWS::RDS::DBCluster::DBClusterRoleValue {
   
   has FeatureName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::RDS::DBCluster {

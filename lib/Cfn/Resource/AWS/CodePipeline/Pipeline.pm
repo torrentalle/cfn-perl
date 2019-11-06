@@ -1,4 +1,4 @@
-# AWS::CodePipeline::Pipeline generated from spec 5.3.0
+# AWS::CodePipeline::Pipeline generated from spec 7.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline',
@@ -414,6 +414,7 @@ package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline {
   has RestartExecutionOnUpdate => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Stages => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CodePipeline::Pipeline::StageDeclaration', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;
