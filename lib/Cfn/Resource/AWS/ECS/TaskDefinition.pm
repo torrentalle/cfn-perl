@@ -1,4 +1,4 @@
-# AWS::ECS::TaskDefinition generated from spec 7.4.0
+# AWS::ECS::TaskDefinition generated from spec 8.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition',
@@ -868,7 +868,6 @@ package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::InferenceAccelerato
   extends 'Cfn::Value::TypedValue';
   
   has DeviceName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
-  has DevicePolicy => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has DeviceType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDefinition',
