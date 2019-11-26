@@ -1,4 +1,4 @@
-# AWS::CodePipeline::Pipeline generated from spec 7.4.0
+# AWS::CodePipeline::Pipeline generated from spec 9.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline',
@@ -263,6 +263,7 @@ package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ActionDeclaratio
   has Configuration => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InputArtifacts => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CodePipeline::Pipeline::InputArtifact', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Namespace => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has OutputArtifacts => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CodePipeline::Pipeline::OutputArtifact', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Region => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

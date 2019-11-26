@@ -1,4 +1,4 @@
-# AWS::GameLift::Fleet generated from spec 8.1.0
+# AWS::GameLift::Fleet generated from spec 9.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::GameLift::Fleet',

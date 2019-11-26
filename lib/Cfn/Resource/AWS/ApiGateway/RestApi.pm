@@ -1,4 +1,4 @@
-# AWS::ApiGateway::RestApi generated from spec 7.4.0
+# AWS::ApiGateway::RestApi generated from spec 9.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ApiGateway::RestApi',
@@ -63,6 +63,7 @@ package Cfn::Resource::Properties::AWS::ApiGateway::RestApi::EndpointConfigurati
   extends 'Cfn::Value::TypedValue';
   
   has Types => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has VpcEndpointIds => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::ApiGateway::RestApi {
