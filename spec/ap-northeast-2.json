@@ -33222,7 +33222,7 @@
           "UpdateType": "Mutable"
         },
         "ServiceRoleArn": {
-          "Required": true,
+          "Required": false,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-servicerolearn",
           "PrimitiveType": "String",
           "UpdateType": "Mutable"
@@ -33265,7 +33265,7 @@
           "UpdateType": "Mutable"
         },
         "WindowId": {
-          "Required": false,
+          "Required": true,
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-windowid",
           "PrimitiveType": "String",
           "UpdateType": "Immutable"
@@ -42639,5 +42639,5 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "9.1.0"
+  "ResourceSpecificationVersion": "10.0.0"
 }
