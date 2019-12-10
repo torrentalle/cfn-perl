@@ -19,6 +19,11 @@ package AWSJsonSpec::PropertyType {
 
   key Documentation => (isa => 'Str');
   object Properties => (isa => 'AWSJsonSpec::Property');
+  key ItemType => (isa => 'Str');
+  key Required => (isa => 'Bool');
+  key Type => (isa => 'Str');
+  key UpdateType => (isa => 'Str');
+  key PrimitiveType => (isa => 'Str');
 }
 package AWSJsonSpec::ResourceType {
   use MooseX::DataModel;
