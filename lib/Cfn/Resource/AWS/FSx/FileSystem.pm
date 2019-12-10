@@ -1,4 +1,4 @@
-# AWS::FSx::FileSystem generated from spec 7.1.0
+# AWS::FSx::FileSystem generated from spec 10.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::FSx::FileSystem',
@@ -68,6 +68,8 @@ package Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfigurationVal
   has AutomaticBackupRetentionDays => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has CopyTagsToBackups => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has DailyAutomaticBackupStartTime => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DeploymentType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has PreferredSubnetId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has SelfManagedActiveDirectoryConfiguration => (isa => 'Cfn::Resource::Properties::AWS::FSx::FileSystem::SelfManagedActiveDirectoryConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ThroughputCapacity => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has WeeklyMaintenanceStartTime => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
