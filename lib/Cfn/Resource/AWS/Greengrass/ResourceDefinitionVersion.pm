@@ -1,4 +1,4 @@
-# AWS::Greengrass::ResourceDefinitionVersion generated from spec 6.3.0
+# AWS::Greengrass::ResourceDefinitionVersion generated from spec 11.6.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion',
@@ -19,6 +19,28 @@ package Cfn::Resource::AWS::Greengrass::ResourceDefinitionVersion {
 }
 
 
+
+subtype 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion::ResourceDownloadOwnerSetting',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion::ResourceDownloadOwnerSetting',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion::ResourceDownloadOwnerSettingValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion::ResourceDownloadOwnerSettingValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has GroupOwner => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has GroupPermission => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+}
 
 subtype 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion::GroupOwnerSetting',
      as 'Cfn::Value';
@@ -83,6 +105,7 @@ package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion::S
   extends 'Cfn::Value::TypedValue';
   
   has DestinationPath => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has OwnerSetting => (isa => 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion::ResourceDownloadOwnerSetting', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has SageMakerJobArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
@@ -105,6 +128,7 @@ package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion::S
   extends 'Cfn::Value::TypedValue';
   
   has DestinationPath => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has OwnerSetting => (isa => 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinitionVersion::ResourceDownloadOwnerSetting', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has S3Uri => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 

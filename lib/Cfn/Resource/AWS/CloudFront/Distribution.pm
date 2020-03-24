@@ -1,4 +1,4 @@
-# AWS::CloudFront::Distribution generated from spec 11.1.0
+# AWS::CloudFront::Distribution generated from spec 11.6.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution',
@@ -19,6 +19,114 @@ package Cfn::Resource::AWS::CloudFront::Distribution {
 }
 
 
+
+subtype 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodes',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodes',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodesValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodesValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Items => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Quantity => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMember',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMember',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMember')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMember',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMember',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMemberValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMemberValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has OriginId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMembers',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMembers',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMembersValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMembersValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Items => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMember', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Quantity => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFailoverCriteria',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFailoverCriteria',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFailoverCriteriaValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFailoverCriteriaValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has StatusCodes => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodes', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 
 subtype 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::Cookies',
      as 'Cfn::Value';
@@ -61,6 +169,51 @@ package Cfn::Resource::Properties::AWS::CloudFront::Distribution::S3OriginConfig
   extends 'Cfn::Value::TypedValue';
   
   has OriginAccessIdentity => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has FailoverCriteria => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFailoverCriteria', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Members => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMembers', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::OriginCustomHeader',
      as 'Cfn::Value',
@@ -148,6 +301,7 @@ package Cfn::Resource::Properties::AWS::CloudFront::Distribution::LambdaFunction
   extends 'Cfn::Value::TypedValue';
   
   has EventType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IncludeBody => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has LambdaFunctionARN => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -267,6 +421,28 @@ package Cfn::Resource::Properties::AWS::CloudFront::Distribution::RestrictionsVa
   extends 'Cfn::Value::TypedValue';
   
   has GeoRestriction => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::GeoRestriction', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroups',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroups',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Items => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Quantity => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::Origin',
      as 'Cfn::Value',
@@ -503,6 +679,7 @@ package Cfn::Resource::Properties::AWS::CloudFront::Distribution::DistributionCo
   has HttpVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has IPV6Enabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Logging => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::Logging', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has OriginGroups => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroups', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Origins => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::Origin', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has PriceClass => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Restrictions => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::Restrictions', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

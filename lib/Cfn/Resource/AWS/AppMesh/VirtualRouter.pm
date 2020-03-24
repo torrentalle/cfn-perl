@@ -1,4 +1,4 @@
-# AWS::AppMesh::VirtualRouter generated from spec 4.1.0
+# AWS::AppMesh::VirtualRouter generated from spec 11.6.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter',
@@ -11,7 +11,7 @@ package Cfn::Resource::AWS::AppMesh::VirtualRouter {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter', is => 'rw', coerce => 1);
   
   sub AttributeList {
-    [ 'Arn','MeshName','Uid','VirtualRouterName' ]
+    [ 'Arn','MeshName','MeshOwner','ResourceOwner','Uid','VirtualRouterName' ]
   }
   sub supported_regions {
     [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-1','us-west-2' ]
@@ -112,6 +112,7 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter {
   extends 'Cfn::Resource::Properties';
   
   has MeshName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has MeshOwner => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Spec => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterSpec', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has VirtualRouterName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
