@@ -1,4 +1,4 @@
-# AWS::SSM::PatchBaseline generated from spec 2.28.0
+# AWS::SSM::PatchBaseline generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline',
@@ -64,6 +64,26 @@ package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterValue {
   has Values => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDate',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDate',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDateValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDateValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+}
+
 subtype 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterGroup',
      as 'Cfn::Value';
 
@@ -126,6 +146,7 @@ package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::RuleValue {
   extends 'Cfn::Value::TypedValue';
   
   has ApproveAfterDays => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ApproveUntilDate => (isa => 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDate', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ComplianceLevel => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EnableNonSecurity => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has PatchFilterGroup => (isa => 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterGroup', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

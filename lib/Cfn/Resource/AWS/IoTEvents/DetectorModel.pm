@@ -1,4 +1,4 @@
-# AWS::IoTEvents::DetectorModel generated from spec 11.1.0
+# AWS::IoTEvents::DetectorModel generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel',
@@ -20,6 +20,97 @@ package Cfn::Resource::AWS::IoTEvents::DetectorModel {
 
 
 
+subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyVariant',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyVariant',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyVariantValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyVariantValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has BooleanValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DoubleValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IntegerValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has StringValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyTimestamp',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyTimestamp',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyTimestampValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyTimestampValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has OffsetInNanos => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TimeInSeconds => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::PayloadValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::PayloadValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ContentExpression => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyValue',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyValue',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyValueValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyValueValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Quality => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Timestamp => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyTimestamp', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Value => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyVariant', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Sqs',
      as 'Cfn::Value';
 
@@ -38,6 +129,7 @@ package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SqsValue {
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has Payload => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has QueueUrl => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has UseBase64 => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
@@ -60,6 +152,7 @@ package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SnsValue {
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has Payload => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TargetArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -103,6 +196,7 @@ package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetTimerValue 
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has DurationExpression => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Seconds => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TimerName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
@@ -147,6 +241,7 @@ package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::LambdaValue {
   extends 'Cfn::Value::TypedValue';
   
   has FunctionArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Payload => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotTopicPublish',
@@ -168,6 +263,32 @@ package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotTopicPublis
   extends 'Cfn::Value::TypedValue';
   
   has MqttTopic => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Payload => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWise',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWise',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWiseValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWiseValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has AssetId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has EntryId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PropertyAlias => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PropertyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PropertyValue => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotEvents',
@@ -189,6 +310,7 @@ package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotEventsValue
   extends 'Cfn::Value::TypedValue';
   
   has InputName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Payload => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Firehose',
@@ -210,7 +332,60 @@ package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::FirehoseValue 
   extends 'Cfn::Value::TypedValue';
   
   has DeliveryStreamName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Payload => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Separator => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2Value->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2Value {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Payload => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TableName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDB',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDB',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has HashKeyField => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HashKeyType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HashKeyValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Operation => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Payload => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PayloadField => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RangeKeyField => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RangeKeyType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RangeKeyValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TableName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ClearTimer',
@@ -275,8 +450,11 @@ package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ActionValue {
   extends 'Cfn::Value::TypedValue';
   
   has ClearTimer => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ClearTimer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DynamoDB => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDB', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DynamoDBv2 => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Firehose => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Firehose', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has IotEvents => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotEvents', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IotSiteWise => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWise', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has IotTopicPublish => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotTopicPublish', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Lambda => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Lambda', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ResetTimer => (isa => 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ResetTimer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

@@ -1,4 +1,4 @@
-# AWS::CloudWatch::InsightRule generated from spec 9.1.0
+# AWS::CloudWatch::InsightRule generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudWatch::InsightRule',
@@ -20,6 +20,26 @@ package Cfn::Resource::AWS::CloudWatch::InsightRule {
 
 
 
+subtype 'Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::Tags',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::Tags',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::TagsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::TagsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+}
+
 package Cfn::Resource::Properties::AWS::CloudWatch::InsightRule {
   use Moose;
   use MooseX::StrictConstructor;
@@ -28,6 +48,7 @@ package Cfn::Resource::Properties::AWS::CloudWatch::InsightRule {
   has RuleBody => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RuleName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has RuleState => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::Tags', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

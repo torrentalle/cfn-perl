@@ -1,4 +1,4 @@
-# AWS::AutoScaling::AutoScalingGroup generated from spec 11.1.0
+# AWS::AutoScaling::AutoScalingGroup generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup',
@@ -355,6 +355,7 @@ package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup {
   has LaunchTemplate => (isa => 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTemplateSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has LifecycleHookSpecificationList => (isa => 'ArrayOfCfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LifecycleHookSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has LoadBalancerNames => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MaxInstanceLifetime => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MaxSize => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MetricsCollection => (isa => 'ArrayOfCfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::MetricsCollection', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MinSize => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

@@ -1,4 +1,4 @@
-# AWS::MediaStore::Container generated from spec 3.2.0
+# AWS::MediaStore::Container generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::MediaStore::Container',
@@ -19,6 +19,72 @@ package Cfn::Resource::AWS::MediaStore::Container {
 }
 
 
+subtype 'ArrayOfCfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRule',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRule',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRule')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRule',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRule',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRuleValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRuleValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ObjectGroup => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ObjectGroupName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicy',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicy',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ContainerLevelMetrics => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MetricPolicyRules => (isa => 'ArrayOfCfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRule', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::MediaStore::Container::CorsRule',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -76,7 +142,9 @@ package Cfn::Resource::Properties::AWS::MediaStore::Container {
   has ContainerName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has CorsPolicy => (isa => 'ArrayOfCfn::Resource::Properties::AWS::MediaStore::Container::CorsRule', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has LifecyclePolicy => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MetricPolicy => (isa => 'Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicy', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Policy => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

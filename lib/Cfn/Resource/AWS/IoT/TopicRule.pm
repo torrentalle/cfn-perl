@@ -1,4 +1,4 @@
-# AWS::IoT::TopicRule generated from spec 5.3.0
+# AWS::IoT::TopicRule generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule',
@@ -20,6 +20,120 @@ package Cfn::Resource::AWS::IoT::TopicRule {
 
 
 
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyVariant',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyVariant',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyVariantValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyVariantValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has BooleanValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DoubleValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IntegerValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has StringValue => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyTimestamp',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyTimestamp',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyTimestampValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyTimestampValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has OffsetInNanos => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TimeInSeconds => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::SigV4Authorization',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::SigV4Authorization',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::SigV4AuthorizationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::SigV4AuthorizationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ServiceName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SigningRegion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValue',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValue',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValue')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValue',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValue',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValueValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValueValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Quality => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Timestamp => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyTimestamp', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Value => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyVariant', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::PutItemInput',
      as 'Cfn::Value';
 
@@ -39,6 +153,118 @@ package Cfn::Resource::Properties::AWS::IoT::TopicRule::PutItemInputValue {
   extends 'Cfn::Value::TypedValue';
   
   has TableName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntry',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntry',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntry')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntry',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntry',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntryValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntryValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has AssetId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has EntryId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PropertyAlias => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PropertyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PropertyValues => (isa => 'ArrayOfCfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAuthorization',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAuthorization',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAuthorizationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAuthorizationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Sigv4 => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::SigV4Authorization', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeader',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeader',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeader')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeader',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeader',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeaderValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeaderValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Key => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Value => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::StepFunctionsAction',
@@ -151,6 +377,7 @@ package Cfn::Resource::Properties::AWS::IoT::TopicRule::RepublishActionValue {
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has Qos => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Topic => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
@@ -199,6 +426,51 @@ package Cfn::Resource::Properties::AWS::IoT::TopicRule::KinesisActionValue {
   has StreamName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotSiteWiseAction',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotSiteWiseAction',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::IotSiteWiseActionValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::IotSiteWiseActionValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has PutAssetPropertyValueEntries => (isa => 'ArrayOfCfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntry', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotEventsAction',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotEventsAction',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::IotEventsActionValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::IotEventsActionValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has InputName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MessageId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotAnalyticsAction',
      as 'Cfn::Value';
 
@@ -219,6 +491,30 @@ package Cfn::Resource::Properties::AWS::IoT::TopicRule::IotAnalyticsActionValue 
   
   has ChannelName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAction',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAction',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Auth => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAuthorization', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ConfirmationUrl => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Headers => (isa => 'ArrayOfCfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeader', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Url => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::IoT::TopicRule::FirehoseAction',
@@ -416,7 +712,10 @@ package Cfn::Resource::Properties::AWS::IoT::TopicRule::ActionValue {
   has DynamoDBv2 => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::DynamoDBv2Action', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Elasticsearch => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::ElasticsearchAction', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Firehose => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::FirehoseAction', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Http => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAction', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has IotAnalytics => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotAnalyticsAction', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IotEvents => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotEventsAction', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IotSiteWise => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotSiteWiseAction', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Kinesis => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::KinesisAction', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Lambda => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::LambdaAction', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Republish => (isa => 'Cfn::Resource::Properties::AWS::IoT::TopicRule::RepublishAction', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

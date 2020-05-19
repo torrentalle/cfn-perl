@@ -1,4 +1,4 @@
-# AWS::Cloud9::EnvironmentEC2 generated from spec 10.2.0
+# AWS::Cloud9::EnvironmentEC2 generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Cloud9::EnvironmentEC2',
@@ -70,6 +70,7 @@ package Cfn::Resource::Properties::AWS::Cloud9::EnvironmentEC2 {
   extends 'Cfn::Resource::Properties';
   
   has AutomaticStopTimeMinutes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ConnectionType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InstanceType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

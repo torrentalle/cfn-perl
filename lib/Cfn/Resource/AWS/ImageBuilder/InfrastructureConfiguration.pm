@@ -1,0 +1,84 @@
+# AWS::ImageBuilder::InfrastructureConfiguration generated from spec 14.3.0
+use Moose::Util::TypeConstraints;
+
+coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration',
+  from 'HashRef',
+   via { Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration->new( %$_ ) };
+
+package Cfn::Resource::AWS::ImageBuilder::InfrastructureConfiguration {
+  use Moose;
+  extends 'Cfn::Resource';
+  has Properties => (isa => 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration', is => 'rw', coerce => 1);
+  
+  sub AttributeList {
+    [ 'Arn' ]
+  }
+  sub supported_regions {
+    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
+  }
+}
+
+
+
+subtype 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3Logs',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3Logs',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3LogsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3LogsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has S3BucketName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has S3KeyPrefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::Logging',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::Logging',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::LoggingValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::LoggingValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has S3Logs => (isa => 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3Logs', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Resource::Properties';
+  
+  has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has InstanceProfileName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has InstanceTypes => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has KeyPair => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Logging => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has SecurityGroupIds => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SnsTopicArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SubnetId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'Cfn::Value::Hash|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TerminateInstanceOnFailure => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+1;
