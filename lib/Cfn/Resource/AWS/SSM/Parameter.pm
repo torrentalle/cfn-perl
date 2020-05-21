@@ -1,4 +1,4 @@
-# AWS::SSM::Parameter generated from spec 11.6.0
+# AWS::SSM::Parameter generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::Parameter',
@@ -26,6 +26,7 @@ package Cfn::Resource::Properties::AWS::SSM::Parameter {
   extends 'Cfn::Resource::Properties';
   
   has AllowedPattern => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DataType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Policies => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

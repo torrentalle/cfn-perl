@@ -1,4 +1,4 @@
-# AWS::KinesisAnalyticsV2::Application generated from spec 3.2.0
+# AWS::KinesisAnalyticsV2::Application generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::Application',
@@ -632,6 +632,7 @@ package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::Application {
   has ApplicationName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has RuntimeEnvironment => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ServiceExecutionRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

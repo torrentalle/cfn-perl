@@ -1,4 +1,4 @@
-# AWS::CodeGuruProfiler::ProfilingGroup generated from spec 11.6.0
+# AWS::CodeGuruProfiler::ProfilingGroup generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeGuruProfiler::ProfilingGroup',

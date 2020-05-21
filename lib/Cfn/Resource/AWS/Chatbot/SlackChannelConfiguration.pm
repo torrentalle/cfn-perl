@@ -1,4 +1,4 @@
-# AWS::Chatbot::SlackChannelConfiguration generated from spec 11.6.0
+# AWS::Chatbot::SlackChannelConfiguration generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Chatbot::SlackChannelConfiguration',

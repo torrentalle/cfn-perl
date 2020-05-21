@@ -1,4 +1,4 @@
-# AWS::FSx::FileSystem generated from spec 11.1.0
+# AWS::FSx::FileSystem generated from spec 14.3.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::FSx::FileSystem',
@@ -11,7 +11,7 @@ package Cfn::Resource::AWS::FSx::FileSystem {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::FSx::FileSystem', is => 'rw', coerce => 1);
   
   sub AttributeList {
-    [  ]
+    [ 'LustreMountName' ]
   }
   sub supported_regions {
     [ 'ap-northeast-1','ap-southeast-2','eu-central-1','eu-north-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-1','us-west-2' ]
@@ -112,6 +112,7 @@ package Cfn::Resource::Properties::AWS::FSx::FileSystem {
   has LustreConfiguration => (isa => 'Cfn::Resource::Properties::AWS::FSx::FileSystem::LustreConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SecurityGroupIds => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has StorageCapacity => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has StorageType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has SubnetIds => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has WindowsConfiguration => (isa => 'Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
