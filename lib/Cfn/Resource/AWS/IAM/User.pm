@@ -102,3 +102,30 @@ package Cfn::Resource::Properties::AWS::IAM::User {
 }
 
 1;
+### main pod documentation begin ###
+
+=encoding UTF-8
+
+=head1 NAME
+
+Cfn::Resource::AWS::IAM::User - Cfn resource for AWS::IAM::User
+
+=head1 DESCRIPTION
+
+This module implements a Perl module that represents the CloudFormation object AWS::IAM::User.
+
+See L<Cfn> for more information on how to use it.
+
+=head1 AUTHOR
+
+    Jose Luis Martinez
+    CAPSiDE
+    jlmartinez@capside.com
+
+=head1 COPYRIGHT and LICENSE
+
+Copyright (c) 2013 by CAPSiDE
+This code is distributed under the Apache 2 License. The full text of the 
+license can be found in the LICENSE file included with this module.
+
+=cut
