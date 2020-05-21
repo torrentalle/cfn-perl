@@ -1,4 +1,4 @@
-# AWS::MSK::Cluster generated from spec 11.1.0
+# AWS::MSK::Cluster generated from spec 11.6.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster',
@@ -19,6 +19,29 @@ package Cfn::Resource::AWS::MSK::Cluster {
 }
 
 
+
+subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::S3',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::S3',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::MSK::Cluster::S3Value->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::MSK::Cluster::S3Value {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Bucket => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Enabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Prefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 
 subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::NodeExporter',
      as 'Cfn::Value';
@@ -62,6 +85,28 @@ package Cfn::Resource::Properties::AWS::MSK::Cluster::JmxExporterValue {
   has EnabledInBroker => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::Firehose',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::Firehose',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::MSK::Cluster::FirehoseValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::MSK::Cluster::FirehoseValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has DeliveryStream => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Enabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::EBSStorageInfo',
      as 'Cfn::Value';
 
@@ -81,6 +126,28 @@ package Cfn::Resource::Properties::AWS::MSK::Cluster::EBSStorageInfoValue {
   extends 'Cfn::Value::TypedValue';
   
   has VolumeSize => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::CloudWatchLogs',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::CloudWatchLogs',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::MSK::Cluster::CloudWatchLogsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::MSK::Cluster::CloudWatchLogsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Enabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has LogGroup => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::Tls',
@@ -190,6 +257,29 @@ package Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionAtRestValue {
   has DataVolumeKMSKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerLogs',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerLogs',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerLogsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerLogsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CloudWatchLogs => (isa => 'Cfn::Resource::Properties::AWS::MSK::Cluster::CloudWatchLogs', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Firehose => (isa => 'Cfn::Resource::Properties::AWS::MSK::Cluster::Firehose', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has S3 => (isa => 'Cfn::Resource::Properties::AWS::MSK::Cluster::S3', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::OpenMonitoring',
      as 'Cfn::Value';
 
@@ -209,6 +299,27 @@ package Cfn::Resource::Properties::AWS::MSK::Cluster::OpenMonitoringValue {
   extends 'Cfn::Value::TypedValue';
   
   has Prometheus => (isa => 'Cfn::Resource::Properties::AWS::MSK::Cluster::Prometheus', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::LoggingInfo',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::LoggingInfo',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::MSK::Cluster::LoggingInfoValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::MSK::Cluster::LoggingInfoValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has BrokerLogs => (isa => 'Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerLogs', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionInfo',
@@ -313,6 +424,7 @@ package Cfn::Resource::Properties::AWS::MSK::Cluster {
   has EncryptionInfo => (isa => 'Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionInfo', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has EnhancedMonitoring => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has KafkaVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has LoggingInfo => (isa => 'Cfn::Resource::Properties::AWS::MSK::Cluster::LoggingInfo', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has NumberOfBrokerNodes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has OpenMonitoring => (isa => 'Cfn::Resource::Properties::AWS::MSK::Cluster::OpenMonitoring', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Tags => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

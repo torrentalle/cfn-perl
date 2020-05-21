@@ -1,4 +1,4 @@
-# AWS::AppMesh::Mesh generated from spec 4.1.0
+# AWS::AppMesh::Mesh generated from spec 11.6.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::Mesh',
@@ -11,7 +11,7 @@ package Cfn::Resource::AWS::AppMesh::Mesh {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Mesh', is => 'rw', coerce => 1);
   
   sub AttributeList {
-    [ 'Arn','MeshName','Uid' ]
+    [ 'Arn','MeshName','MeshOwner','ResourceOwner','Uid' ]
   }
   sub supported_regions {
     [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-1','us-west-2' ]

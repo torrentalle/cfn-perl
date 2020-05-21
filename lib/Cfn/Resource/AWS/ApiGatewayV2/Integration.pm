@@ -1,4 +1,4 @@
-# AWS::ApiGatewayV2::Integration generated from spec 10.0.0
+# AWS::ApiGatewayV2::Integration generated from spec 11.6.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::Integration',
@@ -20,6 +20,27 @@ package Cfn::Resource::AWS::ApiGatewayV2::Integration {
 
 
 
+subtype 'Cfn::Resource::Properties::AWS::ApiGatewayV2::Integration::TlsConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::Integration::TlsConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::ApiGatewayV2::Integration::TlsConfigValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::ApiGatewayV2::Integration::TlsConfigValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ServerNameToVerify => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 package Cfn::Resource::Properties::AWS::ApiGatewayV2::Integration {
   use Moose;
   use MooseX::StrictConstructor;
@@ -39,6 +60,7 @@ package Cfn::Resource::Properties::AWS::ApiGatewayV2::Integration {
   has RequestTemplates => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TemplateSelectionExpression => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TimeoutInMillis => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TlsConfig => (isa => 'Cfn::Resource::Properties::AWS::ApiGatewayV2::Integration::TlsConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

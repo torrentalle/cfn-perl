@@ -1,4 +1,4 @@
-# AWS::AppMesh::VirtualNode generated from spec 4.1.0
+# AWS::AppMesh::VirtualNode generated from spec 11.6.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode',
@@ -11,7 +11,7 @@ package Cfn::Resource::AWS::AppMesh::VirtualNode {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode', is => 'rw', coerce => 1);
   
   sub AttributeList {
-    [ 'Arn','MeshName','Uid','VirtualNodeName' ]
+    [ 'Arn','MeshName','MeshOwner','ResourceOwner','Uid','VirtualNodeName' ]
   }
   sub supported_regions {
     [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-1','us-west-2' ]
@@ -19,6 +19,179 @@ package Cfn::Resource::AWS::AppMesh::VirtualNode {
 }
 
 
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextFileTrust',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextFileTrust',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextFileTrustValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextFileTrustValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CertificateChain => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextAcmTrust',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextAcmTrust',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextAcmTrustValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextAcmTrustValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CertificateAuthorityArns => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextTrust',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextTrust',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextTrustValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextTrustValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ACM => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextAcmTrust', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has File => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextFileTrust', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContext',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContext',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Trust => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextTrust', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificate',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificate',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificateValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificateValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CertificateChain => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PrivateKey => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificate',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificate',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificateValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificateValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CertificateArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTls',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTls',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTlsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTlsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Enforce => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Ports => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Validation => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContext', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificate',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificate',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificateValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificateValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ACM => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificate', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has File => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificate', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::FileAccessLog',
      as 'Cfn::Value';
@@ -39,6 +212,27 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::FileAccessLogValue
   extends 'Cfn::Value::TypedValue';
   
   has Path => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicy',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicy',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has TLS => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTls', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapInstanceAttribute',
      as 'Cfn::Value',
@@ -103,6 +297,7 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualServiceBack
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has ClientPolicy => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicy', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has VirtualServiceName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -126,6 +321,28 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::PortMappingValue {
   
   has Port => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Protocol => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTls',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTls',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Certificate => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificate', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Mode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HealthCheck',
@@ -305,6 +522,28 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerValue {
   
   has HealthCheck => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HealthCheck', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has PortMapping => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::PortMapping', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TLS => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTls', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaults',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaults',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaultsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaultsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ClientPolicy => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicy', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::AppMesh::VirtualNode::Backend',
      as 'Cfn::Value',
@@ -368,6 +607,7 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualNodeSpecVal
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has BackendDefaults => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaults', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Backends => (isa => 'ArrayOfCfn::Resource::Properties::AWS::AppMesh::VirtualNode::Backend', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Listeners => (isa => 'ArrayOfCfn::Resource::Properties::AWS::AppMesh::VirtualNode::Listener', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Logging => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Logging', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
@@ -380,6 +620,7 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode {
   extends 'Cfn::Resource::Properties';
   
   has MeshName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has MeshOwner => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Spec => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualNodeSpec', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has VirtualNodeName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
