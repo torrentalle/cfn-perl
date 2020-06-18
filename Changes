@@ -1,3 +1,6 @@
+0.14
+  - Implements AWS::Serverless resources specs (2020-06-18)
+
 0.13 
   - Implements the resources in CloudFormation spec 14.3.0 (published as of 2020-05-21) (by torrentalle)
   - Added minimal documentation for resource classes
