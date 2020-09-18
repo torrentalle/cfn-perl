@@ -1,4 +1,4 @@
-# AWS::Events::Rule generated from spec 14.3.0
+# AWS::Events::Rule generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Events::Rule',
@@ -235,6 +235,29 @@ package Cfn::Resource::Properties::AWS::Events::Rule::InputTransformerValue {
   has InputTemplate => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::Events::Rule::HttpParameters',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Events::Rule::HttpParameters',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::Events::Rule::HttpParametersValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::Events::Rule::HttpParametersValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has HeaderParameters => (isa => 'Cfn::Value::Hash|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PathParameterValues => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has QueryStringParameters => (isa => 'Cfn::Value::Hash|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::Events::Rule::EcsParameters',
      as 'Cfn::Value';
 
@@ -328,6 +351,7 @@ package Cfn::Resource::Properties::AWS::Events::Rule::TargetValue {
   has Arn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has BatchParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::BatchParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EcsParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::EcsParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HttpParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::HttpParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Input => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InputPath => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

@@ -1,4 +1,4 @@
-# AWS::SSM::Association generated from spec 14.3.0
+# AWS::SSM::Association generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::Association',
@@ -113,6 +113,7 @@ package Cfn::Resource::Properties::AWS::SSM::Association {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has ApplyOnlyAtCronInterval => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has AssociationName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has AutomationTargetParameterName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ComplianceSeverity => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

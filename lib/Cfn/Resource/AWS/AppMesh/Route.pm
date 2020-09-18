@@ -1,4 +1,4 @@
-# AWS::AppMesh::Route generated from spec 14.3.0
+# AWS::AppMesh::Route generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route',
@@ -248,6 +248,27 @@ package Cfn::Resource::Properties::AWS::AppMesh::Route::DurationValue {
   has Value => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeout',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeout',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeoutValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeoutValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Idle => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteAction',
      as 'Cfn::Value';
 
@@ -267,6 +288,28 @@ package Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteActionValue {
   extends 'Cfn::Value::TypedValue';
   
   has WeightedTargets => (isa => 'ArrayOfCfn::Resource::Properties::AWS::AppMesh::Route::WeightedTarget', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeout',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeout',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeoutValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeoutValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Idle => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PerRequest => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteMatch',
@@ -336,6 +379,28 @@ package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRetryPolicyValue {
   has MaxRetries => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has PerRetryTimeout => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::Duration', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TcpRetryEvents => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeout',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeout',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeoutValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeoutValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Idle => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PerRequest => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMatch',
@@ -426,6 +491,7 @@ package Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteValue {
   extends 'Cfn::Value::TypedValue';
   
   has Action => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteAction', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Timeout => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeout', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRoute',
@@ -449,6 +515,7 @@ package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteValue {
   has Action => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteAction', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Match => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteMatch', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RetryPolicy => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRetryPolicy', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Timeout => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeout', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRoute',
@@ -472,6 +539,7 @@ package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteValue {
   has Action => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteAction', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Match => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMatch', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RetryPolicy => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRetryPolicy', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Timeout => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeout', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::Route::RouteSpec',

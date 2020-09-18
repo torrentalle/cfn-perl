@@ -1,4 +1,4 @@
-# AWS::SNS::Topic generated from spec 14.3.0
+# AWS::SNS::Topic generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SNS::Topic',
@@ -69,6 +69,7 @@ package Cfn::Resource::Properties::AWS::SNS::Topic {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has ContentBasedDeduplication => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DisplayName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has KmsMasterKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Subscription => (isa => 'ArrayOfCfn::Resource::Properties::AWS::SNS::Topic::Subscription', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

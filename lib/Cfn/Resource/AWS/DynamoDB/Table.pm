@@ -1,4 +1,4 @@
-# AWS::DynamoDB::Table generated from spec 14.3.0
+# AWS::DynamoDB::Table generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table',
@@ -342,7 +342,7 @@ package Cfn::Resource::Properties::AWS::DynamoDB::Table {
   has LocalSecondaryIndexes => (isa => 'ArrayOfCfn::Resource::Properties::AWS::DynamoDB::Table::LocalSecondaryIndex', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has PointInTimeRecoverySpecification => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::PointInTimeRecoverySpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ProvisionedThroughput => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::ProvisionedThroughput', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has SSESpecification => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::SSESpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Conditional');
+  has SSESpecification => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::SSESpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has StreamSpecification => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::StreamSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TableName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

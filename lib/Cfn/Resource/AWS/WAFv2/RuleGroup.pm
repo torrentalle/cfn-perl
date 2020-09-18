@@ -1,4 +1,4 @@
-# AWS::WAFv2::RuleGroup generated from spec 14.3.0
+# AWS::WAFv2::RuleGroup generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup',
@@ -62,6 +62,51 @@ package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::TextTransformationValu
   
   has Priority => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfiguration',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfiguration',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfigurationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfigurationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has FallbackBehavior => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HeaderName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Position => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfiguration',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfiguration',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfigurationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfigurationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has FallbackBehavior => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HeaderName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::FieldToMatch',
@@ -201,6 +246,7 @@ package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetReferenceStatemen
   extends 'Cfn::Value::TypedValue';
   
   has Arn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IPSetForwardedIPConfig => (isa => 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::GeoMatchStatement',
@@ -222,6 +268,7 @@ package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::GeoMatchStatementValue
   extends 'Cfn::Value::TypedValue';
   
   has CountryCodes => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ForwardedIPConfig => (isa => 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ByteMatchStatement',
@@ -317,6 +364,7 @@ package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RateBasedStatementTwoV
   extends 'Cfn::Value::TypedValue';
   
   has AggregateKeyType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ForwardedIPConfig => (isa => 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Limit => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ScopeDownStatement => (isa => 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementThree', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
@@ -456,6 +504,7 @@ package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RateBasedStatementOneV
   extends 'Cfn::Value::TypedValue';
   
   has AggregateKeyType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ForwardedIPConfig => (isa => 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Limit => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ScopeDownStatement => (isa => 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementTwo', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }

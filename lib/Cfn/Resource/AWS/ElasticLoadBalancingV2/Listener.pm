@@ -1,4 +1,4 @@
-# AWS::ElasticLoadBalancingV2::Listener generated from spec 14.3.0
+# AWS::ElasticLoadBalancingV2::Listener generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::Listener',
@@ -314,6 +314,7 @@ package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::Listener {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has AlpnPolicy => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Certificates => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ElasticLoadBalancingV2::Listener::Certificate', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DefaultActions => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ElasticLoadBalancingV2::Listener::Action', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has LoadBalancerArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

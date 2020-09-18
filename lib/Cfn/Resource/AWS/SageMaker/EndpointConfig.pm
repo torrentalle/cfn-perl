@@ -1,4 +1,4 @@
-# AWS::SageMaker::EndpointConfig generated from spec 14.3.0
+# AWS::SageMaker::EndpointConfig generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig',
@@ -19,6 +19,71 @@ package Cfn::Resource::AWS::SageMaker::EndpointConfig {
 }
 
 
+subtype 'ArrayOfCfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOption',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOption',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOption')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOption',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOption',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOptionValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOptionValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CaptureMode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureContentTypeHeader',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureContentTypeHeader',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureContentTypeHeaderValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureContentTypeHeaderValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CsvContentTypes => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has JsonContentTypes => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::SageMaker::EndpointConfig::ProductionVariant',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -68,11 +133,38 @@ package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::ProductionVar
   has VariantName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureConfigValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureConfigValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CaptureContentTypeHeader => (isa => 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureContentTypeHeader', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has CaptureOptions => (isa => 'ArrayOfCfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOption', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has DestinationS3Uri => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has EnableCapture => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has InitialSamplingPercentage => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has KmsKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+}
+
 package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has DataCaptureConfig => (isa => 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has EndpointConfigName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has KmsKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ProductionVariants => (isa => 'ArrayOfCfn::Resource::Properties::AWS::SageMaker::EndpointConfig::ProductionVariant', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

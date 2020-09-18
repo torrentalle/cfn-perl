@@ -1,4 +1,4 @@
-# AWS::CodeBuild::Project generated from spec 14.3.0
+# AWS::CodeBuild::Project generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project',
@@ -218,6 +218,50 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::CloudWatchLogsConfig
   has StreamName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::BuildStatusConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::BuildStatusConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CodeBuild::Project::BuildStatusConfigValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CodeBuild::Project::BuildStatusConfigValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Context => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TargetUrl => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::BatchRestrictions',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::BatchRestrictions',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CodeBuild::Project::BatchRestrictionsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CodeBuild::Project::BatchRestrictionsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ComputeTypesAllowed => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MaximumBuildsAllowed => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::WebhookFilter',
      as 'Cfn::Value';
 
@@ -306,6 +350,7 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::SourceValue {
   
   has Auth => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::SourceAuth', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has BuildSpec => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has BuildStatusConfig => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::BuildStatusConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has GitCloneDepth => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has GitSubmodulesConfig => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InsecureSsl => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
@@ -451,6 +496,30 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectCacheValue {
   has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectBuildBatchConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectBuildBatchConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectBuildBatchConfigValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectBuildBatchConfigValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has CombineArtifacts => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Restrictions => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::BatchRestrictions', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ServiceRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TimeoutInMins => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::CodeBuild::Project::LogsConfig',
      as 'Cfn::Value';
 
@@ -559,6 +628,7 @@ package Cfn::Resource::Properties::AWS::CodeBuild::Project {
   
   has Artifacts => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::Artifacts', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has BadgeEnabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has BuildBatchConfig => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectBuildBatchConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Cache => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectCache', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EncryptionKey => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

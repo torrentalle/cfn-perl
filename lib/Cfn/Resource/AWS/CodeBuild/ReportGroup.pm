@@ -1,4 +1,4 @@
-# AWS::CodeBuild::ReportGroup generated from spec 14.3.0
+# AWS::CodeBuild::ReportGroup generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup',
@@ -72,10 +72,11 @@ package Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has DeleteReports => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ExportConfig => (isa => 'Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::ReportExportConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
 1;

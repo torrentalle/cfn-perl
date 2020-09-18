@@ -1,4 +1,4 @@
-# AWS::WAFv2::WebACLAssociation generated from spec 14.3.0
+# AWS::WAFv2::WebACLAssociation generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::WAFv2::WebACLAssociation',
@@ -25,8 +25,8 @@ package Cfn::Resource::Properties::AWS::WAFv2::WebACLAssociation {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
-  has ResourceArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has WebACLArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ResourceArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has WebACLArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
 1;

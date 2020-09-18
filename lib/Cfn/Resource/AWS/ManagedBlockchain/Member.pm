@@ -1,4 +1,4 @@
-# AWS::ManagedBlockchain::Member generated from spec 14.3.0
+# AWS::ManagedBlockchain::Member generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ManagedBlockchain::Member',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::ManagedBlockchain::Member {
     [ 'MemberId','NetworkId' ]
   }
   sub supported_regions {
-    [ 'us-east-1' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-2' ]
   }
 }
 

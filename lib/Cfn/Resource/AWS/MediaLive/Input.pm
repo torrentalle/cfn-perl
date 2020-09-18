@@ -1,4 +1,4 @@
-# AWS::MediaLive::Input generated from spec 14.3.0
+# AWS::MediaLive::Input generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::MediaLive::Input',
@@ -129,6 +129,70 @@ package Cfn::Resource::Properties::AWS::MediaLive::Input::InputSourceRequestValu
   has Url => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Username => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
+subtype 'ArrayOfCfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettings',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettings',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettings')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettings',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettings',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettingsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettingsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceRequest',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceRequest',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceRequestValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceRequestValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::MediaLive::Input::InputDestinationRequest',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -179,6 +243,7 @@ package Cfn::Resource::Properties::AWS::MediaLive::Input {
   extends 'Cfn::Resource::Properties';
   
   has Destinations => (isa => 'ArrayOfCfn::Resource::Properties::AWS::MediaLive::Input::InputDestinationRequest', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has InputDevices => (isa => 'ArrayOfCfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettings', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InputSecurityGroups => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MediaConnectFlows => (isa => 'ArrayOfCfn::Resource::Properties::AWS::MediaLive::Input::MediaConnectFlowRequest', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

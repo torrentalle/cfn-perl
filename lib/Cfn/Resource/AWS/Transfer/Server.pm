@@ -1,4 +1,4 @@
-# AWS::Transfer::Server generated from spec 14.3.0
+# AWS::Transfer::Server generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Transfer::Server',
@@ -120,6 +120,7 @@ package Cfn::Resource::Properties::AWS::Transfer::Server {
   has IdentityProviderType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has LoggingRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Protocols => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Transfer::Server::Protocol', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SecurityPolicyName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

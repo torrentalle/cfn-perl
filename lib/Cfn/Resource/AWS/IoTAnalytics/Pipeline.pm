@@ -1,4 +1,4 @@
-# AWS::IoTAnalytics::Pipeline generated from spec 14.3.0
+# AWS::IoTAnalytics::Pipeline generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::IoTAnalytics::Pipeline {
     [  ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','eu-central-1','eu-west-1','us-east-1','us-east-2','us-west-2' ]
+    [ 'ap-northeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-east-2','us-west-2' ]
   }
 }
 

@@ -1,4 +1,4 @@
-# AWS::CloudWatch::Alarm generated from spec 14.3.0
+# AWS::CloudWatch::Alarm generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudWatch::Alarm',
@@ -155,6 +155,7 @@ package Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricDataQueryValue 
   has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Label => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MetricStat => (isa => 'Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricStat', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Period => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ReturnData => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

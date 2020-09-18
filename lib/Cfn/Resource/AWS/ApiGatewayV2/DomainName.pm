@@ -1,4 +1,4 @@
-# AWS::ApiGatewayV2::DomainName generated from spec 14.3.0
+# AWS::ApiGatewayV2::DomainName generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName',
@@ -19,6 +19,28 @@ package Cfn::Resource::AWS::ApiGatewayV2::DomainName {
 }
 
 
+
+subtype 'Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::MutualTlsAuthentication',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::MutualTlsAuthentication',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::MutualTlsAuthenticationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::MutualTlsAuthenticationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has TruststoreUri => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TruststoreVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::DomainNameConfiguration',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -63,6 +85,7 @@ package Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::DomainNameConf
   has CertificateArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has CertificateName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EndpointType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SecurityPolicy => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName {
@@ -72,6 +95,7 @@ package Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName {
   
   has DomainName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has DomainNameConfigurations => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::DomainNameConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MutualTlsAuthentication => (isa => 'Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::MutualTlsAuthentication', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Tags => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

@@ -1,4 +1,4 @@
-# AWS::S3::Bucket generated from spec 14.3.0
+# AWS::S3::Bucket generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::S3::Bucket',
@@ -19,6 +19,71 @@ package Cfn::Resource::AWS::S3::Bucket {
 }
 
 
+subtype 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::S3::Bucket::TagFilterValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::S3::Bucket::TagFilterValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Key => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Value => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValueValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValueValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Minutes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::FilterRule',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -104,6 +169,72 @@ package Cfn::Resource::Properties::AWS::S3::Bucket::S3KeyFilterValue {
   extends 'Cfn::Value::TypedValue';
   
   has Rules => (isa => 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::FilterRule', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTime',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTime',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Time => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleAndOperator',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleAndOperator',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleAndOperatorValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleAndOperatorValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Prefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TagFilters => (isa => 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::Metrics',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::Metrics',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::S3::Bucket::MetricsValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::S3::Bucket::MetricsValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has EventThreshold => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::EncryptionConfiguration',
@@ -216,50 +347,6 @@ package Cfn::Resource::Properties::AWS::S3::Bucket::TransitionValue {
   has TransitionDate => (isa => 'Cfn::Value::Timestamp', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TransitionInDays => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
-subtype 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
-     as 'Cfn::Value',
-  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
-message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
-
-coerce 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
-  from 'HashRef',
-   via {
-     if (my $f = Cfn::TypeLibrary::try_function($_)) {
-       return $f
-     } else {
-       die 'Only accepts functions'; 
-     }
-   },
-  from 'ArrayRef',
-   via {
-     Cfn::Value::Array->new(Value => [
-       map { 
-         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter')->coerce($_)
-       } @$_
-     ]);
-   };
-
-subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
-     as 'Cfn::Value';
-
-coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
-  from 'HashRef',
-   via {
-     if (my $f = Cfn::TypeLibrary::try_function($_)) {
-       return $f
-     } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::TagFilterValue->new( %$_ );
-     }
-   };
-
-package Cfn::Resource::Properties::AWS::S3::Bucket::TagFilterValue {
-  use Moose;
-  use MooseX::StrictConstructor;
-  extends 'Cfn::Value::TypedValue';
-  
-  has Key => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Value => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-}
 
 subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::SourceSelectionCriteria',
      as 'Cfn::Value';
@@ -326,6 +413,29 @@ package Cfn::Resource::Properties::AWS::S3::Bucket::RoutingRuleConditionValue {
   has KeyPrefixEquals => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleFilter',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleFilter',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleFilterValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleFilterValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has And => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleAndOperator', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Prefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TagFilter => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationDestination',
      as 'Cfn::Value';
 
@@ -348,6 +458,8 @@ package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationDestinationValue 
   has Account => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Bucket => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EncryptionConfiguration => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::EncryptionConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Metrics => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::Metrics', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ReplicationTime => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTime', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has StorageClass => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -439,6 +551,27 @@ package Cfn::Resource::Properties::AWS::S3::Bucket::NoncurrentVersionTransitionV
   
   has StorageClass => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TransitionInDays => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::DeleteMarkerReplication',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::DeleteMarkerReplication',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::S3::Bucket::DeleteMarkerReplicationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::S3::Bucket::DeleteMarkerReplicationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::DefaultRetention',
@@ -754,9 +887,12 @@ package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleValue {
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has DeleteMarkerReplication => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::DeleteMarkerReplication', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Destination => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationDestination', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Filter => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleFilter', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Prefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Prefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Priority => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SourceSelectionCriteria => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::SourceSelectionCriteria', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }

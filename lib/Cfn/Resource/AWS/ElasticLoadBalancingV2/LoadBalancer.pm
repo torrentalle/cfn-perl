@@ -1,4 +1,4 @@
-# AWS::ElasticLoadBalancingV2::LoadBalancer generated from spec 14.3.0
+# AWS::ElasticLoadBalancingV2::LoadBalancer generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer',
@@ -60,7 +60,8 @@ package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::Su
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has AllocationId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has AllocationId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PrivateIPv4Address => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SubnetId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttribute',

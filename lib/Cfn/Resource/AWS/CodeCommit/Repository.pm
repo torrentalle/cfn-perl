@@ -1,4 +1,4 @@
-# AWS::CodeCommit::Repository generated from spec 14.3.0
+# AWS::CodeCommit::Repository generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeCommit::Repository',
@@ -108,6 +108,7 @@ package Cfn::Resource::Properties::AWS::CodeCommit::Repository::CodeValue {
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has BranchName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has S3 => (isa => 'Cfn::Resource::Properties::AWS::CodeCommit::Repository::S3', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

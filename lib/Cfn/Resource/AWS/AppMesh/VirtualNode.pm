@@ -1,4 +1,4 @@
-# AWS::AppMesh::VirtualNode generated from spec 14.3.0
+# AWS::AppMesh::VirtualNode generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode',
@@ -148,6 +148,28 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCert
   has CertificateArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::DurationValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::DurationValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Unit => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Value => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTls',
      as 'Cfn::Value';
 
@@ -171,6 +193,27 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTlsVal
   has Validation => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContext', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeout',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeout',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeoutValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeoutValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Idle => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificate',
      as 'Cfn::Value';
 
@@ -191,6 +234,50 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertifi
   
   has ACM => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificate', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has File => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificate', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeout',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeout',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeoutValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeoutValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Idle => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PerRequest => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeout',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeout',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeoutValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeoutValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Idle => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PerRequest => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::FileAccessLog',
@@ -343,6 +430,30 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsValue {
   
   has Certificate => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificate', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Mode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeout',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeout',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeoutValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeoutValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has GRPC => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeout', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HTTP => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeout', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HTTP2 => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeout', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TCP => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeout', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HealthCheck',
@@ -522,6 +633,7 @@ package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerValue {
   
   has HealthCheck => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HealthCheck', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has PortMapping => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::PortMapping', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Timeout => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeout', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TLS => (isa => 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTls', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

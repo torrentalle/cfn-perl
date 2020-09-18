@@ -1,4 +1,4 @@
-# AWS::AutoScaling::AutoScalingGroup generated from spec 14.3.0
+# AWS::AutoScaling::AutoScalingGroup generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup',
@@ -360,6 +360,7 @@ package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup {
   has MetricsCollection => (isa => 'ArrayOfCfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::MetricsCollection', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MinSize => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MixedInstancesPolicy => (isa => 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::MixedInstancesPolicy', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has NewInstancesProtectedFromScaleIn => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has NotificationConfigurations => (isa => 'ArrayOfCfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::NotificationConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has PlacementGroup => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ServiceLinkedRoleARN => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

@@ -1,4 +1,4 @@
-# AWS::Amplify::Domain generated from spec 14.3.0
+# AWS::Amplify::Domain generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Amplify::Domain',
@@ -11,7 +11,7 @@ package Cfn::Resource::AWS::Amplify::Domain {
   has Properties => (isa => 'Cfn::Resource::Properties::AWS::Amplify::Domain', is => 'rw', coerce => 1);
   
   sub AttributeList {
-    [ 'Arn','CertificateRecord','DomainName','DomainStatus','StatusReason' ]
+    [ 'Arn','AutoSubDomainCreationPatterns','AutoSubDomainIAMRole','CertificateRecord','DomainName','DomainStatus','EnableAutoSubDomain','StatusReason' ]
   }
   sub supported_regions {
     [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-2' ]
@@ -70,7 +70,10 @@ package Cfn::Resource::Properties::AWS::Amplify::Domain {
   extends 'Cfn::Resource::Properties';
   
   has AppId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has AutoSubDomainCreationPatterns => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has AutoSubDomainIAMRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DomainName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has EnableAutoSubDomain => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SubDomainSettings => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Amplify::Domain::SubDomainSetting', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

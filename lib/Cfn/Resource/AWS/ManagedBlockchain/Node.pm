@@ -1,4 +1,4 @@
-# AWS::ManagedBlockchain::Node generated from spec 14.3.0
+# AWS::ManagedBlockchain::Node generated from spec 18.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ManagedBlockchain::Node',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::ManagedBlockchain::Node {
     [ 'Arn','MemberId','NetworkId','NodeId' ]
   }
   sub supported_regions {
-    [ 'us-east-1' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-2' ]
   }
 }
 

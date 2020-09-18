@@ -1,4 +1,4 @@
-# AWS::CertificateManager::Certificate generated from spec 14.3.0
+# AWS::CertificateManager::Certificate generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CertificateManager::Certificate',
@@ -61,7 +61,8 @@ package Cfn::Resource::Properties::AWS::CertificateManager::Certificate::DomainV
   extends 'Cfn::Value::TypedValue';
   
   has DomainName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has ValidationDomain => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HostedZoneId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ValidationDomain => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::CertificateManager::Certificate {
@@ -69,6 +70,8 @@ package Cfn::Resource::Properties::AWS::CertificateManager::Certificate {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has CertificateAuthorityArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has CertificateTransparencyLoggingPreference => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DomainName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has DomainValidationOptions => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CertificateManager::Certificate::DomainValidationOption', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has SubjectAlternativeNames => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

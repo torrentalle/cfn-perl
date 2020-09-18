@@ -1,4 +1,4 @@
-# AWS::Cloud9::EnvironmentEC2 generated from spec 14.3.0
+# AWS::Cloud9::EnvironmentEC2 generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Cloud9::EnvironmentEC2',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::Cloud9::EnvironmentEC2 {
     [ 'Arn','Name' ]
   }
   sub supported_regions {
-    [ 'ap-southeast-1','eu-west-1','us-east-1','us-east-2','us-west-2' ]
+    [ 'ap-southeast-1','eu-south-1','eu-west-1','us-east-1','us-east-2','us-west-2' ]
   }
 }
 

@@ -1,4 +1,4 @@
-# AWS::FMS::Policy generated from spec 14.3.0
+# AWS::FMS::Policy generated from spec 17.0.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::FMS::Policy',
@@ -127,6 +127,7 @@ package Cfn::Resource::Properties::AWS::FMS::Policy::IEMapValue {
   extends 'Cfn::Value::TypedValue';
   
   has ACCOUNT => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ORGUNIT => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::FMS::Policy {
