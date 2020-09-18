@@ -1,4 +1,4 @@
-# AWS::AppSync::GraphQLApi generated from spec 14.3.0
+# AWS::AppSync::GraphQLApi generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppSync::GraphQLApi',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::OpenIDConnectConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::OpenIDConnectConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::OpenIDConnectConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::OpenIDConnectConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::OpenIDConnectConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -53,11 +53,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::CognitoUserPoolConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::CognitoUserPoolConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::CognitoUserPoolConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::CognitoUserPoolConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::CognitoUserPoolConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -76,11 +76,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::UserPoolConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::UserPoolConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::UserPoolConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::UserPoolConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::UserPoolConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -100,11 +100,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::TagsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::Tags::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::TagsValue {
+package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::Tags::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -120,11 +120,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::LogConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::LogConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::LogConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::LogConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::LogConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -143,11 +143,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthentic
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthenticationProvidersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthenticationProviders::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthenticationProvidersValue {
+package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthenticationProviders::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -163,11 +163,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthentic
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthenticationProviderValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthenticationProvider::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthenticationProviderValue {
+package Cfn::Resource::Properties::AWS::AppSync::GraphQLApi::AdditionalAuthenticationProvider::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

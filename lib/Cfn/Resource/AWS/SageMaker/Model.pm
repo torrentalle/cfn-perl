@@ -1,4 +1,4 @@
-# AWS::SageMaker::Model generated from spec 18.0.0
+# AWS::SageMaker::Model generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SageMaker::Model',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Model::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Model::VpcConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SageMaker::Model::VpcConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Model::VpcConfigValue {
+package Cfn::Resource::Properties::AWS::SageMaker::Model::VpcConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinitionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinition::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinitionValue {
+package Cfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinition::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

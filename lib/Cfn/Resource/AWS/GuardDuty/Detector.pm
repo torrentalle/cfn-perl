@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNS3LogsConfigurat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNS3LogsConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNS3LogsConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNS3LogsConfigurationValue {
+package Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNS3LogsConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNDataSourceConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNDataSourceConfigurationsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNDataSourceConfigurations::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNDataSourceConfigurationsValue {
+package Cfn::Resource::Properties::AWS::GuardDuty::Detector::CFNDataSourceConfigurations::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

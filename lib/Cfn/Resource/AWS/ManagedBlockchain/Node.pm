@@ -1,4 +1,4 @@
-# AWS::ManagedBlockchain::Node generated from spec 18.1.0
+# AWS::ManagedBlockchain::Node generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ManagedBlockchain::Node',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ManagedBlockchain::Node::NodeConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ManagedBlockchain::Node::NodeConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ManagedBlockchain::Node::NodeConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ManagedBlockchain::Node::NodeConfigurationValue {
+package Cfn::Resource::Properties::AWS::ManagedBlockchain::Node::NodeConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

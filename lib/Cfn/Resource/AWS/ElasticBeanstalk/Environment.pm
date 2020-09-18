@@ -1,4 +1,4 @@
-# AWS::ElasticBeanstalk::Environment generated from spec 14.3.0
+# AWS::ElasticBeanstalk::Environment generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::Tier',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::TierValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::Tier::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::TierValue {
+package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::Tier::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::OptionSet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::OptionSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::OptionSetting::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::OptionSettingValue {
+package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Environment::OptionSetting::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::EC2::SpotFleet generated from spec 14.3.0
+# AWS::EC2::SpotFleet generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroup',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroupValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroup::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroupValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroup::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::PrivateIpAddressSpecific
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::PrivateIpAddressSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::PrivateIpAddressSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::PrivateIpAddressSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::PrivateIpAddressSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -138,11 +138,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceIpv6Address',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceIpv6AddressValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceIpv6Address::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceIpv6AddressValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceIpv6Address::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -159,11 +159,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::EbsBlockDevice',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::EbsBlockDeviceValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::EbsBlockDevice::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::EbsBlockDeviceValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::EbsBlockDevice::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -207,11 +207,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancer',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancer::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancerValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancer::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -228,11 +228,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroupsConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroupsConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroupsConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroupsConfigValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::TargetGroupsConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -249,11 +249,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotPlacement',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotPlacementValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotPlacement::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotPlacementValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotPlacement::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -294,11 +294,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetTagSpecificatio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetTagSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetTagSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetTagSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetTagSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -316,11 +316,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetMonitoring',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetMonitoringValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetMonitoring::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetMonitoringValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetMonitoring::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -359,11 +359,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateOverrides'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateOverridesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateOverrides::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateOverridesValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateOverrides::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -406,11 +406,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceNetworkInterface
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceNetworkInterfaceSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceNetworkInterfaceSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceNetworkInterfaceSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::InstanceNetworkInterfaceSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -437,11 +437,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::IamInstanceProfileSpecif
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::IamInstanceProfileSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::IamInstanceProfileSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::IamInstanceProfileSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::IamInstanceProfileSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -480,11 +480,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::GroupIdentifier',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::GroupIdentifierValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::GroupIdentifier::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::GroupIdentifierValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::GroupIdentifier::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -501,11 +501,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::FleetLaunchTemplateSpeci
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::FleetLaunchTemplateSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::FleetLaunchTemplateSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::FleetLaunchTemplateSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::FleetLaunchTemplateSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -524,11 +524,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancersConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancersConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancersConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancersConfigValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::ClassicLoadBalancersConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -567,11 +567,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::BlockDeviceMapping',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::BlockDeviceMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::BlockDeviceMapping::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::BlockDeviceMappingValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::BlockDeviceMapping::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -613,11 +613,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetLaunchSpecifica
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetLaunchSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetLaunchSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetLaunchSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetLaunchSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -650,11 +650,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::LoadBalancersConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::LoadBalancersConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::LoadBalancersConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::LoadBalancersConfigValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::LoadBalancersConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -694,11 +694,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateConfigValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::LaunchTemplateConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -716,11 +716,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetRequestConfigDa
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetRequestConfigDataValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetRequestConfigData::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetRequestConfigDataValue {
+package Cfn::Resource::Properties::AWS::EC2::SpotFleet::SpotFleetRequestConfigData::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

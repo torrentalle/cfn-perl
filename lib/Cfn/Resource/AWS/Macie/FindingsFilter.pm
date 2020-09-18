@@ -1,4 +1,4 @@
-# AWS::Macie::FindingsFilter generated from spec 18.2.0
+# AWS::Macie::FindingsFilter generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::Criterion',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::CriterionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::Criterion::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::CriterionValue {
+package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::Criterion::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -49,11 +49,11 @@ coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterLis
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterListItemValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterListItem::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterListItemValue {
+package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterListItem::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteriaValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteriaValue {
+package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

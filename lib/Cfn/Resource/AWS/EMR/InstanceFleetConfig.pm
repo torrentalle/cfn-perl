@@ -1,4 +1,4 @@
-# AWS::EMR::InstanceFleetConfig generated from spec 14.3.0
+# AWS::EMR::InstanceFleetConfig generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::VolumeSpecific
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::VolumeSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::VolumeSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::VolumeSpecificationValue {
+package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::VolumeSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsBlockDevice
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsBlockDeviceConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsBlockDeviceConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsBlockDeviceConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsBlockDeviceConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::SpotProvisioni
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::SpotProvisioningSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::SpotProvisioningSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::SpotProvisioningSpecificationValue {
+package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::SpotProvisioningSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -119,11 +119,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsConfigurationValue {
+package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -163,11 +163,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::Configuration'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::ConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::Configuration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::ConfigurationValue {
+package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::Configuration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -208,11 +208,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceTypeCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceTypeConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceTypeConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceTypeConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceTypeConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -234,11 +234,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceFleetP
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceFleetProvisioningSpecificationsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceFleetProvisioningSpecifications::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceFleetProvisioningSpecificationsValue {
+package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::InstanceFleetProvisioningSpecifications::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

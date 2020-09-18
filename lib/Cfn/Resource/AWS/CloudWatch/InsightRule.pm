@@ -1,4 +1,4 @@
-# AWS::CloudWatch::InsightRule generated from spec 18.2.0
+# AWS::CloudWatch::InsightRule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudWatch::InsightRule',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::TagsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::Tags::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::TagsValue {
+package Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::Tags::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

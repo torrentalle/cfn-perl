@@ -1,4 +1,4 @@
-# AWS::Cognito::UserPoolClient generated from spec 18.2.0
+# AWS::Cognito::UserPoolClient generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolClient',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::TokenValidityUn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::TokenValidityUnitsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::TokenValidityUnits::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::TokenValidityUnitsValue {
+package Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::TokenValidityUnits::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::AnalyticsConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::AnalyticsConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::AnalyticsConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::AnalyticsConfigurationValue {
+package Cfn::Resource::Properties::AWS::Cognito::UserPoolClient::AnalyticsConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

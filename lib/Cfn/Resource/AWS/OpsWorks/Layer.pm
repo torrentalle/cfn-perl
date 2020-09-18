@@ -1,4 +1,4 @@
-# AWS::OpsWorks::Layer generated from spec 14.3.0
+# AWS::OpsWorks::Layer generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Layer',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Layer::ShutdownEventConfigurat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::ShutdownEventConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::ShutdownEventConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Layer::ShutdownEventConfigurationValue {
+package Cfn::Resource::Properties::AWS::OpsWorks::Layer::ShutdownEventConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Layer::AutoScalingThresholds',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::AutoScalingThresholdsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::AutoScalingThresholds::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Layer::AutoScalingThresholdsValue {
+package Cfn::Resource::Properties::AWS::OpsWorks::Layer::AutoScalingThresholds::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -99,11 +99,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Layer::VolumeConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::VolumeConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::VolumeConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Layer::VolumeConfigurationValue {
+package Cfn::Resource::Properties::AWS::OpsWorks::Layer::VolumeConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -126,11 +126,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Layer::Recipes',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::RecipesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::Recipes::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Layer::RecipesValue {
+package Cfn::Resource::Properties::AWS::OpsWorks::Layer::Recipes::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -151,11 +151,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Layer::LoadBasedAutoScaling',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::LoadBasedAutoScalingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::LoadBasedAutoScaling::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Layer::LoadBasedAutoScalingValue {
+package Cfn::Resource::Properties::AWS::OpsWorks::Layer::LoadBasedAutoScaling::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -174,11 +174,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Layer::LifecycleEventConfigura
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::LifecycleEventConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::OpsWorks::Layer::LifecycleEventConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Layer::LifecycleEventConfigurationValue {
+package Cfn::Resource::Properties::AWS::OpsWorks::Layer::LifecycleEventConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

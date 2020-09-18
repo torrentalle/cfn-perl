@@ -1,4 +1,4 @@
-# AWS::IoTAnalytics::Datastore generated from spec 17.0.0
+# AWS::IoTAnalytics::Datastore generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::ServiceManagedS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::ServiceManagedS3Value->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::ServiceManagedS3::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::ServiceManagedS3Value {
+package Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::ServiceManagedS3::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -49,11 +49,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::CustomerManaged
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::CustomerManagedS3Value->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::CustomerManagedS3::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::CustomerManagedS3Value {
+package Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::CustomerManagedS3::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::RetentionPeriod
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::RetentionPeriodValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::RetentionPeriod::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::RetentionPeriodValue {
+package Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::RetentionPeriod::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::DatastoreStorag
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::DatastoreStorageValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::DatastoreStorage::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::DatastoreStorageValue {
+package Cfn::Resource::Properties::AWS::IoTAnalytics::Datastore::DatastoreStorage::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

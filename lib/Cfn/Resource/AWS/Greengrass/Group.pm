@@ -1,4 +1,4 @@
-# AWS::Greengrass::Group generated from spec 14.3.0
+# AWS::Greengrass::Group generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Greengrass::Group',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::Group::GroupVersion',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::Group::GroupVersionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::Group::GroupVersion::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::Group::GroupVersionValue {
+package Cfn::Resource::Properties::AWS::Greengrass::Group::GroupVersion::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

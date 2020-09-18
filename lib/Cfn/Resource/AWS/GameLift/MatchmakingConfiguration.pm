@@ -1,4 +1,4 @@
-# AWS::GameLift::MatchmakingConfiguration generated from spec 14.3.0
+# AWS::GameLift::MatchmakingConfiguration generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::GameLift::MatchmakingConfiguration',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::MatchmakingConfiguration::Game
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::MatchmakingConfiguration::GamePropertyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::GameLift::MatchmakingConfiguration::GameProperty::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::MatchmakingConfiguration::GamePropertyValue {
+package Cfn::Resource::Properties::AWS::GameLift::MatchmakingConfiguration::GameProperty::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

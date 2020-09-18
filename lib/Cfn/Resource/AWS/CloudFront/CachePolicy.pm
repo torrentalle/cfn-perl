@@ -1,4 +1,4 @@
-# AWS::CloudFront::CachePolicy generated from spec 18.2.0
+# AWS::CloudFront::CachePolicy generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::QueryStringsCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::QueryStringsConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::QueryStringsConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::QueryStringsConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::QueryStringsConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::HeadersConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::HeadersConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::HeadersConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::HeadersConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::HeadersConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CookiesConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CookiesConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CookiesConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CookiesConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CookiesConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::ParametersInCac
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::ParametersInCacheKeyAndForwardedToOriginValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::ParametersInCacheKeyAndForwardedToOrigin::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::ParametersInCacheKeyAndForwardedToOriginValue {
+package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::ParametersInCacheKeyAndForwardedToOrigin::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -119,11 +119,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CachePolicyConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CachePolicyConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CachePolicyConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CachePolicyConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CachePolicyConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

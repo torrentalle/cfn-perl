@@ -1,4 +1,4 @@
-# AWS::S3::AccessPoint generated from spec 17.0.0
+# AWS::S3::AccessPoint generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::S3::AccessPoint',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::AccessPoint::VpcConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::AccessPoint::VpcConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::S3::AccessPoint::VpcConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::AccessPoint::VpcConfigurationValue {
+package Cfn::Resource::Properties::AWS::S3::AccessPoint::VpcConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::AccessPoint::PublicAccessBlockConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::AccessPoint::PublicAccessBlockConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::S3::AccessPoint::PublicAccessBlockConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::AccessPoint::PublicAccessBlockConfigurationValue {
+package Cfn::Resource::Properties::AWS::S3::AccessPoint::PublicAccessBlockConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

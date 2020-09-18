@@ -1,4 +1,4 @@
-# AWS::SSM::PatchBaseline generated from spec 14.3.0
+# AWS::SSM::PatchBaseline generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilter::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterValue {
+package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilter::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDate',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDate::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDateValue {
+package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchStringDate::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterGroup',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterGroupValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterGroup::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterGroupValue {
+package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchFilterGroup::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -136,11 +136,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::Rule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::RuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::Rule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::RuleValue {
+package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::Rule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -161,11 +161,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::RuleGroup',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::RuleGroupValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::RuleGroup::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::RuleGroupValue {
+package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::RuleGroup::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -204,11 +204,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchSource',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchSourceValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchSource::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchSourceValue {
+package Cfn::Resource::Properties::AWS::SSM::PatchBaseline::PatchSource::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

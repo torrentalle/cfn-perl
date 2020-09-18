@@ -1,4 +1,4 @@
-# AWS::AppMesh::VirtualRouter generated from spec 14.3.0
+# AWS::AppMesh::VirtualRouter generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::PortMapping',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::PortMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::PortMapping::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::PortMappingValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::PortMapping::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterLis
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterListenerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterListener::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterListenerValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterListener::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterSpe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterSpecValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterSpec::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterSpecValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterSpec::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

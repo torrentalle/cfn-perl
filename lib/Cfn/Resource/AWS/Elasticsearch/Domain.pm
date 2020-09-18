@@ -1,4 +1,4 @@
-# AWS::Elasticsearch::Domain generated from spec 17.0.0
+# AWS::Elasticsearch::Domain generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ZoneAwarenessConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ZoneAwarenessConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ZoneAwarenessConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ZoneAwarenessConfigValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ZoneAwarenessConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::MasterUserOptions
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::MasterUserOptionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::MasterUserOptions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::MasterUserOptionsValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::MasterUserOptions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::VPCOptions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::VPCOptionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::VPCOptions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::VPCOptionsValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::VPCOptions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::SnapshotOptions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::SnapshotOptionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::SnapshotOptions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::SnapshotOptionsValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::SnapshotOptions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -116,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::NodeToNodeEncrypt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::NodeToNodeEncryptionOptionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::NodeToNodeEncryptionOptions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::NodeToNodeEncryptionOptionsValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::NodeToNodeEncryptionOptions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -155,11 +155,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::LogPublishingOpti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::LogPublishingOptionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::LogPublishingOption::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::LogPublishingOptionValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::LogPublishingOption::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -177,11 +177,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EncryptionAtRestO
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EncryptionAtRestOptionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EncryptionAtRestOptions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EncryptionAtRestOptionsValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EncryptionAtRestOptions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -199,11 +199,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ElasticsearchClus
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ElasticsearchClusterConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ElasticsearchClusterConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ElasticsearchClusterConfigValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::ElasticsearchClusterConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -226,11 +226,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EBSOptions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EBSOptionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EBSOptions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EBSOptionsValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::EBSOptions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -250,11 +250,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::DomainEndpointOpt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::DomainEndpointOptionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::DomainEndpointOptions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::DomainEndpointOptionsValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::DomainEndpointOptions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -272,11 +272,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::CognitoOptions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::CognitoOptionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::CognitoOptions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::CognitoOptionsValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::CognitoOptions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -296,11 +296,11 @@ coerce 'Cfn::Resource::Properties::AWS::Elasticsearch::Domain::AdvancedSecurityO
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::AdvancedSecurityOptionsInputValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Elasticsearch::Domain::AdvancedSecurityOptionsInput::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::AdvancedSecurityOptionsInputValue {
+package Cfn::Resource::Properties::AWS::Elasticsearch::Domain::AdvancedSecurityOptionsInput::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

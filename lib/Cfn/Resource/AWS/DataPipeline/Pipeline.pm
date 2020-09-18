@@ -1,4 +1,4 @@
-# AWS::DataPipeline::Pipeline generated from spec 14.3.0
+# AWS::DataPipeline::Pipeline generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::DataPipeline::Pipeline',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterAttribu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterAttributeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterAttribute::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterAttributeValue {
+package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterAttribute::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::Field',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::FieldValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::Field::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::FieldValue {
+package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::Field::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -140,11 +140,11 @@ coerce 'Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineTag',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineTagValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineTag::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineTagValue {
+package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineTag::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -184,11 +184,11 @@ coerce 'Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineObject',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineObjectValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineObject::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineObjectValue {
+package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::PipelineObject::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -229,11 +229,11 @@ coerce 'Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterValue',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterValueValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterValue::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterValueValue {
+package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterValue::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -273,11 +273,11 @@ coerce 'Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterObject'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterObjectValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterObject::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterObjectValue {
+package Cfn::Resource::Properties::AWS::DataPipeline::Pipeline::ParameterObject::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

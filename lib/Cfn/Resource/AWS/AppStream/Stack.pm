@@ -1,4 +1,4 @@
-# AWS::AppStream::Stack generated from spec 17.0.0
+# AWS::AppStream::Stack generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack::UserSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Stack::UserSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::Stack::UserSetting::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Stack::UserSettingValue {
+package Cfn::Resource::Properties::AWS::AppStream::Stack::UserSetting::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack::StorageConnector',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Stack::StorageConnectorValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::Stack::StorageConnector::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Stack::StorageConnectorValue {
+package Cfn::Resource::Properties::AWS::AppStream::Stack::StorageConnector::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack::ApplicationSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Stack::ApplicationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::Stack::ApplicationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Stack::ApplicationSettingsValue {
+package Cfn::Resource::Properties::AWS::AppStream::Stack::ApplicationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -162,11 +162,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack::AccessEndpoint',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Stack::AccessEndpointValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::Stack::AccessEndpoint::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Stack::AccessEndpointValue {
+package Cfn::Resource::Properties::AWS::AppStream::Stack::AccessEndpoint::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

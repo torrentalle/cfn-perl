@@ -1,4 +1,4 @@
-# AWS::AppSync::DataSource generated from spec 14.3.0
+# AWS::AppSync::DataSource generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource::AwsIamConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::DataSource::AwsIamConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::DataSource::AwsIamConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::DataSource::AwsIamConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::DataSource::AwsIamConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource::RdsHttpEndpointConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::DataSource::RdsHttpEndpointConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::DataSource::RdsHttpEndpointConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::DataSource::RdsHttpEndpointConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::DataSource::RdsHttpEndpointConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -76,11 +76,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource::DeltaSyncConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::DataSource::DeltaSyncConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::DataSource::DeltaSyncConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::DataSource::DeltaSyncConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::DataSource::DeltaSyncConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -99,11 +99,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource::AuthorizationConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::DataSource::AuthorizationConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::DataSource::AuthorizationConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::DataSource::AuthorizationConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::DataSource::AuthorizationConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -121,11 +121,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource::RelationalDatabaseC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::DataSource::RelationalDatabaseConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::DataSource::RelationalDatabaseConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::DataSource::RelationalDatabaseConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::DataSource::RelationalDatabaseConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -143,11 +143,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource::LambdaConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::DataSource::LambdaConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::DataSource::LambdaConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::DataSource::LambdaConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::DataSource::LambdaConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -164,11 +164,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource::HttpConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::DataSource::HttpConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::DataSource::HttpConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::DataSource::HttpConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::DataSource::HttpConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -186,11 +186,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource::ElasticsearchConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::DataSource::ElasticsearchConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::DataSource::ElasticsearchConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::DataSource::ElasticsearchConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::DataSource::ElasticsearchConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -208,11 +208,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::DataSource::DynamoDBConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::DataSource::DynamoDBConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::DataSource::DynamoDBConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::DataSource::DynamoDBConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::DataSource::DynamoDBConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

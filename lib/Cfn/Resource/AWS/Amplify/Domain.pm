@@ -1,4 +1,4 @@
-# AWS::Amplify::Domain generated from spec 17.0.0
+# AWS::Amplify::Domain generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Amplify::Domain',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::Domain::SubDomainSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::Domain::SubDomainSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Amplify::Domain::SubDomainSetting::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::Domain::SubDomainSettingValue {
+package Cfn::Resource::Properties::AWS::Amplify::Domain::SubDomainSetting::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

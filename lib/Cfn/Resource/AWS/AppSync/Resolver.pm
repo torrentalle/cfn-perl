@@ -1,4 +1,4 @@
-# AWS::AppSync::Resolver generated from spec 14.3.0
+# AWS::AppSync::Resolver generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppSync::Resolver',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::Resolver::LambdaConflictHandler
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::Resolver::LambdaConflictHandlerConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::Resolver::LambdaConflictHandlerConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::Resolver::LambdaConflictHandlerConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::Resolver::LambdaConflictHandlerConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::Resolver::SyncConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::Resolver::SyncConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::Resolver::SyncConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::Resolver::SyncConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::Resolver::SyncConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::Resolver::PipelineConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::Resolver::PipelineConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::Resolver::PipelineConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::Resolver::PipelineConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::Resolver::PipelineConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::Resolver::CachingConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::Resolver::CachingConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppSync::Resolver::CachingConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::Resolver::CachingConfigValue {
+package Cfn::Resource::Properties::AWS::AppSync::Resolver::CachingConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

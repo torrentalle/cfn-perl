@@ -1,4 +1,4 @@
-# AWS::EC2::VPNConnection generated from spec 14.3.0
+# AWS::EC2::VPNConnection generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::VPNConnection',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::VPNConnection::VpnTunnelOptionsSpec
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::VPNConnection::VpnTunnelOptionsSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::VPNConnection::VpnTunnelOptionsSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::VPNConnection::VpnTunnelOptionsSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::VPNConnection::VpnTunnelOptionsSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

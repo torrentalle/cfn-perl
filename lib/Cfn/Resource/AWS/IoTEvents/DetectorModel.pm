@@ -1,4 +1,4 @@
-# AWS::IoTEvents::DetectorModel generated from spec 14.3.0
+# AWS::IoTEvents::DetectorModel generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyV
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyVariantValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyVariant::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyVariantValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyVariant::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -53,11 +53,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyT
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyTimestampValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyTimestamp::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyTimestampValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyTimestamp::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::PayloadValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::PayloadValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Payload::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyV
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyValueValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyValue::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyValueValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::AssetPropertyValue::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -120,11 +120,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Sqs',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SqsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Sqs::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SqsValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Sqs::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -143,11 +143,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Sns',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SnsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Sns::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SnsValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Sns::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -165,11 +165,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetVariable',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetVariableValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetVariable::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetVariableValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetVariable::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -187,11 +187,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetTimer',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetTimerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetTimer::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetTimerValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::SetTimer::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -210,11 +210,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ResetTimer',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ResetTimerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ResetTimer::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ResetTimerValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ResetTimer::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -231,11 +231,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Lambda',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::LambdaValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Lambda::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::LambdaValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Lambda::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -253,11 +253,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotTopicPublis
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotTopicPublishValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotTopicPublish::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotTopicPublishValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotTopicPublish::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -275,11 +275,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWise',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWiseValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWise::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWiseValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotSiteWise::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -300,11 +300,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotEvents',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotEventsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotEvents::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotEventsValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::IotEvents::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -322,11 +322,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Firehose',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::FirehoseValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Firehose::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::FirehoseValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Firehose::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -345,11 +345,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2Value->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2Value {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBv2::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -367,11 +367,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDB',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDB::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDBValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DynamoDB::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -397,11 +397,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ClearTimer',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ClearTimerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ClearTimer::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ClearTimerValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ClearTimer::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -440,11 +440,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Action',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Action::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::ActionValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Action::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -495,11 +495,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::TransitionEven
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::TransitionEventValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::TransitionEvent::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::TransitionEventValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::TransitionEvent::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -541,11 +541,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Event',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::EventValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Event::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::EventValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::Event::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -564,11 +564,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnInput',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnInputValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnInput::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnInputValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnInput::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -586,11 +586,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnExit',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnExitValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnExit::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnExitValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnExit::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -607,11 +607,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnEnter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnEnterValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnEnter::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnEnterValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::OnEnter::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -650,11 +650,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::State',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::StateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::State::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::StateValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::State::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -674,11 +674,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DetectorModelD
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DetectorModelDefinitionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DetectorModelDefinition::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DetectorModelDefinitionValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::DetectorModel::DetectorModelDefinition::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

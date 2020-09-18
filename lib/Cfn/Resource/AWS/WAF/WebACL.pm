@@ -1,4 +1,4 @@
-# AWS::WAF::WebACL generated from spec 14.3.0
+# AWS::WAF::WebACL generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::WAF::WebACL',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAF::WebACL::WafAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAF::WebACL::WafActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::WAF::WebACL::WafAction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAF::WebACL::WafActionValue {
+package Cfn::Resource::Properties::AWS::WAF::WebACL::WafAction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAF::WebACL::ActivatedRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAF::WebACL::ActivatedRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::WAF::WebACL::ActivatedRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAF::WebACL::ActivatedRuleValue {
+package Cfn::Resource::Properties::AWS::WAF::WebACL::ActivatedRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

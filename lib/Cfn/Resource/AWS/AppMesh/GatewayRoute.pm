@@ -1,4 +1,4 @@
-# AWS::AppMesh::GatewayRoute generated from spec 17.0.0
+# AWS::AppMesh::GatewayRoute generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteVirtu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteVirtualServiceValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteVirtualService::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteVirtualServiceValue {
+package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteVirtualService::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteTarge
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteTargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteTarget::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteTargetValue {
+package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteTarget::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteM
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteMatchValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteMatch::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteMatchValue {
+package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteMatch::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -92,11 +92,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteA
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteAction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteActionValue {
+package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteAction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -113,11 +113,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteM
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteMatchValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteMatch::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteMatchValue {
+package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteMatch::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -134,11 +134,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteA
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteAction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteActionValue {
+package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteAction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -155,11 +155,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRoute'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRoute::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRouteValue {
+package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::HttpGatewayRoute::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -177,11 +177,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRoute'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRoute::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRouteValue {
+package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GrpcGatewayRoute::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -199,11 +199,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteSpec'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteSpecValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteSpec::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteSpecValue {
+package Cfn::Resource::Properties::AWS::AppMesh::GatewayRoute::GatewayRouteSpec::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

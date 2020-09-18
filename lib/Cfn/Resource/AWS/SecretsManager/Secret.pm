@@ -1,4 +1,4 @@
-# AWS::SecretsManager::Secret generated from spec 14.3.0
+# AWS::SecretsManager::Secret generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SecretsManager::Secret',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SecretsManager::Secret::GenerateSecretSt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SecretsManager::Secret::GenerateSecretStringValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SecretsManager::Secret::GenerateSecretString::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SecretsManager::Secret::GenerateSecretStringValue {
+package Cfn::Resource::Properties::AWS::SecretsManager::Secret::GenerateSecretString::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

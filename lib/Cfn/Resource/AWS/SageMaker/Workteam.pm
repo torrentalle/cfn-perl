@@ -1,4 +1,4 @@
-# AWS::SageMaker::Workteam generated from spec 14.3.0
+# AWS::SageMaker::Workteam generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SageMaker::Workteam',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Workteam::CognitoMemberDefini
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Workteam::CognitoMemberDefinitionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SageMaker::Workteam::CognitoMemberDefinition::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Workteam::CognitoMemberDefinitionValue {
+package Cfn::Resource::Properties::AWS::SageMaker::Workteam::CognitoMemberDefinition::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Workteam::NotificationConfigu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Workteam::NotificationConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SageMaker::Workteam::NotificationConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Workteam::NotificationConfigurationValue {
+package Cfn::Resource::Properties::AWS::SageMaker::Workteam::NotificationConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Workteam::MemberDefinition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Workteam::MemberDefinitionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SageMaker::Workteam::MemberDefinition::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Workteam::MemberDefinitionValue {
+package Cfn::Resource::Properties::AWS::SageMaker::Workteam::MemberDefinition::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

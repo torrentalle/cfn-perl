@@ -1,4 +1,4 @@
-# AWS::WAF::SqlInjectionMatchSet generated from spec 14.3.0
+# AWS::WAF::SqlInjectionMatchSet generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::FieldToMatch'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::FieldToMatchValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::FieldToMatch::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::FieldToMatchValue {
+package Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::FieldToMatch::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::SqlInjectionM
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::SqlInjectionMatchTupleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::SqlInjectionMatchTuple::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::SqlInjectionMatchTupleValue {
+package Cfn::Resource::Properties::AWS::WAF::SqlInjectionMatchSet::SqlInjectionMatchTuple::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

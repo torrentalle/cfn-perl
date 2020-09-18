@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFormation::StackSet::Parameter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::ParameterValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::Parameter::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::ParameterValue {
+package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::Parameter::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFormation::StackSet::DeploymentTarg
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::DeploymentTargetsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::DeploymentTargets::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::DeploymentTargetsValue {
+package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::DeploymentTargets::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFormation::StackSet::StackInstances
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::StackInstancesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::StackInstances::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::StackInstancesValue {
+package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::StackInstances::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -140,11 +140,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFormation::StackSet::OperationPrefe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::OperationPreferencesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::OperationPreferences::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::OperationPreferencesValue {
+package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::OperationPreferences::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -165,11 +165,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFormation::StackSet::AutoDeployment
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::AutoDeploymentValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFormation::StackSet::AutoDeployment::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::AutoDeploymentValue {
+package Cfn::Resource::Properties::AWS::CloudFormation::StackSet::AutoDeployment::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::AppMesh::VirtualNode generated from spec 17.0.0
+# AWS::AppMesh::VirtualNode generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationConte
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextFileTrustValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextFileTrust::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextFileTrustValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextFileTrust::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationConte
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextAcmTrustValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextAcmTrust::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextAcmTrustValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextAcmTrust::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationConte
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextTrustValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextTrust::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextTrustValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextTrust::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationConte
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContext::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContextValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TlsValidationContext::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -114,11 +114,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCer
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificate::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificateValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsFileCertificate::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -136,11 +136,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCert
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificate::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificateValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsAcmCertificate::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -157,11 +157,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::DurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::DurationValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Duration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -179,11 +179,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTls',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTlsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTls::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTlsValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyTls::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -202,11 +202,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeout',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeoutValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeout::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeoutValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::TcpTimeout::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -223,11 +223,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertifi
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificate::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificateValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsCertificate::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -245,11 +245,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeout',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeoutValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeout::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeoutValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HttpTimeout::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -267,11 +267,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeout',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeoutValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeout::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeoutValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::GrpcTimeout::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -289,11 +289,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::FileAccessLog',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::FileAccessLogValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::FileAccessLog::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::FileAccessLogValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::FileAccessLog::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -310,11 +310,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicyValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ClientPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -353,11 +353,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapInstanc
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapInstanceAttributeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapInstanceAttribute::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapInstanceAttributeValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapInstanceAttribute::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -375,11 +375,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualServiceBack
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualServiceBackendValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualServiceBackend::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualServiceBackendValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualServiceBackend::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -397,11 +397,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::PortMapping',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::PortMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::PortMapping::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::PortMappingValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::PortMapping::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -419,11 +419,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTls',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTls::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTlsValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTls::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -441,11 +441,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeout',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeoutValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeout::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeoutValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerTimeout::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -465,11 +465,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HealthCheck',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HealthCheckValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HealthCheck::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HealthCheckValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::HealthCheck::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -492,11 +492,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::DnsServiceDiscover
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::DnsServiceDiscoveryValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::DnsServiceDiscovery::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::DnsServiceDiscoveryValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::DnsServiceDiscovery::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -513,11 +513,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapService
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapServiceDiscoveryValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapServiceDiscovery::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapServiceDiscoveryValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AwsCloudMapServiceDiscovery::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -536,11 +536,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AccessLog',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AccessLogValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AccessLog::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AccessLogValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::AccessLog::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -557,11 +557,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ServiceDiscovery',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ServiceDiscoveryValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ServiceDiscovery::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ServiceDiscoveryValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ServiceDiscovery::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -579,11 +579,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Logging',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::LoggingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Logging::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::LoggingValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Logging::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -622,11 +622,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Listener',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Listener::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::ListenerValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Listener::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -646,11 +646,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaults',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaultsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaults::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaultsValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendDefaults::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -689,11 +689,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Backend',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Backend::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::BackendValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::Backend::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -710,11 +710,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualNodeSpec',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualNodeSpecValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualNodeSpec::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualNodeSpecValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualNode::VirtualNodeSpec::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

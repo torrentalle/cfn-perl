@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::HostedZone::VPC',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::HostedZone::VPCValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Route53::HostedZone::VPC::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::HostedZone::VPCValue {
+package Cfn::Resource::Properties::AWS::Route53::HostedZone::VPC::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::HostedZone::QueryLoggingConfig'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::HostedZone::QueryLoggingConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Route53::HostedZone::QueryLoggingConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::HostedZone::QueryLoggingConfigValue {
+package Cfn::Resource::Properties::AWS::Route53::HostedZone::QueryLoggingConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -116,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneTag',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneTagValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneTag::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneTagValue {
+package Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneTag::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -138,11 +138,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneConfigValue {
+package Cfn::Resource::Properties::AWS::Route53::HostedZone::HostedZoneConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

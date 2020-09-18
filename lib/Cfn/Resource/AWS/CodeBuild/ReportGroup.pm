@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::S3ReportExportCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::S3ReportExportConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::S3ReportExportConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::S3ReportExportConfigValue {
+package Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::S3ReportExportConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -54,11 +54,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::ReportExportConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::ReportExportConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::ReportExportConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::ReportExportConfigValue {
+package Cfn::Resource::Properties::AWS::CodeBuild::ReportGroup::ReportExportConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

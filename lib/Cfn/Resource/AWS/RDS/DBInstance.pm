@@ -1,4 +1,4 @@
-# AWS::RDS::DBInstance generated from spec 17.0.0
+# AWS::RDS::DBInstance generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::RDS::DBInstance',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBInstance::ProcessorFeature',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBInstance::ProcessorFeatureValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::RDS::DBInstance::ProcessorFeature::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBInstance::ProcessorFeatureValue {
+package Cfn::Resource::Properties::AWS::RDS::DBInstance::ProcessorFeature::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBInstance::DBInstanceRole',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBInstance::DBInstanceRoleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::RDS::DBInstance::DBInstanceRole::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBInstance::DBInstanceRoleValue {
+package Cfn::Resource::Properties::AWS::RDS::DBInstance::DBInstanceRole::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::Greengrass::FunctionDefinition generated from spec 14.3.0
+# AWS::Greengrass::FunctionDefinition generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::RunAs',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::RunAsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::RunAs::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::RunAsValue {
+package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::RunAs::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Resource
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::ResourceAccessPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::ResourceAccessPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::ResourceAccessPolicyValue {
+package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::ResourceAccessPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Executio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::ExecutionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Execution::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::ExecutionValue {
+package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Execution::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Environm
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::EnvironmentValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Environment::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::EnvironmentValue {
+package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Environment::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Function
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionConfigurationValue {
+package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -190,11 +190,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Function
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Function::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionValue {
+package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Function::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -213,11 +213,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::DefaultC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::DefaultConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::DefaultConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::DefaultConfigValue {
+package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::DefaultConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -234,11 +234,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::Function
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionDefinitionVersionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionDefinitionVersion::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionDefinitionVersionValue {
+package Cfn::Resource::Properties::AWS::Greengrass::FunctionDefinition::FunctionDefinitionVersion::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

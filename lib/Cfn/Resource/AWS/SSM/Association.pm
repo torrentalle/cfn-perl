@@ -1,4 +1,4 @@
-# AWS::SSM::Association generated from spec 17.0.0
+# AWS::SSM::Association generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::Association',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocation',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocation::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocationValue {
+package Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocation::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::Association::Target',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::Association::TargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::Association::Target::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::Association::TargetValue {
+package Cfn::Resource::Properties::AWS::SSM::Association::Target::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOut
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOutputLocationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOutputLocation::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOutputLocationValue {
+package Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOutputLocation::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

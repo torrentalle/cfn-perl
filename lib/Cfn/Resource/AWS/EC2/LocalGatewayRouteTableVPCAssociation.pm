@@ -1,4 +1,4 @@
-# AWS::EC2::LocalGatewayRouteTableVPCAssociation generated from spec 17.0.0
+# AWS::EC2::LocalGatewayRouteTableVPCAssociation generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::LocalGatewayRouteTableVPCAssociation',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LocalGatewayRouteTableVPCAssociatio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LocalGatewayRouteTableVPCAssociation::TagsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::LocalGatewayRouteTableVPCAssociation::Tags::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LocalGatewayRouteTableVPCAssociation::TagsValue {
+package Cfn::Resource::Properties::AWS::EC2::LocalGatewayRouteTableVPCAssociation::Tags::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

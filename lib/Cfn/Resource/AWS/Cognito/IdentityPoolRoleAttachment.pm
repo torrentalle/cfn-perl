@@ -1,4 +1,4 @@
-# AWS::Cognito::IdentityPoolRoleAttachment generated from spec 14.3.0
+# AWS::Cognito::IdentityPoolRoleAttachment generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::Map
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::MappingRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::MappingRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::MappingRuleValue {
+package Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::MappingRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::Rul
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::RulesConfigurationTypeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::RulesConfigurationType::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::RulesConfigurationTypeValue {
+package Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::RulesConfigurationType::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::Rol
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::RoleMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::RoleMapping::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::RoleMappingValue {
+package Cfn::Resource::Properties::AWS::Cognito::IdentityPoolRoleAttachment::RoleMapping::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

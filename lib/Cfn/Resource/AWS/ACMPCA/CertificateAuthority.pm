@@ -1,4 +1,4 @@
-# AWS::ACMPCA::CertificateAuthority generated from spec 14.3.0
+# AWS::ACMPCA::CertificateAuthority generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::CrlConfigu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::CrlConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::CrlConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::CrlConfigurationValue {
+package Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::CrlConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -53,11 +53,11 @@ coerce 'Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::Subject',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::SubjectValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::Subject::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::SubjectValue {
+package Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::Subject::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -87,11 +87,11 @@ coerce 'Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::Revocation
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::RevocationConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::RevocationConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::RevocationConfigurationValue {
+package Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::RevocationConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

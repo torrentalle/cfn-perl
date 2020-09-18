@@ -1,4 +1,4 @@
-# AWS::EMR::Step generated from spec 14.3.0
+# AWS::EMR::Step generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EMR::Step',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Step::KeyValue',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Step::KeyValueValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Step::KeyValue::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Step::KeyValueValue {
+package Cfn::Resource::Properties::AWS::EMR::Step::KeyValue::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Step::HadoopJarStepConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Step::HadoopJarStepConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Step::HadoopJarStepConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Step::HadoopJarStepConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Step::HadoopJarStepConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

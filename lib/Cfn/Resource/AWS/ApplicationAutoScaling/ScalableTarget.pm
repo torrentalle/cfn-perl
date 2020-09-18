@@ -1,4 +1,4 @@
-# AWS::ApplicationAutoScaling::ScalableTarget generated from spec 14.3.0
+# AWS::ApplicationAutoScaling::ScalableTarget generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScalableTargetActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScalableTargetAction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScalableTargetActionValue {
+package Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScalableTargetAction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::SuspendedStateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::SuspendedState::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::SuspendedStateValue {
+package Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::SuspendedState::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScheduledActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScheduledAction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScheduledActionValue {
+package Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScheduledAction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

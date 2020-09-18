@@ -1,4 +1,4 @@
-# AWS::EC2::EC2Fleet generated from spec 14.3.0
+# AWS::EC2::EC2Fleet generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet::Placement',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::PlacementValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::Placement::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::PlacementValue {
+package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::Placement::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -57,11 +57,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateSpecif
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateSpecificationRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateSpecificationRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateSpecificationRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateSpecificationRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -102,11 +102,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateOverri
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateOverridesRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateOverridesRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateOverridesRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateOverridesRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -129,11 +129,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet::CapacityReservationOption
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::CapacityReservationOptionsRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::CapacityReservationOptionsRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::CapacityReservationOptionsRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::CapacityReservationOptionsRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -150,11 +150,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TargetCapacitySpecificati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TargetCapacitySpecificationRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TargetCapacitySpecificationRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TargetCapacitySpecificationRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TargetCapacitySpecificationRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -196,11 +196,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TagSpecification',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TagSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TagSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TagSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::TagSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -218,11 +218,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet::SpotOptionsRequest',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::SpotOptionsRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::SpotOptionsRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::SpotOptionsRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::SpotOptionsRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -245,11 +245,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet::OnDemandOptionsRequest',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::OnDemandOptionsRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::OnDemandOptionsRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::OnDemandOptionsRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::OnDemandOptionsRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -293,11 +293,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateConfigRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateConfigRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateConfigRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::EC2Fleet::FleetLaunchTemplateConfigRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

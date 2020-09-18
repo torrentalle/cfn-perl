@@ -1,4 +1,4 @@
-# AWS::Config::DeliveryChannel generated from spec 14.3.0
+# AWS::Config::DeliveryChannel generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Config::DeliveryChannel',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::DeliveryChannel::ConfigSnapshotD
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::DeliveryChannel::ConfigSnapshotDeliveryPropertiesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Config::DeliveryChannel::ConfigSnapshotDeliveryProperties::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::DeliveryChannel::ConfigSnapshotDeliveryPropertiesValue {
+package Cfn::Resource::Properties::AWS::Config::DeliveryChannel::ConfigSnapshotDeliveryProperties::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

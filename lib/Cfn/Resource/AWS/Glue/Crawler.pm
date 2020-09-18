@@ -1,4 +1,4 @@
-# AWS::Glue::Crawler generated from spec 14.3.0
+# AWS::Glue::Crawler generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Glue::Crawler',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Crawler::S3Target',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Crawler::S3TargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::Crawler::S3Target::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Crawler::S3TargetValue {
+package Cfn::Resource::Properties::AWS::Glue::Crawler::S3Target::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Crawler::JdbcTarget',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Crawler::JdbcTargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::Crawler::JdbcTarget::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Crawler::JdbcTargetValue {
+package Cfn::Resource::Properties::AWS::Glue::Crawler::JdbcTarget::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -140,11 +140,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Crawler::DynamoDBTarget',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Crawler::DynamoDBTargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::Crawler::DynamoDBTarget::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Crawler::DynamoDBTargetValue {
+package Cfn::Resource::Properties::AWS::Glue::Crawler::DynamoDBTarget::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -183,11 +183,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Crawler::CatalogTarget',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Crawler::CatalogTargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::Crawler::CatalogTarget::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Crawler::CatalogTargetValue {
+package Cfn::Resource::Properties::AWS::Glue::Crawler::CatalogTarget::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -205,11 +205,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Crawler::Targets',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Crawler::TargetsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::Crawler::Targets::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Crawler::TargetsValue {
+package Cfn::Resource::Properties::AWS::Glue::Crawler::Targets::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -229,11 +229,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Crawler::SchemaChangePolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Crawler::SchemaChangePolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::Crawler::SchemaChangePolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Crawler::SchemaChangePolicyValue {
+package Cfn::Resource::Properties::AWS::Glue::Crawler::SchemaChangePolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -251,11 +251,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Crawler::Schedule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Crawler::ScheduleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::Crawler::Schedule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Crawler::ScheduleValue {
+package Cfn::Resource::Properties::AWS::Glue::Crawler::Schedule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

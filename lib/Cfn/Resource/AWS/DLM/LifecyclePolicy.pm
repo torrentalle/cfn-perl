@@ -1,4 +1,4 @@
-# AWS::DLM::LifecyclePolicy generated from spec 17.0.0
+# AWS::DLM::LifecyclePolicy generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRetainRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRetainRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRetainRuleValue {
+package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRetainRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::RetainRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::RetainRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::RetainRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::RetainRuleValue {
+package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::RetainRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::FastRestoreRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::FastRestoreRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::FastRestoreRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::FastRestoreRuleValue {
+package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::FastRestoreRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -120,11 +120,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRul
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRuleValue {
+package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -145,11 +145,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CreateRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CreateRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CreateRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CreateRuleValue {
+package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CreateRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -191,11 +191,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::Schedule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::ScheduleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::Schedule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::ScheduleValue {
+package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::Schedule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -219,11 +219,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::Parameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::ParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::Parameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::ParametersValue {
+package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::Parameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -240,11 +240,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::PolicyDetails',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::PolicyDetailsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::PolicyDetails::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::PolicyDetailsValue {
+package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::PolicyDetails::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

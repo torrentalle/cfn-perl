@@ -1,4 +1,4 @@
-# AWS::ApiGateway::Stage generated from spec 14.3.0
+# AWS::ApiGateway::Stage generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Stage',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Stage::MethodSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Stage::MethodSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApiGateway::Stage::MethodSetting::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Stage::MethodSettingValue {
+package Cfn::Resource::Properties::AWS::ApiGateway::Stage::MethodSetting::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -81,11 +81,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Stage::CanarySetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Stage::CanarySettingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApiGateway::Stage::CanarySetting::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Stage::CanarySettingValue {
+package Cfn::Resource::Properties::AWS::ApiGateway::Stage::CanarySetting::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -105,11 +105,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Stage::AccessLogSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Stage::AccessLogSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApiGateway::Stage::AccessLogSetting::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Stage::AccessLogSettingValue {
+package Cfn::Resource::Properties::AWS::ApiGateway::Stage::AccessLogSetting::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::AppMesh::VirtualGateway generated from spec 17.0.0
+# AWS::AppMesh::VirtualGateway generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayT
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextFileTrustValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextFileTrust::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextFileTrustValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextFileTrust::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayT
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextAcmTrustValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextAcmTrust::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextAcmTrustValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextAcmTrust::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayT
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextTrustValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextTrust::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextTrustValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextTrust::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayT
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContext::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContextValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayTlsValidationContext::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -114,11 +114,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayL
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsFileCertificateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsFileCertificate::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsFileCertificateValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsFileCertificate::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -136,11 +136,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayL
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsAcmCertificateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsAcmCertificate::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsAcmCertificateValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsAcmCertificate::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -157,11 +157,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayL
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsCertificateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsCertificate::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsCertificateValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsCertificate::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -179,11 +179,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayF
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayFileAccessLogValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayFileAccessLog::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayFileAccessLogValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayFileAccessLog::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -200,11 +200,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayClientPolicyTlsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayClientPolicyTls::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayClientPolicyTlsValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayClientPolicyTls::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -223,11 +223,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayP
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayPortMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayPortMapping::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayPortMappingValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayPortMapping::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -245,11 +245,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayL
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTls::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTlsValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerTls::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -267,11 +267,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayH
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayHealthCheckPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayHealthCheckPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayHealthCheckPolicyValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayHealthCheckPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -294,11 +294,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayClientPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayClientPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayClientPolicyValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayClientPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -315,11 +315,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayA
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayAccessLogValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayAccessLog::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayAccessLogValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayAccessLog::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -336,11 +336,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayL
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayLoggingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayLogging::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayLoggingValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayLogging::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -379,11 +379,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayL
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListener::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListenerValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayListener::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -402,11 +402,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayB
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayBackendDefaultsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayBackendDefaults::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayBackendDefaultsValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayBackendDefaults::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -423,11 +423,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewayS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewaySpecValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewaySpec::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewaySpecValue {
+package Cfn::Resource::Properties::AWS::AppMesh::VirtualGateway::VirtualGatewaySpec::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

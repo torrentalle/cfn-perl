@@ -1,4 +1,4 @@
-# AWS::Batch::ComputeEnvironment generated from spec 14.3.0
+# AWS::Batch::ComputeEnvironment generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::LaunchTemplat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::LaunchTemplateSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::LaunchTemplateSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::LaunchTemplateSpecificationValue {
+package Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::LaunchTemplateSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::ComputeResour
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::ComputeResourcesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::ComputeResources::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::ComputeResourcesValue {
+package Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::ComputeResources::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

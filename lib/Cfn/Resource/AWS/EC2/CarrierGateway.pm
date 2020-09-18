@@ -1,4 +1,4 @@
-# AWS::EC2::CarrierGateway generated from spec 17.0.0
+# AWS::EC2::CarrierGateway generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::CarrierGateway',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::CarrierGateway::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::CarrierGateway::TagsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::CarrierGateway::Tags::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::CarrierGateway::TagsValue {
+package Cfn::Resource::Properties::AWS::EC2::CarrierGateway::Tags::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

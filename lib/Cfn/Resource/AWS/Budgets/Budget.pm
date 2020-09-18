@@ -1,4 +1,4 @@
-# AWS::Budgets::Budget generated from spec 17.0.0
+# AWS::Budgets::Budget generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Budgets::Budget',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Budgets::Budget::TimePeriod',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Budgets::Budget::TimePeriodValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Budgets::Budget::TimePeriod::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Budgets::Budget::TimePeriodValue {
+package Cfn::Resource::Properties::AWS::Budgets::Budget::TimePeriod::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Budgets::Budget::Subscriber',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Budgets::Budget::SubscriberValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Budgets::Budget::Subscriber::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Budgets::Budget::SubscriberValue {
+package Cfn::Resource::Properties::AWS::Budgets::Budget::Subscriber::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::Budgets::Budget::Spend',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Budgets::Budget::SpendValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Budgets::Budget::Spend::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Budgets::Budget::SpendValue {
+package Cfn::Resource::Properties::AWS::Budgets::Budget::Spend::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::Budgets::Budget::Notification',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Budgets::Budget::NotificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Budgets::Budget::Notification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Budgets::Budget::NotificationValue {
+package Cfn::Resource::Properties::AWS::Budgets::Budget::Notification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::Budgets::Budget::CostTypes',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Budgets::Budget::CostTypesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Budgets::Budget::CostTypes::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Budgets::Budget::CostTypesValue {
+package Cfn::Resource::Properties::AWS::Budgets::Budget::CostTypes::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -194,11 +194,11 @@ coerce 'Cfn::Resource::Properties::AWS::Budgets::Budget::NotificationWithSubscri
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Budgets::Budget::NotificationWithSubscribersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Budgets::Budget::NotificationWithSubscribers::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Budgets::Budget::NotificationWithSubscribersValue {
+package Cfn::Resource::Properties::AWS::Budgets::Budget::NotificationWithSubscribers::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -216,11 +216,11 @@ coerce 'Cfn::Resource::Properties::AWS::Budgets::Budget::BudgetData',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Budgets::Budget::BudgetDataValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Budgets::Budget::BudgetData::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Budgets::Budget::BudgetDataValue {
+package Cfn::Resource::Properties::AWS::Budgets::Budget::BudgetData::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

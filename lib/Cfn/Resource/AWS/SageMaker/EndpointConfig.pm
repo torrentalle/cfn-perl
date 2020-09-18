@@ -1,4 +1,4 @@
-# AWS::SageMaker::EndpointConfig generated from spec 17.0.0
+# AWS::SageMaker::EndpointConfig generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOption
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOptionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOption::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOptionValue {
+package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureOption::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureConten
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureContentTypeHeaderValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureContentTypeHeader::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureContentTypeHeaderValue {
+package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::CaptureContentTypeHeader::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -116,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::ProductionVar
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::ProductionVariantValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::ProductionVariant::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::ProductionVariantValue {
+package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::ProductionVariant::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -142,11 +142,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureConfigValue {
+package Cfn::Resource::Properties::AWS::SageMaker::EndpointConfig::DataCaptureConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

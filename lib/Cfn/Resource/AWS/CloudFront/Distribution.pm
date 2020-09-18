@@ -1,4 +1,4 @@
-# AWS::CloudFront::Distribution generated from spec 18.1.0
+# AWS::CloudFront::Distribution generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodes',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodes::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodesValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::StatusCodes::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMem
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMemberValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMember::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMemberValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMember::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMem
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMembersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMembers::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMembersValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupMembers::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -116,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFai
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFailoverCriteriaValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFailoverCriteria::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFailoverCriteriaValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupFailoverCriteria::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -137,11 +137,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::Cookies',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::CookiesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::Cookies::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::CookiesValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::Cookies::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -159,11 +159,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::S3OriginConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::S3OriginConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::S3OriginConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::S3OriginConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::S3OriginConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -202,11 +202,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -247,11 +247,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginCustomHe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginCustomHeaderValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginCustomHeader::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginCustomHeaderValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginCustomHeader::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -291,11 +291,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::LambdaFunction
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::LambdaFunctionAssociationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::LambdaFunctionAssociation::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::LambdaFunctionAssociationValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::LambdaFunctionAssociation::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -314,11 +314,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::GeoRestriction
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::GeoRestrictionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::GeoRestriction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::GeoRestrictionValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::GeoRestriction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -336,11 +336,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::ForwardedValue
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::ForwardedValuesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::ForwardedValues::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::ForwardedValuesValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::ForwardedValues::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -360,11 +360,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomOriginCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomOriginConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomOriginConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomOriginConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomOriginConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -386,11 +386,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::ViewerCertific
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::ViewerCertificateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::ViewerCertificate::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::ViewerCertificateValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::ViewerCertificate::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -411,11 +411,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::Restrictions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::RestrictionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::Restrictions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::RestrictionsValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::Restrictions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -432,11 +432,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroups',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroups::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroupsValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroups::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -476,11 +476,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::Origin',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::Origin::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::Origin::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -504,11 +504,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::Logging',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::LoggingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::Logging::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::LoggingValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::Logging::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -527,11 +527,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::DefaultCacheBe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::DefaultCacheBehaviorValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::DefaultCacheBehavior::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::DefaultCacheBehaviorValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::DefaultCacheBehavior::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -585,11 +585,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomErrorRes
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomErrorResponseValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomErrorResponse::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomErrorResponseValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::CustomErrorResponse::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -631,11 +631,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::CacheBehavior'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::CacheBehaviorValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::CacheBehavior::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::CacheBehaviorValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::CacheBehavior::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -668,11 +668,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::DistributionCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::DistributionConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::Distribution::DistributionConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::Distribution::DistributionConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::Distribution::DistributionConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

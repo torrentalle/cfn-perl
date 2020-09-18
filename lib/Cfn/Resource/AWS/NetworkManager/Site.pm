@@ -1,4 +1,4 @@
-# AWS::NetworkManager::Site generated from spec 14.3.0
+# AWS::NetworkManager::Site generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::NetworkManager::Site',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::NetworkManager::Site::Location',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::NetworkManager::Site::LocationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::NetworkManager::Site::Location::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::NetworkManager::Site::LocationValue {
+package Cfn::Resource::Properties::AWS::NetworkManager::Site::Location::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

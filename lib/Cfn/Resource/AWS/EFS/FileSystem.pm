@@ -1,4 +1,4 @@
-# AWS::EFS::FileSystem generated from spec 17.0.0
+# AWS::EFS::FileSystem generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EFS::FileSystem',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::FileSystem::LifecyclePolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::FileSystem::LifecyclePolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EFS::FileSystem::LifecyclePolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::FileSystem::LifecyclePolicyValue {
+package Cfn::Resource::Properties::AWS::EFS::FileSystem::LifecyclePolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::FileSystem::ElasticFileSystemTag',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::FileSystem::ElasticFileSystemTagValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EFS::FileSystem::ElasticFileSystemTag::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::FileSystem::ElasticFileSystemTagValue {
+package Cfn::Resource::Properties::AWS::EFS::FileSystem::ElasticFileSystemTag::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -116,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::FileSystem::BackupPolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::FileSystem::BackupPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EFS::FileSystem::BackupPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::FileSystem::BackupPolicyValue {
+package Cfn::Resource::Properties::AWS::EFS::FileSystem::BackupPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

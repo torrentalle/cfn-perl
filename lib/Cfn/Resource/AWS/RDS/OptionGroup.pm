@@ -1,4 +1,4 @@
-# AWS::RDS::OptionGroup generated from spec 14.3.0
+# AWS::RDS::OptionGroup generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::RDS::OptionGroup',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionSetting::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionSettingValue {
+package Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionSetting::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionConfigurationValue {
+package Cfn::Resource::Properties::AWS::RDS::OptionGroup::OptionConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

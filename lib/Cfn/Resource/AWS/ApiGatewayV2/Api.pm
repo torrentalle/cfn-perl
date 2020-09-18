@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::Cors',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::CorsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::Cors::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::CorsValue {
+package Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::Cors::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -55,11 +55,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::BodyS3Location',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::BodyS3LocationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::BodyS3Location::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::BodyS3LocationValue {
+package Cfn::Resource::Properties::AWS::ApiGatewayV2::Api::BodyS3Location::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

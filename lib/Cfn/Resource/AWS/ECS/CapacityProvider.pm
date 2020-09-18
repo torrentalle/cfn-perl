@@ -1,4 +1,4 @@
-# AWS::ECS::CapacityProvider generated from spec 17.0.0
+# AWS::ECS::CapacityProvider generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ECS::CapacityProvider',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::CapacityProvider::ManagedScaling',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::CapacityProvider::ManagedScalingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ECS::CapacityProvider::ManagedScaling::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::CapacityProvider::ManagedScalingValue {
+package Cfn::Resource::Properties::AWS::ECS::CapacityProvider::ManagedScaling::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -53,11 +53,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::CapacityProvider::AutoScalingGroupP
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::CapacityProvider::AutoScalingGroupProviderValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ECS::CapacityProvider::AutoScalingGroupProvider::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::CapacityProvider::AutoScalingGroupProviderValue {
+package Cfn::Resource::Properties::AWS::ECS::CapacityProvider::AutoScalingGroupProvider::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::ElasticLoadBalancing::LoadBalancer generated from spec 14.3.0
+# AWS::ElasticLoadBalancing::LoadBalancer generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::Poli
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::PoliciesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::Policies::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::PoliciesValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::Policies::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -98,11 +98,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::List
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ListenersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::Listeners::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ListenersValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::Listeners::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -146,11 +146,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::LBCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::LBCookieStickinessPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::LBCookieStickinessPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::LBCookieStickinessPolicyValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::LBCookieStickinessPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -168,11 +168,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::Heal
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::HealthCheckValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::HealthCheck::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::HealthCheckValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::HealthCheck::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -193,11 +193,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::Conn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ConnectionSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ConnectionSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ConnectionSettingsValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ConnectionSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -214,11 +214,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::Conn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ConnectionDrainingPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ConnectionDrainingPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ConnectionDrainingPolicyValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::ConnectionDrainingPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -258,11 +258,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::AppC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::AppCookieStickinessPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::AppCookieStickinessPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::AppCookieStickinessPolicyValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::AppCookieStickinessPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -280,11 +280,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::Acce
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::AccessLoggingPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::AccessLoggingPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::AccessLoggingPolicyValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancing::LoadBalancer::AccessLoggingPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

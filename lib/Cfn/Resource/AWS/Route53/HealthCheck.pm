@@ -1,4 +1,4 @@
-# AWS::Route53::HealthCheck generated from spec 18.2.0
+# AWS::Route53::HealthCheck generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Route53::HealthCheck',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::HealthCheck::HealthCheckTag',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::HealthCheck::HealthCheckTagValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Route53::HealthCheck::HealthCheckTag::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::HealthCheck::HealthCheckTagValue {
+package Cfn::Resource::Properties::AWS::Route53::HealthCheck::HealthCheckTag::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

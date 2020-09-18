@@ -1,4 +1,4 @@
-# AWS::EC2::NetworkAclEntry generated from spec 14.3.0
+# AWS::EC2::NetworkAclEntry generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::PortRange',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::PortRangeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::PortRange::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::PortRangeValue {
+package Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::PortRange::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::Icmp',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::IcmpValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::Icmp::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::IcmpValue {
+package Cfn::Resource::Properties::AWS::EC2::NetworkAclEntry::Icmp::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

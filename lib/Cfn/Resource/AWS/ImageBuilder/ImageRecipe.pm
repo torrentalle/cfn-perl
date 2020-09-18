@@ -1,4 +1,4 @@
-# AWS::ImageBuilder::ImageRecipe generated from spec 17.0.0
+# AWS::ImageBuilder::ImageRecipe generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::EbsInstanceBl
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::EbsInstanceBlockDeviceSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::EbsInstanceBlockDeviceSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::EbsInstanceBlockDeviceSpecificationValue {
+package Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::EbsInstanceBlockDeviceSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -78,11 +78,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::InstanceBlock
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::InstanceBlockDeviceMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::InstanceBlockDeviceMapping::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::InstanceBlockDeviceMappingValue {
+package Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::InstanceBlockDeviceMapping::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -124,11 +124,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::ComponentConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::ComponentConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::ComponentConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::ComponentConfigurationValue {
+package Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::ComponentConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

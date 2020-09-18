@@ -1,4 +1,4 @@
-# AWS::Lambda::Alias generated from spec 14.3.0
+# AWS::Lambda::Alias generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Lambda::Alias',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Alias::VersionWeight',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Alias::VersionWeightValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Lambda::Alias::VersionWeight::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Alias::VersionWeightValue {
+package Cfn::Resource::Properties::AWS::Lambda::Alias::VersionWeight::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Alias::ProvisionedConcurrencyCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Alias::ProvisionedConcurrencyConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Lambda::Alias::ProvisionedConcurrencyConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Alias::ProvisionedConcurrencyConfigurationValue {
+package Cfn::Resource::Properties::AWS::Lambda::Alias::ProvisionedConcurrencyConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Alias::AliasRoutingConfiguration
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Alias::AliasRoutingConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Lambda::Alias::AliasRoutingConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Alias::AliasRoutingConfigurationValue {
+package Cfn::Resource::Properties::AWS::Lambda::Alias::AliasRoutingConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

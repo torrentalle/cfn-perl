@@ -1,4 +1,4 @@
-# AWS::Batch::JobQueue generated from spec 14.3.0
+# AWS::Batch::JobQueue generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Batch::JobQueue',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobQueue::ComputeEnvironmentOrder
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobQueue::ComputeEnvironmentOrderValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Batch::JobQueue::ComputeEnvironmentOrder::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobQueue::ComputeEnvironmentOrderValue {
+package Cfn::Resource::Properties::AWS::Batch::JobQueue::ComputeEnvironmentOrder::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

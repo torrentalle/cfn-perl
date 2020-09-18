@@ -1,4 +1,4 @@
-# AWS::SecretsManager::RotationSchedule generated from spec 17.0.0
+# AWS::SecretsManager::RotationSchedule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::Rotati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::RotationRulesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::RotationRules::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::RotationRulesValue {
+package Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::RotationRules::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::Hosted
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::HostedRotationLambdaValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::HostedRotationLambda::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::HostedRotationLambdaValue {
+package Cfn::Resource::Properties::AWS::SecretsManager::RotationSchedule::HostedRotationLambda::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

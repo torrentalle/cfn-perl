@@ -1,4 +1,4 @@
-# AWS::FSx::FileSystem generated from spec 17.0.0
+# AWS::FSx::FileSystem generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::FSx::FileSystem',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::FSx::FileSystem::SelfManagedActiveDirect
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::FSx::FileSystem::SelfManagedActiveDirectoryConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::FSx::FileSystem::SelfManagedActiveDirectoryConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::FSx::FileSystem::SelfManagedActiveDirectoryConfigurationValue {
+package Cfn::Resource::Properties::AWS::FSx::FileSystem::SelfManagedActiveDirectoryConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -55,11 +55,11 @@ coerce 'Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfigurationValue {
+package Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -84,11 +84,11 @@ coerce 'Cfn::Resource::Properties::AWS::FSx::FileSystem::LustreConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::FSx::FileSystem::LustreConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::FSx::FileSystem::LustreConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::FSx::FileSystem::LustreConfigurationValue {
+package Cfn::Resource::Properties::AWS::FSx::FileSystem::LustreConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

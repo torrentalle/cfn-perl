@@ -1,4 +1,4 @@
-# AWS::EC2::ClientVpnEndpoint generated from spec 17.0.0
+# AWS::EC2::ClientVpnEndpoint generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::FederatedAuthent
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::FederatedAuthenticationRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::FederatedAuthenticationRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::FederatedAuthenticationRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::FederatedAuthenticationRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::DirectoryService
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::DirectoryServiceAuthenticationRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::DirectoryServiceAuthenticationRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::DirectoryServiceAuthenticationRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::DirectoryServiceAuthenticationRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::CertificateAuthe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::CertificateAuthenticationRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::CertificateAuthenticationRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::CertificateAuthenticationRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::CertificateAuthenticationRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -114,11 +114,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::TagSpecification
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::TagSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::TagSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::TagSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::TagSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -136,11 +136,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ConnectionLogOpt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ConnectionLogOptionsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ConnectionLogOptions::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ConnectionLogOptionsValue {
+package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ConnectionLogOptions::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -181,11 +181,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ClientAuthentica
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ClientAuthenticationRequestValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ClientAuthenticationRequest::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ClientAuthenticationRequestValue {
+package Cfn::Resource::Properties::AWS::EC2::ClientVpnEndpoint::ClientAuthenticationRequest::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

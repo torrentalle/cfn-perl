@@ -1,4 +1,4 @@
-# AWS::EC2::CapacityReservation generated from spec 14.3.0
+# AWS::EC2::CapacityReservation generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::CapacityReservation',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::CapacityReservation::TagSpecificati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::CapacityReservation::TagSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::CapacityReservation::TagSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::CapacityReservation::TagSpecificationValue {
+package Cfn::Resource::Properties::AWS::EC2::CapacityReservation::TagSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

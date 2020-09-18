@@ -1,4 +1,4 @@
-# AWS::Logs::MetricFilter generated from spec 14.3.0
+# AWS::Logs::MetricFilter generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Logs::MetricFilter',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Logs::MetricFilter::MetricTransformation
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Logs::MetricFilter::MetricTransformationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Logs::MetricFilter::MetricTransformation::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Logs::MetricFilter::MetricTransformationValue {
+package Cfn::Resource::Properties::AWS::Logs::MetricFilter::MetricTransformation::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

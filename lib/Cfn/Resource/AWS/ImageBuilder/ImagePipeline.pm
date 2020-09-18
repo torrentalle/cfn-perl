@@ -1,4 +1,4 @@
-# AWS::ImageBuilder::ImagePipeline generated from spec 17.0.0
+# AWS::ImageBuilder::ImagePipeline generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::Schedule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::ScheduleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::Schedule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::ScheduleValue {
+package Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::Schedule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::ImageTestsC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::ImageTestsConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::ImageTestsConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::ImageTestsConfigurationValue {
+package Cfn::Resource::Properties::AWS::ImageBuilder::ImagePipeline::ImageTestsConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

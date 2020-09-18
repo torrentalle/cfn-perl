@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFie
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFieldMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFieldMapping::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFieldMappingValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFieldMapping::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFie
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFieldMappingListValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFieldMappingList::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFieldMappingListValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceToIndexFieldMappingList::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnow
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnowledgeArticleTypeConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnowledgeArticleTypeConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnowledgeArticleTypeConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnowledgeArticleTypeConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -163,11 +163,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardOb
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -187,11 +187,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardKn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardKnowledgeArticleTypeConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardKnowledgeArticleTypeConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardKnowledgeArticleTypeConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardKnowledgeArticleTypeConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -210,11 +210,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeA
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeArticleStateListValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeArticleStateList::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeArticleStateListValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeArticleStateList::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -231,11 +231,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnow
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnowledgeArticleTypeConfigurationListValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnowledgeArticleTypeConfigurationList::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnowledgeArticleTypeConfigurationListValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceCustomKnowledgeArticleTypeConfigurationList::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -252,11 +252,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFee
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFeedIncludeFilterTypesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFeedIncludeFilterTypes::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFeedIncludeFilterTypesValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFeedIncludeFilterTypes::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -273,11 +273,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::S3Path',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::S3PathValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::S3Path::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::S3PathValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::S3Path::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -295,11 +295,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUserList',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUserListValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUserList::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUserListValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUserList::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -316,11 +316,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceInclusions
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceInclusionsExclusionsStringsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceInclusionsExclusionsStrings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceInclusionsExclusionsStringsValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceInclusionsExclusionsStrings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -337,11 +337,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::ChangeDetectingColum
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ChangeDetectingColumnsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ChangeDetectingColumns::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::ChangeDetectingColumnsValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::ChangeDetectingColumns::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -358,11 +358,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SqlConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SqlConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SqlConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SqlConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SqlConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -379,11 +379,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowServiceCat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowServiceCatalogConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowServiceCatalogConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowServiceCatalogConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowServiceCatalogConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -405,11 +405,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowKnowledgeA
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowKnowledgeArticleConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowKnowledgeArticleConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowKnowledgeArticleConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowKnowledgeArticleConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -431,11 +431,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardOb
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectConfigurationListValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectConfigurationList::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectConfigurationListValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectConfigurationList::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -452,11 +452,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardOb
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectAttachmentConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectAttachmentConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectAttachmentConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceStandardObjectAttachmentConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -474,11 +474,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeA
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeArticleConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeArticleConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeArticleConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceKnowledgeArticleConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -497,11 +497,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFee
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFeedConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFeedConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFeedConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceChatterFeedConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -521,11 +521,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUsers',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUsersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUsers::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUsersValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveUsers::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -543,11 +543,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DocumentsMetadataCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DocumentsMetadataConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DocumentsMetadataConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::DocumentsMetadataConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::DocumentsMetadataConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -564,11 +564,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceVpcConfigu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceVpcConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceVpcConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceVpcConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceVpcConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -586,11 +586,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::ConnectionConfigurat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ConnectionConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ConnectionConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::ConnectionConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::ConnectionConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -611,11 +611,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::ColumnConfiguration'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ColumnConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ColumnConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::ColumnConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::ColumnConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -636,11 +636,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::AclConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::AclConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::AclConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::AclConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::AclConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -657,11 +657,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::AccessControlListCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::AccessControlListConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::AccessControlListConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::AccessControlListConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::AccessControlListConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -678,11 +678,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SharePointConfigurat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SharePointConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SharePointConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SharePointConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SharePointConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -708,11 +708,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowConfigurat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::ServiceNowConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -733,11 +733,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceConfigurat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::SalesforceConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -762,11 +762,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::S3DataSourceConfigur
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::S3DataSourceConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::S3DataSourceConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::S3DataSourceConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::S3DataSourceConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -787,11 +787,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::OneDriveConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -813,11 +813,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DatabaseConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DatabaseConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DatabaseConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::DatabaseConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::DatabaseConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -839,11 +839,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::TagList',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::TagListValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::TagList::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::TagListValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::TagList::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -860,11 +860,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceConfigurat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceConfigurationValue {
+package Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

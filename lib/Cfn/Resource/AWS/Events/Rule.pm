@@ -1,4 +1,4 @@
-# AWS::Events::Rule generated from spec 17.0.0
+# AWS::Events::Rule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Events::Rule',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::AwsVpcConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::AwsVpcConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::AwsVpcConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::AwsVpcConfigurationValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::AwsVpcConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::RunCommandTarget',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::RunCommandTargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::RunCommandTarget::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::RunCommandTargetValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::RunCommandTarget::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::NetworkConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::NetworkConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::NetworkConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::NetworkConfigurationValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::NetworkConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::BatchRetryStrategy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::BatchRetryStrategyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::BatchRetryStrategy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::BatchRetryStrategyValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::BatchRetryStrategy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -138,11 +138,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::BatchArrayProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::BatchArrayPropertiesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::BatchArrayProperties::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::BatchArrayPropertiesValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::BatchArrayProperties::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -159,11 +159,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::SqsParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::SqsParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::SqsParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::SqsParametersValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::SqsParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -180,11 +180,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::RunCommandParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::RunCommandParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::RunCommandParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::RunCommandParametersValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::RunCommandParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -201,11 +201,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::KinesisParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::KinesisParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::KinesisParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::KinesisParametersValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::KinesisParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -222,11 +222,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::InputTransformer',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::InputTransformerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::InputTransformer::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::InputTransformerValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::InputTransformer::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -244,11 +244,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::HttpParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::HttpParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::HttpParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::HttpParametersValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::HttpParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -267,11 +267,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::EcsParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::EcsParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::EcsParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::EcsParametersValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::EcsParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -293,11 +293,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::BatchParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::BatchParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::BatchParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::BatchParametersValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::BatchParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -339,11 +339,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::Rule::Target',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::Rule::TargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Events::Rule::Target::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::Rule::TargetValue {
+package Cfn::Resource::Properties::AWS::Events::Rule::Target::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

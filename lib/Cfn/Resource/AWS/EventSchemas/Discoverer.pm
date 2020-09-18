@@ -1,4 +1,4 @@
-# AWS::EventSchemas::Discoverer generated from spec 14.3.0
+# AWS::EventSchemas::Discoverer generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EventSchemas::Discoverer',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EventSchemas::Discoverer::TagsEntry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EventSchemas::Discoverer::TagsEntryValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EventSchemas::Discoverer::TagsEntry::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EventSchemas::Discoverer::TagsEntryValue {
+package Cfn::Resource::Properties::AWS::EventSchemas::Discoverer::TagsEntry::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

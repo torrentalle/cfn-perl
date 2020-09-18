@@ -1,4 +1,4 @@
-# AWS::GameLift::Alias generated from spec 18.1.0
+# AWS::GameLift::Alias generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::GameLift::Alias',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::Alias::RoutingStrategy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::Alias::RoutingStrategyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::GameLift::Alias::RoutingStrategy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::Alias::RoutingStrategyValue {
+package Cfn::Resource::Properties::AWS::GameLift::Alias::RoutingStrategy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

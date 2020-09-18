@@ -1,4 +1,4 @@
-# AWS::ServiceDiscovery::Service generated from spec 17.0.0
+# AWS::ServiceDiscovery::Service generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecord',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecordValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecord::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecordValue {
+package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecord::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCustomConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCustomConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCustomConfigValue {
+package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCustomConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckConfigValue {
+package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfigValue {
+package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

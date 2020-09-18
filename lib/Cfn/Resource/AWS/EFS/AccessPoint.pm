@@ -1,4 +1,4 @@
-# AWS::EFS::AccessPoint generated from spec 17.0.0
+# AWS::EFS::AccessPoint generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EFS::AccessPoint',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::AccessPoint::CreationInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::AccessPoint::CreationInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EFS::AccessPoint::CreationInfo::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::AccessPoint::CreationInfoValue {
+package Cfn::Resource::Properties::AWS::EFS::AccessPoint::CreationInfo::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::AccessPoint::RootDirectory',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::AccessPoint::RootDirectoryValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EFS::AccessPoint::RootDirectory::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::AccessPoint::RootDirectoryValue {
+package Cfn::Resource::Properties::AWS::EFS::AccessPoint::RootDirectory::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::AccessPoint::PosixUser',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::AccessPoint::PosixUserValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EFS::AccessPoint::PosixUser::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::AccessPoint::PosixUserValue {
+package Cfn::Resource::Properties::AWS::EFS::AccessPoint::PosixUser::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -119,11 +119,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::AccessPoint::AccessPointTag',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::AccessPoint::AccessPointTagValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EFS::AccessPoint::AccessPointTag::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::AccessPoint::AccessPointTagValue {
+package Cfn::Resource::Properties::AWS::EFS::AccessPoint::AccessPointTag::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

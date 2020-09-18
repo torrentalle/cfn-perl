@@ -1,4 +1,4 @@
-# AWS::Cognito::UserPoolResourceServer generated from spec 14.3.0
+# AWS::Cognito::UserPoolResourceServer generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolResourceServer',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolResourceServer::Resourc
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::UserPoolResourceServer::ResourceServerScopeTypeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Cognito::UserPoolResourceServer::ResourceServerScopeType::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::UserPoolResourceServer::ResourceServerScopeTypeValue {
+package Cfn::Resource::Properties::AWS::Cognito::UserPoolResourceServer::ResourceServerScopeType::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

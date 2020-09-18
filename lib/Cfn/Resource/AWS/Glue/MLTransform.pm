@@ -1,4 +1,4 @@
-# AWS::Glue::MLTransform generated from spec 17.0.0
+# AWS::Glue::MLTransform generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform::GlueTables',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::MLTransform::GlueTablesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::MLTransform::GlueTables::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::MLTransform::GlueTablesValue {
+package Cfn::Resource::Properties::AWS::Glue::MLTransform::GlueTables::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform::FindMatchesParameters
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::MLTransform::FindMatchesParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::MLTransform::FindMatchesParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::MLTransform::FindMatchesParametersValue {
+package Cfn::Resource::Properties::AWS::Glue::MLTransform::FindMatchesParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -99,11 +99,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform::TransformParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::MLTransform::TransformParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::MLTransform::TransformParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::MLTransform::TransformParametersValue {
+package Cfn::Resource::Properties::AWS::Glue::MLTransform::TransformParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -121,11 +121,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform::InputRecordTables',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::MLTransform::InputRecordTablesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Glue::MLTransform::InputRecordTables::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::MLTransform::InputRecordTablesValue {
+package Cfn::Resource::Properties::AWS::Glue::MLTransform::InputRecordTables::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::PinpointEmail::DedicatedIpPool generated from spec 14.3.0
+# AWS::PinpointEmail::DedicatedIpPool generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::DedicatedIpPool',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::DedicatedIpPool::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::DedicatedIpPool::TagsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::PinpointEmail::DedicatedIpPool::Tags::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::DedicatedIpPool::TagsValue {
+package Cfn::Resource::Properties::AWS::PinpointEmail::DedicatedIpPool::Tags::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

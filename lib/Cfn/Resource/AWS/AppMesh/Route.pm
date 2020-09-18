@@ -1,4 +1,4 @@
-# AWS::AppMesh::Route generated from spec 17.0.0
+# AWS::AppMesh::Route generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::MatchRange',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::MatchRangeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::MatchRange::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::MatchRangeValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::MatchRange::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::HeaderMatchMethod',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::HeaderMatchMethodValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::HeaderMatchMethod::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::HeaderMatchMethodValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::HeaderMatchMethod::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -76,11 +76,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadataMatchMe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadataMatchMethodValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadataMatchMethod::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadataMatchMethodValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadataMatchMethod::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -123,11 +123,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::WeightedTarget',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::WeightedTargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::WeightedTarget::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::WeightedTargetValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::WeightedTarget::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -167,11 +167,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteHeader',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteHeaderValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteHeader::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteHeaderValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteHeader::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -212,11 +212,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadata',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadataValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadata::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadataValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMetadata::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -235,11 +235,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::Duration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::DurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::Duration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::DurationValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::Duration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -257,11 +257,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeout',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeoutValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeout::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeoutValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::TcpTimeout::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -278,11 +278,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteAction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteActionValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteAction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -299,11 +299,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeout',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeoutValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeout::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeoutValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpTimeout::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -321,11 +321,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteMatch',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteMatchValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteMatch::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteMatchValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteMatch::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -345,11 +345,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteAction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteActionValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteAction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -366,11 +366,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRetryPolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRetryPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRetryPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRetryPolicyValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRetryPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -390,11 +390,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeout',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeoutValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeout::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeoutValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcTimeout::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -412,11 +412,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMatch',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMatchValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMatch::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMatchValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteMatch::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -435,11 +435,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteAction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteActionValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteAction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -456,11 +456,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRetryPolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRetryPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRetryPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRetryPolicyValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRetryPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -481,11 +481,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRoute',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRoute::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRouteValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::TcpRoute::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -503,11 +503,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRoute',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRoute::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRouteValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::HttpRoute::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -527,11 +527,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRoute',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRoute::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRouteValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::GrpcRoute::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -551,11 +551,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Route::RouteSpec',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Route::RouteSpecValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppMesh::Route::RouteSpec::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Route::RouteSpecValue {
+package Cfn::Resource::Properties::AWS::AppMesh::Route::RouteSpec::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

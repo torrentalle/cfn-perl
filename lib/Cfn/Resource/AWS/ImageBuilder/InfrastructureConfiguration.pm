@@ -1,4 +1,4 @@
-# AWS::ImageBuilder::InfrastructureConfiguration generated from spec 17.0.0
+# AWS::ImageBuilder::InfrastructureConfiguration generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3LogsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3Logs::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3LogsValue {
+package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3Logs::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::LoggingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::Logging::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::LoggingValue {
+package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::Logging::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

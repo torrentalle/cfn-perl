@@ -1,4 +1,4 @@
-# AWS::ApiGateway::RestApi generated from spec 14.3.0
+# AWS::ApiGateway::RestApi generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ApiGateway::RestApi',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::RestApi::S3Location',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::RestApi::S3LocationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApiGateway::RestApi::S3Location::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::RestApi::S3LocationValue {
+package Cfn::Resource::Properties::AWS::ApiGateway::RestApi::S3Location::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -53,11 +53,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::RestApi::EndpointConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::RestApi::EndpointConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApiGateway::RestApi::EndpointConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::RestApi::EndpointConfigurationValue {
+package Cfn::Resource::Properties::AWS::ApiGateway::RestApi::EndpointConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

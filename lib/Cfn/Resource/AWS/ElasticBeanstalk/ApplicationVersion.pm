@@ -1,4 +1,4 @@
-# AWS::ElasticBeanstalk::ApplicationVersion generated from spec 14.3.0
+# AWS::ElasticBeanstalk::ApplicationVersion generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::ApplicationVersion',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::ApplicationVersion::So
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::ApplicationVersion::SourceBundleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::ApplicationVersion::SourceBundle::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticBeanstalk::ApplicationVersion::SourceBundleValue {
+package Cfn::Resource::Properties::AWS::ElasticBeanstalk::ApplicationVersion::SourceBundle::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

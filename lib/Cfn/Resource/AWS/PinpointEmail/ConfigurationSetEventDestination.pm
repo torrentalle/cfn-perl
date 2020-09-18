@@ -1,4 +1,4 @@
-# AWS::PinpointEmail::ConfigurationSetEventDestination generated from spec 14.3.0
+# AWS::PinpointEmail::ConfigurationSetEventDestination generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDest
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::DimensionConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::DimensionConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::DimensionConfigurationValue {
+package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::DimensionConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDest
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::SnsDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::SnsDestination::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::SnsDestinationValue {
+package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::SnsDestination::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDest
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::PinpointDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::PinpointDestination::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::PinpointDestinationValue {
+package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::PinpointDestination::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -116,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDest
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::KinesisFirehoseDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::KinesisFirehoseDestination::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::KinesisFirehoseDestinationValue {
+package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::KinesisFirehoseDestination::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -138,11 +138,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDest
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::CloudWatchDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::CloudWatchDestination::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::CloudWatchDestinationValue {
+package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::CloudWatchDestination::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -159,11 +159,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDest
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::EventDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::EventDestination::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::EventDestinationValue {
+package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSetEventDestination::EventDestination::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

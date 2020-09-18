@@ -1,4 +1,4 @@
-# AWS::ElasticBeanstalk::Application generated from spec 14.3.0
+# AWS::ElasticBeanstalk::Application generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxCountR
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxCountRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxCountRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxCountRuleValue {
+package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxCountRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxAgeRul
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxAgeRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxAgeRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxAgeRuleValue {
+package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::MaxAgeRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::Applicati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::ApplicationVersionLifecycleConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::ApplicationVersionLifecycleConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::ApplicationVersionLifecycleConfigValue {
+package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::ApplicationVersionLifecycleConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::Applicati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::ApplicationResourceLifecycleConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::ApplicationResourceLifecycleConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::ApplicationResourceLifecycleConfigValue {
+package Cfn::Resource::Properties::AWS::ElasticBeanstalk::Application::ApplicationResourceLifecycleConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

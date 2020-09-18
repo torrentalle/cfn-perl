@@ -1,4 +1,4 @@
-# AWS::AppStream::Fleet generated from spec 17.0.0
+# AWS::AppStream::Fleet generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfigValue {
+package Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfo::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfoValue {
+package Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfo::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacity',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacityValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacity::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacityValue {
+package Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacity::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

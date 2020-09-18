@@ -1,4 +1,4 @@
-# AWS::Config::ConfigurationRecorder generated from spec 14.3.0
+# AWS::Config::ConfigurationRecorder generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Config::ConfigurationRecorder',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigurationRecorder::Recording
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigurationRecorder::RecordingGroupValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Config::ConfigurationRecorder::RecordingGroup::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigurationRecorder::RecordingGroupValue {
+package Cfn::Resource::Properties::AWS::Config::ConfigurationRecorder::RecordingGroup::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

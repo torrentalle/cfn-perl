@@ -1,4 +1,4 @@
-# AWS::ApplicationInsights::Application generated from spec 18.0.0
+# AWS::ApplicationInsights::Application generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Window
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::WindowsEventValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::WindowsEvent::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::WindowsEventValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::WindowsEvent::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Log',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Log::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Log::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -144,11 +144,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::AlarmM
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::AlarmMetricValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::AlarmMetric::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::AlarmMetricValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::AlarmMetric::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -165,11 +165,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubCom
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubComponentConfigurationDetailsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubComponentConfigurationDetails::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubComponentConfigurationDetailsValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubComponentConfigurationDetails::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -210,11 +210,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Alarm'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::AlarmValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Alarm::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::AlarmValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Alarm::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -254,11 +254,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubCom
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubComponentTypeConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubComponentTypeConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubComponentTypeConfigurationValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::SubComponentTypeConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -276,11 +276,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Config
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ConfigurationDetailsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ConfigurationDetails::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ConfigurationDetailsValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ConfigurationDetails::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -322,11 +322,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPatternValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPattern::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPatternValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPattern::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -345,11 +345,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Compon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ComponentConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ComponentConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ComponentConfigurationValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ComponentConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -389,11 +389,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPatternSetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPatternSet::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPatternSetValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::LogPatternSet::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -433,11 +433,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Custom
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::CustomComponentValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::CustomComponent::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::CustomComponentValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::CustomComponent::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -477,11 +477,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationInsights::Application::Compon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ComponentMonitoringSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ComponentMonitoringSetting::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ComponentMonitoringSettingValue {
+package Cfn::Resource::Properties::AWS::ApplicationInsights::Application::ComponentMonitoringSetting::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

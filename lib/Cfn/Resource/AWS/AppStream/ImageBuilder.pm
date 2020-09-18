@@ -1,4 +1,4 @@
-# AWS::AppStream::ImageBuilder generated from spec 17.0.0
+# AWS::AppStream::ImageBuilder generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfigValue {
+package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfo'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfo::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfoValue {
+package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfo::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpoint'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpointValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpoint::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpointValue {
+package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpoint::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

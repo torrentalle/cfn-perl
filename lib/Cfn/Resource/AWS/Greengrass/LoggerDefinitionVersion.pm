@@ -1,4 +1,4 @@
-# AWS::Greengrass::LoggerDefinitionVersion generated from spec 14.3.0
+# AWS::Greengrass::LoggerDefinitionVersion generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinitionVersion',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinitionVersion::Log
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinitionVersion::LoggerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinitionVersion::Logger::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinitionVersion::LoggerValue {
+package Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinitionVersion::Logger::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

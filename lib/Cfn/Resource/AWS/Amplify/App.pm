@@ -1,4 +1,4 @@
-# AWS::Amplify::App generated from spec 17.0.0
+# AWS::Amplify::App generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Amplify::App',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::App::EnvironmentVariable',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::App::EnvironmentVariableValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Amplify::App::EnvironmentVariable::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::App::EnvironmentVariableValue {
+package Cfn::Resource::Properties::AWS::Amplify::App::EnvironmentVariable::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::App::BasicAuthConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::App::BasicAuthConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Amplify::App::BasicAuthConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::App::BasicAuthConfigValue {
+package Cfn::Resource::Properties::AWS::Amplify::App::BasicAuthConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::App::CustomRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::App::CustomRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Amplify::App::CustomRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::App::CustomRuleValue {
+package Cfn::Resource::Properties::AWS::Amplify::App::CustomRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -142,11 +142,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::App::AutoBranchCreationConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::App::AutoBranchCreationConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Amplify::App::AutoBranchCreationConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::App::AutoBranchCreationConfigValue {
+package Cfn::Resource::Properties::AWS::Amplify::App::AutoBranchCreationConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

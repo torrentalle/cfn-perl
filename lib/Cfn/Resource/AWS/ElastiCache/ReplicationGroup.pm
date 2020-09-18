@@ -1,4 +1,4 @@
-# AWS::ElastiCache::ReplicationGroup generated from spec 17.0.0
+# AWS::ElastiCache::ReplicationGroup generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup::NodeGroup
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup::NodeGroupConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup::NodeGroupConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup::NodeGroupConfigurationValue {
+package Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup::NodeGroupConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

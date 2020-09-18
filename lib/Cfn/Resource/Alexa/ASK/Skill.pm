@@ -1,4 +1,4 @@
-# Alexa::ASK::Skill generated from spec 14.3.0
+# Alexa::ASK::Skill generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::Alexa::ASK::Skill',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::Alexa::ASK::Skill::Overrides',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::Alexa::ASK::Skill::OverridesValue->new( %$_ );
+       return Cfn::Resource::Properties::Alexa::ASK::Skill::Overrides::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::Alexa::ASK::Skill::OverridesValue {
+package Cfn::Resource::Properties::Alexa::ASK::Skill::Overrides::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::Alexa::ASK::Skill::SkillPackage',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::Alexa::ASK::Skill::SkillPackageValue->new( %$_ );
+       return Cfn::Resource::Properties::Alexa::ASK::Skill::SkillPackage::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::Alexa::ASK::Skill::SkillPackageValue {
+package Cfn::Resource::Properties::Alexa::ASK::Skill::SkillPackage::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::Alexa::ASK::Skill::AuthenticationConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::Alexa::ASK::Skill::AuthenticationConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Alexa::ASK::Skill::AuthenticationConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::Alexa::ASK::Skill::AuthenticationConfigurationValue {
+package Cfn::Resource::Properties::Alexa::ASK::Skill::AuthenticationConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

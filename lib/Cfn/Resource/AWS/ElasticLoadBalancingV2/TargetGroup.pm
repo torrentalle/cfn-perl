@@ -1,4 +1,4 @@
-# AWS::ElasticLoadBalancingV2::TargetGroup generated from spec 14.3.0
+# AWS::ElasticLoadBalancingV2::TargetGroup generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::Tar
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::TargetGroupAttributeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::TargetGroupAttribute::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::TargetGroupAttributeValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::TargetGroupAttribute::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::Tar
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::TargetDescriptionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::TargetDescription::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::TargetDescriptionValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::TargetDescription::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::Mat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::MatcherValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::Matcher::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::MatcherValue {
+package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup::Matcher::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

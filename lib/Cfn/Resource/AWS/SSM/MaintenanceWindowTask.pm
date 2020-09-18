@@ -1,4 +1,4 @@
-# AWS::SSM::MaintenanceWindowTask generated from spec 17.0.0
+# AWS::SSM::MaintenanceWindowTask generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::Notification
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::NotificationConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::NotificationConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::NotificationConfigValue {
+package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::NotificationConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceW
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowStepFunctionsParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowStepFunctionsParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowStepFunctionsParametersValue {
+package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowStepFunctionsParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceW
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowRunCommandParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowRunCommandParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowRunCommandParametersValue {
+package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowRunCommandParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -103,11 +103,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceW
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowLambdaParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowLambdaParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowLambdaParametersValue {
+package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowLambdaParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -126,11 +126,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceW
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowAutomationParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowAutomationParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowAutomationParametersValue {
+package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::MaintenanceWindowAutomationParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -148,11 +148,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::TaskInvocati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::TaskInvocationParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::TaskInvocationParameters::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::TaskInvocationParametersValue {
+package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::TaskInvocationParameters::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -194,11 +194,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::Target',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::TargetValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::Target::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::TargetValue {
+package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::Target::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -216,11 +216,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::LoggingInfo'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::LoggingInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::LoggingInfo::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::LoggingInfoValue {
+package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTask::LoggingInfo::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

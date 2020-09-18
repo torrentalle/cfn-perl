@@ -1,4 +1,4 @@
-# AWS::CloudFront::OriginRequestPolicy generated from spec 18.2.0
+# AWS::CloudFront::OriginRequestPolicy generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::QuerySt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::QueryStringsConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::QueryStringsConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::QueryStringsConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::QueryStringsConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::Headers
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::HeadersConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::HeadersConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::HeadersConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::HeadersConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::Cookies
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::CookiesConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::CookiesConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::CookiesConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::CookiesConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::OriginR
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::OriginRequestPolicyConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::OriginRequestPolicyConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::OriginRequestPolicyConfigValue {
+package Cfn::Resource::Properties::AWS::CloudFront::OriginRequestPolicy::OriginRequestPolicyConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

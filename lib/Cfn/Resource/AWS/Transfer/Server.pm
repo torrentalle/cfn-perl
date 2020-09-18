@@ -1,4 +1,4 @@
-# AWS::Transfer::Server generated from spec 17.0.0
+# AWS::Transfer::Server generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Transfer::Server',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::Server::Protocol',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::Server::ProtocolValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Transfer::Server::Protocol::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::Server::ProtocolValue {
+package Cfn::Resource::Properties::AWS::Transfer::Server::Protocol::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetail
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetailsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetails::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetailsValue {
+package Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetails::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetails',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetailsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetails::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetailsValue {
+package Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetails::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::IoTEvents::Input generated from spec 14.3.0
+# AWS::IoTEvents::Input generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IoTEvents::Input',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::Input::Attribute',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::Input::AttributeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::Input::Attribute::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::Input::AttributeValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::Input::Attribute::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTEvents::Input::InputDefinition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTEvents::Input::InputDefinitionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::IoTEvents::Input::InputDefinition::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTEvents::Input::InputDefinitionValue {
+package Cfn::Resource::Properties::AWS::IoTEvents::Input::InputDefinition::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

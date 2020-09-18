@@ -1,4 +1,4 @@
-# AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption generated from spec 14.3.0
+# AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatc
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption::CloudWatchLoggingOptionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption::CloudWatchLoggingOption::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption::CloudWatchLoggingOptionValue {
+package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption::CloudWatchLoggingOption::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

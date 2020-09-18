@@ -1,4 +1,4 @@
-# AWS::AppConfig::ConfigurationProfile generated from spec 14.3.0
+# AWS::AppConfig::ConfigurationProfile generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::Validat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::ValidatorsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::Validators::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::ValidatorsValue {
+package Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::Validators::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::TagsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::Tags::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::TagsValue {
+package Cfn::Resource::Properties::AWS::AppConfig::ConfigurationProfile::Tags::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

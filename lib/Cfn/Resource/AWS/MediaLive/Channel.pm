@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::M3u8Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::M3u8SettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::M3u8Settings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::M3u8SettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::M3u8Settings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -66,11 +66,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLocation',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLocationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLocation::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLocationValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLocation::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -89,11 +89,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbTdtSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbTdtSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbTdtSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbTdtSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbTdtSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -110,11 +110,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSdtSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSdtSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSdtSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSdtSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSdtSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -134,11 +134,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbNitSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbNitSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbNitSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbNitSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbNitSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -157,11 +157,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::StandardHlsSettings'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::StandardHlsSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::StandardHlsSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::StandardHlsSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::StandardHlsSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -179,11 +179,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::M2tsSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::M2tsSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::M2tsSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::M2tsSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::M2tsSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -246,11 +246,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Fmp4HlsSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Fmp4HlsSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Fmp4HlsSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Fmp4HlsSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Fmp4HlsSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -269,11 +269,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioOnlyHlsSettings
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioOnlyHlsSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioOnlyHlsSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioOnlyHlsSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioOnlyHlsSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -293,11 +293,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpContainerSettings
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpContainerSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpContainerSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpContainerSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpContainerSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -314,11 +314,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::TemporalFilterSettin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TemporalFilterSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TemporalFilterSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::TemporalFilterSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::TemporalFilterSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -336,11 +336,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::StaticKeySettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::StaticKeySettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::StaticKeySettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::StaticKeySettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::StaticKeySettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -358,11 +358,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec709Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec709SettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec709Settings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec709SettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec709Settings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -378,11 +378,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec601Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec601SettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec601Settings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec601SettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Rec601Settings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -398,11 +398,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputLocationRef',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputLocationRefValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputLocationRef::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputLocationRefValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputLocationRef::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -419,11 +419,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsWebdavSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsWebdavSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsWebdavSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsWebdavSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsWebdavSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -444,11 +444,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -467,11 +467,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsMediaStoreSetting
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsMediaStoreSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsMediaStoreSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsMediaStoreSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsMediaStoreSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -492,11 +492,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsBasicPutSettings'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsBasicPutSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsBasicPutSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsBasicPutSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsBasicPutSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -516,11 +516,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsAkamaiSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsAkamaiSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsAkamaiSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsAkamaiSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsAkamaiSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -543,11 +543,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Hdr10Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Hdr10SettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Hdr10Settings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Hdr10SettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Hdr10Settings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -565,11 +565,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::FecOutputSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FecOutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FecOutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::FecOutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::FecOutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -588,11 +588,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::ColorSpacePassthroug
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::ColorSpacePassthroughSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::ColorSpacePassthroughSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::ColorSpacePassthroughSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::ColorSpacePassthroughSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -630,11 +630,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrack',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrackValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrack::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrackValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrack::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -651,11 +651,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveContainerSett
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveContainerSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveContainerSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveContainerSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveContainerSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -672,11 +672,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorProgram
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorProgramIdValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorProgramId::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorProgramIdValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorProgramId::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -693,11 +693,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorPid',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorPidValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorPid::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorPidValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorPid::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -714,11 +714,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpOutputSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpOutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpOutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpOutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpOutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -738,11 +738,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextSourceSettin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextSourceSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextSourceSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextSourceSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextSourceSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -759,11 +759,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27SourceSettings
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27SourceSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27SourceSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27SourceSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27SourceSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -780,11 +780,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20SourceSettings
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20SourceSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20SourceSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20SourceSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20SourceSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -802,11 +802,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpOutputSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpOutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpOutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpOutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpOutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -826,11 +826,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexOutputSetti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexOutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexOutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexOutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexOutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -847,11 +847,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothOutputSettin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothOutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothOutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothOutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothOutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -869,11 +869,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputSe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -889,11 +889,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::KeyProviderSettings'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::KeyProviderSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::KeyProviderSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::KeyProviderSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::KeyProviderSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -932,11 +932,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::InputChannelLevel',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputChannelLevelValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputChannelLevel::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputChannelLevelValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputChannelLevel::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -954,11 +954,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsOutputSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsOutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsOutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsOutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsOutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -978,11 +978,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsCdnSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsCdnSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsCdnSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsCdnSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsCdnSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1002,11 +1002,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::H265FilterSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H265FilterSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H265FilterSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::H265FilterSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::H265FilterSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1023,11 +1023,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::H265ColorSpaceSettin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H265ColorSpaceSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H265ColorSpaceSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::H265ColorSpaceSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::H265ColorSpaceSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1047,11 +1047,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::H264FilterSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H264FilterSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H264FilterSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::H264FilterSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::H264FilterSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1068,11 +1068,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::H264ColorSpaceSettin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H264ColorSpaceSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H264ColorSpaceSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::H264ColorSpaceSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::H264ColorSpaceSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1091,11 +1091,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureOutputSe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureOutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureOutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureOutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureOutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1112,11 +1112,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedSourceSettin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedSourceSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedSourceSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedSourceSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedSourceSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1136,11 +1136,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubSourceSettings
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubSourceSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubSourceSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubSourceSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubSourceSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1179,11 +1179,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionLanguageMappi
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionLanguageMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionLanguageMapping::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionLanguageMappingValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionLanguageMapping::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1202,11 +1202,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrackSelection'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrackSelectionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrackSelection::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrackSelectionValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioTrackSelection::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1223,11 +1223,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioPidSelection',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioPidSelectionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioPidSelection::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioPidSelectionValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioPidSelection::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1244,11 +1244,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioLanguageSelecti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioLanguageSelectionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioLanguageSelection::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioLanguageSelectionValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioLanguageSelection::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1266,11 +1266,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AribSourceSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AribSourceSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AribSourceSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AribSourceSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AribSourceSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1286,11 +1286,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveOutputSetting
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveOutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveOutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveOutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveOutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1309,11 +1309,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::WebvttDestinationSet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::WebvttDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::WebvttDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::WebvttDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::WebvttDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1329,11 +1329,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorSetting
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1351,11 +1351,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpGroupSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpGroupSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpGroupSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpGroupSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::UdpGroupSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1374,11 +1374,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::TtmlDestinationSetti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TtmlDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TtmlDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::TtmlDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::TtmlDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1395,11 +1395,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextDestinationS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::TeletextDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1415,11 +1415,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::SmpteTtDestinationSe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::SmpteTtDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::SmpteTtDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::SmpteTtDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::SmpteTtDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1435,11 +1435,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35TimeSignalApos
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35TimeSignalAposValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35TimeSignalApos::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35TimeSignalAposValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35TimeSignalApos::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1458,11 +1458,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35SpliceInsert',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35SpliceInsertValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35SpliceInsert::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35SpliceInsertValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte35SpliceInsert::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1481,11 +1481,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27DestinationSet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27DestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27DestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27DestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte27DestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1501,11 +1501,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20PlusEmbeddedDe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20PlusEmbeddedDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20PlusEmbeddedDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20PlusEmbeddedDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Scte20PlusEmbeddedDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1521,11 +1521,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpGroupSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpGroupSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpGroupSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpGroupSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpGroupSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1547,11 +1547,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpCaptionInfoDesti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpCaptionInfoDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpCaptionInfoDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpCaptionInfoDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::RtmpCaptionInfoDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1567,11 +1567,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::PassThroughSettings'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::PassThroughSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::PassThroughSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::PassThroughSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::PassThroughSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1587,11 +1587,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1615,11 +1615,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexGroupSettin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexGroupSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexGroupSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexGroupSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexGroupSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1635,11 +1635,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothGroupSetting
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothGroupSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothGroupSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothGroupSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::MsSmoothGroupSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1674,11 +1674,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Mp2Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Mp2SettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Mp2Settings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Mp2SettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Mp2Settings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1697,11 +1697,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageGroupSet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageGroupSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageGroupSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageGroupSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageGroupSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1718,11 +1718,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsInputSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsInputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsInputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsInputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsInputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1742,11 +1742,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsGroupSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsGroupSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsGroupSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsGroupSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::HlsGroupSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1802,11 +1802,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::H265Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H265SettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H265Settings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::H265SettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::H265Settings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1851,11 +1851,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::H264Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H264SettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::H264Settings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::H264SettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::H264Settings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1912,11 +1912,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureSettings
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1934,11 +1934,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureGroupSet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureGroupSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureGroupSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureGroupSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::FrameCaptureGroupSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1955,11 +1955,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedPlusScte20De
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedPlusScte20DestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedPlusScte20DestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedPlusScte20DestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedPlusScte20DestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1975,11 +1975,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedDestinationS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::EmbeddedDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1995,11 +1995,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::EbuTtDDestinationSet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EbuTtDDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EbuTtDDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::EbuTtDDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::EbuTtDDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2018,11 +2018,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Eac3Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Eac3SettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Eac3Settings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Eac3SettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Eac3Settings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2058,11 +2058,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubDestinationSet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::DvbSubDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2095,11 +2095,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelectorSetti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelectorSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelectorSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelectorSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelectorSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2121,11 +2121,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::BurnInDestinationSet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::BurnInDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::BurnInDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::BurnInDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::BurnInDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2158,11 +2158,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelectorSetting
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelectorSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelectorSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelectorSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelectorSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2203,11 +2203,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioChannelMapping'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioChannelMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioChannelMapping::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioChannelMappingValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioChannelMapping::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2225,11 +2225,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AribDestinationSetti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AribDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AribDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AribDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AribDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2245,11 +2245,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveGroupSettings
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveGroupSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveGroupSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveGroupSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::ArchiveGroupSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2267,11 +2267,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Ac3Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Ac3SettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Ac3Settings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::Ac3SettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Ac3Settings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2294,11 +2294,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AacSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AacSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AacSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AacSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AacSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2323,11 +2323,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelector',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelector::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelectorValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoSelector::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2346,11 +2346,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoCodecSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoCodecSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoCodecSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoCodecSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoCodecSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2369,11 +2369,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::RemixSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::RemixSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::RemixSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::RemixSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::RemixSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2392,11 +2392,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroupSettings'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroupSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroupSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroupSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroupSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2442,11 +2442,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::Output',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::Output::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::Output::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2467,11 +2467,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::NetworkInputSettings
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::NetworkInputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::NetworkInputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::NetworkInputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::NetworkInputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2489,11 +2489,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLossBehavior',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLossBehaviorValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLossBehavior::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLossBehaviorValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputLossBehavior::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2536,11 +2536,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelector',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelectorValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelector::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelectorValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionSelector::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2559,11 +2559,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDestinationSe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2592,11 +2592,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2636,11 +2636,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelector',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelectorValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelector::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelectorValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioSelector::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2658,11 +2658,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioNormalizationSe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioNormalizationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioNormalizationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioNormalizationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioNormalizationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2681,11 +2681,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioCodecSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioCodecSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioCodecSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioCodecSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioCodecSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2728,11 +2728,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoDescription',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoDescriptionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoDescription::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoDescriptionValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::VideoDescription::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2755,11 +2755,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::TimecodeConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TimecodeConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::TimecodeConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::TimecodeConfigValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::TimecodeConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2799,11 +2799,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroup',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroupValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroup::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroupValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputGroup::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2844,11 +2844,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestinationSet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2868,11 +2868,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::NielsenConfiguration
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::NielsenConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::NielsenConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::NielsenConfigurationValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::NielsenConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2890,11 +2890,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexProgramChan
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexProgramChannelDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexProgramChannelDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexProgramChannelDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::MultiplexProgramChannelDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2934,11 +2934,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputDe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputDestinationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputDestinationSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputDestinationSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::MediaPackageOutputDestinationSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2955,11 +2955,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -2985,11 +2985,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::GlobalConfiguration'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::GlobalConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::GlobalConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::GlobalConfigurationValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::GlobalConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3011,11 +3011,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::FeatureActivations',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FeatureActivationsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::FeatureActivations::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::FeatureActivationsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::FeatureActivations::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3054,11 +3054,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDescription',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDescriptionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDescription::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDescriptionValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::CaptionDescription::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3079,11 +3079,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::BlackoutSlate',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::BlackoutSlateValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::BlackoutSlate::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::BlackoutSlateValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::BlackoutSlate::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3104,11 +3104,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailConfigurationValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3125,11 +3125,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailBlanking',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailBlankingValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailBlanking::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailBlankingValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AvailBlanking::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3147,11 +3147,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AutomaticInputFailov
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AutomaticInputFailoverSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AutomaticInputFailoverSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AutomaticInputFailoverSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AutomaticInputFailoverSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3191,11 +3191,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioDescription',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioDescriptionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioDescription::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioDescriptionValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::AudioDescription::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3243,11 +3243,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestination',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestination::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestinationValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::OutputDestination::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3267,11 +3267,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSpecification',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSpecificationValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3312,11 +3312,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::InputAttachment',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputAttachmentValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::InputAttachment::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputAttachmentValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::InputAttachment::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -3336,11 +3336,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Channel::EncoderSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EncoderSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::MediaLive::Channel::EncoderSettings::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Channel::EncoderSettingsValue {
+package Cfn::Resource::Properties::AWS::MediaLive::Channel::EncoderSettings::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

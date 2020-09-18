@@ -1,4 +1,4 @@
-# AWS::EMR::Cluster generated from spec 14.3.0
+# AWS::EMR::Cluster generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::MetricDimension',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::MetricDimensionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::MetricDimension::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::MetricDimensionValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::MetricDimension::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::VolumeSpecification',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::VolumeSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::VolumeSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::VolumeSpecificationValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::VolumeSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::SimpleScalingPolicyConfigu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::SimpleScalingPolicyConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::SimpleScalingPolicyConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::SimpleScalingPolicyConfigurationValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::SimpleScalingPolicyConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -119,11 +119,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::CloudWatchAlarmDefinition'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::CloudWatchAlarmDefinitionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::CloudWatchAlarmDefinition::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::CloudWatchAlarmDefinitionValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::CloudWatchAlarmDefinition::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -148,11 +148,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingTrigger',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingTriggerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingTrigger::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingTriggerValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingTrigger::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -169,11 +169,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingActionValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingAction::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingActionValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingAction::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -213,11 +213,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::EbsBlockDeviceConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::EbsBlockDeviceConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::EbsBlockDeviceConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::EbsBlockDeviceConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::EbsBlockDeviceConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -235,11 +235,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::SpotProvisioningSpecificat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::SpotProvisioningSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::SpotProvisioningSpecification::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::SpotProvisioningSpecificationValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::SpotProvisioningSpecification::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -280,11 +280,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingRule::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingRuleValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingRule::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -304,11 +304,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingConstraints',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingConstraintsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingConstraints::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingConstraintsValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::ScalingConstraints::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -326,11 +326,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::EbsConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::EbsConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::EbsConfiguration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::EbsConfigurationValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::EbsConfiguration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -370,11 +370,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::Configuration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::ConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::Configuration::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::ConfigurationValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::Configuration::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -415,11 +415,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::KeyValue',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::KeyValueValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::KeyValue::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::KeyValueValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::KeyValue::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -459,11 +459,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceTypeConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceTypeConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceTypeConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceTypeConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceTypeConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -485,11 +485,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetProvisioningS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetProvisioningSpecificationsValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetProvisioningSpecifications::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetProvisioningSpecificationsValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetProvisioningSpecifications::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -506,11 +506,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::AutoScalingPolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::AutoScalingPolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::AutoScalingPolicy::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::AutoScalingPolicyValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::AutoScalingPolicy::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -528,11 +528,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::ScriptBootstrapActionConfi
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScriptBootstrapActionConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::ScriptBootstrapActionConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::ScriptBootstrapActionConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::ScriptBootstrapActionConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -550,11 +550,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::PlacementType',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::PlacementTypeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::PlacementType::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::PlacementTypeValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::PlacementType::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -571,11 +571,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceGroupConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceGroupConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceGroupConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceGroupConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceGroupConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -599,11 +599,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::InstanceFleetConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -624,11 +624,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::HadoopJarStepConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::HadoopJarStepConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::HadoopJarStepConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::HadoopJarStepConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::HadoopJarStepConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -670,11 +670,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::StepConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::StepConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::StepConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::StepConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::StepConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -693,11 +693,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::KerberosAttributes',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::KerberosAttributesValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::KerberosAttributes::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::KerberosAttributesValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::KerberosAttributes::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -718,11 +718,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::JobFlowInstancesConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::JobFlowInstancesConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::JobFlowInstancesConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::JobFlowInstancesConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::JobFlowInstancesConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -776,11 +776,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::BootstrapActionConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::BootstrapActionConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::BootstrapActionConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::BootstrapActionConfigValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::BootstrapActionConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -820,11 +820,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::Application',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Cluster::ApplicationValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EMR::Cluster::Application::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Cluster::ApplicationValue {
+package Cfn::Resource::Properties::AWS::EMR::Cluster::Application::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

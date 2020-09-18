@@ -1,4 +1,4 @@
-# AWS::CodeCommit::Repository generated from spec 17.0.0
+# AWS::CodeCommit::Repository generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeCommit::Repository',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeCommit::Repository::S3',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeCommit::Repository::S3Value->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CodeCommit::Repository::S3::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeCommit::Repository::S3Value {
+package Cfn::Resource::Properties::AWS::CodeCommit::Repository::S3::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeCommit::Repository::RepositoryTrigge
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeCommit::Repository::RepositoryTriggerValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CodeCommit::Repository::RepositoryTrigger::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeCommit::Repository::RepositoryTriggerValue {
+package Cfn::Resource::Properties::AWS::CodeCommit::Repository::RepositoryTrigger::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -99,11 +99,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeCommit::Repository::Code',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeCommit::Repository::CodeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::CodeCommit::Repository::Code::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeCommit::Repository::CodeValue {
+package Cfn::Resource::Properties::AWS::CodeCommit::Repository::Code::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::Lambda::Function generated from spec 17.0.0
+# AWS::Lambda::Function generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Lambda::Function',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::VpcConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Lambda::Function::VpcConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::VpcConfigValue {
+package Cfn::Resource::Properties::AWS::Lambda::Function::VpcConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::TracingConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::TracingConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Lambda::Function::TracingConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::TracingConfigValue {
+package Cfn::Resource::Properties::AWS::Lambda::Function::TracingConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfigValue {
+package Cfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -116,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::Environment',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::EnvironmentValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Lambda::Function::Environment::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::EnvironmentValue {
+package Cfn::Resource::Properties::AWS::Lambda::Function::Environment::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -137,11 +137,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::DeadLetterConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::DeadLetterConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Lambda::Function::DeadLetterConfig::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::DeadLetterConfigValue {
+package Cfn::Resource::Properties::AWS::Lambda::Function::DeadLetterConfig::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -158,11 +158,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::Code',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::CodeValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::Lambda::Function::Code::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::CodeValue {
+package Cfn::Resource::Properties::AWS::Lambda::Function::Code::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

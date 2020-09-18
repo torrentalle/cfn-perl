@@ -1,4 +1,4 @@
-# AWS::EC2::PrefixList generated from spec 17.0.0
+# AWS::EC2::PrefixList generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::PrefixList',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::PrefixList::Entry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::PrefixList::EntryValue->new( %$_ );
+       return Cfn::Resource::Properties::AWS::EC2::PrefixList::Entry::Value->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::PrefixList::EntryValue {
+package Cfn::Resource::Properties::AWS::EC2::PrefixList::Entry::Value {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
