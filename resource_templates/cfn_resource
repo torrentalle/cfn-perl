@@ -87,11 +87,11 @@ coerce 'Cfn::Resource::Properties::[% subtype.cfn_type %]',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::[% subtype.class_name %]::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::[% subtype.class_name %]->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::[% subtype.cfn_type %]::Value {
+package Cfn::Resource::Properties::Object::[% subtype.cfn_type %] {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
