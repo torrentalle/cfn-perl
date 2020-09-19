@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::Stage::RouteSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::Stage::RouteSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::Stage::RouteSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::Stage::RouteSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::Stage::RouteSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -54,11 +54,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::Stage::AccessLogSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::Stage::AccessLogSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::Stage::AccessLogSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::Stage::AccessLogSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::Stage::AccessLogSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

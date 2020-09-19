@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::Group::GroupVersion',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::Group::GroupVersion::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::Group::GroupVersion->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::Group::GroupVersion::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::Group::GroupVersion {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

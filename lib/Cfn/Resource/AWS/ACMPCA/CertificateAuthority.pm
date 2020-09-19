@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::CrlConfigu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::CrlConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ACMPCA::CertificateAuthority::CrlConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::CrlConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ACMPCA::CertificateAuthority::CrlConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -53,11 +53,11 @@ coerce 'Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::Subject',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::Subject::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ACMPCA::CertificateAuthority::Subject->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::Subject::Value {
+package Cfn::Resource::Properties::Object::AWS::ACMPCA::CertificateAuthority::Subject {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -87,11 +87,11 @@ coerce 'Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::Revocation
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::RevocationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ACMPCA::CertificateAuthority::RevocationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ACMPCA::CertificateAuthority::RevocationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ACMPCA::CertificateAuthority::RevocationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

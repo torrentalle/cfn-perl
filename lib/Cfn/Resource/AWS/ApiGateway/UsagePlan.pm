@@ -47,11 +47,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::UsagePlan::ThrottleSettings'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::UsagePlan::ThrottleSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::UsagePlan::ThrottleSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::UsagePlan::ThrottleSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::UsagePlan::ThrottleSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -69,11 +69,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::UsagePlan::QuotaSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::UsagePlan::QuotaSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::UsagePlan::QuotaSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::UsagePlan::QuotaSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::UsagePlan::QuotaSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -114,11 +114,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::UsagePlan::ApiStage',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::UsagePlan::ApiStage::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::UsagePlan::ApiStage->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::UsagePlan::ApiStage::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::UsagePlan::ApiStage {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

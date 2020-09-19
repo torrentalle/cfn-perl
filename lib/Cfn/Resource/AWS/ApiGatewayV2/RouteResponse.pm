@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::RouteResponse::ParameterCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::RouteResponse::ParameterConstraints::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::RouteResponse::ParameterConstraints->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::RouteResponse::ParameterConstraints::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::RouteResponse::ParameterConstraints {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

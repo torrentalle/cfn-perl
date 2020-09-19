@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::DataCatalogEncryptionSettings::Enc
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::DataCatalogEncryptionSettings::EncryptionAtRest::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::DataCatalogEncryptionSettings::EncryptionAtRest->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::DataCatalogEncryptionSettings::EncryptionAtRest::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::DataCatalogEncryptionSettings::EncryptionAtRest {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::DataCatalogEncryptionSettings::Con
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::DataCatalogEncryptionSettings::ConnectionPasswordEncryption::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::DataCatalogEncryptionSettings::ConnectionPasswordEncryption->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::DataCatalogEncryptionSettings::ConnectionPasswordEncryption::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::DataCatalogEncryptionSettings::ConnectionPasswordEncryption {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::DataCatalogEncryptionSettings::Dat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::DataCatalogEncryptionSettings::DataCatalogEncryptionSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::DataCatalogEncryptionSettings::DataCatalogEncryptionSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::DataCatalogEncryptionSettings::DataCatalogEncryptionSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::DataCatalogEncryptionSettings::DataCatalogEncryptionSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

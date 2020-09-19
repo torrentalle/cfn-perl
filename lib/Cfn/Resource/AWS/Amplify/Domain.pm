@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::Domain::SubDomainSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::Domain::SubDomainSetting::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Amplify::Domain::SubDomainSetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::Domain::SubDomainSetting::Value {
+package Cfn::Resource::Properties::Object::AWS::Amplify::Domain::SubDomainSetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

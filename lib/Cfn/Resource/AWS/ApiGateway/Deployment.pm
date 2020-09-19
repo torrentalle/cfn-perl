@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Deployment::MethodSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Deployment::MethodSetting::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::MethodSetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Deployment::MethodSetting::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::MethodSetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -81,11 +81,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Deployment::CanarySetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Deployment::CanarySetting::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::CanarySetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Deployment::CanarySetting::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::CanarySetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -104,11 +104,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Deployment::AccessLogSetting
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Deployment::AccessLogSetting::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::AccessLogSetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Deployment::AccessLogSetting::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::AccessLogSetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -126,11 +126,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Deployment::StageDescription
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Deployment::StageDescription::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::StageDescription->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Deployment::StageDescription::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::StageDescription {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -165,11 +165,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Deployment::DeploymentCanary
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Deployment::DeploymentCanarySettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::DeploymentCanarySettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Deployment::DeploymentCanarySettings::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Deployment::DeploymentCanarySettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

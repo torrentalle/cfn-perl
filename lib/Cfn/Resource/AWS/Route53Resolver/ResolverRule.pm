@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53Resolver::ResolverRule::TargetAdd
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53Resolver::ResolverRule::TargetAddress::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53Resolver::ResolverRule::TargetAddress->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53Resolver::ResolverRule::TargetAddress::Value {
+package Cfn::Resource::Properties::Object::AWS::Route53Resolver::ResolverRule::TargetAddress {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

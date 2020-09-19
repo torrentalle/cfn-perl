@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScalableTargetAction::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApplicationAutoScaling::ScalableTarget::ScalableTargetAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScalableTargetAction::Value {
+package Cfn::Resource::Properties::Object::AWS::ApplicationAutoScaling::ScalableTarget::ScalableTargetAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::SuspendedState::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApplicationAutoScaling::ScalableTarget::SuspendedState->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::SuspendedState::Value {
+package Cfn::Resource::Properties::Object::AWS::ApplicationAutoScaling::ScalableTarget::SuspendedState {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScheduledAction::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApplicationAutoScaling::ScalableTarget::ScheduledAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApplicationAutoScaling::ScalableTarget::ScheduledAction::Value {
+package Cfn::Resource::Properties::Object::AWS::ApplicationAutoScaling::ScalableTarget::ScheduledAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

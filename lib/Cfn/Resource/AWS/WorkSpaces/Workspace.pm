@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::WorkSpaces::Workspace::WorkspaceProperti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WorkSpaces::Workspace::WorkspaceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WorkSpaces::Workspace::WorkspaceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WorkSpaces::Workspace::WorkspaceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::WorkSpaces::Workspace::WorkspaceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

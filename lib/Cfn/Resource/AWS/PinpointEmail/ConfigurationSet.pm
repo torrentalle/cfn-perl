@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::Trackin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::TrackingOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::TrackingOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::TrackingOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::TrackingOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::Tags::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::Tags::Value {
+package Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::Sending
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::SendingOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::SendingOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::SendingOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::SendingOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -115,11 +115,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::Reputat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::ReputationOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::ReputationOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::ReputationOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::ReputationOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -136,11 +136,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::Deliver
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::DeliveryOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::DeliveryOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::ConfigurationSet::DeliveryOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::PinpointEmail::ConfigurationSet::DeliveryOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

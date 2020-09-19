@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::EbsInstanceBl
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::EbsInstanceBlockDeviceSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ImageBuilder::ImageRecipe::EbsInstanceBlockDeviceSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::EbsInstanceBlockDeviceSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::ImageBuilder::ImageRecipe::EbsInstanceBlockDeviceSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -78,11 +78,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::InstanceBlock
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::InstanceBlockDeviceMapping::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ImageBuilder::ImageRecipe::InstanceBlockDeviceMapping->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::InstanceBlockDeviceMapping::Value {
+package Cfn::Resource::Properties::Object::AWS::ImageBuilder::ImageRecipe::InstanceBlockDeviceMapping {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -124,11 +124,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::ComponentConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::ComponentConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ImageBuilder::ImageRecipe::ComponentConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::ImageRecipe::ComponentConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ImageBuilder::ImageRecipe::ComponentConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::DataLakeSettings::DataLak
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::DataLakeSettings::DataLakePrincipal::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::DataLakeSettings::DataLakePrincipal->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::DataLakeSettings::DataLakePrincipal::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::DataLakeSettings::DataLakePrincipal {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::DataLakeSettings::Admins'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::DataLakeSettings::Admins::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::DataLakeSettings::Admins->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::DataLakeSettings::Admins::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::DataLakeSettings::Admins {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

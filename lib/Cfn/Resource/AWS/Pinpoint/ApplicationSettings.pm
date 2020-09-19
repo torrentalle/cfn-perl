@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::ApplicationSettings::QuietTime
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::ApplicationSettings::QuietTime::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::ApplicationSettings::QuietTime->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::ApplicationSettings::QuietTime::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::ApplicationSettings::QuietTime {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::ApplicationSettings::Limits',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::ApplicationSettings::Limits::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::ApplicationSettings::Limits->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::ApplicationSettings::Limits::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::ApplicationSettings::Limits {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::ApplicationSettings::CampaignH
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::ApplicationSettings::CampaignHook::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::ApplicationSettings::CampaignHook->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::ApplicationSettings::CampaignHook::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::ApplicationSettings::CampaignHook {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

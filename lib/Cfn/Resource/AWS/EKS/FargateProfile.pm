@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::FargateProfile::Label',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::FargateProfile::Label::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::FargateProfile::Label->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::FargateProfile::Label::Value {
+package Cfn::Resource::Properties::Object::AWS::EKS::FargateProfile::Label {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::FargateProfile::Selector',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::FargateProfile::Selector::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::FargateProfile::Selector->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::FargateProfile::Selector::Value {
+package Cfn::Resource::Properties::Object::AWS::EKS::FargateProfile::Selector {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

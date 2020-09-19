@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LocalGatewayRouteTableVPCAssociatio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LocalGatewayRouteTableVPCAssociation::Tags::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LocalGatewayRouteTableVPCAssociation::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LocalGatewayRouteTableVPCAssociation::Tags::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LocalGatewayRouteTableVPCAssociation::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

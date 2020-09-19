@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Step::KeyValue',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Step::KeyValue::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::Step::KeyValue->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Step::KeyValue::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::Step::KeyValue {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::Step::HadoopJarStepConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::Step::HadoopJarStepConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::Step::HadoopJarStepConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::Step::HadoopJarStepConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::Step::HadoopJarStepConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

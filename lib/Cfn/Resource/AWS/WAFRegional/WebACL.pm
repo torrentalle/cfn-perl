@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::WebACL::Action',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::WebACL::Action::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::WebACL::Action->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::WebACL::Action::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::WebACL::Action {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::WebACL::Rule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::WebACL::Rule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::WebACL::Rule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::WebACL::Rule::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::WebACL::Rule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

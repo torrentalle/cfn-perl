@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::Filter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::Filter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AccessAnalyzer::Analyzer::Filter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::Filter::Value {
+package Cfn::Resource::Properties::Object::AWS::AccessAnalyzer::Analyzer::Filter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -98,11 +98,11 @@ coerce 'Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::ArchiveRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::ArchiveRule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AccessAnalyzer::Analyzer::ArchiveRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::ArchiveRule::Value {
+package Cfn::Resource::Properties::Object::AWS::AccessAnalyzer::Analyzer::ArchiveRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

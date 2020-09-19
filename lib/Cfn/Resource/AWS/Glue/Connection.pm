@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Connection::PhysicalConnectionRequ
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Connection::PhysicalConnectionRequirements::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Connection::PhysicalConnectionRequirements->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Connection::PhysicalConnectionRequirements::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Connection::PhysicalConnectionRequirements {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Connection::ConnectionInput',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Connection::ConnectionInput::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Connection::ConnectionInput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Connection::ConnectionInput::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Connection::ConnectionInput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

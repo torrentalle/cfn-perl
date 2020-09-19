@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBProxyTargetGroup::ConnectionPoolC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBProxyTargetGroup::ConnectionPoolConfigurationInfoFormat::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RDS::DBProxyTargetGroup::ConnectionPoolConfigurationInfoFormat->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBProxyTargetGroup::ConnectionPoolConfigurationInfoFormat::Value {
+package Cfn::Resource::Properties::Object::AWS::RDS::DBProxyTargetGroup::ConnectionPoolConfigurationInfoFormat {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Job::NotificationProperty',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Job::NotificationProperty::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Job::NotificationProperty->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Job::NotificationProperty::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Job::NotificationProperty {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Job::JobCommand',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Job::JobCommand::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Job::JobCommand->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Job::JobCommand::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Job::JobCommand {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Job::ExecutionProperty',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Job::ExecutionProperty::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Job::ExecutionProperty->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Job::ExecutionProperty::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Job::ExecutionProperty {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Job::ConnectionsList',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Job::ConnectionsList::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Job::ConnectionsList->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Job::ConnectionsList::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Job::ConnectionsList {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinition::Logger',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinition::Logger::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::LoggerDefinition::Logger->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinition::Logger::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::LoggerDefinition::Logger {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -76,11 +76,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinition::LoggerDefi
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinition::LoggerDefinitionVersion::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::LoggerDefinition::LoggerDefinitionVersion->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::LoggerDefinition::LoggerDefinitionVersion::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::LoggerDefinition::LoggerDefinitionVersion {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

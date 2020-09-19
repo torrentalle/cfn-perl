@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Events::EventBusPolicy::Condition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Events::EventBusPolicy::Condition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Events::EventBusPolicy::Condition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Events::EventBusPolicy::Condition::Value {
+package Cfn::Resource::Properties::Object::AWS::Events::EventBusPolicy::Condition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

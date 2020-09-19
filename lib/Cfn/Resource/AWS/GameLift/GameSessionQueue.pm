@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::GameSessionQueue::PlayerLatenc
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::GameSessionQueue::PlayerLatencyPolicy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::GameSessionQueue::PlayerLatencyPolicy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::GameSessionQueue::PlayerLatencyPolicy::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::GameSessionQueue::PlayerLatencyPolicy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::GameSessionQueue::Destination'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::GameSessionQueue::Destination::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::GameSessionQueue::Destination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::GameSessionQueue::Destination::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::GameSessionQueue::Destination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::App::EnvironmentVariable',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::App::EnvironmentVariable::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Amplify::App::EnvironmentVariable->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::App::EnvironmentVariable::Value {
+package Cfn::Resource::Properties::Object::AWS::Amplify::App::EnvironmentVariable {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::App::BasicAuthConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::App::BasicAuthConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Amplify::App::BasicAuthConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::App::BasicAuthConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::Amplify::App::BasicAuthConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::App::CustomRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::App::CustomRule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Amplify::App::CustomRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::App::CustomRule::Value {
+package Cfn::Resource::Properties::Object::AWS::Amplify::App::CustomRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -142,11 +142,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::App::AutoBranchCreationConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::App::AutoBranchCreationConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Amplify::App::AutoBranchCreationConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::App::AutoBranchCreationConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::Amplify::App::AutoBranchCreationConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBProxy::TagFormat',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBProxy::TagFormat::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RDS::DBProxy::TagFormat->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBProxy::TagFormat::Value {
+package Cfn::Resource::Properties::Object::AWS::RDS::DBProxy::TagFormat {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBProxy::AuthFormat',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBProxy::AuthFormat::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RDS::DBProxy::AuthFormat->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBProxy::AuthFormat::Value {
+package Cfn::Resource::Properties::Object::AWS::RDS::DBProxy::AuthFormat {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

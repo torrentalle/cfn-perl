@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Synthetics::Canary::VPCConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Synthetics::Canary::VPCConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::VPCConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Synthetics::Canary::VPCConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::VPCConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Synthetics::Canary::Schedule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Synthetics::Canary::Schedule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::Schedule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Synthetics::Canary::Schedule::Value {
+package Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::Schedule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::Synthetics::Canary::RunConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Synthetics::Canary::RunConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::RunConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Synthetics::Canary::RunConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::RunConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::Synthetics::Canary::Code',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Synthetics::Canary::Code::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::Code->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Synthetics::Canary::Code::Value {
+package Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::Code {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

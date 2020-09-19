@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Trigger::NotificationProperty',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Trigger::NotificationProperty::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Trigger::NotificationProperty->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Trigger::NotificationProperty::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Trigger::NotificationProperty {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Trigger::Condition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Trigger::Condition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Trigger::Condition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Trigger::Condition::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Trigger::Condition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Trigger::Predicate',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Trigger::Predicate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Trigger::Predicate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Trigger::Predicate::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Trigger::Predicate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Trigger::Action',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Trigger::Action::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Trigger::Action->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Trigger::Action::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::Trigger::Action {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

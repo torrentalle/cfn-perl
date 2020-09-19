@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Stack::StackConfigurationManag
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Stack::StackConfigurationManager::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::StackConfigurationManager->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Stack::StackConfigurationManager::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::StackConfigurationManager {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Stack::Source',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Stack::Source::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::Source->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Stack::Source::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::Source {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -99,11 +99,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Stack::RdsDbInstance',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Stack::RdsDbInstance::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::RdsDbInstance->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Stack::RdsDbInstance::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::RdsDbInstance {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -144,11 +144,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Stack::ElasticIp',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Stack::ElasticIp::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::ElasticIp->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Stack::ElasticIp::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::ElasticIp {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -166,11 +166,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Stack::ChefConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Stack::ChefConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::ChefConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Stack::ChefConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::Stack::ChefConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

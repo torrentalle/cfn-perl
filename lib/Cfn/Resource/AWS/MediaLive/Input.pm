@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Input::MediaConnectFlowReques
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Input::MediaConnectFlowRequest::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaLive::Input::MediaConnectFlowRequest->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Input::MediaConnectFlowRequest::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaLive::Input::MediaConnectFlowRequest {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Input::InputVpcRequest',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Input::InputVpcRequest::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputVpcRequest->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Input::InputVpcRequest::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputVpcRequest {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -116,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Input::InputSourceRequest',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Input::InputSourceRequest::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputSourceRequest->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Input::InputSourceRequest::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputSourceRequest {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -161,11 +161,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputDeviceSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputDeviceSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -182,11 +182,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceRequest',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceRequest::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputDeviceRequest->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Input::InputDeviceRequest::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputDeviceRequest {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -225,11 +225,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::Input::InputDestinationReques
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::Input::InputDestinationRequest::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputDestinationRequest->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::Input::InputDestinationRequest::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaLive::Input::InputDestinationRequest {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

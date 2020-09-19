@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProduct::P
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProduct::ProvisioningArtifactProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceCatalog::CloudFormationProduct::ProvisioningArtifactProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProduct::ProvisioningArtifactProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::ServiceCatalog::CloudFormationProduct::ProvisioningArtifactProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

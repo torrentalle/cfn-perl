@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::SNS::Topic::Subscription',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SNS::Topic::Subscription::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SNS::Topic::Subscription->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SNS::Topic::Subscription::Value {
+package Cfn::Resource::Properties::Object::AWS::SNS::Topic::Subscription {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

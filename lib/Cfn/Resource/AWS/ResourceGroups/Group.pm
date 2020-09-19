@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ResourceGroups::Group::TagFilter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ResourceGroups::Group::TagFilter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::TagFilter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ResourceGroups::Group::TagFilter::Value {
+package Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::TagFilter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::ResourceGroups::Group::Query',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ResourceGroups::Group::Query::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::Query->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ResourceGroups::Group::Query::Value {
+package Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::Query {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::ResourceGroups::Group::ResourceQuery',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ResourceGroups::Group::ResourceQuery::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::ResourceQuery->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ResourceGroups::Group::ResourceQuery::Value {
+package Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::ResourceQuery {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

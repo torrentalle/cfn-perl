@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ManagedBlockchain::Node::NodeConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ManagedBlockchain::Node::NodeConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ManagedBlockchain::Node::NodeConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ManagedBlockchain::Node::NodeConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ManagedBlockchain::Node::NodeConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigurationRecorder::Recording
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigurationRecorder::RecordingGroup::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::ConfigurationRecorder::RecordingGroup->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigurationRecorder::RecordingGroup::Value {
+package Cfn::Resource::Properties::Object::AWS::Config::ConfigurationRecorder::RecordingGroup {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

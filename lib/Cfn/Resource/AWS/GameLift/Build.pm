@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::Build::S3Location',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::Build::S3Location::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::Build::S3Location->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::Build::S3Location::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::Build::S3Location {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

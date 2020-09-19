@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticBeanstalk::ApplicationVersion::So
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticBeanstalk::ApplicationVersion::SourceBundle::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ElasticBeanstalk::ApplicationVersion::SourceBundle->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticBeanstalk::ApplicationVersion::SourceBundle::Value {
+package Cfn::Resource::Properties::Object::AWS::ElasticBeanstalk::ApplicationVersion::SourceBundle {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

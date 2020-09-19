@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::ListenerCertific
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::ListenerCertificate::Certificate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::ListenerCertificate::Certificate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::ListenerCertificate::Certificate::Value {
+package Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::ListenerCertificate::Certificate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

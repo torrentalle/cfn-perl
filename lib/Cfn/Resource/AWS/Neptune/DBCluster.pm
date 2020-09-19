@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Neptune::DBCluster::DBClusterRole',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Neptune::DBCluster::DBClusterRole::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Neptune::DBCluster::DBClusterRole->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Neptune::DBCluster::DBClusterRole::Value {
+package Cfn::Resource::Properties::Object::AWS::Neptune::DBCluster::DBClusterRole {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

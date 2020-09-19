@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kinesis::Stream::StreamEncryption',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kinesis::Stream::StreamEncryption::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Kinesis::Stream::StreamEncryption->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kinesis::Stream::StreamEncryption::Value {
+package Cfn::Resource::Properties::Object::AWS::Kinesis::Stream::StreamEncryption {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

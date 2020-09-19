@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::Criterion',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::Criterion::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::Criterion->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::Criterion::Value {
+package Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::Criterion {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -49,11 +49,11 @@ coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterLis
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterListItem::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::FindingsFilterListItem->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterListItem::Value {
+package Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::FindingsFilterListItem {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::FindingCriteria->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria::Value {
+package Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::FindingCriteria {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup::NodeGroup
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup::NodeGroupConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ElastiCache::ReplicationGroup::NodeGroupConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup::NodeGroupConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ElastiCache::ReplicationGroup::NodeGroupConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

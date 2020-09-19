@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReference
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::JSONMappingParameters::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::JSONMappingParameters->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::JSONMappingParameters::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::JSONMappingParameters {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReference
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::CSVMappingParameters::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::CSVMappingParameters->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::CSVMappingParameters::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::CSVMappingParameters {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReference
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::MappingParameters::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::MappingParameters->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::MappingParameters::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::MappingParameters {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReference
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::RecordFormat::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::RecordFormat->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::RecordFormat::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::RecordFormat {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -138,11 +138,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReference
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::RecordColumn::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::RecordColumn->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::RecordColumn::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::RecordColumn {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -161,11 +161,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReference
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::S3ReferenceDataSource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::S3ReferenceDataSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::S3ReferenceDataSource::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::S3ReferenceDataSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -183,11 +183,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReference
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::ReferenceSchema::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::ReferenceSchema->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::ReferenceSchema::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::ReferenceSchema {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -206,11 +206,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReference
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::ReferenceDataSource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::ReferenceDataSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::ReferenceDataSource::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource::ReferenceDataSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

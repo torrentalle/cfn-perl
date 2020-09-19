@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::Alexa::ASK::Skill::Overrides',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::Alexa::ASK::Skill::Overrides::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::Alexa::ASK::Skill::Overrides->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::Alexa::ASK::Skill::Overrides::Value {
+package Cfn::Resource::Properties::Object::Alexa::ASK::Skill::Overrides {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::Alexa::ASK::Skill::SkillPackage',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::Alexa::ASK::Skill::SkillPackage::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::Alexa::ASK::Skill::SkillPackage->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::Alexa::ASK::Skill::SkillPackage::Value {
+package Cfn::Resource::Properties::Object::Alexa::ASK::Skill::SkillPackage {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::Alexa::ASK::Skill::AuthenticationConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::Alexa::ASK::Skill::AuthenticationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::Alexa::ASK::Skill::AuthenticationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::Alexa::ASK::Skill::AuthenticationConfiguration::Value {
+package Cfn::Resource::Properties::Object::Alexa::ASK::Skill::AuthenticationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

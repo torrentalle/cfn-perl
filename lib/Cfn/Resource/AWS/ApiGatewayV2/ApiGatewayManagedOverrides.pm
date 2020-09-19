@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::RouteSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::RouteSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::RouteSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::RouteSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -54,11 +54,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::AccessLogSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::AccessLogSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::AccessLogSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::AccessLogSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -76,11 +76,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::StageOverrides::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::StageOverrides->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::StageOverrides::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::StageOverrides {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -102,11 +102,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::RouteOverrides::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::RouteOverrides->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::RouteOverrides::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::RouteOverrides {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -127,11 +127,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::IntegrationOverrides::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::IntegrationOverrides->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::IntegrationOverrides::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::ApiGatewayManagedOverrides::IntegrationOverrides {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::SubscriptionDefinition::Subs
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::SubscriptionDefinition::Subscription::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::SubscriptionDefinition::Subscription->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::SubscriptionDefinition::Subscription::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::SubscriptionDefinition::Subscription {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::SubscriptionDefinition::Subs
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::SubscriptionDefinition::SubscriptionDefinitionVersion::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::SubscriptionDefinition::SubscriptionDefinitionVersion->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::SubscriptionDefinition::SubscriptionDefinitionVersion::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::SubscriptionDefinition::SubscriptionDefinitionVersion {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

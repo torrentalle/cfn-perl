@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::Authorizer::TokenSigningPublicKeys'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::Authorizer::TokenSigningPublicKeys::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::Authorizer::TokenSigningPublicKeys->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::Authorizer::TokenSigningPublicKeys::Value {
+package Cfn::Resource::Properties::Object::AWS::IoT::Authorizer::TokenSigningPublicKeys {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

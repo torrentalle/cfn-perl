@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::CloudFrontOriginAccessIdenti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentityConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudFront::CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentityConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentityConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::CloudFront::CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentityConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolDomain::CustomDomainCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::UserPoolDomain::CustomDomainConfigType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cognito::UserPoolDomain::CustomDomainConfigType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::UserPoolDomain::CustomDomainConfigType::Value {
+package Cfn::Resource::Properties::Object::AWS::Cognito::UserPoolDomain::CustomDomainConfigType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

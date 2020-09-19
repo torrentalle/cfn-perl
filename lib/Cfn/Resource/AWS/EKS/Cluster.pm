@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Cluster::Provider',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Cluster::Provider::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Cluster::Provider->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Cluster::Provider::Value {
+package Cfn::Resource::Properties::Object::AWS::EKS::Cluster::Provider {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Cluster::ResourcesVpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Cluster::ResourcesVpcConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Cluster::ResourcesVpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Cluster::ResourcesVpcConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::EKS::Cluster::ResourcesVpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Cluster::EncryptionConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Cluster::EncryptionConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Cluster::EncryptionConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Cluster::EncryptionConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::EKS::Cluster::EncryptionConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

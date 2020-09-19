@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::MutualTlsAuthe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::MutualTlsAuthentication::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::DomainName::MutualTlsAuthentication->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::MutualTlsAuthentication::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::DomainName::MutualTlsAuthentication {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::DomainNameConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::DomainNameConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::DomainName::DomainNameConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGatewayV2::DomainName::DomainNameConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGatewayV2::DomainName::DomainNameConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

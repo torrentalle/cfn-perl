@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Backup::BackupVault::NotificationObjectT
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Backup::BackupVault::NotificationObjectType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Backup::BackupVault::NotificationObjectType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Backup::BackupVault::NotificationObjectType::Value {
+package Cfn::Resource::Properties::Object::AWS::Backup::BackupVault::NotificationObjectType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

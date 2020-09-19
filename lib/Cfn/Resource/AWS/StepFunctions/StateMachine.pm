@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::CloudWatchL
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::CloudWatchLogsLogGroup::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::CloudWatchLogsLogGroup->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::CloudWatchLogsLogGroup::Value {
+package Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::CloudWatchLogsLogGroup {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::LogDestinat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::LogDestination::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::LogDestination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::LogDestination::Value {
+package Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::LogDestination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::TracingConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::TracingConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::TracingConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::TracingConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::TracingConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -136,11 +136,11 @@ coerce 'Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::TagsEntry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::TagsEntry::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::TagsEntry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::TagsEntry::Value {
+package Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::TagsEntry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -158,11 +158,11 @@ coerce 'Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::S3Location'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::S3Location::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::S3Location->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::S3Location::Value {
+package Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::S3Location {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -181,11 +181,11 @@ coerce 'Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::LoggingConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::LoggingConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::LoggingConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::LoggingConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::LoggingConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -204,11 +204,11 @@ coerce 'Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::DefinitionS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::DefinitionSubstitutions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::DefinitionSubstitutions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::StepFunctions::StateMachine::DefinitionSubstitutions::Value {
+package Cfn::Resource::Properties::Object::AWS::StepFunctions::StateMachine::DefinitionSubstitutions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

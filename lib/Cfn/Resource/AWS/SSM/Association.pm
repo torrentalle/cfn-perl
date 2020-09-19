@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocation',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocation::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::Association::S3OutputLocation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocation::Value {
+package Cfn::Resource::Properties::Object::AWS::SSM::Association::S3OutputLocation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::Association::Target',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::Association::Target::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::Association::Target->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::Association::Target::Value {
+package Cfn::Resource::Properties::Object::AWS::SSM::Association::Target {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOut
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOutputLocation::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::Association::InstanceAssociationOutputLocation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOutputLocation::Value {
+package Cfn::Resource::Properties::Object::AWS::SSM::Association::InstanceAssociationOutputLocation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

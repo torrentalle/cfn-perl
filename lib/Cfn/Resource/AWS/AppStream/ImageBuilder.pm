@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::VpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::VpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfo'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::DomainJoinInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfo::Value {
+package Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::DomainJoinInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpoint'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpoint::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::AccessEndpoint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpoint::Value {
+package Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::AccessEndpoint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

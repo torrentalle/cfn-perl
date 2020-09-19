@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Mesh::EgressFilter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Mesh::EgressFilter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppMesh::Mesh::EgressFilter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Mesh::EgressFilter::Value {
+package Cfn::Resource::Properties::Object::AWS::AppMesh::Mesh::EgressFilter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::Mesh::MeshSpec',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::Mesh::MeshSpec::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppMesh::Mesh::MeshSpec->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::Mesh::MeshSpec::Value {
+package Cfn::Resource::Properties::Object::AWS::AppMesh::Mesh::MeshSpec {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::TargetTrackin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::TargetTrackingConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::TargetTrackingConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::TargetTrackingConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::TargetTrackingConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::InstanceDefin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::InstanceDefinition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::InstanceDefinition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::InstanceDefinition::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::InstanceDefinition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::VpcSubnets',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::VpcSubnets::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::VpcSubnets->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::VpcSubnets::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::VpcSubnets {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -115,11 +115,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::Tags::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::Tags::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -136,11 +136,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::LaunchTemplat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::LaunchTemplate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::LaunchTemplate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::LaunchTemplate::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::LaunchTemplate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -159,11 +159,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::InstanceDefin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::InstanceDefinitions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::InstanceDefinitions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::InstanceDefinitions::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::InstanceDefinitions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -180,11 +180,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::AutoScalingPo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::AutoScalingPolicy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::AutoScalingPolicy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::GameServerGroup::AutoScalingPolicy::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::GameServerGroup::AutoScalingPolicy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

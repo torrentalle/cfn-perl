@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Redshift::ClusterParameterGroup::Paramet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Redshift::ClusterParameterGroup::Parameter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Redshift::ClusterParameterGroup::Parameter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Redshift::ClusterParameterGroup::Parameter::Value {
+package Cfn::Resource::Properties::Object::AWS::Redshift::ClusterParameterGroup::Parameter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

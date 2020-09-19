@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EventSchemas::Registry::TagsEntry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EventSchemas::Registry::TagsEntry::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EventSchemas::Registry::TagsEntry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EventSchemas::Registry::TagsEntry::Value {
+package Cfn::Resource::Properties::Object::AWS::EventSchemas::Registry::TagsEntry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

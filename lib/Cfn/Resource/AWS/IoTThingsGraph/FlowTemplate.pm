@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTThingsGraph::FlowTemplate::Definition
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTThingsGraph::FlowTemplate::DefinitionDocument::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTThingsGraph::FlowTemplate::DefinitionDocument->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTThingsGraph::FlowTemplate::DefinitionDocument::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTThingsGraph::FlowTemplate::DefinitionDocument {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

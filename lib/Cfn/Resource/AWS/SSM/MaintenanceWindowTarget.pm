@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTarget::Targets',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTarget::Targets::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::MaintenanceWindowTarget::Targets->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::MaintenanceWindowTarget::Targets::Value {
+package Cfn::Resource::Properties::Object::AWS::SSM::MaintenanceWindowTarget::Targets {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

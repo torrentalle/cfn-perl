@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cassandra::Table::ProvisionedThroughput'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cassandra::Table::ProvisionedThroughput::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cassandra::Table::ProvisionedThroughput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cassandra::Table::ProvisionedThroughput::Value {
+package Cfn::Resource::Properties::Object::AWS::Cassandra::Table::ProvisionedThroughput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cassandra::Table::Column',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cassandra::Table::Column::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cassandra::Table::Column->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cassandra::Table::Column::Value {
+package Cfn::Resource::Properties::Object::AWS::Cassandra::Table::Column {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cassandra::Table::ClusteringKeyColumn',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cassandra::Table::ClusteringKeyColumn::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cassandra::Table::ClusteringKeyColumn->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cassandra::Table::ClusteringKeyColumn::Value {
+package Cfn::Resource::Properties::Object::AWS::Cassandra::Table::ClusteringKeyColumn {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -139,11 +139,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cassandra::Table::BillingMode',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cassandra::Table::BillingMode::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cassandra::Table::BillingMode->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cassandra::Table::BillingMode::Value {
+package Cfn::Resource::Properties::Object::AWS::Cassandra::Table::BillingMode {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

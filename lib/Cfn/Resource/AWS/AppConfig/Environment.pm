@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppConfig::Environment::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppConfig::Environment::Tags::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppConfig::Environment::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppConfig::Environment::Tags::Value {
+package Cfn::Resource::Properties::Object::AWS::AppConfig::Environment::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppConfig::Environment::Monitors',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppConfig::Environment::Monitors::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppConfig::Environment::Monitors->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppConfig::Environment::Monitors::Value {
+package Cfn::Resource::Properties::Object::AWS::AppConfig::Environment::Monitors {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

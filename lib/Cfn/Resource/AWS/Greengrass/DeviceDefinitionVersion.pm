@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinitionVersion::Dev
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinitionVersion::Device::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::DeviceDefinitionVersion::Device->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinitionVersion::Device::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::DeviceDefinitionVersion::Device {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

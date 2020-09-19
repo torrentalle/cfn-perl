@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Instance::EbsBlockDevice',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Instance::EbsBlockDevice::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::Instance::EbsBlockDevice->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Instance::EbsBlockDevice::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::Instance::EbsBlockDevice {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -54,11 +54,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Instance::TimeBasedAutoScaling
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Instance::TimeBasedAutoScaling::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::Instance::TimeBasedAutoScaling->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Instance::TimeBasedAutoScaling::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::Instance::TimeBasedAutoScaling {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -103,11 +103,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::Instance::BlockDeviceMapping',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::Instance::BlockDeviceMapping::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::Instance::BlockDeviceMapping->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::Instance::BlockDeviceMapping::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::Instance::BlockDeviceMapping {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

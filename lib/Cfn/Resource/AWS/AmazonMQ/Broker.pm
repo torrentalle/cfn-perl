@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::ServerMetadata',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::ServerMetadata::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::ServerMetadata->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::ServerMetadata::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::ServerMetadata {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -82,11 +82,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::InterBrokerCred',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::InterBrokerCred::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::InterBrokerCred->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::InterBrokerCred::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::InterBrokerCred {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -126,11 +126,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::User',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::User::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::User->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::User::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::User {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -172,11 +172,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::TagsEntry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::TagsEntry::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::TagsEntry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::TagsEntry::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::TagsEntry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -194,11 +194,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::MaintenanceWindow',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::MaintenanceWindow::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::MaintenanceWindow->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::MaintenanceWindow::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::MaintenanceWindow {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -217,11 +217,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LogList',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LogList::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::LogList->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LogList::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::LogList {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -239,11 +239,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapServerMetadata',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapServerMetadata::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::LdapServerMetadata->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapServerMetadata::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::LdapServerMetadata {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -270,11 +270,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapMetadata',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapMetadata::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::LdapMetadata->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapMetadata::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::LdapMetadata {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -292,11 +292,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::EncryptionOptions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::EncryptionOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::EncryptionOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::EncryptionOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::EncryptionOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -314,11 +314,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::ConfigurationId',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::Broker::ConfigurationId::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::ConfigurationId->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::Broker::ConfigurationId::Value {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::ConfigurationId {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

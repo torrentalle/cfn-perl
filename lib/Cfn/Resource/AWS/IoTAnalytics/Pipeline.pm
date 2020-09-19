@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::SelectAttributes
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::SelectAttributes::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::SelectAttributes->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::SelectAttributes::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::SelectAttributes {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::RemoveAttributes
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::RemoveAttributes::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::RemoveAttributes->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::RemoveAttributes::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::RemoveAttributes {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Math',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Math::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Math->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Math::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Math {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -99,11 +99,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Lambda',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Lambda::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Lambda->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Lambda::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Lambda {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -123,11 +123,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Filter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Filter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Filter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Filter::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Filter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -146,11 +146,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::DeviceShadowEnri
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::DeviceShadowEnrich::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::DeviceShadowEnrich->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::DeviceShadowEnrich::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::DeviceShadowEnrich {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -171,11 +171,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::DeviceRegistryEn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::DeviceRegistryEnrich::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::DeviceRegistryEnrich->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::DeviceRegistryEnrich::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::DeviceRegistryEnrich {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -196,11 +196,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Datastore',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Datastore::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Datastore->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Datastore::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Datastore {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -218,11 +218,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Channel',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Channel::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Channel->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Channel::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Channel {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -241,11 +241,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::AddAttributes',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::AddAttributes::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::AddAttributes->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::AddAttributes::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::AddAttributes {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -286,11 +286,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Activity',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Activity::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Activity->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Pipeline::Activity::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Pipeline::Activity {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::ProvisioningTemplate::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::ProvisioningTemplate::Tags::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::ProvisioningTemplate::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::ProvisioningTemplate::Tags::Value {
+package Cfn::Resource::Properties::Object::AWS::IoT::ProvisioningTemplate::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::ProvisioningTemplate::ProvisioningH
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::ProvisioningTemplate::ProvisioningHook::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::ProvisioningTemplate::ProvisioningHook->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::ProvisioningTemplate::ProvisioningHook::Value {
+package Cfn::Resource::Properties::Object::AWS::IoT::ProvisioningTemplate::ProvisioningHook {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

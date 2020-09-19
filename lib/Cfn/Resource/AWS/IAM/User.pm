@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::IAM::User::Policy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IAM::User::Policy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IAM::User::Policy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IAM::User::Policy::Value {
+package Cfn::Resource::Properties::Object::AWS::IAM::User::Policy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::IAM::User::LoginProfile',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IAM::User::LoginProfile::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IAM::User::LoginProfile->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IAM::User::LoginProfile::Value {
+package Cfn::Resource::Properties::Object::AWS::IAM::User::LoginProfile {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::NetworkInterface::PrivateIpAddressS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::NetworkInterface::PrivateIpAddressSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::NetworkInterface::PrivateIpAddressSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::NetworkInterface::PrivateIpAddressSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::NetworkInterface::PrivateIpAddressSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::NetworkInterface::InstanceIpv6Addre
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::NetworkInterface::InstanceIpv6Address::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::NetworkInterface::InstanceIpv6Address->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::NetworkInterface::InstanceIpv6Address::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::NetworkInterface::InstanceIpv6Address {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

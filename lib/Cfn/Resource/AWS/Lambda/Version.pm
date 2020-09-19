@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Version::ProvisionedConcurrencyC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Version::ProvisionedConcurrencyConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Version::ProvisionedConcurrencyConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Version::ProvisionedConcurrencyConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Version::ProvisionedConcurrencyConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

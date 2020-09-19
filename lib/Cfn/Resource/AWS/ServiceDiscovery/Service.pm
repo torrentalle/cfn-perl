@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecord',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecord::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::DnsRecord->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecord::Value {
+package Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::DnsRecord {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCustomConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::HealthCheckCustomConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCustomConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::HealthCheckCustomConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::HealthCheckConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::HealthCheckConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::DnsConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::DnsConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

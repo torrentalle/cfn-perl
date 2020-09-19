@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::IAM::Group::Policy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IAM::Group::Policy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IAM::Group::Policy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IAM::Group::Policy::Value {
+package Cfn::Resource::Properties::Object::AWS::IAM::Group::Policy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

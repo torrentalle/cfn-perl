@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::DistributionConfiguration:
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::DistributionConfiguration::Distribution::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ImageBuilder::DistributionConfiguration::Distribution->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::DistributionConfiguration::Distribution::Value {
+package Cfn::Resource::Properties::Object::AWS::ImageBuilder::DistributionConfiguration::Distribution {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

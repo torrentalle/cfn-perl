@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53Resolver::ResolverEndpoint::IpAdd
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53Resolver::ResolverEndpoint::IpAddressRequest::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53Resolver::ResolverEndpoint::IpAddressRequest->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53Resolver::ResolverEndpoint::IpAddressRequest::Value {
+package Cfn::Resource::Properties::Object::AWS::Route53Resolver::ResolverEndpoint::IpAddressRequest {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

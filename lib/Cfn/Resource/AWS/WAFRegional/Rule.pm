@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::Rule::Predicate',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::Rule::Predicate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::Rule::Predicate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::Rule::Predicate::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::Rule::Predicate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

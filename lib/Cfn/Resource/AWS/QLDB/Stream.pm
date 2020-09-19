@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::QLDB::Stream::KinesisConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::QLDB::Stream::KinesisConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::QLDB::Stream::KinesisConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::QLDB::Stream::KinesisConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::QLDB::Stream::KinesisConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

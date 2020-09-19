@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::EncryptionConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::EncryptionConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::EncryptionConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::EncryptionConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::EncryptionConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfigurationUp
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfigurationUpdates::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::ResultConfigurationUpdates->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfigurationUpdates::Value {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::ResultConfigurationUpdates {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::ResultConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::ResultConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfigurationUpdates::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::WorkGroupConfigurationUpdates->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfigurationUpdates::Value {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::WorkGroupConfigurationUpdates {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -123,11 +123,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::WorkGroupConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::WorkGroupConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -148,11 +148,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::Tags::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::Tags::Value {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

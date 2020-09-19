@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Nodegroup::ScalingConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Nodegroup::ScalingConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::ScalingConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Nodegroup::ScalingConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::ScalingConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Nodegroup::RemoteAccess',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Nodegroup::RemoteAccess::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::RemoteAccess->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Nodegroup::RemoteAccess::Value {
+package Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::RemoteAccess {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Nodegroup::LaunchTemplateSpecificat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Nodegroup::LaunchTemplateSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::LaunchTemplateSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Nodegroup::LaunchTemplateSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::LaunchTemplateSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

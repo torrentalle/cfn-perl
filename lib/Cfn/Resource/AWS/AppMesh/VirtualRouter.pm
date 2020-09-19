@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::PortMapping',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::PortMapping::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualRouter::PortMapping->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::PortMapping::Value {
+package Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualRouter::PortMapping {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterLis
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterListener::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualRouter::VirtualRouterListener->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterListener::Value {
+package Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualRouter::VirtualRouterListener {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterSpe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterSpec::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualRouter::VirtualRouterSpec->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualRouter::VirtualRouterSpec::Value {
+package Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualRouter::VirtualRouterSpec {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

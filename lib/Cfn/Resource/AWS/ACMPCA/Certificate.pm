@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ACMPCA::Certificate::Validity',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ACMPCA::Certificate::Validity::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ACMPCA::Certificate::Validity->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ACMPCA::Certificate::Validity::Value {
+package Cfn::Resource::Properties::Object::AWS::ACMPCA::Certificate::Validity {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

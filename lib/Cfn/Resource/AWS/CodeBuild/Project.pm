@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::SourceAuth',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::SourceAuth::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::SourceAuth->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::SourceAuth::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::SourceAuth {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::S3LogsConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::S3LogsConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::S3LogsConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::S3LogsConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::S3LogsConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::RegistryCredential',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::RegistryCredential::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::RegistryCredential->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::RegistryCredential::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::RegistryCredential {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::GitSubmodulesConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::GitSubmodulesConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::GitSubmodulesConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -139,11 +139,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::FilterGroup->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::FilterGroup {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -181,11 +181,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::EnvironmentVariable'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::EnvironmentVariable::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::EnvironmentVariable->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::EnvironmentVariable::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::EnvironmentVariable {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -204,11 +204,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::CloudWatchLogsConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::CloudWatchLogsConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::CloudWatchLogsConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::CloudWatchLogsConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::CloudWatchLogsConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -227,11 +227,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::BuildStatusConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::BuildStatusConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::BuildStatusConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::BuildStatusConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::BuildStatusConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -249,11 +249,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::BatchRestrictions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::BatchRestrictions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::BatchRestrictions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::BatchRestrictions::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::BatchRestrictions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -271,11 +271,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::WebhookFilter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::WebhookFilter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::WebhookFilter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::WebhookFilter::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::WebhookFilter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -294,11 +294,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::VpcConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::VpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::VpcConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::VpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -339,11 +339,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::Source',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::Source::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::Source->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::Source::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::Source {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -369,11 +369,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectTriggers',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectTriggers::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectTriggers->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectTriggers::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectTriggers {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -413,11 +413,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersion
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersion::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectSourceVersion->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectSourceVersion::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectSourceVersion {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -457,11 +457,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectFileSystemLoc
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectFileSystemLocation::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectFileSystemLocation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectFileSystemLocation::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectFileSystemLocation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -482,11 +482,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectCache',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectCache::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectCache->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectCache::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectCache {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -505,11 +505,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectBuildBatchCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectBuildBatchConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectBuildBatchConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::ProjectBuildBatchConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectBuildBatchConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -529,11 +529,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::LogsConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::LogsConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::LogsConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::LogsConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::LogsConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -551,11 +551,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::Environment',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::Environment::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::Environment->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::Environment::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::Environment {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -601,11 +601,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project::Artifacts',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeBuild::Project::Artifacts::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::Artifacts->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeBuild::Project::Artifacts::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::Artifacts {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

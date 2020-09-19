@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::Tags::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::InsightRule::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::InsightRule::Tags::Value {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::InsightRule::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAF::XssMatchSet::FieldToMatch',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAF::XssMatchSet::FieldToMatch::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAF::XssMatchSet::FieldToMatch->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAF::XssMatchSet::FieldToMatch::Value {
+package Cfn::Resource::Properties::Object::AWS::WAF::XssMatchSet::FieldToMatch {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAF::XssMatchSet::XssMatchTuple',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAF::XssMatchSet::XssMatchTuple::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAF::XssMatchSet::XssMatchTuple->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAF::XssMatchSet::XssMatchTuple::Value {
+package Cfn::Resource::Properties::Object::AWS::WAF::XssMatchSet::XssMatchTuple {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

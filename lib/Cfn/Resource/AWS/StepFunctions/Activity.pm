@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::StepFunctions::Activity::TagsEntry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::StepFunctions::Activity::TagsEntry::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::StepFunctions::Activity::TagsEntry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::StepFunctions::Activity::TagsEntry::Value {
+package Cfn::Resource::Properties::Object::AWS::StepFunctions::Activity::TagsEntry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

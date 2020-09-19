@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Alias::VersionWeight',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Alias::VersionWeight::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Alias::VersionWeight->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Alias::VersionWeight::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Alias::VersionWeight {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Alias::ProvisionedConcurrencyCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Alias::ProvisionedConcurrencyConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Alias::ProvisionedConcurrencyConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Alias::ProvisionedConcurrencyConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Alias::ProvisionedConcurrencyConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Alias::AliasRoutingConfiguration
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Alias::AliasRoutingConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Alias::AliasRoutingConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Alias::AliasRoutingConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Alias::AliasRoutingConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

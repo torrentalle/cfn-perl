@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnSuccess',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnSuccess::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::OnSuccess->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnSuccess::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::OnSuccess {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnFailure',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnFailure::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::OnFailure->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnFailure::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::OnFailure {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::DestinationCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::DestinationConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::DestinationConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::DestinationConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::DestinationConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

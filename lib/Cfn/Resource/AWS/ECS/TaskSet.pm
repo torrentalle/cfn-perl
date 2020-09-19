@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskSet::AwsVpcConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskSet::AwsVpcConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::AwsVpcConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskSet::AwsVpcConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::AwsVpcConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskSet::ServiceRegistry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskSet::ServiceRegistry::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::ServiceRegistry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskSet::ServiceRegistry::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::ServiceRegistry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -98,11 +98,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskSet::Scale',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskSet::Scale::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::Scale->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskSet::Scale::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::Scale {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -120,11 +120,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskSet::NetworkConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskSet::NetworkConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::NetworkConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskSet::NetworkConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::NetworkConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -163,11 +163,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskSet::LoadBalancer',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskSet::LoadBalancer::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::LoadBalancer->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskSet::LoadBalancer::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskSet::LoadBalancer {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

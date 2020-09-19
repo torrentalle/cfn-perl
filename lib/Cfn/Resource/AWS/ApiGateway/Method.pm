@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Method::IntegrationResponse'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Method::IntegrationResponse::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::IntegrationResponse->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Method::IntegrationResponse::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::IntegrationResponse {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -98,11 +98,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Method::MethodResponse',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Method::MethodResponse::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::MethodResponse->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Method::MethodResponse::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::MethodResponse {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -121,11 +121,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Method::Integration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Method::Integration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::Integration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Method::Integration::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::Integration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::Resolver::LambdaConflictHandler
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::Resolver::LambdaConflictHandlerConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppSync::Resolver::LambdaConflictHandlerConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::Resolver::LambdaConflictHandlerConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppSync::Resolver::LambdaConflictHandlerConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::Resolver::SyncConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::Resolver::SyncConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppSync::Resolver::SyncConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::Resolver::SyncConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppSync::Resolver::SyncConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::Resolver::PipelineConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::Resolver::PipelineConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppSync::Resolver::PipelineConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::Resolver::PipelineConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppSync::Resolver::PipelineConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppSync::Resolver::CachingConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppSync::Resolver::CachingConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppSync::Resolver::CachingConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppSync::Resolver::CachingConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppSync::Resolver::CachingConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppConfig::Deployment::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppConfig::Deployment::Tags::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppConfig::Deployment::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppConfig::Deployment::Tags::Value {
+package Cfn::Resource::Properties::Object::AWS::AppConfig::Deployment::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

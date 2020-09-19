@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::FileSystem::LifecyclePolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::FileSystem::LifecyclePolicy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EFS::FileSystem::LifecyclePolicy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::FileSystem::LifecyclePolicy::Value {
+package Cfn::Resource::Properties::Object::AWS::EFS::FileSystem::LifecyclePolicy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::FileSystem::ElasticFileSystemTag',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::FileSystem::ElasticFileSystemTag::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EFS::FileSystem::ElasticFileSystemTag->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::FileSystem::ElasticFileSystemTag::Value {
+package Cfn::Resource::Properties::Object::AWS::EFS::FileSystem::ElasticFileSystemTag {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -116,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::EFS::FileSystem::BackupPolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EFS::FileSystem::BackupPolicy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EFS::FileSystem::BackupPolicy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EFS::FileSystem::BackupPolicy::Value {
+package Cfn::Resource::Properties::Object::AWS::EFS::FileSystem::BackupPolicy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

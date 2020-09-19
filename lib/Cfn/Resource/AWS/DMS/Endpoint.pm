@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::DMS::Endpoint::S3Settings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DMS::Endpoint::S3Settings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::S3Settings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DMS::Endpoint::S3Settings::Value {
+package Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::S3Settings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -56,11 +56,11 @@ coerce 'Cfn::Resource::Properties::AWS::DMS::Endpoint::NeptuneSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DMS::Endpoint::NeptuneSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::NeptuneSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DMS::Endpoint::NeptuneSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::NeptuneSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -83,11 +83,11 @@ coerce 'Cfn::Resource::Properties::AWS::DMS::Endpoint::MongoDbSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DMS::Endpoint::MongoDbSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::MongoDbSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DMS::Endpoint::MongoDbSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::MongoDbSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -114,11 +114,11 @@ coerce 'Cfn::Resource::Properties::AWS::DMS::Endpoint::KinesisSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DMS::Endpoint::KinesisSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::KinesisSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DMS::Endpoint::KinesisSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::KinesisSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -137,11 +137,11 @@ coerce 'Cfn::Resource::Properties::AWS::DMS::Endpoint::KafkaSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DMS::Endpoint::KafkaSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::KafkaSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DMS::Endpoint::KafkaSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::KafkaSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -159,11 +159,11 @@ coerce 'Cfn::Resource::Properties::AWS::DMS::Endpoint::ElasticsearchSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DMS::Endpoint::ElasticsearchSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::ElasticsearchSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DMS::Endpoint::ElasticsearchSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::ElasticsearchSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -183,11 +183,11 @@ coerce 'Cfn::Resource::Properties::AWS::DMS::Endpoint::DynamoDbSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DMS::Endpoint::DynamoDbSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::DynamoDbSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DMS::Endpoint::DynamoDbSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::DMS::Endpoint::DynamoDbSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

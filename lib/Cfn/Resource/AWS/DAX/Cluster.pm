@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::DAX::Cluster::SSESpecification',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DAX::Cluster::SSESpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DAX::Cluster::SSESpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DAX::Cluster::SSESpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::DAX::Cluster::SSESpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolUser::AttributeType',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::UserPoolUser::AttributeType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cognito::UserPoolUser::AttributeType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::UserPoolUser::AttributeType::Value {
+package Cfn::Resource::Properties::Object::AWS::Cognito::UserPoolUser::AttributeType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

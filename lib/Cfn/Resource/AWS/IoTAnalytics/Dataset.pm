@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::OutputFileUriValu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::OutputFileUriValue::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::OutputFileUriValue->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::OutputFileUriValue::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::OutputFileUriValue {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::GlueConfiguration
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::GlueConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::GlueConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::GlueConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::GlueConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DeltaTime',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DeltaTime::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::DeltaTime->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DeltaTime::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::DeltaTime {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DatasetContentVer
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DatasetContentVersionValue::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::DatasetContentVersionValue->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DatasetContentVersionValue::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::DatasetContentVersionValue {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -137,11 +137,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Variable',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Variable::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Variable->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Variable::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Variable {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -162,11 +162,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::S3DestinationConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::S3DestinationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::S3DestinationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::S3DestinationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::S3DestinationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -186,11 +186,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::ResourceConfigura
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::ResourceConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::ResourceConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::ResourceConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::ResourceConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -208,11 +208,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::IotEventsDestinat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::IotEventsDestinationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::IotEventsDestinationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::IotEventsDestinationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::IotEventsDestinationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -252,11 +252,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Filter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Filter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Filter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Filter::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Filter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -273,11 +273,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::TriggeringDataset
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::TriggeringDataset::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::TriggeringDataset->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::TriggeringDataset::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::TriggeringDataset {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -294,11 +294,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Schedule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Schedule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Schedule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Schedule::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Schedule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -315,11 +315,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::QueryAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::QueryAction::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::QueryAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::QueryAction::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::QueryAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -337,11 +337,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DatasetContentDel
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DatasetContentDeliveryRuleDestination::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::DatasetContentDeliveryRuleDestination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DatasetContentDeliveryRuleDestination::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::DatasetContentDeliveryRuleDestination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -359,11 +359,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::ContainerAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::ContainerAction::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::ContainerAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::ContainerAction::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::ContainerAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -383,11 +383,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::VersioningConfigu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::VersioningConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::VersioningConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::VersioningConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::VersioningConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -427,11 +427,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Trigger',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Trigger::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Trigger->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Trigger::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Trigger {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -449,11 +449,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::RetentionPeriod',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::RetentionPeriod::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::RetentionPeriod->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::RetentionPeriod::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::RetentionPeriod {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -493,11 +493,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DatasetContentDel
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DatasetContentDeliveryRule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::DatasetContentDeliveryRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::DatasetContentDeliveryRule::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::DatasetContentDeliveryRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -537,11 +537,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Action',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Action::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Action->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Dataset::Action::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Dataset::Action {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

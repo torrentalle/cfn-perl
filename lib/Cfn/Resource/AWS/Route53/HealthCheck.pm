@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::HealthCheck::HealthCheckTag',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::HealthCheck::HealthCheckTag::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53::HealthCheck::HealthCheckTag->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::HealthCheck::HealthCheckTag::Value {
+package Cfn::Resource::Properties::Object::AWS::Route53::HealthCheck::HealthCheckTag {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

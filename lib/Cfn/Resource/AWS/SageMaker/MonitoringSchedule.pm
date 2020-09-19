@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::S3Output'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::S3Output::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::S3Output->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::S3Output::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::S3Output {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::EndpointI
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::EndpointInput::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::EndpointInput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::EndpointInput::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::EndpointInput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -76,11 +76,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::VpcConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::VpcConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::VpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::VpcConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::VpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -98,11 +98,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Statistic
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::StatisticsResource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::StatisticsResource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::StatisticsResource::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::StatisticsResource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Monitorin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringOutput::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringOutput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringOutput::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringOutput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -184,11 +184,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Monitorin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringInput::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringInput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringInput::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringInput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -205,11 +205,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Constrain
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::ConstraintsResource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::ConstraintsResource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::ConstraintsResource::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::ConstraintsResource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -226,11 +226,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::ClusterCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::ClusterConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::ClusterConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::ClusterConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::ClusterConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -250,11 +250,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::StoppingC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::StoppingCondition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::StoppingCondition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::StoppingCondition::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::StoppingCondition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -271,11 +271,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::NetworkCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::NetworkConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::NetworkConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::NetworkConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::NetworkConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -294,11 +294,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Monitorin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringResources::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringResources->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringResources::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringResources {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -315,11 +315,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Monitorin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringOutputConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringOutputConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringOutputConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringOutputConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -337,11 +337,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Monitorin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringInputs::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringInputs->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringInputs::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringInputs {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -358,11 +358,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Monitorin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringAppSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringAppSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringAppSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringAppSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -383,11 +383,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Environme
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Environment::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::Environment->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Environment::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::Environment {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -403,11 +403,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::BaselineC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::BaselineConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::BaselineConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::BaselineConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::BaselineConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -425,11 +425,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::ScheduleC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::ScheduleConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::ScheduleConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::ScheduleConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::ScheduleConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -446,11 +446,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Monitorin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringJobDefinition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringJobDefinition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringJobDefinition::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringJobDefinition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -475,11 +475,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Monitorin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringScheduleConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringScheduleConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringScheduleConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringScheduleConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -497,11 +497,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::Monitorin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringExecutionSummary::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringExecutionSummary->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::MonitoringSchedule::MonitoringExecutionSummary::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::MonitoringSchedule::MonitoringExecutionSummary {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

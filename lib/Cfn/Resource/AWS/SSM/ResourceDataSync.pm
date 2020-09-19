@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::AwsOrganizationsS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::AwsOrganizationsSource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::AwsOrganizationsSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::AwsOrganizationsSource::Value {
+package Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::AwsOrganizationsSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::SyncSource',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::SyncSource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::SyncSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::SyncSource::Value {
+package Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::SyncSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::S3Destination',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::S3Destination::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::S3Destination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::S3Destination::Value {
+package Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::S3Destination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

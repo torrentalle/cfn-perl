@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECR::Repository::LifecyclePolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECR::Repository::LifecyclePolicy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECR::Repository::LifecyclePolicy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECR::Repository::LifecyclePolicy::Value {
+package Cfn::Resource::Properties::Object::AWS::ECR::Repository::LifecyclePolicy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

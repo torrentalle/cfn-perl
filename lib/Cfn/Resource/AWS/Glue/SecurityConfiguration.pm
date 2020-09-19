@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::S3Encryptio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::S3Encryptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::S3Encryptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::S3Encryptions::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::S3Encryptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -49,11 +49,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::JobBookmark
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::JobBookmarksEncryption::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::JobBookmarksEncryption->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::JobBookmarksEncryption::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::JobBookmarksEncryption {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::CloudWatchE
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::CloudWatchEncryption::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::CloudWatchEncryption->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::CloudWatchEncryption::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::CloudWatchEncryption {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::S3Encryptio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::S3Encryption::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::S3Encryption->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::S3Encryption::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::S3Encryption {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -115,11 +115,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::EncryptionC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::EncryptionConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::EncryptionConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::SecurityConfiguration::EncryptionConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::Glue::SecurityConfiguration::EncryptionConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

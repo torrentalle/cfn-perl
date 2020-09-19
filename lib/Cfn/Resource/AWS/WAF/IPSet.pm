@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAF::IPSet::IPSetDescriptor',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAF::IPSet::IPSetDescriptor::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAF::IPSet::IPSetDescriptor->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAF::IPSet::IPSetDescriptor::Value {
+package Cfn::Resource::Properties::Object::AWS::WAF::IPSet::IPSetDescriptor {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

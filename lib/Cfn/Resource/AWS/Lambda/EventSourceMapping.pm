@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::OnFailure',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::OnFailure::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::EventSourceMapping::OnFailure->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::OnFailure::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::EventSourceMapping::OnFailure {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::DestinationC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::DestinationConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::EventSourceMapping::DestinationConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::DestinationConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::EventSourceMapping::DestinationConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::MatchmakingConfiguration::Game
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::MatchmakingConfiguration::GameProperty::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::MatchmakingConfiguration::GameProperty->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::MatchmakingConfiguration::GameProperty::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::MatchmakingConfiguration::GameProperty {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

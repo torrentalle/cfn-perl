@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::RealtimeLogConfig::KinesisSt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::RealtimeLogConfig::KinesisStreamConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudFront::RealtimeLogConfig::KinesisStreamConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::RealtimeLogConfig::KinesisStreamConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::CloudFront::RealtimeLogConfig::KinesisStreamConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::RealtimeLogConfig::EndPoint'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::RealtimeLogConfig::EndPoint::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudFront::RealtimeLogConfig::EndPoint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::RealtimeLogConfig::EndPoint::Value {
+package Cfn::Resource::Properties::Object::AWS::CloudFront::RealtimeLogConfig::EndPoint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::FMS::Policy::ResourceTag',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::FMS::Policy::ResourceTag::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::FMS::Policy::ResourceTag->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::FMS::Policy::ResourceTag::Value {
+package Cfn::Resource::Properties::Object::AWS::FMS::Policy::ResourceTag {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::FMS::Policy::PolicyTag',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::FMS::Policy::PolicyTag::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::FMS::Policy::PolicyTag->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::FMS::Policy::PolicyTag::Value {
+package Cfn::Resource::Properties::Object::AWS::FMS::Policy::PolicyTag {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::FMS::Policy::IEMap',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::FMS::Policy::IEMap::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::FMS::Policy::IEMap->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::FMS::Policy::IEMap::Value {
+package Cfn::Resource::Properties::Object::AWS::FMS::Policy::IEMap {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

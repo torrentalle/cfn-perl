@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigRule::SourceDetail',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigRule::SourceDetail::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::SourceDetail->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigRule::SourceDetail::Value {
+package Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::SourceDetail {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigRule::Source',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigRule::Source::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::Source->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigRule::Source::Value {
+package Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::Source {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigRule::Scope',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigRule::Scope::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::Scope->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigRule::Scope::Value {
+package Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::Scope {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

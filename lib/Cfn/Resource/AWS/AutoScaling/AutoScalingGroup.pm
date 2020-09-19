@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTem
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTemplateSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::LaunchTemplateSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTemplateSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::LaunchTemplateSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTem
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTemplateOverrides::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::LaunchTemplateOverrides->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTemplateOverrides::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::LaunchTemplateOverrides {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTem
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTemplate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::LaunchTemplate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LaunchTemplate::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::LaunchTemplate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::Instances
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::InstancesDistribution::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::InstancesDistribution->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::InstancesDistribution::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::InstancesDistribution {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -166,11 +166,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::TagProper
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::TagProperty::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::TagProperty->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::TagProperty::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::TagProperty {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -211,11 +211,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::Notificat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::NotificationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::NotificationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::NotificationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::NotificationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -233,11 +233,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::MixedInst
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::MixedInstancesPolicy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::MixedInstancesPolicy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::MixedInstancesPolicy::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::MixedInstancesPolicy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -277,11 +277,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::MetricsCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::MetricsCollection::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::MetricsCollection->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::MetricsCollection::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::MetricsCollection {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -321,11 +321,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::Lifecycle
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LifecycleHookSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::LifecycleHookSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::AutoScalingGroup::LifecycleHookSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::AutoScalingGroup::LifecycleHookSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

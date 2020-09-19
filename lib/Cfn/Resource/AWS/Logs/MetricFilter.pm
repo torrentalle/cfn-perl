@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Logs::MetricFilter::MetricTransformation
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Logs::MetricFilter::MetricTransformation::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Logs::MetricFilter::MetricTransformation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Logs::MetricFilter::MetricTransformation::Value {
+package Cfn::Resource::Properties::Object::AWS::Logs::MetricFilter::MetricTransformation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

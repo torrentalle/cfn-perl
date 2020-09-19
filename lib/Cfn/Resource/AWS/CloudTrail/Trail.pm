@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudTrail::Trail::DataResource',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudTrail::Trail::DataResource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudTrail::Trail::DataResource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudTrail::Trail::DataResource::Value {
+package Cfn::Resource::Properties::Object::AWS::CloudTrail::Trail::DataResource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudTrail::Trail::EventSelector',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudTrail::Trail::EventSelector::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudTrail::Trail::EventSelector->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudTrail::Trail::EventSelector::Value {
+package Cfn::Resource::Properties::Object::AWS::CloudTrail::Trail::EventSelector {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

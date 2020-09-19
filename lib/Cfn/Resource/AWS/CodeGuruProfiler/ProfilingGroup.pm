@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeGuruProfiler::ProfilingGroup::Channe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeGuruProfiler::ProfilingGroup::Channel::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeGuruProfiler::ProfilingGroup::Channel->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeGuruProfiler::ProfilingGroup::Channel::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeGuruProfiler::ProfilingGroup::Channel {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

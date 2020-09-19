@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SES::Template::Template',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SES::Template::Template::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SES::Template::Template->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SES::Template::Template::Value {
+package Cfn::Resource::Properties::Object::AWS::SES::Template::Template {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ConnectorDefinitionVersion::
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ConnectorDefinitionVersion::Connector::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ConnectorDefinitionVersion::Connector->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ConnectorDefinitionVersion::Connector::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ConnectorDefinitionVersion::Connector {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

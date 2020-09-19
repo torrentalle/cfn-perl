@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::Faq::TagList',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::Faq::TagList::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Kendra::Faq::TagList->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::Faq::TagList::Value {
+package Cfn::Resource::Properties::Object::AWS::Kendra::Faq::TagList {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kendra::Faq::S3Path',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kendra::Faq::S3Path::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Kendra::Faq::S3Path->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kendra::Faq::S3Path::Value {
+package Cfn::Resource::Properties::Object::AWS::Kendra::Faq::S3Path {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

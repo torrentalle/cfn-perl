@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::DeliveryChannel::ConfigSnapshotD
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::DeliveryChannel::ConfigSnapshotDeliveryProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::DeliveryChannel::ConfigSnapshotDeliveryProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::DeliveryChannel::ConfigSnapshotDeliveryProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::Config::DeliveryChannel::ConfigSnapshotDeliveryProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

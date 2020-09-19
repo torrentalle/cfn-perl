@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeCommit::Repository::S3',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeCommit::Repository::S3::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeCommit::Repository::S3->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeCommit::Repository::S3::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeCommit::Repository::S3 {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeCommit::Repository::RepositoryTrigge
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeCommit::Repository::RepositoryTrigger::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeCommit::Repository::RepositoryTrigger->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeCommit::Repository::RepositoryTrigger::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeCommit::Repository::RepositoryTrigger {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -99,11 +99,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeCommit::Repository::Code',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeCommit::Repository::Code::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeCommit::Repository::Code->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeCommit::Repository::Code::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeCommit::Repository::Code {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

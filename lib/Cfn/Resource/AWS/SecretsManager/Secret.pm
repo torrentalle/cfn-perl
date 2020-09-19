@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SecretsManager::Secret::GenerateSecretSt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SecretsManager::Secret::GenerateSecretString::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SecretsManager::Secret::GenerateSecretString->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SecretsManager::Secret::GenerateSecretString::Value {
+package Cfn::Resource::Properties::Object::AWS::SecretsManager::Secret::GenerateSecretString {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

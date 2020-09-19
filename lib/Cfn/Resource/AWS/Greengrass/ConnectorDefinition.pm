@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ConnectorDefinition::Connect
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ConnectorDefinition::Connector::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ConnectorDefinition::Connector->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ConnectorDefinition::Connector::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ConnectorDefinition::Connector {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ConnectorDefinition::Connect
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ConnectorDefinition::ConnectorDefinitionVersion::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ConnectorDefinition::ConnectorDefinitionVersion->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ConnectorDefinition::ConnectorDefinitionVersion::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ConnectorDefinition::ConnectorDefinitionVersion {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

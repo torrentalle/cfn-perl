@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaConvert::JobTemplate::HopDestinatio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaConvert::JobTemplate::HopDestination::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaConvert::JobTemplate::HopDestination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaConvert::JobTemplate::HopDestination::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaConvert::JobTemplate::HopDestination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaConvert::JobTemplate::AccelerationS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaConvert::JobTemplate::AccelerationSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaConvert::JobTemplate::AccelerationSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaConvert::JobTemplate::AccelerationSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaConvert::JobTemplate::AccelerationSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

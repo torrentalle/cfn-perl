@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Range',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Range::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Range->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Range::Value {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Range {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Dimension',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Dimension::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Dimension->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Dimension::Value {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Dimension {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Configurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Configuration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Configuration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Configuration::Value {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Configuration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

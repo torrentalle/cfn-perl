@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SecurityGroup::Ingress',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SecurityGroup::Ingress::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::SecurityGroup::Ingress->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SecurityGroup::Ingress::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::SecurityGroup::Ingress {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -103,11 +103,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::SecurityGroup::Egress',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::SecurityGroup::Egress::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::SecurityGroup::Egress->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::SecurityGroup::Egress::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::SecurityGroup::Egress {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

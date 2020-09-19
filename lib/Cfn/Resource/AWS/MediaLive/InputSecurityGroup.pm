@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaLive::InputSecurityGroup::InputWhit
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaLive::InputSecurityGroup::InputWhitelistRuleCidr::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaLive::InputSecurityGroup::InputWhitelistRuleCidr->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaLive::InputSecurityGroup::InputWhitelistRuleCidr::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaLive::InputSecurityGroup::InputWhitelistRuleCidr {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

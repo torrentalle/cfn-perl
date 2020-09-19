@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::ServiceManagedS3'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::ServiceManagedS3::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Channel::ServiceManagedS3->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::ServiceManagedS3::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Channel::ServiceManagedS3 {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -49,11 +49,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::CustomerManagedS3
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::CustomerManagedS3::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Channel::CustomerManagedS3->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::CustomerManagedS3::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Channel::CustomerManagedS3 {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::RetentionPeriod',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::RetentionPeriod::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Channel::RetentionPeriod->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::RetentionPeriod::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Channel::RetentionPeriod {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::ChannelStorage',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::ChannelStorage::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Channel::ChannelStorage->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoTAnalytics::Channel::ChannelStorage::Value {
+package Cfn::Resource::Properties::Object::AWS::IoTAnalytics::Channel::ChannelStorage {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

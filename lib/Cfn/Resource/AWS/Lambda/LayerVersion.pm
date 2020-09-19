@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::LayerVersion::Content',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::LayerVersion::Content::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::LayerVersion::Content->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::LayerVersion::Content::Value {
+package Cfn::Resource::Properties::Object::AWS::Lambda::LayerVersion::Content {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

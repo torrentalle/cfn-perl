@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::DirectoryService::MicrosoftAD::VpcSettin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DirectoryService::MicrosoftAD::VpcSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DirectoryService::MicrosoftAD::VpcSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DirectoryService::MicrosoftAD::VpcSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::DirectoryService::MicrosoftAD::VpcSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

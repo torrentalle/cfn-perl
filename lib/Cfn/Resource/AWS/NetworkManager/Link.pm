@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::NetworkManager::Link::Bandwidth',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::NetworkManager::Link::Bandwidth::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::NetworkManager::Link::Bandwidth->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::NetworkManager::Link::Bandwidth::Value {
+package Cfn::Resource::Properties::Object::AWS::NetworkManager::Link::Bandwidth {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

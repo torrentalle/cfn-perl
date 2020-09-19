@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::GuardDuty::Filter::Condition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GuardDuty::Filter::Condition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GuardDuty::Filter::Condition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GuardDuty::Filter::Condition::Value {
+package Cfn::Resource::Properties::Object::AWS::GuardDuty::Filter::Condition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -54,11 +54,11 @@ coerce 'Cfn::Resource::Properties::AWS::GuardDuty::Filter::FindingCriteria',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GuardDuty::Filter::FindingCriteria::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GuardDuty::Filter::FindingCriteria->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GuardDuty::Filter::FindingCriteria::Value {
+package Cfn::Resource::Properties::Object::AWS::GuardDuty::Filter::FindingCriteria {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

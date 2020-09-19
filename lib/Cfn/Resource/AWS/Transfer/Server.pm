@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::Server::Protocol',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::Server::Protocol::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Transfer::Server::Protocol->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::Server::Protocol::Value {
+package Cfn::Resource::Properties::Object::AWS::Transfer::Server::Protocol {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetail
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetails::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Transfer::Server::IdentityProviderDetails->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetails::Value {
+package Cfn::Resource::Properties::Object::AWS::Transfer::Server::IdentityProviderDetails {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetails',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetails::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Transfer::Server::EndpointDetails->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetails::Value {
+package Cfn::Resource::Properties::Object::AWS::Transfer::Server::EndpointDetails {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

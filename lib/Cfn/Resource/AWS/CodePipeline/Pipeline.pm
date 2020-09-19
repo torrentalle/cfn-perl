@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::OutputArtifact',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::OutputArtifact::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::OutputArtifact->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::OutputArtifact::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::OutputArtifact {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::InputArtifact',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::InputArtifact::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::InputArtifact->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::InputArtifact::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::InputArtifact {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -115,11 +115,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::EncryptionKey',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::EncryptionKey::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::EncryptionKey->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::EncryptionKey::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::EncryptionKey {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -137,11 +137,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ActionTypeId',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ActionTypeId::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::ActionTypeId->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ActionTypeId::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::ActionTypeId {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -183,11 +183,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::BlockerDeclarati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::BlockerDeclaration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::BlockerDeclaration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::BlockerDeclaration::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::BlockerDeclaration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -205,11 +205,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ArtifactStore',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ArtifactStore::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::ArtifactStore->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ArtifactStore::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::ArtifactStore {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -250,11 +250,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ActionDeclaratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ActionDeclaration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::ActionDeclaration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ActionDeclaration::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::ActionDeclaration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -301,11 +301,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::StageTransition'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::StageTransition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::StageTransition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::StageTransition::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::StageTransition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -345,11 +345,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::StageDeclaration
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::StageDeclaration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::StageDeclaration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::StageDeclaration::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::StageDeclaration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -390,11 +390,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ArtifactStoreMap
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ArtifactStoreMap::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::ArtifactStoreMap->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Pipeline::ArtifactStoreMap::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Pipeline::ArtifactStoreMap {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::App::SslConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::App::SslConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::App::SslConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::App::SslConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::App::SslConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::App::Source',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::App::Source::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::App::Source->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::App::Source::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::App::Source {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -100,11 +100,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::App::EnvironmentVariable',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::App::EnvironmentVariable::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::App::EnvironmentVariable->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::App::EnvironmentVariable::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::App::EnvironmentVariable {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -145,11 +145,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorks::App::DataSource',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorks::App::DataSource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorks::App::DataSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorks::App::DataSource::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorks::App::DataSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

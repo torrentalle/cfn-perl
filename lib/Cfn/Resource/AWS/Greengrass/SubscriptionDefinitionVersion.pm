@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::SubscriptionDefinitionVersio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::SubscriptionDefinitionVersion::Subscription::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::SubscriptionDefinitionVersion::Subscription->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::SubscriptionDefinitionVersion::Subscription::Value {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::SubscriptionDefinitionVersion::Subscription {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

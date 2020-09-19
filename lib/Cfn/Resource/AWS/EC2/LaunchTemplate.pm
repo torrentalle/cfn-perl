@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::SpotOptions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::SpotOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::SpotOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::SpotOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::SpotOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -76,11 +76,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::PrivateIpAdd',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::PrivateIpAdd::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::PrivateIpAdd->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::PrivateIpAdd::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::PrivateIpAdd {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -120,11 +120,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Ipv6Add',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Ipv6Add::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::Ipv6Add->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Ipv6Add::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::Ipv6Add {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Ebs',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Ebs::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::Ebs->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Ebs::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::Ebs {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -168,11 +168,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservation
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationTarget::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::CapacityReservationTarget->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationTarget::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::CapacityReservationTarget {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -211,11 +211,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::TagSpecification',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::TagSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::TagSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::TagSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::TagSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -233,11 +233,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Placement',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Placement::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::Placement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Placement::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::Placement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -283,11 +283,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::NetworkInterface',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::NetworkInterface::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::NetworkInterface->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::NetworkInterface::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::NetworkInterface {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -316,11 +316,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Monitoring',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Monitoring::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::Monitoring->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::Monitoring::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::Monitoring {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -337,11 +337,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::MetadataOptions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::MetadataOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::MetadataOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::MetadataOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::MetadataOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -382,11 +382,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecificatio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::LicenseSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LicenseSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::LicenseSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -425,11 +425,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElast
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::LaunchTemplateElasticInferenceAccelerator {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -447,11 +447,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::InstanceMarketOptio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::InstanceMarketOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::InstanceMarketOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::InstanceMarketOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::InstanceMarketOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -469,11 +469,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::IamInstanceProfile'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::IamInstanceProfile::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::IamInstanceProfile->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::IamInstanceProfile::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::IamInstanceProfile {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -491,11 +491,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::HibernationOptions'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::HibernationOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::HibernationOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::HibernationOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::HibernationOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -534,11 +534,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::ElasticGpuSpecifica
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::ElasticGpuSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::ElasticGpuSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::ElasticGpuSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::ElasticGpuSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -555,11 +555,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CreditSpecification
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CreditSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::CreditSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CreditSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::CreditSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -576,11 +576,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CpuOptions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CpuOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::CpuOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CpuOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::CpuOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -598,11 +598,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservation
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::CapacityReservationSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::CapacityReservationSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::CapacityReservationSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -642,11 +642,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::BlockDeviceMapping'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::BlockDeviceMapping::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::BlockDeviceMapping->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::BlockDeviceMapping::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::BlockDeviceMapping {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -666,11 +666,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateData'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateData::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::LaunchTemplateData->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::LaunchTemplate::LaunchTemplateData::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::LaunchTemplate::LaunchTemplateData {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

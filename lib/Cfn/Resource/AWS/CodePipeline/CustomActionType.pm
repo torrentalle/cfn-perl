@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::CustomActionType::Settings
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::CustomActionType::Settings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::CustomActionType::Settings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::CustomActionType::Settings::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::CustomActionType::Settings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::CustomActionType::Configur
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::CustomActionType::ConfigurationProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::CustomActionType::ConfigurationProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::CustomActionType::ConfigurationProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::CustomActionType::ConfigurationProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -102,11 +102,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::CustomActionType::Artifact
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::CustomActionType::ArtifactDetails::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::CustomActionType::ArtifactDetails->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::CustomActionType::ArtifactDetails::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::CustomActionType::ArtifactDetails {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

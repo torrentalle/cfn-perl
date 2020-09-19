@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigurationAggregator::Organiz
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigurationAggregator::OrganizationAggregationSource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::ConfigurationAggregator::OrganizationAggregationSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigurationAggregator::OrganizationAggregationSource::Value {
+package Cfn::Resource::Properties::Object::AWS::Config::ConfigurationAggregator::OrganizationAggregationSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigurationAggregator::Account
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigurationAggregator::AccountAggregationSource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::ConfigurationAggregator::AccountAggregationSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigurationAggregator::AccountAggregationSource::Value {
+package Cfn::Resource::Properties::Object::AWS::Config::ConfigurationAggregator::AccountAggregationSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

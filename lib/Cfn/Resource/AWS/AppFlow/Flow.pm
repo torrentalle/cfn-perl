@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::PrefixConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::PrefixConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::PrefixConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::PrefixConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::PrefixConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::AggregationConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::AggregationConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::AggregationConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::AggregationConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::AggregationConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::S3OutputFormatConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::S3OutputFormatConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::S3OutputFormatConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::S3OutputFormatConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::S3OutputFormatConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::ErrorHandlingConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::ErrorHandlingConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ErrorHandlingConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::ErrorHandlingConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ErrorHandlingConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::ZendeskSourceProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::ZendeskSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ZendeskSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::ZendeskSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ZendeskSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -139,11 +139,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::VeevaSourceProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::VeevaSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::VeevaSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::VeevaSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::VeevaSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -160,11 +160,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::TrendmicroSourcePropertie
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::TrendmicroSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::TrendmicroSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::TrendmicroSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::TrendmicroSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -181,11 +181,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::SnowflakeDestinationPrope
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::SnowflakeDestinationProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SnowflakeDestinationProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::SnowflakeDestinationProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SnowflakeDestinationProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -205,11 +205,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::SlackSourceProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::SlackSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SlackSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::SlackSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SlackSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -226,11 +226,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::SingularSourceProperties'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::SingularSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SingularSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::SingularSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SingularSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -247,11 +247,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::ServiceNowSourcePropertie
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::ServiceNowSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ServiceNowSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::ServiceNowSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ServiceNowSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -268,11 +268,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::SalesforceSourcePropertie
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::SalesforceSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SalesforceSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::SalesforceSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SalesforceSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -291,11 +291,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::SalesforceDestinationProp
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::SalesforceDestinationProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SalesforceDestinationProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::SalesforceDestinationProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SalesforceDestinationProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -313,11 +313,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::S3SourceProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::S3SourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::S3SourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::S3SourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::S3SourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -335,11 +335,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::S3DestinationProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::S3DestinationProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::S3DestinationProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::S3DestinationProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::S3DestinationProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -358,11 +358,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::RedshiftDestinationProper
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::RedshiftDestinationProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::RedshiftDestinationProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::RedshiftDestinationProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::RedshiftDestinationProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -382,11 +382,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::MarketoSourceProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::MarketoSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::MarketoSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::MarketoSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::MarketoSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -403,11 +403,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::InforNexusSourcePropertie
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::InforNexusSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::InforNexusSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::InforNexusSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::InforNexusSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -424,11 +424,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::GoogleAnalyticsSourceProp
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::GoogleAnalyticsSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::GoogleAnalyticsSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::GoogleAnalyticsSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::GoogleAnalyticsSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -445,11 +445,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::EventBridgeDestinationPro
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::EventBridgeDestinationProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::EventBridgeDestinationProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::EventBridgeDestinationProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::EventBridgeDestinationProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -467,11 +467,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::DynatraceSourceProperties
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::DynatraceSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::DynatraceSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::DynatraceSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::DynatraceSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -488,11 +488,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::DatadogSourceProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::DatadogSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::DatadogSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::DatadogSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::DatadogSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -509,11 +509,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::AmplitudeSourceProperties
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::AmplitudeSourceProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::AmplitudeSourceProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::AmplitudeSourceProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::AmplitudeSourceProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -552,11 +552,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::TaskPropertiesObject',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::TaskPropertiesObject::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::TaskPropertiesObject->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::TaskPropertiesObject::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::TaskPropertiesObject {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -574,11 +574,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::SourceConnectorProperties
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::SourceConnectorProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SourceConnectorProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::SourceConnectorProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SourceConnectorProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -608,11 +608,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::ScheduledTriggerPropertie
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::ScheduledTriggerProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ScheduledTriggerProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::ScheduledTriggerProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ScheduledTriggerProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -633,11 +633,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::DestinationConnectorPrope
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::DestinationConnectorProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::DestinationConnectorProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::DestinationConnectorProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::DestinationConnectorProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -658,11 +658,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::ConnectorOperator',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::ConnectorOperator::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ConnectorOperator->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::ConnectorOperator::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::ConnectorOperator {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -692,11 +692,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::TriggerConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::TriggerConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::TriggerConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::TriggerConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::TriggerConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -736,11 +736,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::Task',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::Task::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::Task->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::Task::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::Task {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -761,11 +761,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::SourceFlowConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::SourceFlowConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SourceFlowConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::SourceFlowConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::SourceFlowConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -806,11 +806,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::Flow::DestinationFlowConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::Flow::DestinationFlowConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::DestinationFlowConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::Flow::DestinationFlowConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::Flow::DestinationFlowConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

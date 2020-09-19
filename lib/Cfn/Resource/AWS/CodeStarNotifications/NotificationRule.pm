@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeStarNotifications::NotificationRule:
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeStarNotifications::NotificationRule::Target::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeStarNotifications::NotificationRule::Target->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeStarNotifications::NotificationRule::Target::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeStarNotifications::NotificationRule::Target {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

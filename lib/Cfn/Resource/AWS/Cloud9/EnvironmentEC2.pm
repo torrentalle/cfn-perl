@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cloud9::EnvironmentEC2::Repository',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cloud9::EnvironmentEC2::Repository::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cloud9::EnvironmentEC2::Repository->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cloud9::EnvironmentEC2::Repository::Value {
+package Cfn::Resource::Properties::Object::AWS::Cloud9::EnvironmentEC2::Repository {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::VpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::VpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::DomainJoinInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfo::Value {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::DomainJoinInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacity',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacity::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::ComputeCapacity->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacity::Value {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::ComputeCapacity {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::Coordinates',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::Coordinates::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Coordinates->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::Coordinates::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Coordinates {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::SetDimension',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::SetDimension::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::SetDimension->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::SetDimension::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::SetDimension {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::Recency',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::Recency::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Recency->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::Recency::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Recency {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::GPSPoint',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::GPSPoint::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::GPSPoint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::GPSPoint::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::GPSPoint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::Location',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::Location::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Location->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::Location::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Location {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -139,11 +139,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::Demographic',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::Demographic::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Demographic->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::Demographic::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Demographic {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -165,11 +165,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::Behavior',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::Behavior::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Behavior->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::Behavior::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Behavior {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -208,11 +208,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::SourceSegments',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::SourceSegments::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::SourceSegments->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::SourceSegments::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::SourceSegments {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -252,11 +252,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::SegmentDimensions',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::SegmentDimensions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::SegmentDimensions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::SegmentDimensions::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::SegmentDimensions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -300,11 +300,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::Groups',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::Groups::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Groups->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::Groups::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::Groups {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -324,11 +324,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::SegmentGroups',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::SegmentGroups::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::SegmentGroups->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::SegmentGroups::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::SegmentGroups {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -346,11 +346,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::Segment::AttributeDimension',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::Segment::AttributeDimension::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::AttributeDimension->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::Segment::AttributeDimension::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::Segment::AttributeDimension {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeDeploy::DeploymentConfig::MinimumHea
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeDeploy::DeploymentConfig::MinimumHealthyHosts::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeDeploy::DeploymentConfig::MinimumHealthyHosts->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeDeploy::DeploymentConfig::MinimumHealthyHosts::Value {
+package Cfn::Resource::Properties::Object::AWS::CodeDeploy::DeploymentConfig::MinimumHealthyHosts {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

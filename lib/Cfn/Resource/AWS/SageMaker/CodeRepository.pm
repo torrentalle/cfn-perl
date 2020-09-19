@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::CodeRepository::GitConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::CodeRepository::GitConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::CodeRepository::GitConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::CodeRepository::GitConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::CodeRepository::GitConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Webhook::WebhookFilterRule
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Webhook::WebhookFilterRule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Webhook::WebhookFilterRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Webhook::WebhookFilterRule::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Webhook::WebhookFilterRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodePipeline::Webhook::WebhookAuthConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodePipeline::Webhook::WebhookAuthConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodePipeline::Webhook::WebhookAuthConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodePipeline::Webhook::WebhookAuthConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::CodePipeline::Webhook::WebhookAuthConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

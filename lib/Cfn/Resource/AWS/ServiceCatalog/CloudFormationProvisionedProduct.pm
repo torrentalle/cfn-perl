@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProvisione
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProvisionedProduct::ProvisioningPreferences::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceCatalog::CloudFormationProvisionedProduct::ProvisioningPreferences->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProvisionedProduct::ProvisioningPreferences::Value {
+package Cfn::Resource::Properties::Object::AWS::ServiceCatalog::CloudFormationProvisionedProduct::ProvisioningPreferences {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -78,11 +78,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProvisione
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProvisionedProduct::ProvisioningParameter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceCatalog::CloudFormationProvisionedProduct::ProvisioningParameter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProvisionedProduct::ProvisioningParameter::Value {
+package Cfn::Resource::Properties::Object::AWS::ServiceCatalog::CloudFormationProvisionedProduct::ProvisioningParameter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CertificateManager::Certificate::DomainV
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CertificateManager::Certificate::DomainValidationOption::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CertificateManager::Certificate::DomainValidationOption->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CertificateManager::Certificate::DomainValidationOption::Value {
+package Cfn::Resource::Properties::Object::AWS::CertificateManager::Certificate::DomainValidationOption {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

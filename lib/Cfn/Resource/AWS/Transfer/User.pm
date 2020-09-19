@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::User::SshPublicKey',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::User::SshPublicKey::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Transfer::User::SshPublicKey->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::User::SshPublicKey::Value {
+package Cfn::Resource::Properties::Object::AWS::Transfer::User::SshPublicKey {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::User::HomeDirectoryMapEntry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::User::HomeDirectoryMapEntry::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Transfer::User::HomeDirectoryMapEntry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::User::HomeDirectoryMapEntry::Value {
+package Cfn::Resource::Properties::Object::AWS::Transfer::User::HomeDirectoryMapEntry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

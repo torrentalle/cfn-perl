@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::PrefixList::Entry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::PrefixList::Entry::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::PrefixList::Entry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::PrefixList::Entry::Value {
+package Cfn::Resource::Properties::Object::AWS::EC2::PrefixList::Entry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

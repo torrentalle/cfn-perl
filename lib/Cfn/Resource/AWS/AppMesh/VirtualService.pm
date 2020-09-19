@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualRouterSe
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualRouterServiceProvider::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualService::VirtualRouterServiceProvider->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualRouterServiceProvider::Value {
+package Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualService::VirtualRouterServiceProvider {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualNodeServ
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualNodeServiceProvider::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualService::VirtualNodeServiceProvider->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualNodeServiceProvider::Value {
+package Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualService::VirtualNodeServiceProvider {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualServiceP
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualServiceProvider::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualService::VirtualServiceProvider->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualServiceProvider::Value {
+package Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualService::VirtualServiceProvider {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualServiceS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualServiceSpec::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualService::VirtualServiceSpec->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppMesh::VirtualService::VirtualServiceSpec::Value {
+package Cfn::Resource::Properties::Object::AWS::AppMesh::VirtualService::VirtualServiceSpec {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

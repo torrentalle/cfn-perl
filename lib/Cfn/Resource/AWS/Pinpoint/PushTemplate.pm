@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::PushTemplate::DefaultPushNotif
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::PushTemplate::DefaultPushNotificationTemplate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::PushTemplate::DefaultPushNotificationTemplate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::PushTemplate::DefaultPushNotificationTemplate::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::PushTemplate::DefaultPushNotificationTemplate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -54,11 +54,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::PushTemplate::AndroidPushNotif
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::PushTemplate::AndroidPushNotificationTemplate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::PushTemplate::AndroidPushNotificationTemplate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::PushTemplate::AndroidPushNotificationTemplate::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::PushTemplate::AndroidPushNotificationTemplate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -82,11 +82,11 @@ coerce 'Cfn::Resource::Properties::AWS::Pinpoint::PushTemplate::APNSPushNotifica
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Pinpoint::PushTemplate::APNSPushNotificationTemplate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Pinpoint::PushTemplate::APNSPushNotificationTemplate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Pinpoint::PushTemplate::APNSPushNotificationTemplate::Value {
+package Cfn::Resource::Properties::Object::AWS::Pinpoint::PushTemplate::APNSPushNotificationTemplate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

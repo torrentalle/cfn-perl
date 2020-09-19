@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Workteam::CognitoMemberDefini
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Workteam::CognitoMemberDefinition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::Workteam::CognitoMemberDefinition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Workteam::CognitoMemberDefinition::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::Workteam::CognitoMemberDefinition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Workteam::NotificationConfigu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Workteam::NotificationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::Workteam::NotificationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Workteam::NotificationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::Workteam::NotificationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Workteam::MemberDefinition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Workteam::MemberDefinition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::Workteam::MemberDefinition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Workteam::MemberDefinition::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::Workteam::MemberDefinition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

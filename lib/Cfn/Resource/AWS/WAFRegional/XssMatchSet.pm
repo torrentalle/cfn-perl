@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::XssMatchSet::FieldToMatch',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::XssMatchSet::FieldToMatch::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::XssMatchSet::FieldToMatch->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::XssMatchSet::FieldToMatch::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::XssMatchSet::FieldToMatch {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::XssMatchSet::XssMatchTuple'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::XssMatchSet::XssMatchTuple::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::XssMatchSet::XssMatchTuple->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::XssMatchSet::XssMatchTuple::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::XssMatchSet::XssMatchTuple {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

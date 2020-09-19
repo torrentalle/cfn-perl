@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRule'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaStore::Container::MetricPolicyRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicyRule::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaStore::Container::MetricPolicyRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaStore::Container::MetricPolicy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaStore::Container::MetricPolicy::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaStore::Container::MetricPolicy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::MediaStore::Container::CorsRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MediaStore::Container::CorsRule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MediaStore::Container::CorsRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MediaStore::Container::CorsRule::Value {
+package Cfn::Resource::Properties::Object::AWS::MediaStore::Container::CorsRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

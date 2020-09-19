@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::Fleet::ServerProcess',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::Fleet::ServerProcess::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::ServerProcess->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::Fleet::ServerProcess::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::ServerProcess {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::Fleet::RuntimeConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::Fleet::RuntimeConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::RuntimeConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::Fleet::RuntimeConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::RuntimeConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::Fleet::ResourceCreationLimitPo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::Fleet::ResourceCreationLimitPolicy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::ResourceCreationLimitPolicy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::Fleet::ResourceCreationLimitPolicy::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::ResourceCreationLimitPolicy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::Fleet::IpPermission',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::Fleet::IpPermission::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::IpPermission->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::Fleet::IpPermission::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::IpPermission {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -165,11 +165,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::Fleet::CertificateConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::Fleet::CertificateConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::CertificateConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::Fleet::CertificateConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::Fleet::CertificateConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

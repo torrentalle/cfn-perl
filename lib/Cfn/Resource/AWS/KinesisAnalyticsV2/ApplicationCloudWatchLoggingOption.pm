@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatc
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption::CloudWatchLoggingOption::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption::CloudWatchLoggingOption->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption::CloudWatchLoggingOption::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption::CloudWatchLoggingOption {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

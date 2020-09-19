@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::RateBasedRule::Predicate',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::RateBasedRule::Predicate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::RateBasedRule::Predicate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::RateBasedRule::Predicate::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::RateBasedRule::Predicate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

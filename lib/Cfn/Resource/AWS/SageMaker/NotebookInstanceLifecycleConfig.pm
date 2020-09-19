@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::NotebookInstanceLifecycleConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::NotebookInstanceLifecycleConfig::NotebookInstanceLifecycleHook::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::NotebookInstanceLifecycleConfig::NotebookInstanceLifecycleHook->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::NotebookInstanceLifecycleConfig::NotebookInstanceLifecycleHook::Value {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::NotebookInstanceLifecycleConfig::NotebookInstanceLifecycleHook {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

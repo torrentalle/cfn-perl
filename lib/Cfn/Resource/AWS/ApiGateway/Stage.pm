@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Stage::MethodSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Stage::MethodSetting::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Stage::MethodSetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Stage::MethodSetting::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Stage::MethodSetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -81,11 +81,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Stage::CanarySetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Stage::CanarySetting::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Stage::CanarySetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Stage::CanarySetting::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Stage::CanarySetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -105,11 +105,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Stage::AccessLogSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Stage::AccessLogSetting::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Stage::AccessLogSetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Stage::AccessLogSetting::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Stage::AccessLogSetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

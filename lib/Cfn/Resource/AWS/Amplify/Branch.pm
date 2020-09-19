@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::Branch::EnvironmentVariable',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::Branch::EnvironmentVariable::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Amplify::Branch::EnvironmentVariable->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::Branch::EnvironmentVariable::Value {
+package Cfn::Resource::Properties::Object::AWS::Amplify::Branch::EnvironmentVariable {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Amplify::Branch::BasicAuthConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Amplify::Branch::BasicAuthConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Amplify::Branch::BasicAuthConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Amplify::Branch::BasicAuthConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::Amplify::Branch::BasicAuthConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Backup::BackupPlan::LifecycleResourceTyp
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Backup::BackupPlan::LifecycleResourceType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Backup::BackupPlan::LifecycleResourceType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Backup::BackupPlan::LifecycleResourceType::Value {
+package Cfn::Resource::Properties::Object::AWS::Backup::BackupPlan::LifecycleResourceType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Backup::BackupPlan::CopyActionResourceTy
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Backup::BackupPlan::CopyActionResourceType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Backup::BackupPlan::CopyActionResourceType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Backup::BackupPlan::CopyActionResourceType::Value {
+package Cfn::Resource::Properties::Object::AWS::Backup::BackupPlan::CopyActionResourceType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::Backup::BackupPlan::BackupRuleResourceTy
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Backup::BackupPlan::BackupRuleResourceType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Backup::BackupPlan::BackupRuleResourceType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Backup::BackupPlan::BackupRuleResourceType::Value {
+package Cfn::Resource::Properties::Object::AWS::Backup::BackupPlan::BackupRuleResourceType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -145,11 +145,11 @@ coerce 'Cfn::Resource::Properties::AWS::Backup::BackupPlan::BackupPlanResourceTy
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Backup::BackupPlan::BackupPlanResourceType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Backup::BackupPlan::BackupPlanResourceType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Backup::BackupPlan::BackupPlanResourceType::Value {
+package Cfn::Resource::Properties::Object::AWS::Backup::BackupPlan::BackupPlanResourceType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

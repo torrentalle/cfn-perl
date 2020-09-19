@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::MetricDim
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::MetricDimension::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::MetricDimension->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::MetricDimension::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::MetricDimension {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::Predefine
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::PredefinedScalingMetricSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::PredefinedScalingMetricSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::PredefinedScalingMetricSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::PredefinedScalingMetricSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::Customize
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::CustomizedScalingMetricSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::CustomizedScalingMetricSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::CustomizedScalingMetricSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::CustomizedScalingMetricSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -142,11 +142,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::TargetTra
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::TargetTrackingConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::TargetTrackingConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::TargetTrackingConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::TargetTrackingConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -191,11 +191,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::TagFilter
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::TagFilter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::TagFilter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::TagFilter::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::TagFilter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -213,11 +213,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::Predefine
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::PredefinedLoadMetricSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::PredefinedLoadMetricSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::PredefinedLoadMetricSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::PredefinedLoadMetricSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -235,11 +235,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::Customize
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::CustomizedLoadMetricSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::CustomizedLoadMetricSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::CustomizedLoadMetricSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::CustomizedLoadMetricSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -282,11 +282,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::ScalingIn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::ScalingInstruction::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::ScalingInstruction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::ScalingInstruction::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::ScalingInstruction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -316,11 +316,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::Applicati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::ApplicationSource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::ApplicationSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScalingPlans::ScalingPlan::ApplicationSource::Value {
+package Cfn::Resource::Properties::Object::AWS::AutoScalingPlans::ScalingPlan::ApplicationSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

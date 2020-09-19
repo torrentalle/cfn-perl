@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::FSx::FileSystem::SelfManagedActiveDirect
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::FSx::FileSystem::SelfManagedActiveDirectoryConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::FSx::FileSystem::SelfManagedActiveDirectoryConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::FSx::FileSystem::SelfManagedActiveDirectoryConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::FSx::FileSystem::SelfManagedActiveDirectoryConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -55,11 +55,11 @@ coerce 'Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::FSx::FileSystem::WindowsConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::FSx::FileSystem::WindowsConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::FSx::FileSystem::WindowsConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -84,11 +84,11 @@ coerce 'Cfn::Resource::Properties::AWS::FSx::FileSystem::LustreConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::FSx::FileSystem::LustreConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::FSx::FileSystem::LustreConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::FSx::FileSystem::LustreConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::FSx::FileSystem::LustreConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

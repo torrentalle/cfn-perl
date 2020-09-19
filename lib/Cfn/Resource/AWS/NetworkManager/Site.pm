@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::NetworkManager::Site::Location',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::NetworkManager::Site::Location::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::NetworkManager::Site::Location->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::NetworkManager::Site::Location::Value {
+package Cfn::Resource::Properties::Object::AWS::NetworkManager::Site::Location {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT1Click::Project::PlacementTemplate',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT1Click::Project::PlacementTemplate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT1Click::Project::PlacementTemplate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT1Click::Project::PlacementTemplate::Value {
+package Cfn::Resource::Properties::Object::AWS::IoT1Click::Project::PlacementTemplate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT1Click::Project::DeviceTemplate',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT1Click::Project::DeviceTemplate::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT1Click::Project::DeviceTemplate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT1Click::Project::DeviceTemplate::Value {
+package Cfn::Resource::Properties::Object::AWS::IoT1Click::Project::DeviceTemplate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

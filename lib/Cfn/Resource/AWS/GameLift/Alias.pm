@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::GameLift::Alias::RoutingStrategy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::GameLift::Alias::RoutingStrategy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::GameLift::Alias::RoutingStrategy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::GameLift::Alias::RoutingStrategy::Value {
+package Cfn::Resource::Properties::Object::AWS::GameLift::Alias::RoutingStrategy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

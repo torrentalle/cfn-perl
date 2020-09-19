@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::Permissions::TableWildcar
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::Permissions::TableWildcard::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::TableWildcard->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::Permissions::TableWildcard::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::TableWildcard {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -49,11 +49,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::Permissions::ColumnWildca
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::Permissions::ColumnWildcard::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::ColumnWildcard->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::Permissions::ColumnWildcard::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::ColumnWildcard {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -70,11 +70,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::Permissions::TableWithCol
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::Permissions::TableWithColumnsResource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::TableWithColumnsResource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::Permissions::TableWithColumnsResource::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::TableWithColumnsResource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::Permissions::TableResourc
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::Permissions::TableResource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::TableResource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::Permissions::TableResource::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::TableResource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -119,11 +119,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::Permissions::DatabaseReso
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::Permissions::DatabaseResource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::DatabaseResource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::Permissions::DatabaseResource::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::DatabaseResource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::Permissions::DataLocation
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::Permissions::DataLocationResource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::DataLocationResource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::Permissions::DataLocationResource::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::DataLocationResource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -163,11 +163,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::Permissions::Resource',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::Permissions::Resource::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::Resource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::Permissions::Resource::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::Resource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -187,11 +187,11 @@ coerce 'Cfn::Resource::Properties::AWS::LakeFormation::Permissions::DataLakePrin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::LakeFormation::Permissions::DataLakePrincipal::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::DataLakePrincipal->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::LakeFormation::Permissions::DataLakePrincipal::Value {
+package Cfn::Resource::Properties::Object::AWS::LakeFormation::Permissions::DataLakePrincipal {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

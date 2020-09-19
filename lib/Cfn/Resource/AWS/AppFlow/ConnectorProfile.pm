@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorOAut
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorOAuthRequest::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ConnectorOAuthRequest->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorOAuthRequest::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ConnectorOAuthRequest {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ZendeskConnec
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ZendeskConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ZendeskConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ZendeskConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ZendeskConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ZendeskConnec
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ZendeskConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ZendeskConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ZendeskConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ZendeskConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::VeevaConnecto
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::VeevaConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::VeevaConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::VeevaConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::VeevaConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::VeevaConnecto
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::VeevaConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::VeevaConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::VeevaConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::VeevaConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -139,11 +139,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::TrendmicroCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::TrendmicroConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::TrendmicroConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::TrendmicroConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::TrendmicroConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -160,11 +160,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SnowflakeConn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SnowflakeConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SnowflakeConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SnowflakeConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SnowflakeConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -187,11 +187,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SnowflakeConn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SnowflakeConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SnowflakeConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SnowflakeConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SnowflakeConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -209,11 +209,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SlackConnecto
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SlackConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SlackConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SlackConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SlackConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -230,11 +230,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SlackConnecto
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SlackConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SlackConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SlackConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SlackConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -254,11 +254,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SingularConne
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SingularConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SingularConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SingularConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SingularConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -275,11 +275,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ServiceNowCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ServiceNowConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ServiceNowConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ServiceNowConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ServiceNowConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -296,11 +296,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ServiceNowCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ServiceNowConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ServiceNowConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ServiceNowConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ServiceNowConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -318,11 +318,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SalesforceCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SalesforceConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SalesforceConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SalesforceConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SalesforceConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -340,11 +340,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SalesforceCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SalesforceConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SalesforceConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::SalesforceConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::SalesforceConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -363,11 +363,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::RedshiftConne
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::RedshiftConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::RedshiftConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::RedshiftConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::RedshiftConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -387,11 +387,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::RedshiftConne
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::RedshiftConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::RedshiftConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::RedshiftConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::RedshiftConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -409,11 +409,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::MarketoConnec
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::MarketoConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::MarketoConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::MarketoConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::MarketoConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -430,11 +430,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::MarketoConnec
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::MarketoConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::MarketoConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::MarketoConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::MarketoConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -454,11 +454,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::InforNexusCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::InforNexusConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::InforNexusConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::InforNexusConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::InforNexusConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -475,11 +475,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::InforNexusCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::InforNexusConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::InforNexusConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::InforNexusConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::InforNexusConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -499,11 +499,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::GoogleAnalyti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::GoogleAnalyticsConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::GoogleAnalyticsConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::GoogleAnalyticsConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::GoogleAnalyticsConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -524,11 +524,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DynatraceConn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DynatraceConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::DynatraceConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DynatraceConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::DynatraceConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -545,11 +545,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DynatraceConn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DynatraceConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::DynatraceConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DynatraceConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::DynatraceConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -566,11 +566,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DatadogConnec
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DatadogConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::DatadogConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DatadogConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::DatadogConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -587,11 +587,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DatadogConnec
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DatadogConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::DatadogConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::DatadogConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::DatadogConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -609,11 +609,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::AmplitudeConn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::AmplitudeConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::AmplitudeConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::AmplitudeConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::AmplitudeConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -631,11 +631,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorProf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorProfileProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ConnectorProfileProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorProfileProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ConnectorProfileProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -662,11 +662,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorProf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorProfileCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ConnectorProfileCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorProfileCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ConnectorProfileCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -697,11 +697,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorProf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorProfileConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ConnectorProfileConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppFlow::ConnectorProfile::ConnectorProfileConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::AppFlow::ConnectorProfile::ConnectorProfileConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

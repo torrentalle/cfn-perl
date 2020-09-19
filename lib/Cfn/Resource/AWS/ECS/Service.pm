@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Service::AwsVpcConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Service::AwsVpcConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Service::AwsVpcConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Service::AwsVpcConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Service::AwsVpcConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Service::ServiceRegistry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Service::ServiceRegistry::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Service::ServiceRegistry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Service::ServiceRegistry::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Service::ServiceRegistry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -120,11 +120,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Service::PlacementStrategy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Service::PlacementStrategy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Service::PlacementStrategy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Service::PlacementStrategy::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Service::PlacementStrategy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -164,11 +164,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Service::PlacementConstraint',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Service::PlacementConstraint::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Service::PlacementConstraint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Service::PlacementConstraint::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Service::PlacementConstraint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -186,11 +186,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Service::NetworkConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Service::NetworkConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Service::NetworkConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Service::NetworkConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Service::NetworkConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -229,11 +229,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Service::LoadBalancer',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Service::LoadBalancer::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Service::LoadBalancer->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Service::LoadBalancer::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Service::LoadBalancer {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -253,11 +253,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Service::DeploymentController',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Service::DeploymentController::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Service::DeploymentController->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Service::DeploymentController::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Service::DeploymentController {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -274,11 +274,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Service::DeploymentConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Service::DeploymentConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Service::DeploymentConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Service::DeploymentConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Service::DeploymentConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -318,11 +318,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Service::CapacityProviderStrategyIt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Service::CapacityProviderStrategyItem::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Service::CapacityProviderStrategyItem->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Service::CapacityProviderStrategyItem::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Service::CapacityProviderStrategyItem {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

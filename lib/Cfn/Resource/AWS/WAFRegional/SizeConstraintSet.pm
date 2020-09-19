@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::SizeConstraintSet::FieldToM
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::SizeConstraintSet::FieldToMatch::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::SizeConstraintSet::FieldToMatch->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::SizeConstraintSet::FieldToMatch::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::SizeConstraintSet::FieldToMatch {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::SizeConstraintSet::SizeCons
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::SizeConstraintSet::SizeConstraint::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::SizeConstraintSet::SizeConstraint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::SizeConstraintSet::SizeConstraint::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::SizeConstraintSet::SizeConstraint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

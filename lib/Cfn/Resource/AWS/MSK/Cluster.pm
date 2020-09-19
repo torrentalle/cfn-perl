@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::Scram',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::Scram::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Scram->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::Scram::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Scram {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::S3',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::S3::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::S3->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::S3::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::S3 {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::NodeExporter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::NodeExporter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::NodeExporter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::NodeExporter::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::NodeExporter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::JmxExporter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::JmxExporter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::JmxExporter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::JmxExporter::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::JmxExporter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -115,11 +115,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::Firehose',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::Firehose::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Firehose->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::Firehose::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Firehose {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -137,11 +137,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::EBSStorageInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::EBSStorageInfo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::EBSStorageInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::EBSStorageInfo::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::EBSStorageInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -158,11 +158,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::CloudWatchLogs',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::CloudWatchLogs::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::CloudWatchLogs->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::CloudWatchLogs::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::CloudWatchLogs {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -180,11 +180,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::Tls',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::Tls::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Tls->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::Tls::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Tls {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -201,11 +201,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::StorageInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::StorageInfo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::StorageInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::StorageInfo::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::StorageInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -222,11 +222,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::Sasl',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::Sasl::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Sasl->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::Sasl::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Sasl {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -243,11 +243,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::Prometheus',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::Prometheus::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Prometheus->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::Prometheus::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::Prometheus {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -265,11 +265,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionInTransit',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionInTransit::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::EncryptionInTransit->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionInTransit::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::EncryptionInTransit {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -287,11 +287,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionAtRest',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionAtRest::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::EncryptionAtRest->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionAtRest::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::EncryptionAtRest {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -308,11 +308,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerLogs',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerLogs::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::BrokerLogs->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerLogs::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::BrokerLogs {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -331,11 +331,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::OpenMonitoring',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::OpenMonitoring::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::OpenMonitoring->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::OpenMonitoring::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::OpenMonitoring {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -352,11 +352,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::LoggingInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::LoggingInfo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::LoggingInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::LoggingInfo::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::LoggingInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -373,11 +373,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionInfo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::EncryptionInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::EncryptionInfo::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::EncryptionInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -395,11 +395,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::ConfigurationInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::ConfigurationInfo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::ConfigurationInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::ConfigurationInfo::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::ConfigurationInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -417,11 +417,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::ClientAuthentication',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::ClientAuthentication::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::ClientAuthentication->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::ClientAuthentication::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::ClientAuthentication {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -439,11 +439,11 @@ coerce 'Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerNodeGroupInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerNodeGroupInfo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::MSK::Cluster::BrokerNodeGroupInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::MSK::Cluster::BrokerNodeGroupInfo::Value {
+package Cfn::Resource::Properties::Object::AWS::MSK::Cluster::BrokerNodeGroupInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

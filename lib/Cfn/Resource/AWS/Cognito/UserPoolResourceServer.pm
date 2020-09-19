@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolResourceServer::Resourc
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::UserPoolResourceServer::ResourceServerScopeType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cognito::UserPoolResourceServer::ResourceServerScopeType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::UserPoolResourceServer::ResourceServerScopeType::Value {
+package Cfn::Resource::Properties::Object::AWS::Cognito::UserPoolResourceServer::ResourceServerScopeType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

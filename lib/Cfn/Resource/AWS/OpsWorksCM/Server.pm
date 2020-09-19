@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::OpsWorksCM::Server::EngineAttribute',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::OpsWorksCM::Server::EngineAttribute::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::OpsWorksCM::Server::EngineAttribute->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::OpsWorksCM::Server::EngineAttribute::Value {
+package Cfn::Resource::Properties::Object::AWS::OpsWorksCM::Server::EngineAttribute {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

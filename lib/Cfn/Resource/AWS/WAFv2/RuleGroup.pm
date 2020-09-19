@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::TextTransformation',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::TextTransformation::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::TextTransformation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::TextTransformation::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::TextTransformation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::IPSetForwardedIPConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::ForwardedIPConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ForwardedIPConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::ForwardedIPConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::FieldToMatch',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::FieldToMatch::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::FieldToMatch->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::FieldToMatch::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::FieldToMatch {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -145,11 +145,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::XssMatchStatement',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::XssMatchStatement::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::XssMatchStatement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::XssMatchStatement::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::XssMatchStatement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -167,11 +167,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::SqliMatchStatement',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::SqliMatchStatement::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::SqliMatchStatement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::SqliMatchStatement::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::SqliMatchStatement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -189,11 +189,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::SizeConstraintStatemen
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::SizeConstraintStatement::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::SizeConstraintStatement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::SizeConstraintStatement::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::SizeConstraintStatement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -213,11 +213,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RegexPatternSetReferen
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RegexPatternSetReferenceStatement::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::RegexPatternSetReferenceStatement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RegexPatternSetReferenceStatement::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::RegexPatternSetReferenceStatement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -236,11 +236,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetReferenceStatemen
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetReferenceStatement::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::IPSetReferenceStatement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::IPSetReferenceStatement::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::IPSetReferenceStatement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -258,11 +258,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::GeoMatchStatement',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::GeoMatchStatement::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::GeoMatchStatement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::GeoMatchStatement::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::GeoMatchStatement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -280,11 +280,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ByteMatchStatement',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ByteMatchStatement::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::ByteMatchStatement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::ByteMatchStatement::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::ByteMatchStatement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -327,11 +327,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementThree',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementThree::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::StatementThree->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementThree::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::StatementThree {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -354,11 +354,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RateBasedStatementTwo'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RateBasedStatementTwo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::RateBasedStatementTwo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RateBasedStatementTwo::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::RateBasedStatementTwo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -378,11 +378,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::OrStatementTwo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::OrStatementTwo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::OrStatementTwo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::OrStatementTwo::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::OrStatementTwo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -399,11 +399,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::NotStatementTwo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::NotStatementTwo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::NotStatementTwo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::NotStatementTwo::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::NotStatementTwo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -420,11 +420,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::AndStatementTwo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::AndStatementTwo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::AndStatementTwo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::AndStatementTwo::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::AndStatementTwo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -463,11 +463,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementTwo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementTwo::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::StatementTwo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementTwo::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::StatementTwo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -494,11 +494,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RateBasedStatementOne'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RateBasedStatementOne::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::RateBasedStatementOne->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RateBasedStatementOne::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::RateBasedStatementOne {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -518,11 +518,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::OrStatementOne',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::OrStatementOne::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::OrStatementOne->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::OrStatementOne::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::OrStatementOne {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -539,11 +539,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::NotStatementOne',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::NotStatementOne::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::NotStatementOne->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::NotStatementOne::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::NotStatementOne {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -560,11 +560,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::AndStatementOne',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::AndStatementOne::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::AndStatementOne->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::AndStatementOne::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::AndStatementOne {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -581,11 +581,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::VisibilityConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::VisibilityConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::VisibilityConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::VisibilityConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::VisibilityConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -604,11 +604,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementOne',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementOne::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::StatementOne->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::StatementOne::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::StatementOne {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -635,11 +635,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RuleAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RuleAction::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::RuleAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::RuleAction::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::RuleAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -680,11 +680,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::Rule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::Rule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::Rule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFv2::RuleGroup::Rule::Value {
+package Cfn::Resource::Properties::Object::AWS::WAFv2::RuleGroup::Rule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

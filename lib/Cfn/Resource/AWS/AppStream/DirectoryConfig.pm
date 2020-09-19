@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::DirectoryConfig::ServiceAccou
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::DirectoryConfig::ServiceAccountCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::DirectoryConfig::ServiceAccountCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::DirectoryConfig::ServiceAccountCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::AppStream::DirectoryConfig::ServiceAccountCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

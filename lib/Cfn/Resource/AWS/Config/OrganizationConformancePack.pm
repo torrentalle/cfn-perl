@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::OrganizationConformancePack::Con
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::OrganizationConformancePack::ConformancePackInputParameter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::OrganizationConformancePack::ConformancePackInputParameter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::OrganizationConformancePack::ConformancePackInputParameter::Value {
+package Cfn::Resource::Properties::Object::AWS::Config::OrganizationConformancePack::ConformancePackInputParameter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

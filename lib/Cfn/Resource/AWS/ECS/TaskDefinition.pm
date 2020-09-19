@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Tmpfs',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Tmpfs::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Tmpfs->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Tmpfs::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Tmpfs {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Secret',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Secret::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Secret->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Secret::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Secret {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::KernelCapabilities'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::KernelCapabilities::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::KernelCapabilities->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::KernelCapabilities::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::KernelCapabilities {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -162,11 +162,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Device',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Device::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Device->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Device::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Device {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -207,11 +207,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::VolumeFrom',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::VolumeFrom::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::VolumeFrom->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::VolumeFrom::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::VolumeFrom {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -251,11 +251,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Ulimit',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Ulimit::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Ulimit->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Ulimit::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Ulimit {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -296,11 +296,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::SystemControl',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::SystemControl::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::SystemControl->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::SystemControl::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::SystemControl {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -340,11 +340,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ResourceRequirement
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ResourceRequirement::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::ResourceRequirement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ResourceRequirement::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::ResourceRequirement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -362,11 +362,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::RepositoryCredentia
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::RepositoryCredentials::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::RepositoryCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::RepositoryCredentials::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::RepositoryCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -405,11 +405,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::PortMapping',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::PortMapping::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::PortMapping->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::PortMapping::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::PortMapping {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -450,11 +450,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::MountPoint',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::MountPoint::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::MountPoint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::MountPoint::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::MountPoint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -473,11 +473,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::LogConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::LogConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::LogConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::LogConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::LogConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -496,11 +496,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::LinuxParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::LinuxParameters::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::LinuxParameters->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::LinuxParameters::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::LinuxParameters {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -545,11 +545,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::KeyValuePair',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::KeyValuePair::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::KeyValuePair->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::KeyValuePair::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::KeyValuePair {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -567,11 +567,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::HostVolumePropertie
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::HostVolumeProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::HostVolumeProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::HostVolumeProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::HostVolumeProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -610,11 +610,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::HostEntry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::HostEntry::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::HostEntry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::HostEntry::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::HostEntry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -632,11 +632,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::HealthCheck',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::HealthCheck::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::HealthCheck->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::HealthCheck::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::HealthCheck {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -657,11 +657,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::FirelensConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::FirelensConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::FirelensConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::FirelensConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::FirelensConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -701,11 +701,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::EnvironmentFile',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::EnvironmentFile::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::EnvironmentFile->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::EnvironmentFile::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::EnvironmentFile {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -723,11 +723,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::EFSVolumeConfigurat
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::EFSVolumeConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::EFSVolumeConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::EFSVolumeConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::EFSVolumeConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -748,11 +748,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::DockerVolumeConfigu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::DockerVolumeConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::DockerVolumeConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::DockerVolumeConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::DockerVolumeConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -795,11 +795,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependency
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependency::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::ContainerDependency->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDependency::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::ContainerDependency {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -839,11 +839,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Volume',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Volume::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Volume->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::Volume::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::Volume {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -885,11 +885,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::TaskDefinitionPlace
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::TaskDefinitionPlacementConstraint::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::TaskDefinitionPlacementConstraint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::TaskDefinitionPlacementConstraint::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::TaskDefinitionPlacementConstraint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -907,11 +907,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ProxyConfiguration'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ProxyConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::ProxyConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ProxyConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::ProxyConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -952,11 +952,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::InferenceAccelerato
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::InferenceAccelerator::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::InferenceAccelerator->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::InferenceAccelerator::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::InferenceAccelerator {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -996,11 +996,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDefinition
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDefinition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::ContainerDefinition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::ContainerDefinition::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::ContainerDefinition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1055,11 +1055,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::TaskDefinition::AuthorizationConfig
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::TaskDefinition::AuthorizationConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::AuthorizationConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::TaskDefinition::AuthorizationConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::TaskDefinition::AuthorizationConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

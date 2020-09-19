@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::GeoLocation',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::GeoLocation::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::GeoLocation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::GeoLocation::Value {
+package Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::GeoLocation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::AliasTarget',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::AliasTarget::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::AliasTarget->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::AliasTarget::Value {
+package Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::AliasTarget {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::RecordSet',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::RecordSet::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::RecordSet->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::RecordSet::Value {
+package Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::RecordSet {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

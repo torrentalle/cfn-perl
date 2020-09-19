@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::MetricDimensio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::MetricDimension::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::MetricDimension->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::MetricDimension::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::MetricDimension {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::SimpleScalingP
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::SimpleScalingPolicyConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::SimpleScalingPolicyConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::SimpleScalingPolicyConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::SimpleScalingPolicyConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::CloudWatchAlar
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::CloudWatchAlarmDefinition::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::CloudWatchAlarmDefinition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::CloudWatchAlarmDefinition::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::CloudWatchAlarmDefinition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -125,11 +125,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::VolumeSpecific
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::VolumeSpecification::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::VolumeSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::VolumeSpecification::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::VolumeSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -148,11 +148,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingTrigger
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingTrigger::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::ScalingTrigger->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingTrigger::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::ScalingTrigger {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -169,11 +169,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingAction'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingAction::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::ScalingAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingAction::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::ScalingAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -213,11 +213,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingRule::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::ScalingRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingRule::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::ScalingRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -237,11 +237,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingConstra
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingConstraints::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::ScalingConstraints->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::ScalingConstraints::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::ScalingConstraints {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -281,11 +281,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::EbsBlockDevice
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::EbsBlockDeviceConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::EbsBlockDeviceConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::EbsBlockDeviceConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::EbsBlockDeviceConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -303,11 +303,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::EbsConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::EbsConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::EbsConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::EbsConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::EbsConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -347,11 +347,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::Configuration'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::Configuration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::Configuration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::Configuration::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::Configuration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -370,11 +370,11 @@ coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::AutoScalingPol
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::AutoScalingPolicy::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::AutoScalingPolicy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EMR::InstanceGroupConfig::AutoScalingPolicy::Value {
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceGroupConfig::AutoScalingPolicy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

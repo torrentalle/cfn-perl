@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::RoboMaker::RobotApplication::SourceConfi
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RoboMaker::RobotApplication::SourceConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RoboMaker::RobotApplication::SourceConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RoboMaker::RobotApplication::SourceConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::RoboMaker::RobotApplication::SourceConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::RoboMaker::RobotApplication::RobotSoftwa
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RoboMaker::RobotApplication::RobotSoftwareSuite::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RoboMaker::RobotApplication::RobotSoftwareSuite->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RoboMaker::RobotApplication::RobotSoftwareSuite::Value {
+package Cfn::Resource::Properties::Object::AWS::RoboMaker::RobotApplication::RobotSoftwareSuite {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

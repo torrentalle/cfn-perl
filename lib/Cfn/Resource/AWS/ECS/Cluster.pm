@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Cluster::ClusterSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Cluster::ClusterSettings::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Cluster::ClusterSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Cluster::ClusterSettings::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Cluster::ClusterSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::ECS::Cluster::CapacityProviderStrategyIt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ECS::Cluster::CapacityProviderStrategyItem::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ECS::Cluster::CapacityProviderStrategyItem->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ECS::Cluster::CapacityProviderStrategyItem::Value {
+package Cfn::Resource::Properties::Object::AWS::ECS::Cluster::CapacityProviderStrategyItem {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

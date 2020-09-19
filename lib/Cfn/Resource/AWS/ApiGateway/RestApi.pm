@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::RestApi::S3Location',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::RestApi::S3Location::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::RestApi::S3Location->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::RestApi::S3Location::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::RestApi::S3Location {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -53,11 +53,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::RestApi::EndpointConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::RestApi::EndpointConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::RestApi::EndpointConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::RestApi::EndpointConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::RestApi::EndpointConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

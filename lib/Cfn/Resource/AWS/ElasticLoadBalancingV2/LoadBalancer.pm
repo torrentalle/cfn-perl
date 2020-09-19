@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::Su
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMapping::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMapping->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMapping::Value {
+package Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMapping {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::Lo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttribute::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttribute->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttribute::Value {
+package Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttribute {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Parquet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ParquetSerDe::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ParquetSerDe->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ParquetSerDe::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ParquetSerDe {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -55,11 +55,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::OrcSerD
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::OrcSerDe::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::OrcSerDe->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::OrcSerDe::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::OrcSerDe {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -85,11 +85,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::OpenXJs
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::OpenXJsonSerDe::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::OpenXJsonSerDe->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::OpenXJsonSerDe::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::OpenXJsonSerDe {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -108,11 +108,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HiveJso
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HiveJsonSerDe::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HiveJsonSerDe->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HiveJsonSerDe::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HiveJsonSerDe {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -129,11 +129,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Seriali
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Serializer::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::Serializer->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Serializer::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::Serializer {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -173,11 +173,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Process
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ProcessorParameter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ProcessorParameter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ProcessorParameter::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ProcessorParameter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -195,11 +195,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::KMSEncr
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::KMSEncryptionConfig::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::KMSEncryptionConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::KMSEncryptionConfig::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::KMSEncryptionConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -216,11 +216,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Deseria
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Deserializer::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::Deserializer->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Deserializer::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::Deserializer {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -238,11 +238,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SchemaC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SchemaConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::SchemaConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SchemaConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::SchemaConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -286,11 +286,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Process
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Processor::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::Processor->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Processor::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::Processor {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -308,11 +308,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::OutputF
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::OutputFormatConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::OutputFormatConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::OutputFormatConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::OutputFormatConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -329,11 +329,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::InputFo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::InputFormatConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::InputFormatConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::InputFormatConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::InputFormatConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -372,11 +372,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEnd
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointCommonAttribute::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HttpEndpointCommonAttribute->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointCommonAttribute::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HttpEndpointCommonAttribute {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -394,11 +394,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Encrypt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::EncryptionConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::EncryptionConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::EncryptionConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::EncryptionConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -416,11 +416,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::CloudWa
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::CloudWatchLoggingOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::CloudWatchLoggingOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::CloudWatchLoggingOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::CloudWatchLoggingOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -439,11 +439,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Bufferi
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::BufferingHints::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::BufferingHints->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::BufferingHints::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::BufferingHints {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -461,11 +461,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::VpcConf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::VpcConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::VpcConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::VpcConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::VpcConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -484,11 +484,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SplunkR
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SplunkRetryOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::SplunkRetryOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SplunkRetryOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::SplunkRetryOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -505,11 +505,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::S3Desti
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::S3DestinationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::S3DestinationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::S3DestinationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::S3DestinationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -533,11 +533,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::RetryOp
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::RetryOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::RetryOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::RetryOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::RetryOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -554,11 +554,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Redshif
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::RedshiftRetryOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::RedshiftRetryOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::RedshiftRetryOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::RedshiftRetryOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -575,11 +575,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Process
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ProcessingConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ProcessingConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ProcessingConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ProcessingConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -597,11 +597,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEnd
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointRequestConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HttpEndpointRequestConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointRequestConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HttpEndpointRequestConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -619,11 +619,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEnd
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HttpEndpointConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HttpEndpointConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -642,11 +642,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Elastic
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ElasticsearchRetryOptions::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ElasticsearchRetryOptions->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ElasticsearchRetryOptions::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ElasticsearchRetryOptions {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -663,11 +663,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Elastic
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ElasticsearchBufferingHints::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ElasticsearchBufferingHints->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ElasticsearchBufferingHints::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ElasticsearchBufferingHints {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -685,11 +685,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::DataFor
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::DataFormatConversionConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::DataFormatConversionConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::DataFormatConversionConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::DataFormatConversionConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -709,11 +709,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::CopyCom
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::CopyCommand::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::CopyCommand->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::CopyCommand::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::CopyCommand {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -732,11 +732,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SplunkD
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SplunkDestinationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::SplunkDestinationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SplunkDestinationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::SplunkDestinationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -761,11 +761,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Redshif
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::RedshiftDestinationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::RedshiftDestinationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::RedshiftDestinationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::RedshiftDestinationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -792,11 +792,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Kinesis
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::KinesisStreamSourceConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::KinesisStreamSourceConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::KinesisStreamSourceConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::KinesisStreamSourceConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -814,11 +814,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEnd
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointDestinationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HttpEndpointDestinationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointDestinationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::HttpEndpointDestinationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -843,11 +843,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Extende
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ExtendedS3DestinationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ExtendedS3DestinationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ExtendedS3DestinationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ExtendedS3DestinationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -875,11 +875,11 @@ coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::Elastic
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ElasticsearchDestinationConfiguration::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ElasticsearchDestinationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ElasticsearchDestinationConfiguration::Value {
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::ElasticsearchDestinationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

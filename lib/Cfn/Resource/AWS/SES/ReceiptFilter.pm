@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SES::ReceiptFilter::IpFilter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SES::ReceiptFilter::IpFilter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SES::ReceiptFilter::IpFilter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SES::ReceiptFilter::IpFilter::Value {
+package Cfn::Resource::Properties::Object::AWS::SES::ReceiptFilter::IpFilter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::SES::ReceiptFilter::Filter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SES::ReceiptFilter::Filter::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SES::ReceiptFilter::Filter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SES::ReceiptFilter::Filter::Value {
+package Cfn::Resource::Properties::Object::AWS::SES::ReceiptFilter::Filter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

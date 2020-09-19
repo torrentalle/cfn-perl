@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Backup::BackupSelection::ConditionResour
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Backup::BackupSelection::ConditionResourceType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Backup::BackupSelection::ConditionResourceType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Backup::BackupSelection::ConditionResourceType::Value {
+package Cfn::Resource::Properties::Object::AWS::Backup::BackupSelection::ConditionResourceType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::Backup::BackupSelection::BackupSelection
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Backup::BackupSelection::BackupSelectionResourceType::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Backup::BackupSelection::BackupSelectionResourceType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Backup::BackupSelection::BackupSelectionResourceType::Value {
+package Cfn::Resource::Properties::Object::AWS::Backup::BackupSelection::BackupSelectionResourceType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBSecurityGroup::Ingress',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBSecurityGroup::Ingress::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RDS::DBSecurityGroup::Ingress->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBSecurityGroup::Ingress::Value {
+package Cfn::Resource::Properties::Object::AWS::RDS::DBSecurityGroup::Ingress {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Redshift::Cluster::LoggingProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Redshift::Cluster::LoggingProperties::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Redshift::Cluster::LoggingProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Redshift::Cluster::LoggingProperties::Value {
+package Cfn::Resource::Properties::Object::AWS::Redshift::Cluster::LoggingProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

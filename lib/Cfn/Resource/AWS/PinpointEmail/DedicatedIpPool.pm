@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::DedicatedIpPool::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::DedicatedIpPool::Tags::Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::PinpointEmail::DedicatedIpPool::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::DedicatedIpPool::Tags::Value {
+package Cfn::Resource::Properties::Object::AWS::PinpointEmail::DedicatedIpPool::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
