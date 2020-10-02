@@ -1,4 +1,4 @@
-# AWS::ServiceDiscovery::Instance generated from spec 14.3.0
+# AWS::ServiceDiscovery::Instance generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Instance',

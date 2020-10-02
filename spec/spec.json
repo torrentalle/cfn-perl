@@ -22971,6 +22971,18 @@
             }
          }
       },
+      "AWS::IoT::Authorizer.Tags" : {
+         "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-authorizer-tags.html",
+         "Properties" : {
+            "Tags" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-authorizer-tags.html#cfn-iot-authorizer-tags-tags",
+               "ItemType" : "Tag",
+               "Required" : false,
+               "Type" : "List",
+               "UpdateType" : "Mutable"
+            }
+         }
+      },
       "AWS::IoT::Authorizer.TokenSigningPublicKeys" : {
          "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-authorizer-tokensigningpublickeys.html"
       },
@@ -58335,6 +58347,12 @@
                "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-status",
                "PrimitiveType" : "String",
                "Required" : false,
+               "UpdateType" : "Mutable"
+            },
+            "Tags" : {
+               "Documentation" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-tags",
+               "Required" : false,
+               "Type" : "Tags",
                "UpdateType" : "Mutable"
             },
             "TokenKeyName" : {
