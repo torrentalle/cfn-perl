@@ -51,8 +51,7 @@ $doc->{ResourceTypes}{'AWS::KMS::Key'}{Properties}{KeyPolicy}{PrimitiveType} = '
 
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-authorizer-tags.html
 # Not supported by CloudFormation
-delete $doc->{PropertyTypes}{'AWS::IoT::Authorizer.Tags'};
-delete $doc->{ResourceTypes}{'AWS::IoT::Authorizer'}{Properties}{Tags};
+$doc->{PropertyTypes}{'AWS::IoT::Authorizer.Tags'}{Properties}{Tags}{ItemType}= 'Tag';
 
 
 my $dest_file = Path::Class::File->new($to);
