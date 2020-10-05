@@ -1,4 +1,4 @@
-# AWS::Cognito::IdentityPool generated from spec 14.3.0
+# AWS::Cognito::IdentityPool generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Cognito::IdentityPool',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::IdentityPool::PushSync',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::IdentityPool::PushSyncValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cognito::IdentityPool::PushSync->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::IdentityPool::PushSyncValue {
+package Cfn::Resource::Properties::Object::AWS::Cognito::IdentityPool::PushSync {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::IdentityPool::CognitoStreams',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::IdentityPool::CognitoStreamsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cognito::IdentityPool::CognitoStreams->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::IdentityPool::CognitoStreamsValue {
+package Cfn::Resource::Properties::Object::AWS::Cognito::IdentityPool::CognitoStreams {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::IdentityPool::CognitoIdentityPr
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::IdentityPool::CognitoIdentityProviderValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cognito::IdentityPool::CognitoIdentityProvider->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::IdentityPool::CognitoIdentityProviderValue {
+package Cfn::Resource::Properties::Object::AWS::Cognito::IdentityPool::CognitoIdentityProvider {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::ElasticLoadBalancingV2::LoadBalancer generated from spec 14.3.0
+# AWS::ElasticLoadBalancingV2::LoadBalancer generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer',
@@ -51,16 +51,17 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::Su
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMapping->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMappingValue {
+package Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMapping {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has AllocationId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has AllocationId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has PrivateIPv4Address => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SubnetId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttribute',
@@ -95,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::Lo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttributeValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttribute->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttributeValue {
+package Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::LoadBalancer::LoadBalancerAttribute {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

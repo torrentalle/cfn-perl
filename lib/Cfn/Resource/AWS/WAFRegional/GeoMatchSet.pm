@@ -1,4 +1,4 @@
-# AWS::WAFRegional::GeoMatchSet generated from spec 14.3.0
+# AWS::WAFRegional::GeoMatchSet generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::WAFRegional::GeoMatchSet',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::GeoMatchSet::GeoMatchConstr
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::GeoMatchSet::GeoMatchConstraintValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::GeoMatchSet::GeoMatchConstraint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::GeoMatchSet::GeoMatchConstraintValue {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::GeoMatchSet::GeoMatchConstraint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

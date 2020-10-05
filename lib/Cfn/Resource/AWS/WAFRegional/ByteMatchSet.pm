@@ -1,4 +1,4 @@
-# AWS::WAFRegional::ByteMatchSet generated from spec 14.3.0
+# AWS::WAFRegional::ByteMatchSet generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::WAFRegional::ByteMatchSet',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::ByteMatchSet::FieldToMatch'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::ByteMatchSet::FieldToMatchValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::ByteMatchSet::FieldToMatch->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::ByteMatchSet::FieldToMatchValue {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::ByteMatchSet::FieldToMatch {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::ByteMatchSet::ByteMatchTupl
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::ByteMatchSet::ByteMatchTupleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::ByteMatchSet::ByteMatchTuple->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::ByteMatchSet::ByteMatchTupleValue {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::ByteMatchSet::ByteMatchTuple {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

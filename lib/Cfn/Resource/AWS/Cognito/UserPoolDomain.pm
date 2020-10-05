@@ -1,4 +1,4 @@
-# AWS::Cognito::UserPoolDomain generated from spec 14.3.0
+# AWS::Cognito::UserPoolDomain generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolDomain',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Cognito::UserPoolDomain::CustomDomainCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Cognito::UserPoolDomain::CustomDomainConfigTypeValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Cognito::UserPoolDomain::CustomDomainConfigType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Cognito::UserPoolDomain::CustomDomainConfigTypeValue {
+package Cfn::Resource::Properties::Object::AWS::Cognito::UserPoolDomain::CustomDomainConfigType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

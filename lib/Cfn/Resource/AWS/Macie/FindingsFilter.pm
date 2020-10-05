@@ -1,4 +1,4 @@
-# AWS::Macie::FindingsFilter generated from spec 14.3.0
+# AWS::Macie::FindingsFilter generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::Macie::FindingsFilter {
     [ 'Arn','FindingsFilterListItems','Id' ]
   }
   sub supported_regions {
-    [ 'ap-east-1','ap-northeast-1','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
+    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 
@@ -29,15 +29,37 @@ coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::Criterion',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::CriterionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::Criterion->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::CriterionValue {
+package Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::Criterion {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+}
+
+subtype 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterListItem',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingsFilterListItem',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::FindingsFilterListItem->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::FindingsFilterListItem {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria',
@@ -49,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteriaValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::FindingCriteria->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteriaValue {
+package Cfn::Resource::Properties::Object::AWS::Macie::FindingsFilter::FindingCriteria {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -68,8 +90,8 @@ package Cfn::Resource::Properties::AWS::Macie::FindingsFilter {
   
   has Action => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has FindingCriteria => (isa => 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has FindingCriteria => (isa => 'Cfn::Resource::Properties::AWS::Macie::FindingsFilter::FindingCriteria', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Position => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

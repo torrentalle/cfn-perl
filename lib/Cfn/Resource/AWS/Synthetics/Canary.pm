@@ -1,4 +1,4 @@
-# AWS::Synthetics::Canary generated from spec 14.3.0
+# AWS::Synthetics::Canary generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Synthetics::Canary',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::Synthetics::Canary {
     [ 'Id','State' ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
+    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','cn-north-1','cn-northwest-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
   }
 }
 
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Synthetics::Canary::VPCConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Synthetics::Canary::VPCConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::VPCConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Synthetics::Canary::VPCConfigValue {
+package Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::VPCConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,16 +52,16 @@ coerce 'Cfn::Resource::Properties::AWS::Synthetics::Canary::Schedule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Synthetics::Canary::ScheduleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::Schedule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Synthetics::Canary::ScheduleValue {
+package Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::Schedule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has DurationInSeconds => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DurationInSeconds => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Expression => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -74,15 +74,16 @@ coerce 'Cfn::Resource::Properties::AWS::Synthetics::Canary::RunConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Synthetics::Canary::RunConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::RunConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Synthetics::Canary::RunConfigValue {
+package Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::RunConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has MemoryInMB => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TimeoutInSeconds => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -95,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::Synthetics::Canary::Code',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Synthetics::Canary::CodeValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::Code->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Synthetics::Canary::CodeValue {
+package Cfn::Resource::Properties::Object::AWS::Synthetics::Canary::Code {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -121,7 +122,7 @@ package Cfn::Resource::Properties::AWS::Synthetics::Canary {
   has ExecutionRoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has FailureRetentionPeriod => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
-  has RunConfig => (isa => 'Cfn::Resource::Properties::AWS::Synthetics::Canary::RunConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RunConfig => (isa => 'Cfn::Resource::Properties::AWS::Synthetics::Canary::RunConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RuntimeVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Schedule => (isa => 'Cfn::Resource::Properties::AWS::Synthetics::Canary::Schedule', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has StartCanaryAfterCreation => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

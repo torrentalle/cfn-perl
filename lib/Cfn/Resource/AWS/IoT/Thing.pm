@@ -1,4 +1,4 @@
-# AWS::IoT::Thing generated from spec 14.3.0
+# AWS::IoT::Thing generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IoT::Thing',

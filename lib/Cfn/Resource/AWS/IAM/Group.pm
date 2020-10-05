@@ -1,4 +1,4 @@
-# AWS::IAM::Group generated from spec 14.3.0
+# AWS::IAM::Group generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IAM::Group',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::IAM::Group::Policy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IAM::Group::PolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IAM::Group::Policy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IAM::Group::PolicyValue {
+package Cfn::Resource::Properties::Object::AWS::IAM::Group::Policy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

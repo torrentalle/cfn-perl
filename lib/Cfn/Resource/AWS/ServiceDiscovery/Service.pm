@@ -1,4 +1,4 @@
-# AWS::ServiceDiscovery::Service generated from spec 14.3.0
+# AWS::ServiceDiscovery::Service generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecord',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecordValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::DnsRecord->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsRecordValue {
+package Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::DnsRecord {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCustomConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::HealthCheckCustomConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCustomConfigValue {
+package Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::HealthCheckCustomConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::HealthCheckConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckConfigValue {
+package Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::HealthCheckConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::DnsConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::DnsConfigValue {
+package Cfn::Resource::Properties::Object::AWS::ServiceDiscovery::Service::DnsConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -142,6 +142,7 @@ package Cfn::Resource::Properties::AWS::ServiceDiscovery::Service {
   has HealthCheckCustomConfig => (isa => 'Cfn::Resource::Properties::AWS::ServiceDiscovery::Service::HealthCheckCustomConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has NamespaceId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
 1;

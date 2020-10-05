@@ -1,4 +1,4 @@
-# AWS::ImageBuilder::InfrastructureConfiguration generated from spec 14.3.0
+# AWS::ImageBuilder::InfrastructureConfiguration generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::ImageBuilder::InfrastructureConfiguration {
     [ 'Arn' ]
   }
   sub supported_regions {
-    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
+    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
   }
 }
 
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3LogsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ImageBuilder::InfrastructureConfiguration::S3Logs->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::S3LogsValue {
+package Cfn::Resource::Properties::Object::AWS::ImageBuilder::InfrastructureConfiguration::S3Logs {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::LoggingValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ImageBuilder::InfrastructureConfiguration::Logging->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguration::LoggingValue {
+package Cfn::Resource::Properties::Object::AWS::ImageBuilder::InfrastructureConfiguration::Logging {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,6 +74,7 @@ package Cfn::Resource::Properties::AWS::ImageBuilder::InfrastructureConfiguratio
   has KeyPair => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Logging => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ResourceTags => (isa => 'Cfn::Value::Hash|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SecurityGroupIds => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SnsTopicArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SubnetId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

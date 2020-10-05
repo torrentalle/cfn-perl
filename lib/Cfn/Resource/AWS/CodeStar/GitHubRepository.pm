@@ -1,4 +1,4 @@
-# AWS::CodeStar::GitHubRepository generated from spec 14.3.0
+# AWS::CodeStar::GitHubRepository generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeStar::GitHubRepository',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeStar::GitHubRepository::S3',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeStar::GitHubRepository::S3Value->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeStar::GitHubRepository::S3->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeStar::GitHubRepository::S3Value {
+package Cfn::Resource::Properties::Object::AWS::CodeStar::GitHubRepository::S3 {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::CodeStar::GitHubRepository::Code',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CodeStar::GitHubRepository::CodeValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CodeStar::GitHubRepository::Code->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CodeStar::GitHubRepository::CodeValue {
+package Cfn::Resource::Properties::Object::AWS::CodeStar::GitHubRepository::Code {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

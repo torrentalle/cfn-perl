@@ -1,4 +1,4 @@
-# AWS::Config::OrganizationConfigRule generated from spec 14.3.0
+# AWS::Config::OrganizationConfigRule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Config::OrganizationConfigRule',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::OrganizationConfigRule::Organiza
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::OrganizationConfigRule::OrganizationManagedRuleMetadataValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::OrganizationConfigRule::OrganizationManagedRuleMetadata->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::OrganizationConfigRule::OrganizationManagedRuleMetadataValue {
+package Cfn::Resource::Properties::Object::AWS::Config::OrganizationConfigRule::OrganizationManagedRuleMetadata {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -57,11 +57,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::OrganizationConfigRule::Organiza
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::OrganizationConfigRule::OrganizationCustomRuleMetadataValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::OrganizationConfigRule::OrganizationCustomRuleMetadata->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::OrganizationConfigRule::OrganizationCustomRuleMetadataValue {
+package Cfn::Resource::Properties::Object::AWS::Config::OrganizationConfigRule::OrganizationCustomRuleMetadata {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

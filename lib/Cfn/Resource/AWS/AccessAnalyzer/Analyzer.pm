@@ -1,4 +1,4 @@
-# AWS::AccessAnalyzer::Analyzer generated from spec 14.3.0
+# AWS::AccessAnalyzer::Analyzer generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::AccessAnalyzer::Analyzer {
     [ 'Arn' ]
   }
   sub supported_regions {
-    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
+    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','cn-north-1','cn-northwest-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
   }
 }
 
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::Filter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::FilterValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AccessAnalyzer::Analyzer::Filter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::FilterValue {
+package Cfn::Resource::Properties::Object::AWS::AccessAnalyzer::Analyzer::Filter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -98,11 +98,11 @@ coerce 'Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::ArchiveRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::ArchiveRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AccessAnalyzer::Analyzer::ArchiveRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AccessAnalyzer::Analyzer::ArchiveRuleValue {
+package Cfn::Resource::Properties::Object::AWS::AccessAnalyzer::Analyzer::ArchiveRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

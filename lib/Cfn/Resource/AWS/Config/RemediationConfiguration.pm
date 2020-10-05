@@ -1,4 +1,4 @@
-# AWS::Config::RemediationConfiguration generated from spec 14.3.0
+# AWS::Config::RemediationConfiguration generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Config::RemediationConfiguration',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::Static
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::StaticValueValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::StaticValue->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::StaticValueValue {
+package Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::StaticValue {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::SsmCon
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::SsmControlsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::SsmControls->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::SsmControlsValue {
+package Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::SsmControls {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::Resour
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::ResourceValueValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::ResourceValue->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::ResourceValueValue {
+package Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::ResourceValue {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::Remedi
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::RemediationParameterValueValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::RemediationParameterValue->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::RemediationParameterValueValue {
+package Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::RemediationParameterValue {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -115,11 +115,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::Execut
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::ExecutionControlsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::ExecutionControls->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::RemediationConfiguration::ExecutionControlsValue {
+package Cfn::Resource::Properties::Object::AWS::Config::RemediationConfiguration::ExecutionControls {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::Route53::RecordSetGroup generated from spec 14.3.0
+# AWS::Route53::RecordSetGroup generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSetGroup',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::GeoLocation',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::GeoLocationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::GeoLocation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::GeoLocationValue {
+package Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::GeoLocation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::AliasTarget',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::AliasTargetValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::AliasTarget->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::AliasTargetValue {
+package Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::AliasTarget {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::RecordSet',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::RecordSetValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::RecordSet->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::RecordSetGroup::RecordSetValue {
+package Cfn::Resource::Properties::Object::AWS::Route53::RecordSetGroup::RecordSet {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

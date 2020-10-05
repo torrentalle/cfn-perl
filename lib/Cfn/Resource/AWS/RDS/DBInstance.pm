@@ -1,4 +1,4 @@
-# AWS::RDS::DBInstance generated from spec 14.3.0
+# AWS::RDS::DBInstance generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::RDS::DBInstance',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBInstance::ProcessorFeature',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBInstance::ProcessorFeatureValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RDS::DBInstance::ProcessorFeature->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBInstance::ProcessorFeatureValue {
+package Cfn::Resource::Properties::Object::AWS::RDS::DBInstance::ProcessorFeature {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBInstance::DBInstanceRole',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBInstance::DBInstanceRoleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RDS::DBInstance::DBInstanceRole->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBInstance::DBInstanceRoleValue {
+package Cfn::Resource::Properties::Object::AWS::RDS::DBInstance::DBInstanceRole {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -147,7 +147,7 @@ package Cfn::Resource::Properties::AWS::RDS::DBInstance {
   has MaxAllocatedStorage => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MonitoringInterval => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Conditional');
   has MonitoringRoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has MultiAZ => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MultiAZ => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Conditional');
   has OptionGroupName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has PerformanceInsightsKMSKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Conditional');
   has PerformanceInsightsRetentionPeriod => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

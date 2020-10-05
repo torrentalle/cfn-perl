@@ -1,4 +1,4 @@
-# AWS::Greengrass::ResourceDefinition generated from spec 14.3.0
+# AWS::Greengrass::ResourceDefinition generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::Resource
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::ResourceDownloadOwnerSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::ResourceDownloadOwnerSetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::ResourceDownloadOwnerSettingValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::ResourceDownloadOwnerSetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::GroupOwn
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::GroupOwnerSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::GroupOwnerSetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::GroupOwnerSettingValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::GroupOwnerSetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::SecretsM
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::SecretsManagerSecretResourceDataValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::SecretsManagerSecretResourceData->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::SecretsManagerSecretResourceDataValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::SecretsManagerSecretResourceData {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::SageMake
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::SageMakerMachineLearningModelResourceDataValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::SageMakerMachineLearningModelResourceData->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::SageMakerMachineLearningModelResourceDataValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::SageMakerMachineLearningModelResourceData {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::S3Machin
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::S3MachineLearningModelResourceDataValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::S3MachineLearningModelResourceData->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::S3MachineLearningModelResourceDataValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::S3MachineLearningModelResourceData {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::LocalVol
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::LocalVolumeResourceDataValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::LocalVolumeResourceData->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::LocalVolumeResourceDataValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::LocalVolumeResourceData {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -164,11 +164,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::LocalDev
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::LocalDeviceResourceDataValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::LocalDeviceResourceData->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::LocalDeviceResourceDataValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::LocalDeviceResourceData {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -186,11 +186,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::Resource
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::ResourceDataContainerValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::ResourceDataContainer->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::ResourceDataContainerValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::ResourceDataContainer {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -233,11 +233,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::Resource
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::ResourceInstanceValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::ResourceInstance->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::ResourceInstanceValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::ResourceInstance {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -256,11 +256,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::Resource
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::ResourceDefinitionVersionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::ResourceDefinitionVersion->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::ResourceDefinition::ResourceDefinitionVersionValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::ResourceDefinition::ResourceDefinitionVersion {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

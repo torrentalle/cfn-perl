@@ -1,4 +1,4 @@
-# AWS::Greengrass::DeviceDefinition generated from spec 14.3.0
+# AWS::Greengrass::DeviceDefinition generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinition',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinition::Device',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinition::DeviceValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::DeviceDefinition::Device->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinition::DeviceValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::DeviceDefinition::Device {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinition::DeviceDefi
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinition::DeviceDefinitionVersionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Greengrass::DeviceDefinition::DeviceDefinitionVersion->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Greengrass::DeviceDefinition::DeviceDefinitionVersionValue {
+package Cfn::Resource::Properties::Object::AWS::Greengrass::DeviceDefinition::DeviceDefinitionVersion {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::StepFunctions::Activity generated from spec 14.3.0
+# AWS::StepFunctions::Activity generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::StepFunctions::Activity',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::StepFunctions::Activity::TagsEntry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::StepFunctions::Activity::TagsEntryValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::StepFunctions::Activity::TagsEntry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::StepFunctions::Activity::TagsEntryValue {
+package Cfn::Resource::Properties::Object::AWS::StepFunctions::Activity::TagsEntry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

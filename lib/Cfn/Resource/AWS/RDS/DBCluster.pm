@@ -1,4 +1,4 @@
-# AWS::RDS::DBCluster generated from spec 14.3.0
+# AWS::RDS::DBCluster generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::RDS::DBCluster',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBCluster::ScalingConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBCluster::ScalingConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RDS::DBCluster::ScalingConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBCluster::ScalingConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::RDS::DBCluster::ScalingConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::RDS::DBCluster::DBClusterRole',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::RDS::DBCluster::DBClusterRoleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::RDS::DBCluster::DBClusterRole->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::RDS::DBCluster::DBClusterRoleValue {
+package Cfn::Resource::Properties::Object::AWS::RDS::DBCluster::DBClusterRole {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

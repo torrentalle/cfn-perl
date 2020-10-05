@@ -1,4 +1,4 @@
-# AWS::ServiceCatalog::CloudFormationProduct generated from spec 14.3.0
+# AWS::ServiceCatalog::CloudFormationProduct generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProduct',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::ServiceCatalog::CloudFormationProduct {
     [ 'ProductName','ProvisioningArtifactIds','ProvisioningArtifactNames' ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
+    [ 'af-south-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-south-1','eu-west-1','eu-west-2','eu-west-3','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProduct::P
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProduct::ProvisioningArtifactPropertiesValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ServiceCatalog::CloudFormationProduct::ProvisioningArtifactProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ServiceCatalog::CloudFormationProduct::ProvisioningArtifactPropertiesValue {
+package Cfn::Resource::Properties::Object::AWS::ServiceCatalog::CloudFormationProduct::ProvisioningArtifactProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

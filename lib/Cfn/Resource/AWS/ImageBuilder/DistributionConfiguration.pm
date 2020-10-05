@@ -1,4 +1,4 @@
-# AWS::ImageBuilder::DistributionConfiguration generated from spec 14.3.0
+# AWS::ImageBuilder::DistributionConfiguration generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::DistributionConfiguration',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::ImageBuilder::DistributionConfiguration {
     [ 'Arn' ]
   }
   sub supported_regions {
-    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
+    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
   }
 }
 
@@ -51,18 +51,18 @@ coerce 'Cfn::Resource::Properties::AWS::ImageBuilder::DistributionConfiguration:
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ImageBuilder::DistributionConfiguration::DistributionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ImageBuilder::DistributionConfiguration::Distribution->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ImageBuilder::DistributionConfiguration::DistributionValue {
+package Cfn::Resource::Properties::Object::AWS::ImageBuilder::DistributionConfiguration::Distribution {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
   has AmiDistributionConfiguration => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has LicenseConfigurationArns => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Region => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Region => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::ImageBuilder::DistributionConfiguration {

@@ -1,4 +1,4 @@
-# AWS::DynamoDB::Table generated from spec 14.3.0
+# AWS::DynamoDB::Table generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::ProvisionedThroughput',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::ProvisionedThroughputValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::ProvisionedThroughput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::ProvisionedThroughputValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::ProvisionedThroughput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::Projection',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::ProjectionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::Projection->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::ProjectionValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::Projection {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::KeySchema',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::KeySchemaValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::KeySchema->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::KeySchemaValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::KeySchema {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::TimeToLiveSpecification
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::TimeToLiveSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::TimeToLiveSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::TimeToLiveSpecificationValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::TimeToLiveSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -139,11 +139,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::StreamSpecification',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::StreamSpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::StreamSpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::StreamSpecificationValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::StreamSpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -160,11 +160,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::SSESpecification',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::SSESpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::SSESpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::SSESpecificationValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::SSESpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -183,11 +183,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::PointInTimeRecoverySpec
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::PointInTimeRecoverySpecificationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::PointInTimeRecoverySpecification->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::PointInTimeRecoverySpecificationValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::PointInTimeRecoverySpecification {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -226,11 +226,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::LocalSecondaryIndex',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::LocalSecondaryIndexValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::LocalSecondaryIndex->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::LocalSecondaryIndexValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::LocalSecondaryIndex {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -271,11 +271,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::GlobalSecondaryIndex',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::GlobalSecondaryIndexValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::GlobalSecondaryIndex->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::GlobalSecondaryIndexValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::GlobalSecondaryIndex {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -317,11 +317,11 @@ coerce 'Cfn::Resource::Properties::AWS::DynamoDB::Table::AttributeDefinition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DynamoDB::Table::AttributeDefinitionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::AttributeDefinition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DynamoDB::Table::AttributeDefinitionValue {
+package Cfn::Resource::Properties::Object::AWS::DynamoDB::Table::AttributeDefinition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -342,7 +342,7 @@ package Cfn::Resource::Properties::AWS::DynamoDB::Table {
   has LocalSecondaryIndexes => (isa => 'ArrayOfCfn::Resource::Properties::AWS::DynamoDB::Table::LocalSecondaryIndex', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has PointInTimeRecoverySpecification => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::PointInTimeRecoverySpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ProvisionedThroughput => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::ProvisionedThroughput', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has SSESpecification => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::SSESpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Conditional');
+  has SSESpecification => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::SSESpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has StreamSpecification => (isa => 'Cfn::Resource::Properties::AWS::DynamoDB::Table::StreamSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TableName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

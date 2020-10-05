@@ -1,4 +1,4 @@
-# AWS::CloudFront::StreamingDistribution generated from spec 14.3.0
+# AWS::CloudFront::StreamingDistribution generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::Trust
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::TrustedSignersValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudFront::StreamingDistribution::TrustedSigners->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::TrustedSignersValue {
+package Cfn::Resource::Properties::Object::AWS::CloudFront::StreamingDistribution::TrustedSigners {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::S3Ori
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::S3OriginValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudFront::StreamingDistribution::S3Origin->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::S3OriginValue {
+package Cfn::Resource::Properties::Object::AWS::CloudFront::StreamingDistribution::S3Origin {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::Loggi
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::LoggingValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudFront::StreamingDistribution::Logging->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::LoggingValue {
+package Cfn::Resource::Properties::Object::AWS::CloudFront::StreamingDistribution::Logging {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::Strea
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::StreamingDistributionConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudFront::StreamingDistribution::StreamingDistributionConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudFront::StreamingDistribution::StreamingDistributionConfigValue {
+package Cfn::Resource::Properties::Object::AWS::CloudFront::StreamingDistribution::StreamingDistributionConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

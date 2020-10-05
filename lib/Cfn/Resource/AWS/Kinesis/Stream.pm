@@ -1,4 +1,4 @@
-# AWS::Kinesis::Stream generated from spec 14.3.0
+# AWS::Kinesis::Stream generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Kinesis::Stream',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Kinesis::Stream::StreamEncryption',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Kinesis::Stream::StreamEncryptionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Kinesis::Stream::StreamEncryption->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Kinesis::Stream::StreamEncryptionValue {
+package Cfn::Resource::Properties::Object::AWS::Kinesis::Stream::StreamEncryption {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

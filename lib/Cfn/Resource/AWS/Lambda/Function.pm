@@ -1,4 +1,4 @@
-# AWS::Lambda::Function generated from spec 14.3.0
+# AWS::Lambda::Function generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Lambda::Function',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::VpcConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Function::VpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::VpcConfigValue {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Function::VpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,16 +51,60 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::TracingConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::TracingConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Function::TracingConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::TracingConfigValue {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Function::TracingConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
   has Mode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+subtype 'ArrayOfCfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfig',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfig')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Function::FileSystemConfig->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::Lambda::Function::FileSystemConfig {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Arn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has LocalMountPath => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::Lambda::Function::Environment',
@@ -72,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::Environment',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::EnvironmentValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Function::Environment->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::EnvironmentValue {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Function::Environment {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +137,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::DeadLetterConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::DeadLetterConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Function::DeadLetterConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::DeadLetterConfigValue {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Function::DeadLetterConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -114,11 +158,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Function::Code',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Function::CodeValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Function::Code->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Function::CodeValue {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Function::Code {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -138,6 +182,7 @@ package Cfn::Resource::Properties::AWS::Lambda::Function {
   has DeadLetterConfig => (isa => 'Cfn::Resource::Properties::AWS::Lambda::Function::DeadLetterConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Environment => (isa => 'Cfn::Resource::Properties::AWS::Lambda::Function::Environment', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has FileSystemConfigs => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Lambda::Function::FileSystemConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has FunctionName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Handler => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has KmsKeyArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

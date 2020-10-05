@@ -1,4 +1,4 @@
-# AWS::AppConfig::DeploymentStrategy generated from spec 14.3.0
+# AWS::AppConfig::DeploymentStrategy generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppConfig::DeploymentStrategy',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppConfig::DeploymentStrategy::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppConfig::DeploymentStrategy::TagsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppConfig::DeploymentStrategy::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppConfig::DeploymentStrategy::TagsValue {
+package Cfn::Resource::Properties::Object::AWS::AppConfig::DeploymentStrategy::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

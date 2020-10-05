@@ -1,4 +1,4 @@
-# AWS::IoT::TopicRule generated from spec 14.3.0
+# AWS::IoT::TopicRule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyVariant',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyVariantValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::AssetPropertyVariant->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyVariantValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::AssetPropertyVariant {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -53,11 +53,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyTimestamp',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyTimestampValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::AssetPropertyTimestamp->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyTimestampValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::AssetPropertyTimestamp {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::SigV4Authorization',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::SigV4AuthorizationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::SigV4Authorization->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::SigV4AuthorizationValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::SigV4Authorization {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -120,11 +120,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValue',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValueValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::AssetPropertyValue->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::AssetPropertyValueValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::AssetPropertyValue {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -143,11 +143,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::PutItemInput',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::PutItemInputValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::PutItemInput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::PutItemInputValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::PutItemInput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -186,11 +186,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEnt
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntryValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::PutAssetPropertyValueEntry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::PutAssetPropertyValueEntryValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::PutAssetPropertyValueEntry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -211,11 +211,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAuthorization',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAuthorizationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::HttpAuthorization->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAuthorizationValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::HttpAuthorization {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -254,11 +254,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeader',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeaderValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::HttpActionHeader->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionHeaderValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::HttpActionHeader {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -276,11 +276,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::StepFunctionsAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::StepFunctionsActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::StepFunctionsAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::StepFunctionsActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::StepFunctionsAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -299,11 +299,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::SqsAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::SqsActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::SqsAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::SqsActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::SqsAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -322,11 +322,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::SnsAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::SnsActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::SnsAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::SnsActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::SnsAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -345,11 +345,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::S3Action',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::S3ActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::S3Action->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::S3ActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::S3Action {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -368,11 +368,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::RepublishAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::RepublishActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::RepublishAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::RepublishActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::RepublishAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -391,11 +391,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::LambdaAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::LambdaActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::LambdaAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::LambdaActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::LambdaAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -412,11 +412,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::KinesisAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::KinesisActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::KinesisAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::KinesisActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::KinesisAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -435,11 +435,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotSiteWiseAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::IotSiteWiseActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::IotSiteWiseAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::IotSiteWiseActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::IotSiteWiseAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -457,11 +457,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotEventsAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::IotEventsActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::IotEventsAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::IotEventsActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::IotEventsAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -480,11 +480,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::IotAnalyticsAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::IotAnalyticsActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::IotAnalyticsAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::IotAnalyticsActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::IotAnalyticsAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -502,11 +502,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::HttpAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::HttpActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::HttpAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -526,11 +526,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::FirehoseAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::FirehoseActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::FirehoseAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::FirehoseActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::FirehoseAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -549,11 +549,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::ElasticsearchAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::ElasticsearchActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::ElasticsearchAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::ElasticsearchActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::ElasticsearchAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -574,11 +574,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::DynamoDBv2Action',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::DynamoDBv2ActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::DynamoDBv2Action->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::DynamoDBv2ActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::DynamoDBv2Action {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -596,11 +596,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::DynamoDBAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::DynamoDBActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::DynamoDBAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::DynamoDBActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::DynamoDBAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -625,11 +625,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::CloudwatchMetricAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::CloudwatchMetricActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::CloudwatchMetricAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::CloudwatchMetricActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::CloudwatchMetricAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -651,11 +651,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::CloudwatchAlarmAction',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::CloudwatchAlarmActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::CloudwatchAlarmAction->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::CloudwatchAlarmActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::CloudwatchAlarmAction {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -697,11 +697,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::Action',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::ActionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::Action->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::ActionValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::Action {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -734,11 +734,11 @@ coerce 'Cfn::Resource::Properties::AWS::IoT::TopicRule::TopicRulePayload',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IoT::TopicRule::TopicRulePayloadValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::TopicRulePayload->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IoT::TopicRule::TopicRulePayloadValue {
+package Cfn::Resource::Properties::Object::AWS::IoT::TopicRule::TopicRulePayload {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

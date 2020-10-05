@@ -1,4 +1,4 @@
-# AWS::Config::ConfigRule generated from spec 14.3.0
+# AWS::Config::ConfigRule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Config::ConfigRule',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigRule::SourceDetail',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigRule::SourceDetailValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::SourceDetail->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigRule::SourceDetailValue {
+package Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::SourceDetail {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigRule::Source',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigRule::SourceValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::Source->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigRule::SourceValue {
+package Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::Source {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::Config::ConfigRule::Scope',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Config::ConfigRule::ScopeValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::Scope->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Config::ConfigRule::ScopeValue {
+package Cfn::Resource::Properties::Object::AWS::Config::ConfigRule::Scope {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::NetworkManager::Link generated from spec 14.3.0
+# AWS::NetworkManager::Link generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::NetworkManager::Link',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::NetworkManager::Link::Bandwidth',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::NetworkManager::Link::BandwidthValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::NetworkManager::Link::Bandwidth->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::NetworkManager::Link::BandwidthValue {
+package Cfn::Resource::Properties::Object::AWS::NetworkManager::Link::Bandwidth {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::SES::Template generated from spec 14.3.0
+# AWS::SES::Template generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SES::Template',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SES::Template::Template',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SES::Template::TemplateValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SES::Template::Template->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SES::Template::TemplateValue {
+package Cfn::Resource::Properties::Object::AWS::SES::Template::Template {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

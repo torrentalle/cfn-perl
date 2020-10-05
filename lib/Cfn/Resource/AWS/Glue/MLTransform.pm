@@ -1,4 +1,4 @@
-# AWS::Glue::MLTransform generated from spec 14.3.0
+# AWS::Glue::MLTransform generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::Glue::MLTransform {
     [  ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','us-east-1','us-east-2','us-west-1','us-west-2' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform::GlueTables',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::MLTransform::GlueTablesValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::MLTransform::GlueTables->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::MLTransform::GlueTablesValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::MLTransform::GlueTables {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform::FindMatchesParameters
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::MLTransform::FindMatchesParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::MLTransform::FindMatchesParameters->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::MLTransform::FindMatchesParametersValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::MLTransform::FindMatchesParameters {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -99,11 +99,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform::TransformParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::MLTransform::TransformParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::MLTransform::TransformParameters->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::MLTransform::TransformParametersValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::MLTransform::TransformParameters {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -121,11 +121,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::MLTransform::InputRecordTables',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::MLTransform::InputRecordTablesValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::MLTransform::InputRecordTables->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::MLTransform::InputRecordTablesValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::MLTransform::InputRecordTables {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

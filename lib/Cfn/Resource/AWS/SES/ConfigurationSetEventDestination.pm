@@ -1,4 +1,4 @@
-# AWS::SES::ConfigurationSetEventDestination generated from spec 14.3.0
+# AWS::SES::ConfigurationSetEventDestination generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::D
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::DimensionConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SES::ConfigurationSetEventDestination::DimensionConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::DimensionConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::SES::ConfigurationSetEventDestination::DimensionConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::K
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::KinesisFirehoseDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SES::ConfigurationSetEventDestination::KinesisFirehoseDestination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::KinesisFirehoseDestinationValue {
+package Cfn::Resource::Properties::Object::AWS::SES::ConfigurationSetEventDestination::KinesisFirehoseDestination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::C
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::CloudWatchDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SES::ConfigurationSetEventDestination::CloudWatchDestination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::CloudWatchDestinationValue {
+package Cfn::Resource::Properties::Object::AWS::SES::ConfigurationSetEventDestination::CloudWatchDestination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::E
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::EventDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SES::ConfigurationSetEventDestination::EventDestination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SES::ConfigurationSetEventDestination::EventDestinationValue {
+package Cfn::Resource::Properties::Object::AWS::SES::ConfigurationSetEventDestination::EventDestination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

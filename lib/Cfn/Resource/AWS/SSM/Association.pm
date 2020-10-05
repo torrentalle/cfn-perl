@@ -1,4 +1,4 @@
-# AWS::SSM::Association generated from spec 14.3.0
+# AWS::SSM::Association generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::Association',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocation',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::Association::S3OutputLocation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::Association::S3OutputLocationValue {
+package Cfn::Resource::Properties::Object::AWS::SSM::Association::S3OutputLocation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::Association::Target',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::Association::TargetValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::Association::Target->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::Association::TargetValue {
+package Cfn::Resource::Properties::Object::AWS::SSM::Association::Target {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOut
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOutputLocationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::Association::InstanceAssociationOutputLocation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::Association::InstanceAssociationOutputLocationValue {
+package Cfn::Resource::Properties::Object::AWS::SSM::Association::InstanceAssociationOutputLocation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -113,6 +113,7 @@ package Cfn::Resource::Properties::AWS::SSM::Association {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has ApplyOnlyAtCronInterval => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has AssociationName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has AutomationTargetParameterName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ComplianceSeverity => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

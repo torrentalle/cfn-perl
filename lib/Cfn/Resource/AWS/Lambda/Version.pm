@@ -1,4 +1,4 @@
-# AWS::Lambda::Version generated from spec 14.3.0
+# AWS::Lambda::Version generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Lambda::Version',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::Version::ProvisionedConcurrencyC
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::Version::ProvisionedConcurrencyConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::Version::ProvisionedConcurrencyConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::Version::ProvisionedConcurrencyConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::Lambda::Version::ProvisionedConcurrencyConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

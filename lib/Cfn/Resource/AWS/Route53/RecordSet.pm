@@ -1,4 +1,4 @@
-# AWS::Route53::RecordSet generated from spec 14.3.0
+# AWS::Route53::RecordSet generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSet',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSet::GeoLocation',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::RecordSet::GeoLocationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53::RecordSet::GeoLocation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::RecordSet::GeoLocationValue {
+package Cfn::Resource::Properties::Object::AWS::Route53::RecordSet::GeoLocation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53::RecordSet::AliasTarget',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53::RecordSet::AliasTargetValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53::RecordSet::AliasTarget->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53::RecordSet::AliasTargetValue {
+package Cfn::Resource::Properties::Object::AWS::Route53::RecordSet::AliasTarget {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

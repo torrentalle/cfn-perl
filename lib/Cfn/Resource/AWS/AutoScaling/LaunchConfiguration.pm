@@ -1,4 +1,4 @@
-# AWS::AutoScaling::LaunchConfiguration generated from spec 14.3.0
+# AWS::AutoScaling::LaunchConfiguration generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AutoScaling::LaunchConfiguration',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::LaunchConfiguration::BlockD
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::LaunchConfiguration::BlockDeviceValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::LaunchConfiguration::BlockDevice->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::LaunchConfiguration::BlockDeviceValue {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::LaunchConfiguration::BlockDevice {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -77,11 +77,11 @@ coerce 'Cfn::Resource::Properties::AWS::AutoScaling::LaunchConfiguration::BlockD
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AutoScaling::LaunchConfiguration::BlockDeviceMappingValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AutoScaling::LaunchConfiguration::BlockDeviceMapping->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AutoScaling::LaunchConfiguration::BlockDeviceMappingValue {
+package Cfn::Resource::Properties::Object::AWS::AutoScaling::LaunchConfiguration::BlockDeviceMapping {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

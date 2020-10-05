@@ -1,4 +1,4 @@
-# AWS::WAF::Rule generated from spec 14.3.0
+# AWS::WAF::Rule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::WAF::Rule',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAF::Rule::Predicate',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAF::Rule::PredicateValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAF::Rule::Predicate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAF::Rule::PredicateValue {
+package Cfn::Resource::Properties::Object::AWS::WAF::Rule::Predicate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

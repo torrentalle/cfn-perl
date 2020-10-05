@@ -1,4 +1,4 @@
-# AWS::S3::Bucket generated from spec 14.3.0
+# AWS::S3::Bucket generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::S3::Bucket',
@@ -19,6 +19,71 @@ package Cfn::Resource::AWS::S3::Bucket {
 }
 
 
+subtype 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::TagFilter->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::TagFilter {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Key => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Value => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationTimeValue->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationTimeValue {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Minutes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::FilterRule',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -51,11 +116,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::FilterRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::FilterRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::FilterRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::FilterRuleValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::FilterRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +138,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::SseKmsEncryptedObjects',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::SseKmsEncryptedObjectsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::SseKmsEncryptedObjects->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::SseKmsEncryptedObjectsValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::SseKmsEncryptedObjects {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,16 +159,82 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::S3KeyFilter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::S3KeyFilterValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::S3KeyFilter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::S3KeyFilterValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::S3KeyFilter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
   has Rules => (isa => 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::FilterRule', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTime',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTime',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationTime->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationTime {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Time => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleAndOperator',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleAndOperator',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationRuleAndOperator->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationRuleAndOperator {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Prefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TagFilters => (isa => 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::Metrics',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::Metrics',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::Metrics->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::Metrics {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has EventThreshold => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::EncryptionConfiguration',
@@ -115,11 +246,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::EncryptionConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::EncryptionConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::EncryptionConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::EncryptionConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::EncryptionConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -136,11 +267,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::Destination',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::DestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::Destination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::DestinationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::Destination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -160,11 +291,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::AccessControlTranslation',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::AccessControlTranslationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::AccessControlTranslation->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::AccessControlTranslationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::AccessControlTranslation {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -203,11 +334,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::Transition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::TransitionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::Transition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::TransitionValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::Transition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -215,50 +346,6 @@ package Cfn::Resource::Properties::AWS::S3::Bucket::TransitionValue {
   has StorageClass => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TransitionDate => (isa => 'Cfn::Value::Timestamp', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TransitionInDays => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-}
-subtype 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
-     as 'Cfn::Value',
-  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
-message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
-
-coerce 'ArrayOfCfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
-  from 'HashRef',
-   via {
-     if (my $f = Cfn::TypeLibrary::try_function($_)) {
-       return $f
-     } else {
-       die 'Only accepts functions'; 
-     }
-   },
-  from 'ArrayRef',
-   via {
-     Cfn::Value::Array->new(Value => [
-       map { 
-         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter')->coerce($_)
-       } @$_
-     ]);
-   };
-
-subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
-     as 'Cfn::Value';
-
-coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter',
-  from 'HashRef',
-   via {
-     if (my $f = Cfn::TypeLibrary::try_function($_)) {
-       return $f
-     } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::TagFilterValue->new( %$_ );
-     }
-   };
-
-package Cfn::Resource::Properties::AWS::S3::Bucket::TagFilterValue {
-  use Moose;
-  use MooseX::StrictConstructor;
-  extends 'Cfn::Value::TypedValue';
-  
-  has Key => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Value => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::SourceSelectionCriteria',
@@ -270,11 +357,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::SourceSelectionCriteria',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::SourceSelectionCriteriaValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::SourceSelectionCriteria->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::SourceSelectionCriteriaValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::SourceSelectionCriteria {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -291,11 +378,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ServerSideEncryptionByDefaul
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::ServerSideEncryptionByDefaultValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ServerSideEncryptionByDefault->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::ServerSideEncryptionByDefaultValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ServerSideEncryptionByDefault {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -313,17 +400,40 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::RoutingRuleCondition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::RoutingRuleConditionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::RoutingRuleCondition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::RoutingRuleConditionValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::RoutingRuleCondition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
   has HttpErrorCodeReturnedEquals => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has KeyPrefixEquals => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleFilter',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleFilter',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationRuleFilter->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationRuleFilter {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has And => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleAndOperator', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Prefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TagFilter => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::TagFilter', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationDestination',
@@ -335,11 +445,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationDestination',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationDestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationDestination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationDestinationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationDestination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -348,6 +458,8 @@ package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationDestinationValue 
   has Account => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Bucket => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EncryptionConfiguration => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::EncryptionConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Metrics => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::Metrics', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ReplicationTime => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTime', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has StorageClass => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -360,11 +472,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::RedirectRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::RedirectRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::RedirectRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::RedirectRuleValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::RedirectRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -385,11 +497,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::NotificationFilter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::NotificationFilterValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::NotificationFilter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::NotificationFilterValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::NotificationFilter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -428,17 +540,38 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::NoncurrentVersionTransition'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::NoncurrentVersionTransitionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::NoncurrentVersionTransition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::NoncurrentVersionTransitionValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::NoncurrentVersionTransition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
   has StorageClass => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TransitionInDays => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::DeleteMarkerReplication',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::DeleteMarkerReplication',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::DeleteMarkerReplication->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::DeleteMarkerReplication {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::DefaultRetention',
@@ -450,11 +583,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::DefaultRetention',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::DefaultRetentionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::DefaultRetention->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::DefaultRetentionValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::DefaultRetention {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -473,11 +606,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::DataExport',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::DataExportValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::DataExport->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::DataExportValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::DataExport {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -495,11 +628,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::AbortIncompleteMultipartUplo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::AbortIncompleteMultipartUploadValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::AbortIncompleteMultipartUpload->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::AbortIncompleteMultipartUploadValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::AbortIncompleteMultipartUpload {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -538,11 +671,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::TopicConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::TopicConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::TopicConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::TopicConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::TopicConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -561,11 +694,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::StorageClassAnalysis',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::StorageClassAnalysisValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::StorageClassAnalysis->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::StorageClassAnalysisValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::StorageClassAnalysis {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -604,11 +737,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ServerSideEncryptionRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::ServerSideEncryptionRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ServerSideEncryptionRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::ServerSideEncryptionRuleValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ServerSideEncryptionRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -647,11 +780,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::Rule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::RuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::Rule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::RuleValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::Rule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -701,11 +834,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::RoutingRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::RoutingRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::RoutingRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::RoutingRuleValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::RoutingRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -745,18 +878,21 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has DeleteMarkerReplication => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::DeleteMarkerReplication', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Destination => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationDestination', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Filter => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationRuleFilter', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Prefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Prefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Priority => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SourceSelectionCriteria => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::SourceSelectionCriteria', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
@@ -770,11 +906,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::RedirectAllRequestsTo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::RedirectAllRequestsToValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::RedirectAllRequestsTo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::RedirectAllRequestsToValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::RedirectAllRequestsTo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -814,11 +950,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::QueueConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::QueueConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::QueueConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::QueueConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::QueueConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -837,11 +973,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ObjectLockRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::ObjectLockRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ObjectLockRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::ObjectLockRuleValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ObjectLockRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -880,11 +1016,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::LambdaConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::LambdaConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::LambdaConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::LambdaConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::LambdaConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -925,11 +1061,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::CorsRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::CorsRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::CorsRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::CorsRuleValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::CorsRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -951,11 +1087,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::WebsiteConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::WebsiteConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::WebsiteConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::WebsiteConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::WebsiteConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -975,11 +1111,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::VersioningConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::VersioningConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::VersioningConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::VersioningConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::VersioningConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -996,11 +1132,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ReplicationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1018,11 +1154,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::PublicAccessBlockConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::PublicAccessBlockConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::PublicAccessBlockConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::PublicAccessBlockConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::PublicAccessBlockConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1042,11 +1178,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::ObjectLockConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::ObjectLockConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::ObjectLockConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::ObjectLockConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::ObjectLockConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1064,11 +1200,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::NotificationConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::NotificationConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::NotificationConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::NotificationConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::NotificationConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1109,11 +1245,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::MetricsConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::MetricsConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::MetricsConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::MetricsConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::MetricsConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1132,11 +1268,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::LoggingConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::LoggingConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::LoggingConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::LoggingConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::LoggingConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1154,11 +1290,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::LifecycleConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::LifecycleConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::LifecycleConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::LifecycleConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::LifecycleConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1197,11 +1333,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::InventoryConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::InventoryConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::InventoryConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::InventoryConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::InventoryConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1224,11 +1360,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::CorsConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::CorsConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::CorsConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::CorsConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::CorsConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1245,11 +1381,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::BucketEncryption',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::BucketEncryptionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::BucketEncryption->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::BucketEncryptionValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::BucketEncryption {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1288,11 +1424,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::AnalyticsConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::AnalyticsConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::AnalyticsConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::AnalyticsConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::AnalyticsConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -1312,11 +1448,11 @@ coerce 'Cfn::Resource::Properties::AWS::S3::Bucket::AccelerateConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::S3::Bucket::AccelerateConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::S3::Bucket::AccelerateConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::S3::Bucket::AccelerateConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::S3::Bucket::AccelerateConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

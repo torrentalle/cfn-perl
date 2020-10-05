@@ -1,4 +1,4 @@
-# AWS::Athena::WorkGroup generated from spec 14.3.0
+# AWS::Athena::WorkGroup generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::Athena::WorkGroup {
     [ 'CreationTime' ]
   }
   sub supported_regions {
-    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','cn-northwest-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
+    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','cn-north-1','cn-northwest-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
   }
 }
 
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::EncryptionConfigurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::EncryptionConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::EncryptionConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::EncryptionConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::EncryptionConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfigurationUp
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfigurationUpdatesValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::ResultConfigurationUpdates->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfigurationUpdatesValue {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::ResultConfigurationUpdates {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfiguration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::ResultConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::ResultConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::ResultConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfigurationUpdatesValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::WorkGroupConfigurationUpdates->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfigurationUpdatesValue {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::WorkGroupConfigurationUpdates {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -123,11 +123,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfiguratio
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::WorkGroupConfiguration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::WorkGroupConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::WorkGroupConfiguration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -148,11 +148,11 @@ coerce 'Cfn::Resource::Properties::AWS::Athena::WorkGroup::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Athena::WorkGroup::TagsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Athena::WorkGroup::TagsValue {
+package Cfn::Resource::Properties::Object::AWS::Athena::WorkGroup::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

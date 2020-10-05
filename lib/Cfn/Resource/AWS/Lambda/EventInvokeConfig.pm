@@ -1,4 +1,4 @@
-# AWS::Lambda::EventInvokeConfig generated from spec 14.3.0
+# AWS::Lambda::EventInvokeConfig generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnSuccess',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnSuccessValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::OnSuccess->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnSuccessValue {
+package Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::OnSuccess {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnFailure',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnFailureValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::OnFailure->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::OnFailureValue {
+package Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::OnFailure {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::DestinationCo
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::DestinationConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::DestinationConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Lambda::EventInvokeConfig::DestinationConfigValue {
+package Cfn::Resource::Properties::Object::AWS::Lambda::EventInvokeConfig::DestinationConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

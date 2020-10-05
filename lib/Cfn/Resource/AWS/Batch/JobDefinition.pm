@@ -1,4 +1,4 @@
-# AWS::Batch::JobDefinition generated from spec 14.3.0
+# AWS::Batch::JobDefinition generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::VolumesHost',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::VolumesHostValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::VolumesHost->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::VolumesHostValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::VolumesHost {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -72,11 +72,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::Device',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::DeviceValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Device->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::DeviceValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Device {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::Volumes',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::VolumesValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Volumes->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::VolumesValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Volumes {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -161,11 +161,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::Ulimit',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::UlimitValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Ulimit->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::UlimitValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Ulimit {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -206,11 +206,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequiremen
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirementValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::ResourceRequirement->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::ResourceRequirementValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::ResourceRequirement {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -250,11 +250,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::MountPoints',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::MountPointsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::MountPoints->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::MountPointsValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::MountPoints {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -273,11 +273,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::LinuxParameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::LinuxParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::LinuxParameters->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::LinuxParametersValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::LinuxParameters {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -316,11 +316,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::Environment',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::EnvironmentValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Environment->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::EnvironmentValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Environment {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -338,11 +338,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::ContainerPropertie
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::ContainerPropertiesValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::ContainerProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::ContainerPropertiesValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::ContainerProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -395,11 +395,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::NodeRangeProperty'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::NodeRangePropertyValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::NodeRangeProperty->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::NodeRangePropertyValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::NodeRangeProperty {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -417,11 +417,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::Timeout',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::TimeoutValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Timeout->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::TimeoutValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::Timeout {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -438,11 +438,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::RetryStrategy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::RetryStrategyValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::RetryStrategy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::RetryStrategyValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::RetryStrategy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -459,11 +459,11 @@ coerce 'Cfn::Resource::Properties::AWS::Batch::JobDefinition::NodeProperties',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Batch::JobDefinition::NodePropertiesValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::NodeProperties->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Batch::JobDefinition::NodePropertiesValue {
+package Cfn::Resource::Properties::Object::AWS::Batch::JobDefinition::NodeProperties {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

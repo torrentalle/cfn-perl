@@ -1,4 +1,4 @@
-# AWS::AppStream::DirectoryConfig generated from spec 14.3.0
+# AWS::AppStream::DirectoryConfig generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppStream::DirectoryConfig',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::AppStream::DirectoryConfig {
     [  ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-gov-west-1','us-west-2' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-gov-west-1','us-west-2' ]
   }
 }
 
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::DirectoryConfig::ServiceAccou
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::DirectoryConfig::ServiceAccountCredentialsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::DirectoryConfig::ServiceAccountCredentials->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::DirectoryConfig::ServiceAccountCredentialsValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::DirectoryConfig::ServiceAccountCredentials {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::AppStream::Stack generated from spec 14.3.0
+# AWS::AppStream::Stack generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::AppStream::Stack {
     [  ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-gov-west-1','us-west-2' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-gov-west-1','us-west-2' ]
   }
 }
 
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack::UserSetting',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Stack::UserSettingValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Stack::UserSetting->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Stack::UserSettingValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Stack::UserSetting {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack::StorageConnector',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Stack::StorageConnectorValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Stack::StorageConnector->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Stack::StorageConnectorValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Stack::StorageConnector {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -118,11 +118,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack::ApplicationSettings',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Stack::ApplicationSettingsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Stack::ApplicationSettings->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Stack::ApplicationSettingsValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Stack::ApplicationSettings {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -162,11 +162,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Stack::AccessEndpoint',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Stack::AccessEndpointValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Stack::AccessEndpoint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Stack::AccessEndpointValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Stack::AccessEndpoint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

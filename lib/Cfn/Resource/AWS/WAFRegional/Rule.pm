@@ -1,4 +1,4 @@
-# AWS::WAFRegional::Rule generated from spec 14.3.0
+# AWS::WAFRegional::Rule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::WAFRegional::Rule',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::WAFRegional::Rule::Predicate',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::WAFRegional::Rule::PredicateValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::WAFRegional::Rule::Predicate->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::WAFRegional::Rule::PredicateValue {
+package Cfn::Resource::Properties::Object::AWS::WAFRegional::Rule::Predicate {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

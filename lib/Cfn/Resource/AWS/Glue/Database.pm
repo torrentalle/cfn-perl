@@ -1,4 +1,4 @@
-# AWS::Glue::Database generated from spec 14.3.0
+# AWS::Glue::Database generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Glue::Database',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Database::DatabaseInput',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Database::DatabaseInputValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Database::DatabaseInput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Database::DatabaseInputValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Database::DatabaseInput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

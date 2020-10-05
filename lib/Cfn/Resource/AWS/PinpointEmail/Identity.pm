@@ -1,4 +1,4 @@
-# AWS::PinpointEmail::Identity generated from spec 14.3.0
+# AWS::PinpointEmail::Identity generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::Identity',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::Identity::Tags',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::Identity::TagsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::PinpointEmail::Identity::Tags->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::Identity::TagsValue {
+package Cfn::Resource::Properties::Object::AWS::PinpointEmail::Identity::Tags {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::PinpointEmail::Identity::MailFromAttribu
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::PinpointEmail::Identity::MailFromAttributesValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::PinpointEmail::Identity::MailFromAttributes->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::PinpointEmail::Identity::MailFromAttributesValue {
+package Cfn::Resource::Properties::Object::AWS::PinpointEmail::Identity::MailFromAttributes {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

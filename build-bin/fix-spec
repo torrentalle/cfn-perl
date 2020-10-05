@@ -40,5 +40,21 @@ delete $doc->{PropertyTypes}{'AWS::EC2::LaunchTemplate.CapacityReservationPrefer
 delete $doc->{PropertyTypes}{'AWS::EC2::LaunchTemplate.CapacityReservationSpecification'}{Properties}{CapacityReservationPreference}{Type};
 $doc->{PropertyTypes}{'AWS::EC2::LaunchTemplate.CapacityReservationSpecification'}{Properties}{CapacityReservationPreference}{ PrimitiveType } = 'String';
 
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-tags
+$doc->{PropertyTypes}{'AWS::IoT::ProvisioningTemplate.Tags'}{Properties}{Tags}{ItemType}= 'Tag';
+
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext
+$doc->{ResourceTypes}{'AWS::ECR::Repository'}{Properties}{RepositoryPolicyText}{PrimitiveType} = 'Json';
+
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keypolicy
+$doc->{ResourceTypes}{'AWS::KMS::Key'}{Properties}{KeyPolicy}{PrimitiveType} = 'Json';
+
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-authorizer-tags.html
+# Not supported by CloudFormation
+$doc->{PropertyTypes}{'AWS::IoT::Authorizer.Tags'}{Properties}{Tags}{ItemType}= 'Tag';
+
+
 my $dest_file = Path::Class::File->new($to);
 $dest_file->spew($json->encode($doc));
+
+

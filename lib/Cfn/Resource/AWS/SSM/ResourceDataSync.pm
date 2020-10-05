@@ -1,4 +1,4 @@
-# AWS::SSM::ResourceDataSync generated from spec 14.3.0
+# AWS::SSM::ResourceDataSync generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SSM::ResourceDataSync',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::AwsOrganizationsS
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::AwsOrganizationsSourceValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::AwsOrganizationsSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::AwsOrganizationsSourceValue {
+package Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::AwsOrganizationsSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::SyncSource',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::SyncSourceValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::SyncSource->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::SyncSourceValue {
+package Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::SyncSource {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -75,11 +75,11 @@ coerce 'Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::S3Destination',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::S3DestinationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::S3Destination->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SSM::ResourceDataSync::S3DestinationValue {
+package Cfn::Resource::Properties::Object::AWS::SSM::ResourceDataSync::S3Destination {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

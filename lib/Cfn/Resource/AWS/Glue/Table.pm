@@ -1,4 +1,4 @@
-# AWS::Glue::Table generated from spec 14.3.0
+# AWS::Glue::Table generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Glue::Table',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Table::SkewedInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Table::SkewedInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Table::SkewedInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Table::SkewedInfoValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Table::SkewedInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Table::SerdeInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Table::SerdeInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Table::SerdeInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Table::SerdeInfoValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Table::SerdeInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Table::Order',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Table::OrderValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Table::Order->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Table::OrderValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Table::Order {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Table::Column',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Table::ColumnValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Table::Column->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Table::ColumnValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Table::Column {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -164,11 +164,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Table::StorageDescriptor',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Table::StorageDescriptorValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Table::StorageDescriptor->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Table::StorageDescriptorValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Table::StorageDescriptor {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -196,11 +196,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Table::TableInput',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Table::TableInputValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Table::TableInput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Table::TableInputValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Table::TableInput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

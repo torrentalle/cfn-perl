@@ -1,4 +1,4 @@
-# AWS::ApiGateway::Method generated from spec 14.3.0
+# AWS::ApiGateway::Method generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Method',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Method::IntegrationResponse'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Method::IntegrationResponseValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::IntegrationResponse->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Method::IntegrationResponseValue {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::IntegrationResponse {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -98,11 +98,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Method::MethodResponse',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Method::MethodResponseValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::MethodResponse->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Method::MethodResponseValue {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::MethodResponse {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -121,11 +121,11 @@ coerce 'Cfn::Resource::Properties::AWS::ApiGateway::Method::Integration',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ApiGateway::Method::IntegrationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::Integration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ApiGateway::Method::IntegrationValue {
+package Cfn::Resource::Properties::Object::AWS::ApiGateway::Method::Integration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::SageMaker::Model generated from spec 14.3.0
+# AWS::SageMaker::Model generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SageMaker::Model',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Model::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Model::VpcConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::Model::VpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Model::VpcConfigValue {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::Model::VpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,20 +73,21 @@ coerce 'Cfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinition',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinitionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::Model::ContainerDefinition->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinitionValue {
+package Cfn::Resource::Properties::Object::AWS::SageMaker::Model::ContainerDefinition {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
   has ContainerHostname => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Environment => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
-  has Image => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has Image => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Mode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ModelDataUrl => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ModelPackageName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
 package Cfn::Resource::Properties::AWS::SageMaker::Model {
@@ -95,6 +96,7 @@ package Cfn::Resource::Properties::AWS::SageMaker::Model {
   extends 'Cfn::Resource::Properties';
   
   has Containers => (isa => 'ArrayOfCfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinition', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has EnableNetworkIsolation => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ExecutionRoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ModelName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has PrimaryContainer => (isa => 'Cfn::Resource::Properties::AWS::SageMaker::Model::ContainerDefinition', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

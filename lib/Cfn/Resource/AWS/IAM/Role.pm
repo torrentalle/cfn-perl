@@ -1,4 +1,4 @@
-# AWS::IAM::Role generated from spec 14.3.0
+# AWS::IAM::Role generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IAM::Role',
@@ -58,11 +58,11 @@ coerce 'Cfn::Resource::Properties::AWS::IAM::Role::Policy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IAM::Role::PolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IAM::Role::Policy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IAM::Role::PolicyValue {
+package Cfn::Resource::Properties::Object::AWS::IAM::Role::Policy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

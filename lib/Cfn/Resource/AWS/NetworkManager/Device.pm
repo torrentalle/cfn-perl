@@ -1,4 +1,4 @@
-# AWS::NetworkManager::Device generated from spec 14.3.0
+# AWS::NetworkManager::Device generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::NetworkManager::Device',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::NetworkManager::Device::Location',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::NetworkManager::Device::LocationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::NetworkManager::Device::Location->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::NetworkManager::Device::LocationValue {
+package Cfn::Resource::Properties::Object::AWS::NetworkManager::Device::Location {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

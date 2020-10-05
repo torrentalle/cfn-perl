@@ -1,4 +1,4 @@
-# AWS::IAM::User generated from spec 14.3.0
+# AWS::IAM::User generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::IAM::User',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::IAM::User::Policy',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IAM::User::PolicyValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IAM::User::Policy->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IAM::User::PolicyValue {
+package Cfn::Resource::Properties::Object::AWS::IAM::User::Policy {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::IAM::User::LoginProfile',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::IAM::User::LoginProfileValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::IAM::User::LoginProfile->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::IAM::User::LoginProfileValue {
+package Cfn::Resource::Properties::Object::AWS::IAM::User::LoginProfile {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

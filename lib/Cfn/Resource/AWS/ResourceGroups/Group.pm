@@ -1,4 +1,4 @@
-# AWS::ResourceGroups::Group generated from spec 14.3.0
+# AWS::ResourceGroups::Group generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ResourceGroups::Group',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::ResourceGroups::Group::TagFilter',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ResourceGroups::Group::TagFilterValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::TagFilter->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ResourceGroups::Group::TagFilterValue {
+package Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::TagFilter {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::ResourceGroups::Group::Query',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ResourceGroups::Group::QueryValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::Query->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ResourceGroups::Group::QueryValue {
+package Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::Query {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::ResourceGroups::Group::ResourceQuery',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::ResourceGroups::Group::ResourceQueryValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::ResourceQuery->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::ResourceGroups::Group::ResourceQueryValue {
+package Cfn::Resource::Properties::Object::AWS::ResourceGroups::Group::ResourceQuery {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

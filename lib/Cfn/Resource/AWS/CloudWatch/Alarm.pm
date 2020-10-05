@@ -1,4 +1,4 @@
-# AWS::CloudWatch::Alarm generated from spec 14.3.0
+# AWS::CloudWatch::Alarm generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudWatch::Alarm',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::Alarm::Dimension',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::Alarm::DimensionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::Alarm::Dimension->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::Alarm::DimensionValue {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::Alarm::Dimension {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::Alarm::Metric',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::Alarm::Metric->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricValue {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::Alarm::Metric {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -96,11 +96,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricStat',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricStatValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::Alarm::MetricStat->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricStatValue {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::Alarm::MetricStat {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -142,11 +142,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricDataQuery',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricDataQueryValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::Alarm::MetricDataQuery->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricDataQueryValue {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::Alarm::MetricDataQuery {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -155,6 +155,7 @@ package Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricDataQueryValue 
   has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Label => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MetricStat => (isa => 'Cfn::Resource::Properties::AWS::CloudWatch::Alarm::MetricStat', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Period => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ReturnData => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

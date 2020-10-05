@@ -1,4 +1,4 @@
-# AWS::CloudWatch::AnomalyDetector generated from spec 14.3.0
+# AWS::CloudWatch::AnomalyDetector generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Range',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::RangeValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Range->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::RangeValue {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Range {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Dimension',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::DimensionValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Dimension->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::DimensionValue {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Dimension {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -117,11 +117,11 @@ coerce 'Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::Configurati
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::ConfigurationValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Configuration->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::CloudWatch::AnomalyDetector::ConfigurationValue {
+package Cfn::Resource::Properties::Object::AWS::CloudWatch::AnomalyDetector::Configuration {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

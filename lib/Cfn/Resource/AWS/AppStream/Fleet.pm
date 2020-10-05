@@ -1,4 +1,4 @@
-# AWS::AppStream::Fleet generated from spec 14.3.0
+# AWS::AppStream::Fleet generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::AppStream::Fleet {
     [  ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-gov-west-1','us-west-2' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-gov-west-1','us-west-2' ]
   }
 }
 
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::VpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Fleet::VpcConfigValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::VpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::DomainJoinInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Fleet::DomainJoinInfoValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::DomainJoinInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -73,11 +73,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacity',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacityValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::ComputeCapacity->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::Fleet::ComputeCapacityValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::Fleet::ComputeCapacity {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

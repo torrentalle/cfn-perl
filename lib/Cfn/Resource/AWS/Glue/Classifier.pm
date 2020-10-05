@@ -1,4 +1,4 @@
-# AWS::Glue::Classifier generated from spec 14.3.0
+# AWS::Glue::Classifier generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Glue::Classifier',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Classifier::XMLClassifier',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Classifier::XMLClassifierValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Classifier::XMLClassifier->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Classifier::XMLClassifierValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Classifier::XMLClassifier {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Classifier::JsonClassifier',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Classifier::JsonClassifierValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Classifier::JsonClassifier->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Classifier::JsonClassifierValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Classifier::JsonClassifier {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Classifier::GrokClassifier',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Classifier::GrokClassifierValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Classifier::GrokClassifier->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Classifier::GrokClassifierValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Classifier::GrokClassifier {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -98,11 +98,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Classifier::CsvClassifier',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Classifier::CsvClassifierValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Classifier::CsvClassifier->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Classifier::CsvClassifierValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Classifier::CsvClassifier {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

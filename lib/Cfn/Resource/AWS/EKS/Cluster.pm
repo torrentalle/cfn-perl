@@ -1,4 +1,4 @@
-# AWS::EKS::Cluster generated from spec 14.3.0
+# AWS::EKS::Cluster generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EKS::Cluster',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Cluster::Provider',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Cluster::ProviderValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Cluster::Provider->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Cluster::ProviderValue {
+package Cfn::Resource::Properties::Object::AWS::EKS::Cluster::Provider {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -50,11 +50,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Cluster::ResourcesVpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Cluster::ResourcesVpcConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Cluster::ResourcesVpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Cluster::ResourcesVpcConfigValue {
+package Cfn::Resource::Properties::Object::AWS::EKS::Cluster::ResourcesVpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -94,11 +94,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Cluster::EncryptionConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Cluster::EncryptionConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Cluster::EncryptionConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Cluster::EncryptionConfigValue {
+package Cfn::Resource::Properties::Object::AWS::EKS::Cluster::EncryptionConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

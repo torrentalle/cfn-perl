@@ -1,4 +1,4 @@
-# AWS::AppStream::ImageBuilder generated from spec 14.3.0
+# AWS::AppStream::ImageBuilder generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::AppStream::ImageBuilder {
     [ 'StreamingUrl' ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-gov-west-1','us-west-2' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','eu-central-1','eu-west-1','us-east-1','us-gov-west-1','us-west-2' ]
   }
 }
 
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::VpcConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::VpcConfigValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::VpcConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfo'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::DomainJoinInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::DomainJoinInfoValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::DomainJoinInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -95,11 +95,11 @@ coerce 'Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpoint'
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpointValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::AccessEndpoint->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AppStream::ImageBuilder::AccessEndpointValue {
+package Cfn::Resource::Properties::Object::AWS::AppStream::ImageBuilder::AccessEndpoint {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::EventSchemas::Registry generated from spec 14.3.0
+# AWS::EventSchemas::Registry generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EventSchemas::Registry',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::EventSchemas::Registry::TagsEntry',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EventSchemas::Registry::TagsEntryValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EventSchemas::Registry::TagsEntry->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EventSchemas::Registry::TagsEntryValue {
+package Cfn::Resource::Properties::Object::AWS::EventSchemas::Registry::TagsEntry {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

@@ -1,4 +1,4 @@
-# AWS::AmazonMQ::ConfigurationAssociation generated from spec 14.3.0
+# AWS::AmazonMQ::ConfigurationAssociation generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::ConfigurationAssociation',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::ConfigurationAssociation::Conf
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::AmazonMQ::ConfigurationAssociation::ConfigurationIdValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::ConfigurationAssociation::ConfigurationId->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::AmazonMQ::ConfigurationAssociation::ConfigurationIdValue {
+package Cfn::Resource::Properties::Object::AWS::AmazonMQ::ConfigurationAssociation::ConfigurationId {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

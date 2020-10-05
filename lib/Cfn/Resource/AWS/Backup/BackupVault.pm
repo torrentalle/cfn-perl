@@ -1,4 +1,4 @@
-# AWS::Backup::BackupVault generated from spec 14.3.0
+# AWS::Backup::BackupVault generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Backup::BackupVault',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::Backup::BackupVault {
     [ 'BackupVaultArn','BackupVaultName' ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-west-1','us-west-2' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-1','us-west-2' ]
   }
 }
 
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Backup::BackupVault::NotificationObjectT
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Backup::BackupVault::NotificationObjectTypeValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Backup::BackupVault::NotificationObjectType->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Backup::BackupVault::NotificationObjectTypeValue {
+package Cfn::Resource::Properties::Object::AWS::Backup::BackupVault::NotificationObjectType {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

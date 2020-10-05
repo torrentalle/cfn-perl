@@ -1,4 +1,4 @@
-# AWS::Glue::Partition generated from spec 14.3.0
+# AWS::Glue::Partition generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Glue::Partition',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Partition::SkewedInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Partition::SkewedInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Partition::SkewedInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Partition::SkewedInfoValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Partition::SkewedInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,11 +52,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Partition::SerdeInfo',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Partition::SerdeInfoValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Partition::SerdeInfo->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Partition::SerdeInfoValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Partition::SerdeInfo {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -97,11 +97,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Partition::Order',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Partition::OrderValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Partition::Order->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Partition::OrderValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Partition::Order {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -141,11 +141,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Partition::Column',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Partition::ColumnValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Partition::Column->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Partition::ColumnValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Partition::Column {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -164,11 +164,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Partition::StorageDescriptor',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Partition::StorageDescriptorValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Partition::StorageDescriptor->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Partition::StorageDescriptorValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Partition::StorageDescriptor {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -196,11 +196,11 @@ coerce 'Cfn::Resource::Properties::AWS::Glue::Partition::PartitionInput',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Glue::Partition::PartitionInputValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Glue::Partition::PartitionInput->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Glue::Partition::PartitionInputValue {
+package Cfn::Resource::Properties::Object::AWS::Glue::Partition::PartitionInput {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

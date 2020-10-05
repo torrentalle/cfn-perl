@@ -1,4 +1,4 @@
-# AWS::DLM::LifecyclePolicy generated from spec 14.3.0
+# AWS::DLM::LifecyclePolicy generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy',
@@ -29,17 +29,17 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRet
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRetainRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::CrossRegionCopyRetainRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRetainRuleValue {
+package Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::CrossRegionCopyRetainRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has Interval => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has IntervalUnit => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Interval => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IntervalUnit => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::RetainRule',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::RetainRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::RetainRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::RetainRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::RetainRuleValue {
+package Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::RetainRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -74,11 +74,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::FastRestoreRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::FastRestoreRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::FastRestoreRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::FastRestoreRuleValue {
+package Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::FastRestoreRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -120,20 +120,20 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRul
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::CrossRegionCopyRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRuleValue {
+package Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::CrossRegionCopyRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
   has CmkArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has CopyTags => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Encrypted => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Encrypted => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RetainRule => (isa => 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CrossRegionCopyRetainRule', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has TargetRegion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TargetRegion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CreateRule',
@@ -145,17 +145,18 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CreateRule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CreateRuleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::CreateRule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::CreateRuleValue {
+package Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::CreateRule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has Interval => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has IntervalUnit => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has CronExpression => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Interval => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IntervalUnit => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Times => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::DLM::LifecyclePolicy::Schedule',
@@ -190,11 +191,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::Schedule',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::ScheduleValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::Schedule->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::ScheduleValue {
+package Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::Schedule {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -218,11 +219,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::Parameters',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::ParametersValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::Parameters->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::ParametersValue {
+package Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::Parameters {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -239,11 +240,11 @@ coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::PolicyDetails',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::PolicyDetailsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::PolicyDetails->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::PolicyDetailsValue {
+package Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::PolicyDetails {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

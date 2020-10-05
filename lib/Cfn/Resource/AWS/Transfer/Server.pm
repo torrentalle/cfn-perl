@@ -1,4 +1,4 @@
-# AWS::Transfer::Server generated from spec 14.3.0
+# AWS::Transfer::Server generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Transfer::Server',
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::Server::Protocol',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::Server::ProtocolValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Transfer::Server::Protocol->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::Server::ProtocolValue {
+package Cfn::Resource::Properties::Object::AWS::Transfer::Server::Protocol {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -71,11 +71,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetail
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetailsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Transfer::Server::IdentityProviderDetails->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::Server::IdentityProviderDetailsValue {
+package Cfn::Resource::Properties::Object::AWS::Transfer::Server::IdentityProviderDetails {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -93,11 +93,11 @@ coerce 'Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetails',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetailsValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Transfer::Server::EndpointDetails->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Transfer::Server::EndpointDetailsValue {
+package Cfn::Resource::Properties::Object::AWS::Transfer::Server::EndpointDetails {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -120,6 +120,7 @@ package Cfn::Resource::Properties::AWS::Transfer::Server {
   has IdentityProviderType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has LoggingRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Protocols => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Transfer::Server::Protocol', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SecurityPolicyName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

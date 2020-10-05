@@ -1,4 +1,4 @@
-# AWS::EKS::Nodegroup generated from spec 14.3.0
+# AWS::EKS::Nodegroup generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EKS::Nodegroup',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Nodegroup::ScalingConfig',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Nodegroup::ScalingConfigValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::ScalingConfig->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Nodegroup::ScalingConfigValue {
+package Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::ScalingConfig {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
@@ -52,17 +52,40 @@ coerce 'Cfn::Resource::Properties::AWS::EKS::Nodegroup::RemoteAccess',
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EKS::Nodegroup::RemoteAccessValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::RemoteAccess->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EKS::Nodegroup::RemoteAccessValue {
+package Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::RemoteAccess {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
   has Ec2SshKey => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has SourceSecurityGroups => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::EKS::Nodegroup::LaunchTemplateSpecification',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EKS::Nodegroup::LaunchTemplateSpecification',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::LaunchTemplateSpecification->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::EKS::Nodegroup::LaunchTemplateSpecification {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Version => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::EKS::Nodegroup {
@@ -76,6 +99,7 @@ package Cfn::Resource::Properties::AWS::EKS::Nodegroup {
   has ForceUpdateEnabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InstanceTypes => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Labels => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has LaunchTemplate => (isa => 'Cfn::Resource::Properties::AWS::EKS::Nodegroup::LaunchTemplateSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has NodeRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has NodegroupName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ReleaseVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

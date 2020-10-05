@@ -1,4 +1,4 @@
-# AWS::Route53Resolver::ResolverRule generated from spec 14.3.0
+# AWS::Route53Resolver::ResolverRule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Route53Resolver::ResolverRule',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::Route53Resolver::ResolverRule {
     [ 'Arn','DomainName','Name','ResolverEndpointId','ResolverRuleId','TargetIps' ]
   }
   sub supported_regions {
-    [ 'ap-east-1','ap-northeast-1','ap-southeast-1','eu-north-1','eu-west-1','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-2' ]
+    [ 'ap-east-1','ap-northeast-1','ap-southeast-1','ap-southeast-2','eu-north-1','eu-west-1','me-south-1','sa-east-1','us-east-1','us-east-2','us-gov-east-1','us-gov-west-1','us-west-2' ]
   }
 }
 
@@ -51,11 +51,11 @@ coerce 'Cfn::Resource::Properties::AWS::Route53Resolver::ResolverRule::TargetAdd
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::Route53Resolver::ResolverRule::TargetAddressValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::Route53Resolver::ResolverRule::TargetAddress->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::Route53Resolver::ResolverRule::TargetAddressValue {
+package Cfn::Resource::Properties::Object::AWS::Route53Resolver::ResolverRule::TargetAddress {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';

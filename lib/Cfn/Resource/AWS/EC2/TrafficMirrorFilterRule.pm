@@ -1,4 +1,4 @@
-# AWS::EC2::TrafficMirrorFilterRule generated from spec 14.3.0
+# AWS::EC2::TrafficMirrorFilterRule generated from spec 18.4.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule',
@@ -29,11 +29,11 @@ coerce 'Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMir
      if (my $f = Cfn::TypeLibrary::try_function($_)) {
        return $f
      } else {
-       return Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeValue->new( %$_ );
+       return Cfn::Resource::Properties::Object::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRange->new( %$_ );
      }
    };
 
-package Cfn::Resource::Properties::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRangeValue {
+package Cfn::Resource::Properties::Object::AWS::EC2::TrafficMirrorFilterRule::TrafficMirrorPortRange {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
