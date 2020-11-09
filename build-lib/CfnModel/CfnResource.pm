@@ -95,6 +95,7 @@ package CfnModel::CfnResource;
     #  key. That should not be
     my $deps_sub = sub { 
       return () if ($_[0] eq 'TagType');
+      die "unsatisfied dependency ".$_[0]." on ".$self->name unless exists $deps->{ $_[0] };
       return @{ $deps->{ $_[0] } } 
     
     }; 
