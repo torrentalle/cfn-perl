@@ -53,6 +53,13 @@ $doc->{ResourceTypes}{'AWS::KMS::Key'}{Properties}{KeyPolicy}{PrimitiveType} = '
 # Not supported by CloudFormation
 $doc->{PropertyTypes}{'AWS::IoT::Authorizer.Tags'}{Properties}{Tags}{ItemType}= 'Tag';
 
+$doc->{PropertyTypes}{'AWS::IoT::DomainConfiguration.Tags'}{Properties}{Tags}{ItemType}= 'Tag';
+
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafencryption.html
+$doc->{PropertyTypes}{'AWS::MediaPackage::PackagingConfiguration.HlsEncryption'}{Properties}{SpekeKeyProvider}{Type} = 'SpekeKeyProvider';
+$doc->{PropertyTypes}{'AWS::MediaPackage::PackagingConfiguration.DashEncryption'}{Properties}{SpekeKeyProvider}{Type} = 'SpekeKeyProvider';
+$doc->{PropertyTypes}{'AWS::MediaPackage::PackagingConfiguration.CmafEncryption'}{Properties}{SpekeKeyProvider}{Type} = 'SpekeKeyProvider';
+$doc->{PropertyTypes}{'AWS::MediaPackage::PackagingConfiguration.MssEncryption'}{Properties}{SpekeKeyProvider}{Type} = 'SpekeKeyProvider';
 
 my $dest_file = Path::Class::File->new($to);
 $dest_file->spew($json->encode($doc));
