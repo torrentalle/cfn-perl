@@ -1,4 +1,4 @@
-# AWS::EMR::InstanceFleetConfig generated from spec 18.4.0
+# AWS::EMR::InstanceFleetConfig generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig',
@@ -105,9 +105,31 @@ package Cfn::Resource::Properties::Object::AWS::EMR::InstanceFleetConfig::SpotPr
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has AllocationStrategy => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has BlockDurationMinutes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TimeoutAction => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TimeoutDurationMinutes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::OnDemandProvisioningSpecification',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::OnDemandProvisioningSpecification',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::EMR::InstanceFleetConfig::OnDemandProvisioningSpecification->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::EMR::InstanceFleetConfig::OnDemandProvisioningSpecification {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has AllocationStrategy => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::EbsConfiguration',
@@ -243,7 +265,8 @@ package Cfn::Resource::Properties::Object::AWS::EMR::InstanceFleetConfig::Instan
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has SpotSpecification => (isa => 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::SpotProvisioningSpecification', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has OnDemandSpecification => (isa => 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::OnDemandProvisioningSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SpotSpecification => (isa => 'Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig::SpotProvisioningSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::EMR::InstanceFleetConfig {

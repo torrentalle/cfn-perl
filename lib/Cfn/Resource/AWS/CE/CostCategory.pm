@@ -1,4 +1,4 @@
-# AWS::CE::CostCategory generated from spec 14.3.0
+# AWS::CE::CostCategory generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CE::CostCategory',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::CE::CostCategory {
     [ 'Arn','EffectiveStart' ]
   }
   sub supported_regions {
-    [ 'us-east-1' ]
+    [ 'cn-northwest-1','us-east-1' ]
   }
 }
 

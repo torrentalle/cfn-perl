@@ -1,4 +1,4 @@
-# AWS::Lambda::EventSourceMapping generated from spec 18.4.0
+# AWS::Lambda::EventSourceMapping generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping',
@@ -40,6 +40,50 @@ package Cfn::Resource::Properties::Object::AWS::Lambda::EventSourceMapping::OnFa
   
   has Destination => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
+subtype 'ArrayOfCfn::Resource::Properties::AWS::Lambda::EventSourceMapping::SourceAccessConfiguration',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::Lambda::EventSourceMapping::SourceAccessConfiguration',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::SourceAccessConfiguration')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::SourceAccessConfiguration',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::SourceAccessConfiguration',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::Lambda::EventSourceMapping::SourceAccessConfiguration->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::Lambda::EventSourceMapping::SourceAccessConfiguration {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has URI => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 
 subtype 'Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping::DestinationConfig',
      as 'Cfn::Value';
@@ -77,6 +121,8 @@ package Cfn::Resource::Properties::AWS::Lambda::EventSourceMapping {
   has MaximumRecordAgeInSeconds => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MaximumRetryAttempts => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ParallelizationFactor => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Queues => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SourceAccessConfigurations => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Lambda::EventSourceMapping::SourceAccessConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has StartingPosition => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Topics => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }

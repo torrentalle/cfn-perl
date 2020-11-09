@@ -1,4 +1,4 @@
-# AWS::ElasticLoadBalancingV2::LoadBalancer generated from spec 18.4.0
+# AWS::ElasticLoadBalancingV2::LoadBalancer generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer',
@@ -61,6 +61,7 @@ package Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::LoadBala
   extends 'Cfn::Value::TypedValue';
   
   has AllocationId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has IPv6Address => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has PrivateIPv4Address => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SubnetId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
@@ -119,7 +120,7 @@ package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer {
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Scheme => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has SecurityGroups => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has SubnetMappings => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMapping', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has SubnetMappings => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ElasticLoadBalancingV2::LoadBalancer::SubnetMapping', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Subnets => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

@@ -1,4 +1,4 @@
-# AWS::ElasticLoadBalancingV2::TargetGroup generated from spec 18.4.0
+# AWS::ElasticLoadBalancingV2::TargetGroup generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup',
@@ -127,7 +127,7 @@ package Cfn::Resource::Properties::Object::AWS::ElasticLoadBalancingV2::TargetGr
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has HttpCode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has HttpCode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::ElasticLoadBalancingV2::TargetGroup {

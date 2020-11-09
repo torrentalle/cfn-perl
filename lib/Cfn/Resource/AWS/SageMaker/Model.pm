@@ -1,4 +1,4 @@
-# AWS::SageMaker::Model generated from spec 18.4.0
+# AWS::SageMaker::Model generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SageMaker::Model',
@@ -19,6 +19,27 @@ package Cfn::Resource::AWS::SageMaker::Model {
 }
 
 
+
+subtype 'Cfn::Resource::Properties::AWS::SageMaker::Model::ImageConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::SageMaker::Model::ImageConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::SageMaker::Model::ImageConfig->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::SageMaker::Model::ImageConfig {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has RepositoryAccessMode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+}
 
 subtype 'Cfn::Resource::Properties::AWS::SageMaker::Model::VpcConfig',
      as 'Cfn::Value';
@@ -85,6 +106,7 @@ package Cfn::Resource::Properties::Object::AWS::SageMaker::Model::ContainerDefin
   has ContainerHostname => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Environment => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Image => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ImageConfig => (isa => 'Cfn::Resource::Properties::AWS::SageMaker::Model::ImageConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Mode => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ModelDataUrl => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ModelPackageName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

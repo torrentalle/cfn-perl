@@ -1,4 +1,4 @@
-# AWS::EMR::Cluster generated from spec 18.4.0
+# AWS::EMR::Cluster generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster',
@@ -244,6 +244,7 @@ package Cfn::Resource::Properties::Object::AWS::EMR::Cluster::SpotProvisioningSp
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has AllocationStrategy => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has BlockDurationMinutes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TimeoutAction => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TimeoutDurationMinutes => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
@@ -315,6 +316,27 @@ package Cfn::Resource::Properties::Object::AWS::EMR::Cluster::ScalingConstraints
   
   has MaxCapacity => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MinCapacity => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::EMR::Cluster::OnDemandProvisioningSpecification',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::OnDemandProvisioningSpecification',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::EMR::Cluster::OnDemandProvisioningSpecification->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::EMR::Cluster::OnDemandProvisioningSpecification {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has AllocationStrategy => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::EMR::Cluster::EbsConfiguration',
@@ -494,7 +516,8 @@ package Cfn::Resource::Properties::Object::AWS::EMR::Cluster::InstanceFleetProvi
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has SpotSpecification => (isa => 'Cfn::Resource::Properties::AWS::EMR::Cluster::SpotProvisioningSpecification', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has OnDemandSpecification => (isa => 'Cfn::Resource::Properties::AWS::EMR::Cluster::OnDemandProvisioningSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SpotSpecification => (isa => 'Cfn::Resource::Properties::AWS::EMR::Cluster::SpotProvisioningSpecification', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::EMR::Cluster::AutoScalingPolicy',
@@ -638,6 +661,31 @@ package Cfn::Resource::Properties::Object::AWS::EMR::Cluster::HadoopJarStepConfi
   has MainClass => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has StepProperties => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EMR::Cluster::KeyValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
+
+subtype 'Cfn::Resource::Properties::AWS::EMR::Cluster::ComputeLimits',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::ComputeLimits',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::EMR::Cluster::ComputeLimits->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::EMR::Cluster::ComputeLimits {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has MaximumCapacityUnits => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MaximumCoreCapacityUnits => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MaximumOnDemandCapacityUnits => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MinimumCapacityUnits => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has UnitType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::EMR::Cluster::StepConfig',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -682,6 +730,27 @@ package Cfn::Resource::Properties::Object::AWS::EMR::Cluster::StepConfig {
   has ActionOnFailure => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has HadoopJarStep => (isa => 'Cfn::Resource::Properties::AWS::EMR::Cluster::HadoopJarStepConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::EMR::Cluster::ManagedScalingPolicy',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EMR::Cluster::ManagedScalingPolicy',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::EMR::Cluster::ManagedScalingPolicy->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::EMR::Cluster::ManagedScalingPolicy {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ComputeLimits => (isa => 'Cfn::Resource::Properties::AWS::EMR::Cluster::ComputeLimits', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::EMR::Cluster::KerberosAttributes',
@@ -850,12 +919,15 @@ package Cfn::Resource::Properties::AWS::EMR::Cluster {
   has Instances => (isa => 'Cfn::Resource::Properties::AWS::EMR::Cluster::JobFlowInstancesConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Conditional');
   has JobFlowRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has KerberosAttributes => (isa => 'Cfn::Resource::Properties::AWS::EMR::Cluster::KerberosAttributes', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has LogEncryptionKmsKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has LogUri => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ManagedScalingPolicy => (isa => 'Cfn::Resource::Properties::AWS::EMR::Cluster::ManagedScalingPolicy', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ReleaseLabel => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ScaleDownBehavior => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has SecurityConfiguration => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ServiceRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has StepConcurrencyLevel => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Steps => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EMR::Cluster::StepConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has VisibleToAllUsers => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

@@ -1,4 +1,4 @@
-# AWS::SecretsManager::ResourcePolicy generated from spec 14.3.0
+# AWS::SecretsManager::ResourcePolicy generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::SecretsManager::ResourcePolicy',
@@ -25,6 +25,7 @@ package Cfn::Resource::Properties::AWS::SecretsManager::ResourcePolicy {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has BlockPublicPolicy => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ResourcePolicy => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SecretId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }

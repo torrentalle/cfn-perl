@@ -1,4 +1,4 @@
-# AWS::AmazonMQ::Broker generated from spec 18.4.0
+# AWS::AmazonMQ::Broker generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker',
@@ -14,86 +14,11 @@ package Cfn::Resource::AWS::AmazonMQ::Broker {
     [ 'AmqpEndpoints','Arn','ConfigurationId','ConfigurationRevision','IpAddresses','MqttEndpoints','OpenWireEndpoints','StompEndpoints','WssEndpoints' ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-3','us-east-1','us-east-2','us-west-1','us-west-2' ]
+    [ 'ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-south-1','eu-west-1','eu-west-3','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 
 
-
-subtype 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::ServerMetadata',
-     as 'Cfn::Value';
-
-coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::ServerMetadata',
-  from 'HashRef',
-   via {
-     if (my $f = Cfn::TypeLibrary::try_function($_)) {
-       return $f
-     } else {
-       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::ServerMetadata->new( %$_ );
-     }
-   };
-
-package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::ServerMetadata {
-  use Moose;
-  use MooseX::StrictConstructor;
-  extends 'Cfn::Value::TypedValue';
-  
-  has Hosts => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has RoleBase => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has RoleName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has RoleSearchMatching => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has RoleSearchSubtree => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has ServiceAccountPassword => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has ServiceAccountUsername => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has UserBase => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has UserRoleName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has UserSearchMatching => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has UserSearchSubtree => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-}
-subtype 'ArrayOfCfn::Resource::Properties::AWS::AmazonMQ::Broker::InterBrokerCred',
-     as 'Cfn::Value',
-  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
-message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
-
-coerce 'ArrayOfCfn::Resource::Properties::AWS::AmazonMQ::Broker::InterBrokerCred',
-  from 'HashRef',
-   via {
-     if (my $f = Cfn::TypeLibrary::try_function($_)) {
-       return $f
-     } else {
-       die 'Only accepts functions'; 
-     }
-   },
-  from 'ArrayRef',
-   via {
-     Cfn::Value::Array->new(Value => [
-       map { 
-         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::AmazonMQ::Broker::InterBrokerCred')->coerce($_)
-       } @$_
-     ]);
-   };
-
-subtype 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::InterBrokerCred',
-     as 'Cfn::Value';
-
-coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::InterBrokerCred',
-  from 'HashRef',
-   via {
-     if (my $f = Cfn::TypeLibrary::try_function($_)) {
-       return $f
-     } else {
-       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::InterBrokerCred->new( %$_ );
-     }
-   };
-
-package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::InterBrokerCred {
-  use Moose;
-  use MooseX::StrictConstructor;
-  extends 'Cfn::Value::TypedValue';
-  
-  has Password => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has Username => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::AmazonMQ::Broker::User',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -261,28 +186,6 @@ package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::LdapServerMeta
   has UserSearchSubtree => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
-subtype 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapMetadata',
-     as 'Cfn::Value';
-
-coerce 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapMetadata',
-  from 'HashRef',
-   via {
-     if (my $f = Cfn::TypeLibrary::try_function($_)) {
-       return $f
-     } else {
-       return Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::LdapMetadata->new( %$_ );
-     }
-   };
-
-package Cfn::Resource::Properties::Object::AWS::AmazonMQ::Broker::LdapMetadata {
-  use Moose;
-  use MooseX::StrictConstructor;
-  extends 'Cfn::Value::TypedValue';
-  
-  has InterBrokerCreds => (isa => 'ArrayOfCfn::Resource::Properties::AWS::AmazonMQ::Broker::InterBrokerCred', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has ServerMetadata => (isa => 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::ServerMetadata', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-}
-
 subtype 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::EncryptionOptions',
      as 'Cfn::Value';
 
@@ -341,7 +244,6 @@ package Cfn::Resource::Properties::AWS::AmazonMQ::Broker {
   has EngineType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has EngineVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has HostInstanceType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has LdapMetadata => (isa => 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapMetadata', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has LdapServerMetadata => (isa => 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LdapServerMetadata', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Logs => (isa => 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::LogList', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MaintenanceWindowStartTime => (isa => 'Cfn::Resource::Properties::AWS::AmazonMQ::Broker::MaintenanceWindow', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

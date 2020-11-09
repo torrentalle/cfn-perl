@@ -1,4 +1,4 @@
-# AWS::LakeFormation::DataLakeSettings generated from spec 18.4.0
+# AWS::LakeFormation::DataLakeSettings generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::LakeFormation::DataLakeSettings',
@@ -67,6 +67,7 @@ package Cfn::Resource::Properties::AWS::LakeFormation::DataLakeSettings {
   extends 'Cfn::Resource::Properties';
   
   has Admins => (isa => 'Cfn::Resource::Properties::AWS::LakeFormation::DataLakeSettings::Admins', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has TrustedResourceOwners => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

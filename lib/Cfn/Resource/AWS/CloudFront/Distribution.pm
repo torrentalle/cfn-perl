@@ -1,4 +1,4 @@
-# AWS::CloudFront::Distribution generated from spec 18.4.0
+# AWS::CloudFront::Distribution generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution',
@@ -169,6 +169,28 @@ package Cfn::Resource::Properties::Object::AWS::CloudFront::Distribution::S3Orig
   extends 'Cfn::Value::TypedValue';
   
   has OriginAccessIdentity => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginShield',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginShield',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::CloudFront::Distribution::OriginShield->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::CloudFront::Distribution::OriginShield {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Enabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has OriginShieldRegion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::OriginGroup',
      as 'Cfn::Value',
@@ -492,6 +514,7 @@ package Cfn::Resource::Properties::Object::AWS::CloudFront::Distribution::Origin
   has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has OriginCustomHeaders => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CloudFront::Distribution::OriginCustomHeader', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has OriginPath => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has OriginShield => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::OriginShield', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has S3OriginConfig => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::Distribution::S3OriginConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 

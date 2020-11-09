@@ -1,4 +1,4 @@
-# AWS::KinesisFirehose::DeliveryStream generated from spec 18.4.0
+# AWS::KinesisFirehose::DeliveryStream generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream',
@@ -801,8 +801,8 @@ package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream:
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has KinesisStreamARN => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has RoleARN => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has KinesisStreamARN => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has RoleARN => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointDestinationConfiguration',
@@ -899,20 +899,44 @@ package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream:
   has VpcConfiguration => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::VpcConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::DeliveryStreamEncryptionConfigurationInput',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::DeliveryStreamEncryptionConfigurationInput',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::DeliveryStreamEncryptionConfigurationInput->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::KinesisFirehose::DeliveryStream::DeliveryStreamEncryptionConfigurationInput {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has KeyARN => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has KeyType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 package Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream {
   use Moose;
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has DeliveryStreamEncryptionConfigurationInput => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::DeliveryStreamEncryptionConfigurationInput', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DeliveryStreamName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has DeliveryStreamType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ElasticsearchDestinationConfiguration => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ElasticsearchDestinationConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ExtendedS3DestinationConfiguration => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::ExtendedS3DestinationConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has HttpEndpointDestinationConfiguration => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::HttpEndpointDestinationConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has KinesisStreamSourceConfiguration => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::KinesisStreamSourceConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has KinesisStreamSourceConfiguration => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::KinesisStreamSourceConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has RedshiftDestinationConfiguration => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::RedshiftDestinationConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has S3DestinationConfiguration => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::S3DestinationConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SplunkDestinationConfiguration => (isa => 'Cfn::Resource::Properties::AWS::KinesisFirehose::DeliveryStream::SplunkDestinationConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'ArrayOfCfn::Resource::Properties::TagType', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 1;

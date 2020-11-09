@@ -1,4 +1,4 @@
-# AWS::GlobalAccelerator::EndpointGroup generated from spec 18.4.0
+# AWS::GlobalAccelerator::EndpointGroup generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::GlobalAccelerator::EndpointGroup',
@@ -14,11 +14,55 @@ package Cfn::Resource::AWS::GlobalAccelerator::EndpointGroup {
     [ 'EndpointGroupArn' ]
   }
   sub supported_regions {
-    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
+    [ 'af-south-1','ap-east-1','ap-northeast-1','ap-northeast-2','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','eu-central-1','eu-north-1','eu-south-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 
 
+subtype 'ArrayOfCfn::Resource::Properties::AWS::GlobalAccelerator::EndpointGroup::PortOverride',
+     as 'Cfn::Value',
+  where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
+message { "$_ is not a Cfn::Value or a Cfn::Value::Function" };
+
+coerce 'ArrayOfCfn::Resource::Properties::AWS::GlobalAccelerator::EndpointGroup::PortOverride',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       die 'Only accepts functions'; 
+     }
+   },
+  from 'ArrayRef',
+   via {
+     Cfn::Value::Array->new(Value => [
+       map { 
+         Moose::Util::TypeConstraints::find_type_constraint('Cfn::Resource::Properties::AWS::GlobalAccelerator::EndpointGroup::PortOverride')->coerce($_)
+       } @$_
+     ]);
+   };
+
+subtype 'Cfn::Resource::Properties::AWS::GlobalAccelerator::EndpointGroup::PortOverride',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::GlobalAccelerator::EndpointGroup::PortOverride',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::GlobalAccelerator::EndpointGroup::PortOverride->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::GlobalAccelerator::EndpointGroup::PortOverride {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has EndpointPort => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ListenerPort => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::GlobalAccelerator::EndpointGroup::EndpointConfiguration',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -77,6 +121,7 @@ package Cfn::Resource::Properties::AWS::GlobalAccelerator::EndpointGroup {
   has HealthCheckPort => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has HealthCheckProtocol => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ListenerArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has PortOverrides => (isa => 'ArrayOfCfn::Resource::Properties::AWS::GlobalAccelerator::EndpointGroup::PortOverride', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ThresholdCount => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has TrafficDialPercentage => (isa => 'Cfn::Value::Double', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }

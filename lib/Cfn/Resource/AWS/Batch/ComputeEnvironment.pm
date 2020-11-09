@@ -1,4 +1,4 @@
-# AWS::Batch::ComputeEnvironment generated from spec 18.4.0
+# AWS::Batch::ComputeEnvironment generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment',
@@ -88,6 +88,7 @@ package Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment {
   has ComputeResources => (isa => 'Cfn::Resource::Properties::AWS::Batch::ComputeEnvironment::ComputeResources', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ServiceRole => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has State => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Tags => (isa => 'Cfn::Value::Json|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
 }
 

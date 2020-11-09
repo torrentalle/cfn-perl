@@ -1,4 +1,4 @@
-# AWS::ElastiCache::ReplicationGroup generated from spec 18.4.0
+# AWS::ElastiCache::ReplicationGroup generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup',
@@ -82,8 +82,9 @@ package Cfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup {
   has CacheSubnetGroupName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Engine => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has EngineVersion => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has GlobalReplicationGroupId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has KmsKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
-  has MultiAZEnabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has MultiAZEnabled => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has NodeGroupConfiguration => (isa => 'ArrayOfCfn::Resource::Properties::AWS::ElastiCache::ReplicationGroup::NodeGroupConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Conditional');
   has NotificationTopicArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has NumCacheClusters => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

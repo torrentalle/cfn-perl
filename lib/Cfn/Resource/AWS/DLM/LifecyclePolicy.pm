@@ -1,4 +1,4 @@
-# AWS::DLM::LifecyclePolicy generated from spec 18.4.0
+# AWS::DLM::LifecyclePolicy generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy',
@@ -229,6 +229,7 @@ package Cfn::Resource::Properties::Object::AWS::DLM::LifecyclePolicy::Parameters
   extends 'Cfn::Value::TypedValue';
   
   has ExcludeBootVolume => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has NoReboot => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::DLM::LifecyclePolicy::PolicyDetails',

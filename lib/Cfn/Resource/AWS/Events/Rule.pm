@@ -1,4 +1,4 @@
-# AWS::Events::Rule generated from spec 18.4.0
+# AWS::Events::Rule generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Events::Rule',
@@ -192,6 +192,54 @@ package Cfn::Resource::Properties::Object::AWS::Events::Rule::RunCommandParamete
   has RunCommandTargets => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Events::Rule::RunCommandTarget', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::Events::Rule::RetryPolicy',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Events::Rule::RetryPolicy',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::Events::Rule::RetryPolicy->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::Events::Rule::RetryPolicy {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has MaximumEventAgeInSeconds => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MaximumRetryAttempts => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
+subtype 'Cfn::Resource::Properties::AWS::Events::Rule::RedshiftDataParameters',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Events::Rule::RedshiftDataParameters',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::Events::Rule::RedshiftDataParameters->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::Events::Rule::RedshiftDataParameters {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Database => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DbUser => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SecretManagerArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has Sql => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has StatementName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has WithEvent => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::Events::Rule::KinesisParameters',
      as 'Cfn::Value';
 
@@ -284,6 +332,27 @@ package Cfn::Resource::Properties::Object::AWS::Events::Rule::EcsParameters {
   has TaskDefinitionArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
+subtype 'Cfn::Resource::Properties::AWS::Events::Rule::DeadLetterConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::Events::Rule::DeadLetterConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::Events::Rule::DeadLetterConfig->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::Events::Rule::DeadLetterConfig {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has Arn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
+
 subtype 'Cfn::Resource::Properties::AWS::Events::Rule::BatchParameters',
      as 'Cfn::Value';
 
@@ -350,6 +419,7 @@ package Cfn::Resource::Properties::Object::AWS::Events::Rule::Target {
   
   has Arn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has BatchParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::BatchParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DeadLetterConfig => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::DeadLetterConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EcsParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::EcsParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has HttpParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::HttpParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Id => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
@@ -357,6 +427,8 @@ package Cfn::Resource::Properties::Object::AWS::Events::Rule::Target {
   has InputPath => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InputTransformer => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::InputTransformer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has KinesisParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::KinesisParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RedshiftDataParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::RedshiftDataParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RetryPolicy => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::RetryPolicy', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RunCommandParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::RunCommandParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SqsParameters => (isa => 'Cfn::Resource::Properties::AWS::Events::Rule::SqsParameters', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

@@ -1,4 +1,4 @@
-# AWS::ApiGateway::DomainName generated from spec 18.4.0
+# AWS::ApiGateway::DomainName generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ApiGateway::DomainName',
@@ -69,7 +69,7 @@ package Cfn::Resource::Properties::AWS::ApiGateway::DomainName {
   extends 'Cfn::Resource::Properties';
   
   has CertificateArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has DomainName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DomainName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has EndpointConfiguration => (isa => 'Cfn::Resource::Properties::AWS::ApiGateway::DomainName::EndpointConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MutualTlsAuthentication => (isa => 'Cfn::Resource::Properties::AWS::ApiGateway::DomainName::MutualTlsAuthentication', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has RegionalCertificateArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');

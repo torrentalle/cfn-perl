@@ -1,4 +1,4 @@
-# AWS::S3::Bucket generated from spec 18.4.0
+# AWS::S3::Bucket generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::S3::Bucket',
@@ -233,7 +233,7 @@ package Cfn::Resource::Properties::Object::AWS::S3::Bucket::Metrics {
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has EventThreshold => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has EventThreshold => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::ReplicationTimeValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Status => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -366,7 +366,7 @@ package Cfn::Resource::Properties::Object::AWS::S3::Bucket::SourceSelectionCrite
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has SseKmsEncryptedObjects => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::SseKmsEncryptedObjects', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has SseKmsEncryptedObjects => (isa => 'Cfn::Resource::Properties::AWS::S3::Bucket::SseKmsEncryptedObjects', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 subtype 'Cfn::Resource::Properties::AWS::S3::Bucket::ServerSideEncryptionByDefault',

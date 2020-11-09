@@ -1,4 +1,4 @@
-# AWS::ECS::Service generated from spec 18.4.0
+# AWS::ECS::Service generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::ECS::Service',
@@ -195,7 +195,7 @@ package Cfn::Resource::Properties::Object::AWS::ECS::Service::NetworkConfigurati
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
-  has AwsVpcConfiguration => (isa => 'Cfn::Resource::Properties::AWS::ECS::Service::AwsVpcConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has AwsvpcConfiguration => (isa => 'Cfn::Resource::Properties::AWS::ECS::Service::AwsVpcConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 subtype 'ArrayOfCfn::Resource::Properties::AWS::ECS::Service::LoadBalancer',
      as 'Cfn::Value',

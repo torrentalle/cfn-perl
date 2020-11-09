@@ -1,4 +1,4 @@
-# AWS::AppSync::ApiKey generated from spec 14.3.0
+# AWS::AppSync::ApiKey generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::AppSync::ApiKey',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::AppSync::ApiKey {
     [ 'ApiKey','Arn' ]
   }
   sub supported_regions {
-    [ 'ap-northeast-1','ap-southeast-2','cn-north-1','eu-west-1','us-east-1','us-east-2','us-west-2' ]
+    [ 'ap-east-1','ap-northeast-1','ap-southeast-2','cn-north-1','cn-northwest-1','eu-west-1','me-south-1','us-east-1','us-east-2','us-west-2' ]
   }
 }
 
@@ -26,6 +26,7 @@ package Cfn::Resource::Properties::AWS::AppSync::ApiKey {
   extends 'Cfn::Resource::Properties';
   
   has ApiId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has ApiKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Expires => (isa => 'Cfn::Value::Double', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }

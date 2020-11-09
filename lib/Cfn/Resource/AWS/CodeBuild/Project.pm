@@ -1,4 +1,4 @@
-# AWS::CodeBuild::Project generated from spec 18.4.0
+# AWS::CodeBuild::Project generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CodeBuild::Project',
@@ -378,6 +378,7 @@ package Cfn::Resource::Properties::Object::AWS::CodeBuild::Project::ProjectTrigg
   use MooseX::StrictConstructor;
   extends 'Cfn::Value::TypedValue';
   
+  has BuildType => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has FilterGroups => (isa => 'ArrayOfCfn::Resource::Properties::AWS::CodeBuild::Project::FilterGroup', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Webhook => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }

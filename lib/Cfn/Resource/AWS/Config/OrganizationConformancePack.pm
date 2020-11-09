@@ -1,4 +1,4 @@
-# AWS::Config::OrganizationConformancePack generated from spec 18.4.0
+# AWS::Config::OrganizationConformancePack generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Config::OrganizationConformancePack',
@@ -70,7 +70,7 @@ package Cfn::Resource::Properties::AWS::Config::OrganizationConformancePack {
   extends 'Cfn::Resource::Properties';
   
   has ConformancePackInputParameters => (isa => 'ArrayOfCfn::Resource::Properties::AWS::Config::OrganizationConformancePack::ConformancePackInputParameter', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has DeliveryS3Bucket => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DeliveryS3Bucket => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DeliveryS3KeyPrefix => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ExcludedAccounts => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has OrganizationConformancePackName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

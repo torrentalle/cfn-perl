@@ -1,4 +1,4 @@
-# AWS::EKS::Cluster generated from spec 18.4.0
+# AWS::EKS::Cluster generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::EKS::Cluster',
@@ -62,6 +62,27 @@ package Cfn::Resource::Properties::Object::AWS::EKS::Cluster::ResourcesVpcConfig
   has SecurityGroupIds => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has SubnetIds => (isa => 'Cfn::Value::Array|Cfn::Value::Function|Cfn::DynamicValue', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
+
+subtype 'Cfn::Resource::Properties::AWS::EKS::Cluster::KubernetesNetworkConfig',
+     as 'Cfn::Value';
+
+coerce 'Cfn::Resource::Properties::AWS::EKS::Cluster::KubernetesNetworkConfig',
+  from 'HashRef',
+   via {
+     if (my $f = Cfn::TypeLibrary::try_function($_)) {
+       return $f
+     } else {
+       return Cfn::Resource::Properties::Object::AWS::EKS::Cluster::KubernetesNetworkConfig->new( %$_ );
+     }
+   };
+
+package Cfn::Resource::Properties::Object::AWS::EKS::Cluster::KubernetesNetworkConfig {
+  use Moose;
+  use MooseX::StrictConstructor;
+  extends 'Cfn::Value::TypedValue';
+  
+  has ServiceIpv4Cidr => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+}
 subtype 'ArrayOfCfn::Resource::Properties::AWS::EKS::Cluster::EncryptionConfig',
      as 'Cfn::Value',
   where { $_->isa('Cfn::Value::Array') or $_->isa('Cfn::Value::Function') },
@@ -113,6 +134,7 @@ package Cfn::Resource::Properties::AWS::EKS::Cluster {
   extends 'Cfn::Resource::Properties';
   
   has EncryptionConfig => (isa => 'ArrayOfCfn::Resource::Properties::AWS::EKS::Cluster::EncryptionConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
+  has KubernetesNetworkConfig => (isa => 'Cfn::Resource::Properties::AWS::EKS::Cluster::KubernetesNetworkConfig', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has ResourcesVpcConfig => (isa => 'Cfn::Resource::Properties::AWS::EKS::Cluster::ResourcesVpcConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

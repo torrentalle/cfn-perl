@@ -1,4 +1,4 @@
-# AWS::Kendra::DataSource generated from spec 18.4.0
+# AWS::Kendra::DataSource generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Kendra::DataSource',
@@ -775,6 +775,7 @@ package Cfn::Resource::Properties::Object::AWS::Kendra::DataSource::S3DataSource
   has BucketName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has DocumentsMetadataConfiguration => (isa => 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DocumentsMetadataConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has ExclusionPatterns => (isa => 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceInclusionsExclusionsStrings', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has InclusionPatterns => (isa => 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceInclusionsExclusionsStrings', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has InclusionPrefixes => (isa => 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceInclusionsExclusionsStrings', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
@@ -882,11 +883,11 @@ package Cfn::Resource::Properties::AWS::Kendra::DataSource {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
-  has DataSourceConfiguration => (isa => 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceConfiguration', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DataSourceConfiguration => (isa => 'Cfn::Resource::Properties::AWS::Kendra::DataSource::DataSourceConfiguration', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Description => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has IndexId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has RoleArn => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Schedule => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Tags => (isa => 'Cfn::Resource::Properties::AWS::Kendra::DataSource::TagList', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Type => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');

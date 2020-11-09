@@ -1,4 +1,4 @@
-# AWS::Logs::LogGroup generated from spec 14.3.0
+# AWS::Logs::LogGroup generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::Logs::LogGroup',
@@ -25,6 +25,7 @@ package Cfn::Resource::Properties::AWS::Logs::LogGroup {
   use MooseX::StrictConstructor;
   extends 'Cfn::Resource::Properties';
   
+  has KmsKeyId => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has LogGroupName => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Immutable');
   has RetentionInDays => (isa => 'Cfn::Value::Integer', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }

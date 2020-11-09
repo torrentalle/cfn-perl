@@ -1,4 +1,4 @@
-# AWS::CloudFront::CachePolicy generated from spec 18.4.0
+# AWS::CloudFront::CachePolicy generated from spec 20.1.0
 use Moose::Util::TypeConstraints;
 
 coerce 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy',
@@ -14,7 +14,7 @@ package Cfn::Resource::AWS::CloudFront::CachePolicy {
     [ 'Id','LastModifiedTime' ]
   }
   sub supported_regions {
-    [ 'ap-east-1','ap-northeast-1','ap-northeast-2','ap-northeast-3','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','cn-north-1','cn-northwest-1','eu-central-1','eu-north-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
+    [ 'af-south-1','ap-east-1','ap-northeast-1','ap-northeast-2','ap-northeast-3','ap-south-1','ap-southeast-1','ap-southeast-2','ca-central-1','cn-north-1','cn-northwest-1','eu-central-1','eu-north-1','eu-south-1','eu-west-1','eu-west-2','eu-west-3','me-south-1','sa-east-1','us-east-1','us-east-2','us-west-1','us-west-2' ]
   }
 }
 
@@ -105,6 +105,7 @@ package Cfn::Resource::Properties::Object::AWS::CloudFront::CachePolicy::Paramet
   extends 'Cfn::Value::TypedValue';
   
   has CookiesConfig => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::CookiesConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has EnableAcceptEncodingBrotli => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has EnableAcceptEncodingGzip => (isa => 'Cfn::Value::Boolean', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has HeadersConfig => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::HeadersConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has QueryStringsConfig => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::QueryStringsConfig', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
@@ -129,11 +130,11 @@ package Cfn::Resource::Properties::Object::AWS::CloudFront::CachePolicy::CachePo
   extends 'Cfn::Value::TypedValue';
   
   has Comment => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has DefaultTTL => (isa => 'Cfn::Value::Double', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has MaxTTL => (isa => 'Cfn::Value::Double', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has DefaultTTL => (isa => 'Cfn::Value::Double', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has MaxTTL => (isa => 'Cfn::Value::Double', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has MinTTL => (isa => 'Cfn::Value::Double', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
   has Name => (isa => 'Cfn::Value::String', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
-  has ParametersInCacheKeyAndForwardedToOrigin => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::ParametersInCacheKeyAndForwardedToOrigin', is => 'rw', coerce => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
+  has ParametersInCacheKeyAndForwardedToOrigin => (isa => 'Cfn::Resource::Properties::AWS::CloudFront::CachePolicy::ParametersInCacheKeyAndForwardedToOrigin', is => 'rw', coerce => 1, required => 1, traits => [ 'CfnMutability' ], mutability => 'Mutable');
 }
 
 package Cfn::Resource::Properties::AWS::CloudFront::CachePolicy {
